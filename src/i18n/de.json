@@ -1,0 +1,354 @@
+{
+  "app": {
+    "title": "Excel-Trainer",
+    "subtitle": "Erste eigene Wohnung"
+  },
+  "nav": {
+    "levels": "Level-Karte",
+    "badges": "Abzeichen",
+    "glossary": "Glossar",
+    "profile": "Profil"
+  },
+  "playerLevel": {
+    "1": "Anfänger",
+    "2": "Entdecker",
+    "3": "Tabellenkenner",
+    "4": "Formelprofi",
+    "5": "Excel-Held"
+  },
+  "common": {
+    "back": "Zurück",
+    "next": "Weiter",
+    "check": "Prüfen",
+    "hint": "Tipp",
+    "stars": "Sterne",
+    "xp": "XP",
+    "level": "Level",
+    "locked": "Gesperrt",
+    "completed": "Abgeschlossen",
+    "streak": "Streak",
+    "day": "Tag",
+    "days": "Tage",
+    "errors": "Fehler",
+    "perfect": "Perfekt!",
+    "tryAgain": "Nochmal versuchen",
+    "start": "Starten",
+    "close": "Schließen",
+    "name": "Name",
+    "save": "Speichern",
+    "reset": "Fortschritt zurücksetzen"
+  },
+  "levelMap": {
+    "title": "Dein Weg zur Excel-Profi",
+    "exercise": "Übung"
+  },
+  "exercise": {
+    "step": "Schritt",
+    "instructions": "Anleitung",
+    "checkAnswer": "Antwort prüfen",
+    "stepComplete": "Schritt erledigt!",
+    "allComplete": "Alle Schritte erledigt!",
+    "hintAvailable": "Tipp verfügbar"
+  },
+  "complete": {
+    "title": "Geschafft!",
+    "xpEarned": "+{xp} XP verdient",
+    "newBadge": "Neues Abzeichen!",
+    "nextExercise": "Nächste Übung",
+    "backToMap": "Zurück zur Karte"
+  },
+  "badges": {
+    "title": "Abzeichen-Wand",
+    "earned": "Erhalten",
+    "locked": "Noch nicht freigeschaltet"
+  },
+  "badge": {
+    "firstCell": "Erste Zelle",
+    "firstFormula": "Erste Formel",
+    "shoppingDone": "Einkauf erledigt",
+    "alltagDone": "Alltag organisiert",
+    "cookingMaster": "Küchenchef",
+    "financePro": "Finanzprofi",
+    "travelExpert": "Reiseprofi",
+    "proComplete": "Excel-Profi",
+    "sumMaster": "Summen-Meister",
+    "streak3": "3-Tage-Streak",
+    "perfectScore": "Perfekte Bewertung",
+    "speedDemon": "Blitzschnell",
+    "polyglot": "Mehrsprachig"
+  },
+  "profile": {
+    "title": "Mein Profil",
+    "chooseAvatar": "Avatar wählen",
+    "enterName": "Dein Name"
+  },
+  "glossary": {
+    "title": "Excel-Glossar",
+    "term": "Begriff",
+    "german": "Deutsch",
+    "english": "English",
+    "description": "Erklärung"
+  },
+  "level1": {
+    "title": "Einkaufen",
+    "story": "Du ziehst in deine erste eigene Wohnung! Zuerst brauchst du eine Einkaufsliste. Lass uns Excel benutzen!",
+    "ex1": {
+      "title": "Einkaufsliste",
+      "story": "Schreibe deine erste Einkaufsliste in eine Tabelle.",
+      "step1": "Schreibe 'Reis' in Zelle A2",
+      "step2": "Schreibe 'Nudeln' in Zelle A3",
+      "step3": "Schreibe 'Öl' in Zelle A4",
+      "step4": "Schreibe 'Salz' in Zelle A5",
+      "hint1": "Klicke auf die Zelle A2 und tippe 'Reis'",
+      "hint2": "Die Zellen sind wie ein Gitter – A ist die Spalte, 2 ist die Zeile"
+    },
+    "ex2": {
+      "title": "Preise eintragen",
+      "story": "Jetzt tragen wir die Preise neben die Artikel ein.",
+      "step1": "Trage den Preis 1,99 in Zelle B2 ein",
+      "step2": "Trage den Preis 0,89 in Zelle B3 ein",
+      "step3": "Trage den Preis 2,49 in Zelle B4 ein",
+      "step4": "Trage den Preis 0,59 in Zelle B5 ein",
+      "hint1": "Klicke auf B2 und tippe die Zahl 1,99",
+      "hint2": "Benutze ein Komma als Dezimaltrennzeichen (z.B. 1,99)"
+    },
+    "ex3": {
+      "title": "Summe berechnen",
+      "story": "Wie viel kostet alles zusammen? Benutze deine erste Formel!",
+      "step1": "Schreibe 'Gesamt' in Zelle A6",
+      "step2": "Schreibe die Formel =SUMME(B2:B5) in Zelle B6",
+      "hint1": "Eine Formel beginnt immer mit dem Gleichheitszeichen =",
+      "hint2": "SUMME() addiert alle Zahlen im Bereich. B2:B5 bedeutet von B2 bis B5."
+    },
+    "ex4": {
+      "title": "Budget prüfen",
+      "story": "Du hast 10 Euro dabei. Reicht das Geld?",
+      "step1": "Schreibe 'Budget' in Zelle A8",
+      "step2": "Schreibe 10 in Zelle B8",
+      "step3": "Schreibe 'Rest' in Zelle A9",
+      "step4": "Schreibe die Formel =B8-B6 in Zelle B9",
+      "hint1": "B8 ist dein Budget, B6 ist die Summe deiner Einkäufe",
+      "hint2": "Mit = startest du eine Formel. Das Minuszeichen - zieht ab."
+    }
+  },
+  "level2": {
+    "title": "Mein Alltag",
+    "story": "Deine erste Woche in der neuen Wohnung! Organisiere deinen Alltag mit Excel.",
+    "ex1": {
+      "title": "Wochenplan",
+      "story": "Plane deine erste Woche in der neuen Wohnung.",
+      "step1": "Schreibe 'Montag' in Zelle A2",
+      "step2": "Schreibe 'Dienstag' in Zelle A3",
+      "step3": "Schreibe 'Mittwoch' in Zelle A4",
+      "step4": "Trage eine Aktivität für Montag in B2 ein",
+      "hint1": "Klicke auf A2 und tippe 'Montag'",
+      "hint2": "In Spalte B kommen deine Aktivitäten"
+    },
+    "ex2": {
+      "title": "Preisvergleich",
+      "story": "Vergleiche die Preise von zwei Supermärkten.",
+      "step1": "Trage den Aldi-Preis 1,29 in Zelle B2 ein",
+      "step2": "Trage den Rewe-Preis 1,59 in Zelle C2 ein",
+      "step3": "Trage den Aldi-Preis 0,79 in Zelle B3 ein",
+      "step4": "Trage den Rewe-Preis 0,99 in Zelle C3 ein",
+      "hint1": "Spalte B ist für Aldi, Spalte C ist für Rewe",
+      "hint2": "Schau genau hin, welcher Markt günstiger ist!"
+    },
+    "ex3": {
+      "title": "Monatsausgaben",
+      "story": "Behalte den Überblick über deine monatlichen Ausgaben.",
+      "step1": "Trage 350 für Miete in Zelle B2 ein",
+      "step2": "Trage 150 für Essen in Zelle B3 ein",
+      "step3": "Trage 30 für Handy in Zelle B4 ein",
+      "step4": "Berechne die Summe mit =SUMME(B2:B5) in Zelle B6",
+      "hint1": "Die Zahlen sind deine monatlichen Kosten in Euro",
+      "hint2": "SUMME addiert automatisch alle Werte im Bereich"
+    },
+    "ex4": {
+      "title": "Durchschnitt berechnen",
+      "story": "Was gibst du im Durchschnitt pro Kategorie aus?",
+      "step1": "Trage 45 in Zelle B2 ein (Woche 1)",
+      "step2": "Trage 52 in Zelle B3 ein (Woche 2)",
+      "step3": "Trage 38 in Zelle B4 ein (Woche 3)",
+      "step4": "Berechne den Durchschnitt mit =MITTELWERT(B2:B4) in Zelle B6",
+      "hint1": "MITTELWERT berechnet den Durchschnitt aller Zahlen",
+      "hint2": "Der Durchschnitt ist die Summe geteilt durch die Anzahl"
+    }
+  },
+  "level3": {
+    "title": "Kochen & Rezepte",
+    "story": "Du kochst jetzt selbst! Plane Rezepte, Einkäufe und Kalorien mit Excel.",
+    "ex1": {
+      "title": "Rezept umrechnen",
+      "story": "Ein Rezept ist für 2 Personen. Du hast aber 4 Gäste! Rechne die Mengen um.",
+      "step1": "Trage die Mengen ein: 200g Nudeln (B2), 100g Käse (B3), 2 Eier (B4), 150ml Sahne (B5)",
+      "step2": "Trage den Faktor 2 in Zelle C2 ein (für doppelte Menge)",
+      "step3": "Berechne die neue Menge für Nudeln: =B2*C2 in Zelle D2",
+      "step4": "Berechne auch Käse (D3), Eier (D4) und Sahne (D5) mit der gleichen Formel",
+      "hint1": "Der Stern * ist das Mal-Zeichen in Excel",
+      "hint2": "Kopiere die Formel: D3 braucht =B3*C3, D4 braucht =B4*C4"
+    },
+    "ex2": {
+      "title": "Wochenmenü",
+      "story": "Plane dein Essen für die Woche und berechne die Kosten pro Tag.",
+      "step1": "Trage die Kosten für Montag ein: Frühstück 2 (B2), Mittag 5 (C2), Abend 4 (D2)",
+      "step2": "Berechne die Tageskosten für Montag: =SUMME(B2:D2) in Zelle E2",
+      "step3": "Trage die Kosten für Dienstag ein und berechne die Tageskosten (E3)",
+      "step4": "Berechne die Wochenkosten: =SUMME(E2:E6) in Zelle E8",
+      "hint1": "Jede Zeile ist ein Tag, jede Spalte eine Mahlzeit",
+      "hint2": "SUMME(B2:D2) addiert alle Mahlzeiten eines Tages"
+    },
+    "ex3": {
+      "title": "Kalorien-Tracker",
+      "story": "Zähle deine Kalorien für einen Tag und vergleiche mit dem Tagesziel.",
+      "step1": "Trage die Kalorien ein: Frühstück 400 (B2), Mittag 600 (B3), Abend 500 (B4), Snacks 200 (B5)",
+      "step2": "Berechne die Gesamt-Kalorien: =SUMME(B2:B5) in Zelle B7",
+      "step3": "Trage dein Tagesziel 2000 in Zelle B8 ein",
+      "step4": "Berechne die verbleibenden Kalorien: =B8-B7 in Zelle B9",
+      "hint1": "SUMME addiert alle Kalorien des Tages",
+      "hint2": "Verbleibend = Ziel minus Verbrauch"
+    },
+    "ex4": {
+      "title": "Rezept-Einkauf",
+      "story": "Berechne die Kosten für alle Zutaten deines Lieblingsrezepts.",
+      "step1": "Trage Preis und Menge ein: Hähnchen 6,99€ (B2), 1 Stück (C2)",
+      "step2": "Berechne den Gesamtpreis für Hähnchen: =B2*C2 in Zelle D2",
+      "step3": "Berechne auch Reis (D3), Gemüse (D4) und Gewürze (D5)",
+      "step4": "Berechne den Einkauf gesamt: =SUMME(D2:D5) in Zelle D7",
+      "hint1": "Gesamtpreis = Preis pro Stück mal Menge",
+      "hint2": "Benutze ein Komma als Dezimaltrennzeichen (z.B. 6,99)"
+    }
+  },
+  "level4": {
+    "title": "WG & Finanzen",
+    "story": "Du lebst jetzt in einer WG! Teile Kosten, plane Sparziele und behalte den Überblick.",
+    "ex1": {
+      "title": "Nebenkosten teilen",
+      "story": "Die Nebenkosten müssen fair auf 2 Mitbewohner aufgeteilt werden.",
+      "step1": "Trage die Kosten ein: Strom 80€ (B2), Wasser 40€ (B3), Internet 30€ (B4)",
+      "step2": "Berechne den Anteil pro Person für Strom: =B2/2 in Zelle C2",
+      "step3": "Berechne auch Wasser (C3) und Internet (C4) pro Person",
+      "step4": "Berechne die Summe pro Person: =SUMME(C2:C4) in Zelle C6",
+      "hint1": "Der Schrägstrich / ist das Geteilt-Zeichen in Excel",
+      "hint2": "Jeder zahlt die Hälfte: Betrag geteilt durch 2"
+    },
+    "ex2": {
+      "title": "Sparplan",
+      "story": "Du möchtest 600€ für ein neues Fahrrad sparen. Erstelle einen Sparplan!",
+      "step1": "Trage ein: Sparziel 600 (B2), Monatliche Rate 50 (B3)",
+      "step2": "Berechne die Dauer in Monaten: =B2/B3 in Zelle B4",
+      "step3": "Trage ein, was du schon gespart hast: Monat 1-3 je 50€ (B7, B8, B9)",
+      "step4": "Berechne Gesamt gespart =SUMME(B7:B9) in B10, Noch offen =B2-B10 in B11",
+      "hint1": "Dauer = Sparziel geteilt durch monatliche Rate",
+      "hint2": "Noch offen = Sparziel minus bereits Gespartes"
+    },
+    "ex3": {
+      "title": "Rabatt berechnen",
+      "story": "Im Möbelhaus gibt es Sale! Berechne die Endpreise nach Rabatt.",
+      "step1": "Trage Preise und Rabatte ein: Lampe 40€ (B2), 20% Rabatt (C2)",
+      "step2": "Berechne die Ersparnis für die Lampe: =B2*C2/100 in Zelle D2",
+      "step3": "Berechne den Endpreis: =B2-D2 in Zelle E2. Mache das auch für Teppich und Regal.",
+      "step4": "Berechne den Gesamt-Endpreis: =SUMME(E2:E4) in Zelle E6",
+      "hint1": "Ersparnis = Preis mal Rabatt geteilt durch 100",
+      "hint2": "Endpreis = Originalpreis minus Ersparnis"
+    },
+    "ex4": {
+      "title": "Monatsübersicht",
+      "story": "Erstelle eine komplette Monatsübersicht mit Einnahmen, Ausgaben und Bilanz.",
+      "step1": "Trage deine Einnahmen ein: Ausbildungsvergütung 800 (B2), Kindergeld 250 (B3)",
+      "step2": "Berechne Summe Einnahmen =SUMME(B2:B3) in B4, Summe Ausgaben =SUMME(B7:B10) in B11",
+      "step3": "Berechne die Bilanz (Einnahmen minus Ausgaben): =B4-B11 in Zelle B13",
+      "step4": "Finde die höchste Ausgabe =MAX(B7:B10) in B14 und die niedrigste =MIN(B7:B10) in B15",
+      "hint1": "MAX findet den größten Wert, MIN den kleinsten",
+      "hint2": "Bilanz = was reinkommt minus was rausgeht"
+    }
+  },
+  "level5": {
+    "title": "Klassenfahrt",
+    "story": "Deine Klasse plant eine Klassenfahrt! Berechne Kosten, verteile Zimmer und rechne am Ende alles ab.",
+    "ex1": {
+      "title": "Reisekosten",
+      "story": "Berechne die Gesamtkosten der Klassenfahrt für 25 Schüler.",
+      "step1": "Trage die Teilnehmerzahl 25 in alle Anzahl-Zellen ein (C2 bis C5)",
+      "step2": "Berechne die Gesamtkosten für Busfahrt: =B2*C2 in Zelle D2",
+      "step3": "Berechne auch Unterkunft (D3), Verpflegung (D4) und Museum (D5)",
+      "step4": "Berechne Gesamtkosten =SUMME(D2:D5) in D7, Kosten pro Person =D7/C2 in D8",
+      "hint1": "Gesamtkosten = Preis pro Person mal Anzahl",
+      "hint2": "Kosten pro Person = Gesamtkosten geteilt durch Teilnehmerzahl"
+    },
+    "ex2": {
+      "title": "Taschengeld",
+      "story": "Du hast 60€ Taschengeld für 5 Tage. Behalte den Überblick!",
+      "step1": "Trage deine täglichen Ausgaben ein: Mo 8, Di 12, Mi 5, Do 15, Fr 10 (B2 bis B6)",
+      "step2": "Berechne die Gesamtausgaben: =SUMME(B2:B6) in Zelle B8",
+      "step3": "Berechne den Tagesdurchschnitt: =MITTELWERT(B2:B6) in Zelle B9",
+      "step4": "Trage Budget 60 in B11 ein, berechne Rest =B11-B8 in B12, Prozent =B8/B11*100 in B13",
+      "hint1": "MITTELWERT berechnet den Durchschnitt aller Tage",
+      "hint2": "Prozent ausgegeben = Ausgaben geteilt durch Budget mal 100"
+    },
+    "ex3": {
+      "title": "Zimmerverteilung",
+      "story": "Verteile die Klasse auf verschiedene Zimmertypen und berechne die Kosten.",
+      "step1": "Trage ein: 3 Nächte (C2-C4), 2 Einzelzimmer (D2), 5 Doppelzimmer (D3), 3 Dreibettzimmer (D4)",
+      "step2": "Berechne die Kosten für Einzelzimmer: =B2*C2*D2 in Zelle E2",
+      "step3": "Berechne auch Doppelzimmer (E3) und Dreibettzimmer (E4)",
+      "step4": "Zimmer gesamt =SUMME(D2:D4) in E6, Kosten gesamt =SUMME(E2:E4) in E7, Ø Kosten =E7/E6 in E8, Günstigstes =MIN(B2:B4) in E9",
+      "hint1": "Kosten = Preis pro Nacht mal Nächte mal Anzahl Zimmer",
+      "hint2": "Durchschnittliche Kosten = Gesamtkosten geteilt durch Anzahl Zimmer"
+    },
+    "ex4": {
+      "title": "Abrechnung",
+      "story": "Nach der Fahrt: Wer hat wie viel bezahlt? Rechne die Differenzen aus.",
+      "step1": "Trage ein, was jeder bezahlt hat: Anna 120, Ben 45, Clara 80, David 55 (B2-B5)",
+      "step2": "Berechne Gesamt =SUMME(B2:B5) in B7, fairer Anteil =B7/4 in B8",
+      "step3": "Trage den fairen Anteil =B$8 in C2 ein, berechne Differenz =B2-C2 in D2 (auch für B3-B5)",
+      "step4": "Höchster Beitrag =MAX(B2:B5) in B10, niedrigster =MIN(B2:B5) in B11, Spanne =B10-B11 in B12",
+      "hint1": "Positiv = bekommt Geld zurück, negativ = muss noch zahlen",
+      "hint2": "Spanne = Höchster minus niedrigster Beitrag"
+    }
+  },
+  "level6": {
+    "title": "Profi-Tabellen",
+    "story": "Du bist fast ein Excel-Profi! Löse komplexe Aufgaben mit verschachtelten Formeln und Prozentberechnungen.",
+    "ex1": {
+      "title": "Notenberechnung",
+      "story": "Berechne deinen Notendurchschnitt und analysiere deine Leistungen.",
+      "step1": "Trage Noten und Punkte ein: Mathe 2/85%, Deutsch 3/72%, Englisch 1/91%, BWL 3/68%, IT 2/80%",
+      "step2": "Berechne den Notendurchschnitt: =MITTELWERT(B2:B6) in B8",
+      "step3": "Beste Note =MIN(B2:B6) in B9, schlechteste =MAX(B2:B6) in B10, Spanne =B10-B9 in B11",
+      "step4": "Berechne Ø Punkte =MITTELWERT(C2:C6) in C13, Max. Punkte =MAX(C2:C6) in C14",
+      "hint1": "Bei Noten ist MIN die beste (1) und MAX die schlechteste (6)",
+      "hint2": "Die Notenspanne zeigt, wie unterschiedlich deine Leistungen sind"
+    },
+    "ex2": {
+      "title": "Gehaltsrechner",
+      "story": "Berechne deinen Lohn als Auszubildender – vom Stundenlohn bis zum Netto.",
+      "step1": "Trage ein: Stundenlohn 12,50 (B2), Stunden/Woche 20 (B3)",
+      "step2": "Berechne Wochenlohn =B2*B3 in B6, Monatslohn =B6*B4 in B7",
+      "step3": "Berechne Jahreslohn =B7*12 in B8, Sozialabgaben =B7*0,2 in B10, Netto =B7-B10 in B11",
+      "step4": "Berechne Netto/Tag =B11/22 in B13 (22 Arbeitstage), Netto/Stunde =B11/B3/B4 in B14",
+      "hint1": "Wochen/Monat (B4) ist schon eingetragen: 4",
+      "hint2": "Netto = Brutto minus Abgaben. 22 Arbeitstage pro Monat ist ein Standardwert."
+    },
+    "ex3": {
+      "title": "Inventur",
+      "story": "Du machst eine Inventur für deinen kleinen Online-Shop. Berechne Werte und Gewinne.",
+      "step1": "Trage ein: T-Shirts EK 8€/VK 20€/50 Stk, Caps 5/15/30, Tassen 3/10/80, Sticker 1/5/200",
+      "step2": "Berechne den Gewinn pro Stück: =C2-B2 in E2, ebenso für alle Produkte",
+      "step3": "Bestand gesamt =SUMME(D2:D5) in D7, Ø Gewinn =MITTELWERT(E2:E5) in E8, bester Gewinn =MAX(E2:E5) in E9",
+      "step4": "Warenwert EK =SUMME(B2*D2,B3*D3,B4*D4,B5*D5) in E11, VK analog in E12, potenzieller Gewinn =E12-E11 in E13",
+      "hint1": "Gewinn pro Stück = Verkaufspreis minus Einkaufspreis",
+      "hint2": "Warenwert = Summe aus (Preis mal Bestand) für jedes Produkt"
+    },
+    "ex4": {
+      "title": "Jahresvergleich",
+      "story": "Vergleiche den Umsatz dieses Jahres mit dem Vorjahr – pro Quartal und gesamt.",
+      "step1": "Trage den Umsatz dieses Jahres ein: Q1 1400, Q2 1650, Q3 1900, Q4 2200 (C2-C5)",
+      "step2": "Berechne die Differenz pro Quartal: =C2-B2 in D2, für alle Quartale",
+      "step3": "Berechne die prozentuale Veränderung: =D2/B2*100 in E2, für alle Quartale",
+      "step4": "Jahressumme Vorjahr =SUMME(B2:B5) in B7, dieses Jahr =SUMME(C2:C5) in C7, Ø Quartal =MITTELWERT(C2:C5) in C8, bestes Quartal =MAX(C2:C5) in C9, Gesamtdifferenz =C7-B7 in D12, Gesamtwachstum =D12/B7*100 in E12",
+      "hint1": "Prozentuale Veränderung = Differenz geteilt durch Vorjahreswert mal 100",
+      "hint2": "Ein positiver Wert bedeutet Wachstum, ein negativer Rückgang"
+    }
+  }
+}

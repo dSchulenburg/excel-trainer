@@ -1,0 +1,39 @@
+export default {
+  id: 'L2-EX3',
+  levelId: 2,
+  order: 3,
+  titleKey: 'level2.ex3.title',
+  storyKey: 'level2.ex3.story',
+  steps: ['level2.ex3.step1', 'level2.ex3.step2', 'level2.ex3.step3', 'level2.ex3.step4'],
+  hints: ['level2.ex3.hint1', 'level2.ex3.hint2'],
+  initialData: [
+    {
+      name: 'Sheet1',
+      order: 0,
+      row: 10,
+      column: 4,
+      celldata: [
+        { r: 0, c: 0, v: { v: 'Kategorie', m: 'Kategorie', ct: { fa: 'General', t: 's' }, bl: 1 } },
+        { r: 0, c: 1, v: { v: 'Betrag (\u20AC)', m: 'Betrag (\u20AC)', ct: { fa: 'General', t: 's' }, bl: 1 } },
+        { r: 1, c: 0, v: { v: 'Miete', m: 'Miete', ct: { fa: 'General', t: 's' } } },
+        { r: 2, c: 0, v: { v: 'Essen', m: 'Essen', ct: { fa: 'General', t: 's' } } },
+        { r: 3, c: 0, v: { v: 'Handy', m: 'Handy', ct: { fa: 'General', t: 's' } } },
+        { r: 4, c: 0, v: { v: 'Transport', m: 'Transport', ct: { fa: 'General', t: 's' } } },
+        { r: 5, c: 0, v: { v: 'Gesamt', m: 'Gesamt', ct: { fa: 'General', t: 's' }, bl: 1 } },
+      ],
+      config: { columnlen: { 0: 120, 1: 120, 2: 100, 3: 100 } },
+    },
+  ],
+  lockedCells: [
+    { r: 0, c: 0 }, { r: 0, c: 1 },
+    { r: 1, c: 0 }, { r: 2, c: 0 }, { r: 3, c: 0 }, { r: 4, c: 0 }, { r: 5, c: 0 },
+  ],
+  ui: { showToolbar: false, showFormulaBar: true, showSheetTabs: false },
+  xp: { base: 30, bonus: 10 },
+  validations: [
+    { type: 'cellValue', cell: { r: 1, c: 1 }, expected: 350, stepIndex: 0 },
+    { type: 'cellValue', cell: { r: 2, c: 1 }, expected: 150, stepIndex: 1 },
+    { type: 'cellValue', cell: { r: 3, c: 1 }, expected: 30, stepIndex: 2 },
+    { type: 'cellFormula', cell: { r: 5, c: 1 }, expected: 'SUMME(B2:B5)', stepIndex: 3 },
+  ],
+};

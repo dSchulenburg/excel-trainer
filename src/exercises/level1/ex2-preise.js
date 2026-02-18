@@ -1,0 +1,35 @@
+export default {
+  id: 'L1-EX2',
+  levelId: 1,
+  order: 2,
+  titleKey: 'level1.ex2.title',
+  storyKey: 'level1.ex2.story',
+  steps: ['level1.ex2.step1', 'level1.ex2.step2', 'level1.ex2.step3', 'level1.ex2.step4'],
+  hints: ['level1.ex2.hint1', 'level1.ex2.hint2'],
+  initialData: [
+    {
+      name: 'Sheet1',
+      order: 0,
+      row: 10,
+      column: 4,
+      celldata: [
+        { r: 0, c: 0, v: { v: 'Artikel', m: 'Artikel', ct: { fa: 'General', t: 's' }, bl: 1 } },
+        { r: 0, c: 1, v: { v: 'Preis (\u20AC)', m: 'Preis (\u20AC)', ct: { fa: 'General', t: 's' }, bl: 1 } },
+        { r: 1, c: 0, v: { v: 'Reis', m: 'Reis', ct: { fa: 'General', t: 's' } } },
+        { r: 2, c: 0, v: { v: 'Nudeln', m: 'Nudeln', ct: { fa: 'General', t: 's' } } },
+        { r: 3, c: 0, v: { v: 'Öl', m: 'Öl', ct: { fa: 'General', t: 's' } } },
+        { r: 4, c: 0, v: { v: 'Salz', m: 'Salz', ct: { fa: 'General', t: 's' } } },
+      ],
+      config: { columnlen: { 0: 150, 1: 100, 2: 100, 3: 100 } },
+    },
+  ],
+  lockedCells: [{ r: 0, c: 0 }, { r: 0, c: 1 }, { r: 1, c: 0 }, { r: 2, c: 0 }, { r: 3, c: 0 }, { r: 4, c: 0 }],
+  ui: { showToolbar: false, showFormulaBar: true, showSheetTabs: false },
+  xp: { base: 20, bonus: 10 },
+  validations: [
+    { type: 'cellValue', cell: { r: 1, c: 1 }, expected: 1.99, stepIndex: 0 },
+    { type: 'cellValue', cell: { r: 2, c: 1 }, expected: 0.89, stepIndex: 1 },
+    { type: 'cellValue', cell: { r: 3, c: 1 }, expected: 2.49, stepIndex: 2 },
+    { type: 'cellValue', cell: { r: 4, c: 1 }, expected: 0.59, stepIndex: 3 },
+  ],
+};

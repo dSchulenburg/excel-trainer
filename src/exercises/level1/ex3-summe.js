@@ -1,0 +1,43 @@
+export default {
+  id: 'L1-EX3',
+  levelId: 1,
+  order: 3,
+  titleKey: 'level1.ex3.title',
+  storyKey: 'level1.ex3.story',
+  steps: ['level1.ex3.step1', 'level1.ex3.step2'],
+  hints: ['level1.ex3.hint1', 'level1.ex3.hint2'],
+  initialData: [
+    {
+      name: 'Sheet1',
+      order: 0,
+      row: 10,
+      column: 4,
+      celldata: [
+        { r: 0, c: 0, v: { v: 'Artikel', m: 'Artikel', ct: { fa: 'General', t: 's' }, bl: 1 } },
+        { r: 0, c: 1, v: { v: 'Preis (\u20AC)', m: 'Preis (\u20AC)', ct: { fa: 'General', t: 's' }, bl: 1 } },
+        { r: 1, c: 0, v: { v: 'Reis', m: 'Reis', ct: { fa: 'General', t: 's' } } },
+        { r: 1, c: 1, v: { v: 1.99, m: '1,99', ct: { fa: 'General', t: 'n' } } },
+        { r: 2, c: 0, v: { v: 'Nudeln', m: 'Nudeln', ct: { fa: 'General', t: 's' } } },
+        { r: 2, c: 1, v: { v: 0.89, m: '0,89', ct: { fa: 'General', t: 'n' } } },
+        { r: 3, c: 0, v: { v: 'Öl', m: 'Öl', ct: { fa: 'General', t: 's' } } },
+        { r: 3, c: 1, v: { v: 2.49, m: '2,49', ct: { fa: 'General', t: 'n' } } },
+        { r: 4, c: 0, v: { v: 'Salz', m: 'Salz', ct: { fa: 'General', t: 's' } } },
+        { r: 4, c: 1, v: { v: 0.59, m: '0,59', ct: { fa: 'General', t: 'n' } } },
+      ],
+      config: { columnlen: { 0: 150, 1: 100, 2: 100, 3: 100 } },
+    },
+  ],
+  lockedCells: [
+    { r: 0, c: 0 }, { r: 0, c: 1 },
+    { r: 1, c: 0 }, { r: 1, c: 1 },
+    { r: 2, c: 0 }, { r: 2, c: 1 },
+    { r: 3, c: 0 }, { r: 3, c: 1 },
+    { r: 4, c: 0 }, { r: 4, c: 1 },
+  ],
+  ui: { showToolbar: false, showFormulaBar: true, showSheetTabs: false },
+  xp: { base: 25, bonus: 15 },
+  validations: [
+    { type: 'cellValue', cell: { r: 5, c: 0 }, expected: 'Gesamt', caseInsensitive: true, stepIndex: 0 },
+    { type: 'cellFormula', cell: { r: 5, c: 1 }, expected: 'SUMME(B2:B5)', stepIndex: 1 },
+  ],
+};

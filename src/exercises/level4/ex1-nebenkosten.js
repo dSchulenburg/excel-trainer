@@ -1,0 +1,42 @@
+export default {
+  id: 'L4-EX1',
+  levelId: 4,
+  order: 1,
+  titleKey: 'level4.ex1.title',
+  storyKey: 'level4.ex1.story',
+  steps: ['level4.ex1.step1', 'level4.ex1.step2', 'level4.ex1.step3', 'level4.ex1.step4'],
+  hints: ['level4.ex1.hint1', 'level4.ex1.hint2'],
+  initialData: [
+    {
+      name: 'Sheet1',
+      order: 0,
+      row: 10,
+      column: 4,
+      celldata: [
+        { r: 0, c: 0, v: { v: 'Kosten', m: 'Kosten', ct: { fa: 'General', t: 's' }, bl: 1 } },
+        { r: 0, c: 1, v: { v: 'Gesamt (€)', m: 'Gesamt (€)', ct: { fa: 'General', t: 's' }, bl: 1 } },
+        { r: 0, c: 2, v: { v: 'Pro Person (€)', m: 'Pro Person (€)', ct: { fa: 'General', t: 's' }, bl: 1 } },
+        { r: 1, c: 0, v: { v: 'Strom', m: 'Strom', ct: { fa: 'General', t: 's' } } },
+        { r: 2, c: 0, v: { v: 'Wasser', m: 'Wasser', ct: { fa: 'General', t: 's' } } },
+        { r: 3, c: 0, v: { v: 'Internet', m: 'Internet', ct: { fa: 'General', t: 's' } } },
+        { r: 5, c: 0, v: { v: 'Summe', m: 'Summe', ct: { fa: 'General', t: 's' }, bl: 1 } },
+      ],
+      config: { columnlen: { 0: 120, 1: 110, 2: 120, 3: 100 } },
+    },
+  ],
+  lockedCells: [
+    { r: 0, c: 0 }, { r: 0, c: 1 }, { r: 0, c: 2 },
+    { r: 1, c: 0 }, { r: 2, c: 0 }, { r: 3, c: 0 }, { r: 5, c: 0 },
+  ],
+  ui: { showToolbar: false, showFormulaBar: true, showSheetTabs: false },
+  xp: { base: 30, bonus: 10 },
+  validations: [
+    { type: 'cellValue', cell: { r: 1, c: 1 }, expected: 80, stepIndex: 0 },
+    { type: 'cellValue', cell: { r: 2, c: 1 }, expected: 40, stepIndex: 0 },
+    { type: 'cellValue', cell: { r: 3, c: 1 }, expected: 30, stepIndex: 0 },
+    { type: 'cellFormula', cell: { r: 1, c: 2 }, expected: 'B2/2', stepIndex: 1 },
+    { type: 'cellFormula', cell: { r: 2, c: 2 }, expected: 'B3/2', stepIndex: 2 },
+    { type: 'cellFormula', cell: { r: 3, c: 2 }, expected: 'B4/2', stepIndex: 2 },
+    { type: 'cellFormula', cell: { r: 5, c: 2 }, expected: 'SUMME(C2:C4)', stepIndex: 3 },
+  ],
+};
