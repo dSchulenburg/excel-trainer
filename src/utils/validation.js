@@ -1,11 +1,25 @@
-import { DE_TO_EN } from './formulaTranslation';
+import { ALL_TO_EN, ES_DOT_FUNCTIONS, ES_SHORT } from './formulaTranslation';
 
 /** Normalize formula functions to English for comparison. */
 function toEN(s) {
   let result = s;
-  for (const [de, en] of Object.entries(DE_TO_EN)) {
-    result = result.replace(new RegExp(de + '\\(', 'g'), en + '(');
+
+  // 1. ES dot functions first (contain dots, must precede word patterns)
+  for (const [es, en] of Object.entries(ES_DOT_FUNCTIONS)) {
+    const escaped = es.replace('.', '\\.');
+    result = result.replace(new RegExp(escaped + '\\(', 'g'), en + '(');
   }
+
+  // 2. ALL_TO_EN entries (German + Spanish longer names)
+  for (const [local, en] of Object.entries(ALL_TO_EN)) {
+    result = result.replace(new RegExp(local + '\\(', 'g'), en + '(');
+  }
+
+  // 3. Short ES keywords — word boundary before + ( after
+  for (const [es, en] of Object.entries(ES_SHORT)) {
+    result = result.replace(new RegExp('\\b' + es + '\\(', 'g'), en + '(');
+  }
+
   return result;
 }
 
