@@ -42,6 +42,17 @@ function reducer(state, action) {
     case 'SET_PROFILE':
       return { ...state, playerName: action.name, avatarId: action.avatarId };
 
+    case 'SKIP_EXERCISE': {
+      const { exerciseId } = action;
+      const existing = state.exerciseResults[exerciseId];
+      if (existing) return state; // Already completed — don't downgrade
+      const newResults = {
+        ...state.exerciseResults,
+        [exerciseId]: { stars: 0, bestTime: 0, attempts: 0, skipped: true },
+      };
+      return { ...state, exerciseResults: newResults };
+    }
+
     case 'COMPLETE_EXERCISE': {
       const { exerciseId, errors, timeSeconds, exercise } = action;
       const existing = state.exerciseResults[exerciseId];
@@ -148,6 +159,10 @@ export function GameProvider({ children }) {
     dispatch({ type: 'COMPLETE_EXERCISE', exerciseId, errors, timeSeconds, exercise });
   }, []);
 
+  const skipExercise = useCallback((exerciseId) => {
+    dispatch({ type: 'SKIP_EXERCISE', exerciseId });
+  }, []);
+
   const notifyCellEdit = useCallback(() => dispatch({ type: 'CELL_EDITED' }), []);
   const notifyFormulaUse = useCallback(() => dispatch({ type: 'FORMULA_USED' }), []);
   const notifyLanguageChange = useCallback(() => dispatch({ type: 'LANGUAGE_CHANGED' }), []);
@@ -183,6 +198,7 @@ export function GameProvider({ children }) {
         ...state,
         dispatch,
         completeExercise,
+        skipExercise,
         notifyCellEdit,
         notifyFormulaUse,
         notifyLanguageChange,

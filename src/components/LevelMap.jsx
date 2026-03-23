@@ -50,13 +50,16 @@ export default function LevelMap({ onStartExercise }) {
                     {unlocked ? (
                       <>
                         <div className="exercise-btn__title">{t(ex.titleKey)}</div>
-                        {result && (
+                        {result?.skipped ? (
+                          <div style={{ fontSize: '0.72rem', color: '#aaa', fontStyle: 'italic' }}>
+                            {t('exercise.skipped')}
+                          </div>
+                        ) : result ? (
                           <div className="exercise-btn__stars">
                             {'⭐'.repeat(result.stars)}
                             {'☆'.repeat(3 - result.stars)}
                           </div>
-                        )}
-                        {!result && (
+                        ) : (
                           <div style={{ fontSize: '0.75rem', color: '#888' }}>
                             {t('levelMap.exercise')} {ex.order}
                           </div>

@@ -7,10 +7,11 @@ import ExerciseInstructions from './ExerciseInstructions';
 import SpreadsheetArea from './SpreadsheetArea';
 import ValidationFeedback from './ValidationFeedback';
 import LevelComplete from './LevelComplete';
+import AudioPlayer from './AudioPlayer';
 
 export default function ExerciseView({ exercise, onBack, onNextExercise }) {
   const { t } = useI18n();
-  const { completeExercise } = useGame();
+  const { completeExercise, skipExercise } = useGame();
   const [sheetData, setSheetData] = useState(null);
   const [validationResult, setValidationResult] = useState(null);
   const [completedSteps, setCompletedSteps] = useState(new Map());
@@ -48,6 +49,11 @@ export default function ExerciseView({ exercise, onBack, onNextExercise }) {
     }
   }, [sheetData, exercise, completeExercise]);
 
+  const handleSkip = useCallback(() => {
+    skipExercise(exercise.id);
+    onBack();
+  }, [exercise.id, skipExercise, onBack]);
+
   if (showComplete) {
     return (
       <LevelComplete
@@ -68,6 +74,11 @@ export default function ExerciseView({ exercise, onBack, onNextExercise }) {
             {'←'} {t('common.back')}
           </button>
           <h2 className="exercise-sidebar__title">{t(exercise.titleKey)}</h2>
+          <AudioPlayer
+            src={`level${exercise.levelId}-${exercise.id.split('-')[1].toLowerCase()}`}
+            label={t('audio.exerciseIntro')}
+            compact
+          />
         </div>
         <ExerciseInstructions exercise={exercise} completedSteps={completedSteps} />
       </div>
@@ -78,6 +89,7 @@ export default function ExerciseView({ exercise, onBack, onNextExercise }) {
         <ValidationFeedback
           validationResult={validationResult}
           onCheck={handleCheck}
+          onSkip={handleSkip}
           allDone={validationResult?.passed}
         />
       </div>

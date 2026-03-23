@@ -1,3 +1,14 @@
+import { DE_TO_EN } from './formulaTranslation';
+
+/** Normalize formula functions to English for comparison. */
+function toEN(s) {
+  let result = s;
+  for (const [de, en] of Object.entries(DE_TO_EN)) {
+    result = result.replace(new RegExp(de + '\\(', 'g'), en + '(');
+  }
+  return result;
+}
+
 /**
  * Validate exercise cells against expected values.
  * Returns { passed: boolean, results: [...], errors: number }
@@ -82,9 +93,8 @@ function validateSingle(v, sheetData) {
       const f = getCellFormula(sheetData, v.cell.r, v.cell.c);
       const normActual = normalizeFormula(f);
       const normExpected = normalizeFormula(v.expected);
-      // Also accept English equivalent
-      const altExpected = normExpected.replace('SUMME', 'SUM').replace('MITTELWERT', 'AVERAGE');
-      const passed = normActual === normExpected || normActual === altExpected;
+      // Normalize both sides to English for comparison (bidirectional)
+      const passed = toEN(normActual) === toEN(normExpected);
       return { type, stepIndex, passed, expected: v.expected, actual: f };
     }
 

@@ -3,6 +3,10 @@
     "title": "Excel-Тренажер",
     "subtitle": "Перша власна квартира"
   },
+  "audio": {
+    "levelIntro": "Вступ до рівня",
+    "exerciseIntro": "Вступ до вправи"
+  },
   "nav": {
     "levels": "Карта рівнів",
     "badges": "Нагороди",
@@ -36,7 +40,9 @@
     "close": "Закрити",
     "name": "Ім'я",
     "save": "Зберегти",
-    "reset": "Скинути прогрес"
+    "reset": "Скинути прогрес",
+    "yes": "Так, далі!",
+    "no": "Ні, залишити"
   },
   "levelMap": {
     "title": "Твій шлях до Excel-профі",
@@ -48,7 +54,11 @@
     "checkAnswer": "Перевірити відповідь",
     "stepComplete": "Крок виконано!",
     "allComplete": "Всі кроки виконано!",
-    "hintAvailable": "Підказка доступна"
+    "hintAvailable": "Підказка доступна",
+    "skip": "Пропустити",
+    "skipConfirm": "Дійсно пропустити? Можеш спробувати пізніше!",
+    "skipped": "Пропущено",
+    "formulaHint": "SUM = SUMME, AVERAGE = MITTELWERT — обидва варіанти працюють!"
   },
   "complete": {
     "title": "Готово!",

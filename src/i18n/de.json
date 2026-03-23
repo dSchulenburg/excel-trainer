@@ -3,6 +3,10 @@
     "title": "Excel-Trainer",
     "subtitle": "Erste eigene Wohnung"
   },
+  "audio": {
+    "levelIntro": "Level-Einleitung",
+    "exerciseIntro": "Aufgaben-Einleitung"
+  },
   "nav": {
     "levels": "Level-Karte",
     "badges": "Abzeichen",
@@ -36,7 +40,9 @@
     "close": "Schließen",
     "name": "Name",
     "save": "Speichern",
-    "reset": "Fortschritt zurücksetzen"
+    "reset": "Fortschritt zurücksetzen",
+    "yes": "Ja, weiter!",
+    "no": "Doch nicht"
   },
   "levelMap": {
     "title": "Dein Weg zur Excel-Profi",
@@ -48,7 +54,11 @@
     "checkAnswer": "Antwort prüfen",
     "stepComplete": "Schritt erledigt!",
     "allComplete": "Alle Schritte erledigt!",
-    "hintAvailable": "Tipp verfügbar"
+    "hintAvailable": "Tipp verfügbar",
+    "skip": "Überspringen",
+    "skipConfirm": "Wirklich überspringen? Du kannst es später nochmal versuchen!",
+    "skipped": "Übersprungen",
+    "formulaHint": "SUM = SUMME, AVERAGE = MITTELWERT — beides funktioniert!"
   },
   "complete": {
     "title": "Geschafft!",
