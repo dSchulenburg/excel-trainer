@@ -388,5 +388,95 @@
       "hint1": "Percentage change = difference divided by last year's value times 100",
       "hint2": "A positive value means growth, a negative value means decline"
     }
+  },
+  "kaufleute": {
+    "level1": {
+      "title": "Mastering Cell References",
+      "story": "Internship Day 1 at Schulz & Partner GmbH – a wholesale office supply company. Your task: update the price list using absolute cell references.",
+      "ex1": {
+        "title": "Calculate VAT",
+        "story": "You need to calculate the gross prices for all items. The VAT factor 1.19 is stored in cell C1 and applies to all products.",
+        "step1": "Enter the formula =B2*$C$1 in cell D2 to calculate the gross price for the folder",
+        "step2": "Copy the formula to D3 – note: $C$1 stays fixed, B3 adjusts automatically",
+        "step3": "Calculate the gross prices for pens (D4) and glue (D5) as well",
+        "step4": "Verify: all formulas in D2:D5 must reference $C$1",
+        "hint1": "The dollar sign $ makes a reference absolute – it does not change when copied",
+        "hint2": "=B2*$C$1 means: net price from B2 times the fixed VAT factor from C1"
+      },
+      "ex2": {
+        "title": "Currency Conversion",
+        "story": "A US customer wants to see prices in USD. The EUR/USD exchange rate is stored in cell E1.",
+        "step1": "Enter the formula =B2*$E$1 in cell C2 to calculate the USD price for copy paper",
+        "step2": "Copy the formula to C3 – the exchange rate in $E$1 stays fixed",
+        "step3": "Calculate the USD prices for the printer (C4) and laptop (C5) as well",
+        "step4": "Verify: all formulas in C2:C5 must use $E$1 as the fixed exchange rate",
+        "hint1": "$E$1 locks both column E and row 1 – the reference never changes",
+        "hint2": "USD price = EUR price multiplied by the exchange rate"
+      },
+      "ex3": {
+        "title": "Discount Tiers",
+        "story": "Schulz & Partner offers two customer groups different discounts: Standard (10%) and Premium (20%). Calculate the net prices after the discount.",
+        "step1": "Enter =B3*(1-C$2) in C3 – the discount rate in row 2 is locked, but the column can change",
+        "step2": "Copy the formula to C4, C5 and C6 for all items (Standard discount)",
+        "step3": "Enter =B3*(1-D$2) in D3 for the Premium price of the first item",
+        "step4": "Copy the Premium formula to D4, D5 and D6 as well",
+        "hint1": "C$2 locks only the row (2), not the column – so the formula can be copied horizontally",
+        "hint2": "(1-discount) gives the factor: 1-0.1 = 0.9 means 90% of the original price"
+      },
+      "ex4": {
+        "title": "Calculate Commission",
+        "story": "The sales team earns a 5% commission on revenue. The commission rate is stored in C1 and applies to all salespeople.",
+        "step1": "Enter =B2*$C$1 in D2 to calculate the commission for Müller, A.",
+        "step2": "Copy the formula to D3 for Schmidt, B.",
+        "step3": "Calculate the commission for Weber, C. (D4) and Fischer, D. (D5) as well",
+        "step4": "Note: without the $ signs, C1 would shift to C2, C3 etc. when copying – that would be wrong!",
+        "hint1": "$C$1 ensures the commission rate from C1 is always used",
+        "hint2": "Commission = revenue × rate (e.g. 12,500 × 0.05 = 625 EUR)"
+      }
+    },
+    "level3": {
+      "title": "Month 2: Customer Evaluation",
+      "story": "In your second month at Schulz & Partner you analyse customer data and make complex business decisions using IF+AND/OR.",
+      "ex1": {
+        "title": "Customer Status",
+        "story": "Classify customers as Premium or Standard — but only when BOTH criteria are met.",
+        "step1": "Enter in D2: =IF(AND(B2>5000,C2>3),\"Premium\",\"Standard\")",
+        "step2": "Copy the formula to row 3: =IF(AND(B3>5000,C3>3),\"Premium\",\"Standard\")",
+        "step3": "Copy the formula to row 4: =IF(AND(B4>5000,C4>3),\"Premium\",\"Standard\")",
+        "step4": "Copy the formula to rows 5 and 6 as well",
+        "hint1": "AND() means: ALL conditions must be true at the same time",
+        "hint2": "Premium = revenue above 5,000 EUR AND more than 3 orders"
+      },
+      "ex2": {
+        "title": "Express Shipping",
+        "story": "Determine the shipping method — high weight OR high value triggers freight forwarding.",
+        "step1": "Enter in D2: =IF(OR(B2>20,C2>500),\"Spedition\",\"Paket\")",
+        "step2": "Copy the formula to row 3: =IF(OR(B3>20,C3>500),\"Spedition\",\"Paket\")",
+        "step3": "Copy the formula to row 4: =IF(OR(B4>20,C4>500),\"Spedition\",\"Paket\")",
+        "step4": "Copy the formula to rows 5 and 6 as well",
+        "hint1": "OR() means: AT LEAST ONE condition must be true",
+        "hint2": "Freight = over 20 kg OR value over 500 EUR"
+      },
+      "ex3": {
+        "title": "Discount Class",
+        "story": "Calculate the discount rate for each customer — using nested IF functions for three tiers.",
+        "step1": "Enter in C2: =IF(B2>10000,10,IF(B2>5000,5,0))",
+        "step2": "Copy the formula to row 3: =IF(B3>10000,10,IF(B3>5000,5,0))",
+        "step3": "Copy the formula to row 4: =IF(B4>10000,10,IF(B4>5000,5,0))",
+        "step4": "Copy the formula to rows 5 and 6 as well",
+        "hint1": "Nested IF: =IF(condition1,value1,IF(condition2,value2,value3))",
+        "hint2": "Over 10,000 EUR = 10%, over 5,000 EUR = 5%, otherwise = 0%"
+      },
+      "ex4": {
+        "title": "Supplier Rating",
+        "story": "Rate suppliers A, B or C — combine AND and OR in nested IF formulas.",
+        "step1": "Enter in E2: =IF(AND(B2>=7,C2>=7),\"A\",IF(OR(B2>=5,C2>=5),\"B\",\"C\"))",
+        "step2": "Copy the formula to row 3: =IF(AND(B3>=7,C3>=7),\"A\",IF(OR(B3>=5,C3>=5),\"B\",\"C\"))",
+        "step3": "Copy the formula to row 4: =IF(AND(B4>=7,C4>=7),\"A\",IF(OR(B4>=5,C4>=5),\"B\",\"C\"))",
+        "step4": "Copy the formula to row 5: =IF(AND(B5>=7,C5>=7),\"A\",IF(OR(B5>=5,C5>=5),\"B\",\"C\"))",
+        "hint1": "A = Price AND Quality both >= 7",
+        "hint2": "B = Price >= 5 OR Quality >= 5 (when no A applies). C = both below 5"
+      }
+    }
   }
 }

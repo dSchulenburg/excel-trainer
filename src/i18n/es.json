@@ -388,5 +388,95 @@
       "hint1": "Cambio porcentual = diferencia dividida entre el valor del año anterior multiplicado por 100",
       "hint2": "Un valor positivo significa crecimiento, un valor negativo significa descenso"
     }
+  },
+  "kaufleute": {
+    "level1": {
+      "title": "Dominar las referencias de celdas",
+      "story": "Primer día de prácticas en Schulz & Partner GmbH – un mayorista de material de oficina. Tu tarea: actualizar la lista de precios usando referencias absolutas de celda.",
+      "ex1": {
+        "title": "Calcular el IVA",
+        "story": "Debes calcular los precios brutos de todos los artículos. El factor del IVA 1,19 está en la celda C1 y se aplica a todos los productos.",
+        "step1": "Introduce la fórmula =B2*$C$1 en la celda D2 para calcular el precio bruto de la carpeta",
+        "step2": "Copia la fórmula a D3 – observa: $C$1 permanece fijo, B3 se adapta automáticamente",
+        "step3": "Calcula también los precios brutos para bolígrafos (D4) y pegamento (D5)",
+        "step4": "Verifica: todas las fórmulas en D2:D5 deben referenciar $C$1",
+        "hint1": "El signo de dólar $ hace que una referencia sea absoluta – no cambia al copiar",
+        "hint2": "=B2*$C$1 significa: precio neto de B2 multiplicado por el factor de IVA fijo de C1"
+      },
+      "ex2": {
+        "title": "Conversión de moneda",
+        "story": "Un cliente estadounidense quiere ver los precios en USD. El tipo de cambio EUR/USD está en la celda E1.",
+        "step1": "Introduce la fórmula =B2*$E$1 en la celda C2 para calcular el precio en USD del papel de copia",
+        "step2": "Copia la fórmula a C3 – el tipo de cambio en $E$1 permanece fijo",
+        "step3": "Calcula también los precios en USD para la impresora (C4) y el portátil (C5)",
+        "step4": "Verifica: todas las fórmulas en C2:C5 deben usar $E$1 como tipo de cambio fijo",
+        "hint1": "$E$1 fija tanto la columna E como la fila 1 – la referencia nunca cambia",
+        "hint2": "Precio en USD = precio en EUR multiplicado por el tipo de cambio"
+      },
+      "ex3": {
+        "title": "Escala de descuentos",
+        "story": "Schulz & Partner ofrece descuentos distintos a dos grupos de clientes: Estándar (10%) y Premium (20%). Calcula los precios netos después del descuento.",
+        "step1": "Introduce =B3*(1-C$2) en C3 – la tasa de descuento en la fila 2 está fija, pero la columna puede cambiar",
+        "step2": "Copia la fórmula a C4, C5 y C6 para todos los artículos (descuento Estándar)",
+        "step3": "Introduce =B3*(1-D$2) en D3 para el precio Premium del primer artículo",
+        "step4": "Copia también la fórmula Premium a D4, D5 y D6",
+        "hint1": "C$2 fija solo la fila (2), no la columna – así la fórmula se puede copiar horizontalmente",
+        "hint2": "(1-descuento) da el factor: 1-0,1 = 0,9 significa el 90% del precio original"
+      },
+      "ex4": {
+        "title": "Calcular comisión",
+        "story": "El equipo de ventas gana un 5% de comisión sobre los ingresos. La tasa de comisión está en C1 y se aplica a todos los vendedores.",
+        "step1": "Introduce =B2*$C$1 en D2 para calcular la comisión de Müller, A.",
+        "step2": "Copia la fórmula a D3 para Schmidt, B.",
+        "step3": "Calcula también la comisión para Weber, C. (D4) y Fischer, D. (D5)",
+        "step4": "Nota: sin el $ el C1 se desplazaría a C2, C3 etc. al copiar – ¡eso sería incorrecto!",
+        "hint1": "$C$1 garantiza que siempre se use la tasa de comisión de C1",
+        "hint2": "Comisión = ingresos × tasa (p. ej. 12.500 × 0,05 = 625 EUR)"
+      }
+    },
+    "level3": {
+      "title": "Mes 2: Evaluación de clientes",
+      "story": "En tu segundo mes en Schulz & Partner analizas datos de clientes y tomas decisiones empresariales complejas con SI+Y/O.",
+      "ex1": {
+        "title": "Estado del cliente",
+        "story": "Clasifica a los clientes como Premium o Estándar — pero solo cuando se cumplan AMBOS criterios.",
+        "step1": "Introduce en D2: =SI(Y(B2>5000;C2>3);\"Premium\";\"Standard\")",
+        "step2": "Copia la fórmula para la fila 3: =SI(Y(B3>5000;C3>3);\"Premium\";\"Standard\")",
+        "step3": "Copia la fórmula para la fila 4: =SI(Y(B4>5000;C4>3);\"Premium\";\"Standard\")",
+        "step4": "Copia la fórmula también para las filas 5 y 6",
+        "hint1": "Y() significa: TODAS las condiciones deben cumplirse al mismo tiempo",
+        "hint2": "Premium = ingresos superiores a 5.000 EUR Y más de 3 pedidos"
+      },
+      "ex2": {
+        "title": "Envío exprés",
+        "story": "Determina el método de envío — peso elevado O valor elevado activa la empresa de transporte.",
+        "step1": "Introduce en D2: =SI(O(B2>20;C2>500);\"Spedition\";\"Paket\")",
+        "step2": "Copia la fórmula para la fila 3: =SI(O(B3>20;C3>500);\"Spedition\";\"Paket\")",
+        "step3": "Copia la fórmula para la fila 4: =SI(O(B4>20;C4>500);\"Spedition\";\"Paket\")",
+        "step4": "Copia la fórmula también para las filas 5 y 6",
+        "hint1": "O() significa: AL MENOS UNA condición debe cumplirse",
+        "hint2": "Transporte = más de 20 kg O valor superior a 500 EUR"
+      },
+      "ex3": {
+        "title": "Clase de descuento",
+        "story": "Calcula el porcentaje de descuento para cada cliente — usando funciones SI anidadas para tres niveles.",
+        "step1": "Introduce en C2: =SI(B2>10000;10;SI(B2>5000;5;0))",
+        "step2": "Copia la fórmula para la fila 3: =SI(B3>10000;10;SI(B3>5000;5;0))",
+        "step3": "Copia la fórmula para la fila 4: =SI(B4>10000;10;SI(B4>5000;5;0))",
+        "step4": "Copia la fórmula también para las filas 5 y 6",
+        "hint1": "SI anidado: =SI(condición1;valor1;SI(condición2;valor2;valor3))",
+        "hint2": "Más de 10.000 EUR = 10%, más de 5.000 EUR = 5%, en caso contrario = 0%"
+      },
+      "ex4": {
+        "title": "Evaluación de proveedores",
+        "story": "Evalúa a los proveedores con A, B o C — combina Y y O en fórmulas SI anidadas.",
+        "step1": "Introduce en E2: =SI(Y(B2>=7;C2>=7);\"A\";SI(O(B2>=5;C2>=5);\"B\";\"C\"))",
+        "step2": "Copia la fórmula para la fila 3: =SI(Y(B3>=7;C3>=7);\"A\";SI(O(B3>=5;C3>=5);\"B\";\"C\"))",
+        "step3": "Copia la fórmula para la fila 4: =SI(Y(B4>=7;C4>=7);\"A\";SI(O(B4>=5;C4>=5);\"B\";\"C\"))",
+        "step4": "Copia la fórmula para la fila 5: =SI(Y(B5>=7;C5>=7);\"A\";SI(O(B5>=5;C5>=5);\"B\";\"C\"))",
+        "hint1": "A = Precio Y Calidad ambos >= 7",
+        "hint2": "B = Precio >= 5 O Calidad >= 5 (cuando no hay A). C = ambos por debajo de 5"
+      }
+    }
   }
 }

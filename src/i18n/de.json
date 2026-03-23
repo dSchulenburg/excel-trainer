@@ -388,5 +388,95 @@
       "hint1": "Prozentuale Veränderung = Differenz geteilt durch Vorjahreswert mal 100",
       "hint2": "Ein positiver Wert bedeutet Wachstum, ein negativer Rückgang"
     }
+  },
+  "kaufleute": {
+    "level1": {
+      "title": "Zellreferenzen meistern",
+      "story": "Praktikum Tag 1 bei Schulz & Partner GmbH – einem Bürobedarfs-Großhändler. Deine Aufgabe: die Preisliste aktualisieren und dabei absolute Zellreferenzen einsetzen.",
+      "ex1": {
+        "title": "MwSt berechnen",
+        "story": "Du sollst die Bruttopreise der Artikel berechnen. Der MwSt-Faktor 1,19 steht in Zelle C1 und gilt für alle Artikel.",
+        "step1": "Trage die Formel =B2*$C$1 in Zelle D2 ein, um den Bruttopreis für Ordner zu berechnen",
+        "step2": "Kopiere die Formel nach D3 – beachte: $C$1 bleibt fest, B3 passt sich an",
+        "step3": "Berechne auch die Bruttopreise für Stifte (D4) und Kleber (D5)",
+        "step4": "Prüfe: Alle Formeln in D2:D5 müssen auf $C$1 verweisen",
+        "hint1": "Das Dollarzeichen $ macht eine Referenz absolut – sie ändert sich beim Kopieren nicht",
+        "hint2": "=B2*$C$1 bedeutet: Nettopreis aus B2 mal fester MwSt-Faktor aus C1"
+      },
+      "ex2": {
+        "title": "Währungsumrechnung",
+        "story": "Ein US-amerikanischer Kunde möchte Preise in USD sehen. Der Wechselkurs EUR/USD steht in Zelle E1.",
+        "step1": "Trage die Formel =B2*$E$1 in Zelle C2 ein, um den USD-Preis für Kopierpapier zu berechnen",
+        "step2": "Kopiere die Formel nach C3 – der Wechselkurs in $E$1 bleibt fest",
+        "step3": "Berechne auch die USD-Preise für Drucker (C4) und Laptop (C5)",
+        "step4": "Prüfe: Alle Formeln in C2:C5 müssen $E$1 als festen Wechselkurs verwenden",
+        "hint1": "$E$1 fixiert sowohl Spalte E als auch Zeile 1 – die Referenz bleibt immer gleich",
+        "hint2": "USD-Preis = EUR-Preis multipliziert mit dem Wechselkurs"
+      },
+      "ex3": {
+        "title": "Rabattstaffel",
+        "story": "Schulz & Partner bietet zwei Kundengruppen unterschiedliche Rabatte: Standard (10%) und Premium (20%). Berechne die Nettopreise nach Abzug.",
+        "step1": "Trage =B3*(1-C$2) in C3 ein – der Rabattsatz in Zeile 2 bleibt fixiert, die Spalte kann sich ändern",
+        "step2": "Kopiere die Formel nach C4, C5 und C6 für alle Artikel (Standard-Rabatt)",
+        "step3": "Trage =B3*(1-D$2) in D3 ein für den Premium-Preis des ersten Artikels",
+        "step4": "Kopiere auch die Premium-Formel nach D4, D5 und D6",
+        "hint1": "C$2 fixiert nur die Zeile (2), nicht die Spalte – so kann die Formel horizontal kopiert werden",
+        "hint2": "(1-Rabatt) ergibt den Faktor: 1-0,1 = 0,9 bedeutet 90% des Originalpreises"
+      },
+      "ex4": {
+        "title": "Provision berechnen",
+        "story": "Das Vertriebsteam erhält 5% Provision auf den Umsatz. Der Provisionssatz steht in C1 und gilt für alle Verkäufer.",
+        "step1": "Trage =B2*$C$1 in D2 ein, um die Provision für Müller, A. zu berechnen",
+        "step2": "Kopiere die Formel nach D3 für Schmidt, B.",
+        "step3": "Berechne auch die Provision für Weber, C. (D4) und Fischer, D. (D5)",
+        "step4": "Prüfe: Ohne das $ würde C1 beim Kopieren zu C2, C3 usw. werden – das wäre falsch!",
+        "hint1": "$C$1 stellt sicher, dass immer der Provisionssatz aus C1 verwendet wird",
+        "hint2": "Provision = Umsatz × Provisionssatz (z.B. 12.500 × 0,05 = 625 EUR)"
+      }
+    },
+    "level3": {
+      "title": "Monat 2: Kundenbewertung",
+      "story": "Im zweiten Monat bei Schulz & Partner wertest du Kundendaten aus und triffst komplexe Geschäftsentscheidungen mit WENN+UND/ODER.",
+      "ex1": {
+        "title": "Kundenstatus",
+        "story": "Klassifiziere Kunden als Premium oder Standard — aber nur wenn BEIDE Kriterien erfüllt sind.",
+        "step1": "Gib in D2 die Formel ein: =WENN(UND(B2>5000;C2>3);\"Premium\";\"Standard\")",
+        "step2": "Kopiere die Formel für Zeile 3: =WENN(UND(B3>5000;C3>3);\"Premium\";\"Standard\")",
+        "step3": "Kopiere die Formel für Zeile 4: =WENN(UND(B4>5000;C4>3);\"Premium\";\"Standard\")",
+        "step4": "Kopiere die Formel auch für die Zeilen 5 und 6",
+        "hint1": "UND() bedeutet: ALLE Bedingungen müssen gleichzeitig wahr sein",
+        "hint2": "Premium = Umsatz über 5.000 EUR UND mehr als 3 Bestellungen"
+      },
+      "ex2": {
+        "title": "Expressversand",
+        "story": "Bestimme die Versandart für Sendungen — bei hohem Gewicht ODER hohem Warenwert kommt die Spedition.",
+        "step1": "Gib in D2 die Formel ein: =WENN(ODER(B2>20;C2>500);\"Spedition\";\"Paket\")",
+        "step2": "Kopiere die Formel für Zeile 3: =WENN(ODER(B3>20;C3>500);\"Spedition\";\"Paket\")",
+        "step3": "Kopiere die Formel für Zeile 4: =WENN(ODER(B4>20;C4>500);\"Spedition\";\"Paket\")",
+        "step4": "Kopiere die Formel auch für die Zeilen 5 und 6",
+        "hint1": "ODER() bedeutet: MINDESTENS EINE Bedingung muss wahr sein",
+        "hint2": "Spedition = über 20 kg ODER Warenwert über 500 EUR"
+      },
+      "ex3": {
+        "title": "Rabattklasse",
+        "story": "Berechne den Rabattsatz für jeden Kunden — mit verschachtelten WENN-Funktionen für drei Stufen.",
+        "step1": "Gib in C2 die Formel ein: =WENN(B2>10000;10;WENN(B2>5000;5;0))",
+        "step2": "Kopiere die Formel für Zeile 3: =WENN(B3>10000;10;WENN(B3>5000;5;0))",
+        "step3": "Kopiere die Formel für Zeile 4: =WENN(B4>10000;10;WENN(B4>5000;5;0))",
+        "step4": "Kopiere die Formel auch für die Zeilen 5 und 6",
+        "hint1": "Verschachtelte WENN: =WENN(Bedingung1;Wert1;WENN(Bedingung2;Wert2;Wert3))",
+        "hint2": "Über 10.000 EUR = 10%, über 5.000 EUR = 5%, sonst = 0%"
+      },
+      "ex4": {
+        "title": "Lieferantenbewertung",
+        "story": "Bewerte Lieferanten mit A, B oder C — kombiniere UND und ODER in verschachtelten WENN-Formeln.",
+        "step1": "Gib in E2 die Formel ein: =WENN(UND(B2>=7;C2>=7);\"A\";WENN(ODER(B2>=5;C2>=5);\"B\";\"C\"))",
+        "step2": "Kopiere die Formel für Zeile 3: =WENN(UND(B3>=7;C3>=7);\"A\";WENN(ODER(B3>=5;C3>=5);\"B\";\"C\"))",
+        "step3": "Kopiere die Formel für Zeile 4: =WENN(UND(B4>=7;C4>=7);\"A\";WENN(ODER(B4>=5;C4>=5);\"B\";\"C\"))",
+        "step4": "Kopiere die Formel für Zeile 5: =WENN(UND(B5>=7;C5>=7);\"A\";WENN(ODER(B5>=5;C5>=5);\"B\";\"C\"))",
+        "hint1": "A = Preis UND Qualität beide >= 7",
+        "hint2": "B = Preis >= 5 ODER Qualität >= 5 (wenn kein A). C = beides unter 5"
+      }
+    }
   }
 }
