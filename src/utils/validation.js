@@ -145,6 +145,45 @@ function validateSingle(v, sheetData) {
       return { type, stepIndex, passed: allNumbers };
     }
 
+    case 'cellFormulaAny': {
+      const f = getCellFormula(sheetData, v.cell.r, v.cell.c);
+      const normActual = normalizeFormula(f);
+      const passed = v.expected.some((exp) => toEN(normActual) === toEN(normalizeFormula(exp)));
+      return { type, stepIndex, passed, expected: v.expected[0], actual: f };
+    }
+
+    case 'chartConfig': {
+      const chart = sheetData?.__chartConfig;
+      if (!chart) return { type, stepIndex, passed: false, expected: v.expected.chartType, actual: 'no chart' };
+      const typeMatch = chart.chartType === v.expected.chartType;
+      const dataMatch = chart.dataRange?.startRow === v.expected.dataRange?.startRow
+        && chart.dataRange?.endRow === v.expected.dataRange?.endRow
+        && chart.dataRange?.col === v.expected.dataRange?.col;
+      const labelMatch = !v.expected.labelRange || (
+        chart.labelRange?.startRow === v.expected.labelRange?.startRow
+        && chart.labelRange?.endRow === v.expected.labelRange?.endRow
+        && chart.labelRange?.col === v.expected.labelRange?.col
+      );
+      const passed = typeMatch && dataMatch && labelMatch;
+      return { type, stepIndex, passed, expected: v.expected.chartType, actual: chart?.chartType || 'none' };
+    }
+
+    case 'conditionalFormat': {
+      const rules = sheetData?.__condFormatRules || [];
+      const expected = v.rules || [];
+      if (rules.length < expected.length) {
+        return { type, stepIndex, passed: false, expected: `${expected.length} rules`, actual: `${rules.length} rules` };
+      }
+      const passed = expected.every((exp, i) => {
+        const actual = rules[i];
+        if (!actual) return false;
+        return actual.operator === exp.operator
+          && Math.abs(Number(actual.value) - Number(exp.value)) < 0.01
+          && actual.color === exp.color;
+      });
+      return { type, stepIndex, passed, expected: `${expected.length} rules`, actual: `${rules.length} rules` };
+    }
+
     default:
       return { type, stepIndex, passed: false, error: `Unknown validation type: ${type}` };
   }
