@@ -478,6 +478,50 @@
         "hint2": "Firma A: 1000 EUR, 3 Bestellungen, Ø 333,33 EUR. Firma B: 730 EUR, 3 Bestellungen, Ø 243,33 EUR"
       }
     },
+    "level7": {
+      "title": "Monat 6: Shop-Präsentation",
+      "story": "Du präsentierst deinen Online-Shop der Bank für einen Kredit — mach die Daten visuell überzeugend!",
+      "ex1": {
+        "title": "Gewinn/Verlust färben",
+        "story": "Die Bank möchte auf einen Blick sehen, welche Monate positiv und welche negativ waren. Färbe die Ergebnisse mit bedingter Formatierung.",
+        "step1": "Schau dir die Monatsergebnisse an: positive Werte sind Gewinne, negative Verluste.",
+        "step2": "Öffne den Formatierungs-Editor über die Schaltfläche.",
+        "step3": "Erstelle Regel 1: Wert größer als 0 → grün (Gewinn)",
+        "step4": "Erstelle Regel 2: Wert kleiner als 0 → rot (Verlust) und klicke Anwenden.",
+        "hint1": "Bedingte Formatierung färbt Zellen automatisch je nach Inhalt — kein manuelles Einfärben nötig",
+        "hint2": "Grün = Gewinn (>0), Rot = Verlust (<0). Die Farben helfen der Bank beim schnellen Überblick."
+      },
+      "ex2": {
+        "title": "Lagerampel",
+        "story": "Vor dem Bankgespräch prüfst du noch den Lagerstand. Markiere kritische Bestände rot und gute grün.",
+        "step1": "Schau dir die Bestände an: unter 10 ist kritisch, über 50 ist gut.",
+        "step2": "Öffne den Formatierungs-Editor über die Schaltfläche.",
+        "step3": "Erstelle Regel 1: Wert kleiner als 10 → rot (kritisch, nachbestellen!)",
+        "step4": "Erstelle Regel 2: Wert größer als 50 → grün (gut bevorratet) und klicke Anwenden.",
+        "hint1": "Du brauchst zwei Regeln: eine für den kritischen Bereich (rot) und eine für gut (grün)",
+        "hint2": "Ordner (5) und Kleber (8) sind kritisch → rot. Stifte (120) und Marker (55) sind gut → grün."
+      },
+      "ex3": {
+        "title": "Umsatz-Säulendiagramm",
+        "story": "Ein Säulendiagramm zeigt der Bank den Umsatzverlauf auf einen Blick. Erstelle es mit dem Diagramm-Assistenten.",
+        "step1": "Schau dir die Monatsumsätze an — sechs Monate, steigender Trend.",
+        "step2": "Klicke auf den Diagramm-Assistenten.",
+        "step3": "Wähle Säulendiagramm, Datenbereich B2:B7 (Umsätze) und Beschriftung A2:A7 (Monate).",
+        "step4": "Gib einen Titel ein (z.B. 'Monatsumsatz') und klicke Fertig.",
+        "hint1": "Säulendiagramme eignen sich gut für Vergleiche über Zeit — perfekt für monatliche Umsätze",
+        "hint2": "Datenbereich = die Zahlen (Spalte B), Beschriftung = die Namen (Spalte A)"
+      },
+      "ex4": {
+        "title": "Kategorie-Kreisdiagramm",
+        "story": "Die Bank fragt nach der Umsatzverteilung. Ein Kreisdiagramm zeigt die Anteile der Produktkategorien.",
+        "step1": "Schau dir die vier Kategorien mit ihren Umsatzanteilen in Prozent an.",
+        "step2": "Klicke auf den Diagramm-Assistenten.",
+        "step3": "Wähle Kreisdiagramm, Datenbereich B2:B5 (Anteile) und Beschriftung A2:A5 (Kategorien).",
+        "step4": "Gib einen Titel ein (z.B. 'Umsatzverteilung') und klicke Fertig.",
+        "hint1": "Kreisdiagramme zeigen Anteile am Ganzen — ideal für Prozentverteilungen",
+        "hint2": "Die Anteile müssen zusammen 100% ergeben: 42 + 28 + 18 + 12 = 100%"
+      }
+    },
     "level5": {
       "title": "Monat 4: Lieferantenvergleich",
       "story": "Monat 4 bei Schulz & Partner. Du hast SVERWEIS gemeistert — jetzt kombinierst du ihn mit WENN, MIN und WENNFEHLER für echte Geschäftsentscheidungen.",
@@ -652,6 +696,50 @@
         "step4": "Vervollständige auch C6 mit der WENN-Formel",
         "hint1": "Der Vergleichsoperator > bedeutet 'größer als'. Über 100 EUR = kostenloser Versand (0).",
         "hint2": "Die WENN-Funktion gibt hier Zahlen zurück, keine Texte. Daher keine Anführungszeichen."
+      }
+    },
+    "level8": {
+      "title": "Jahresabschluss: Dein Shop waechst",
+      "story": "Das Jahr ist zu Ende! Du kombinierst alles Gelernte fuer den Jahresbericht deines Shops — SVERWEIS, SUMMEWENN, bedingte Formatierung und Diagramme.",
+      "ex1": {
+        "title": "Auftragsabwicklung",
+        "story": "Erstelle eine vollstaendige Auftragsabwicklung: hole Bezeichnung und Preis per SVERWEIS aus den Stammdaten und berechne Zwischensumme, Rabatt und Gesamtbetrag.",
+        "step1": "Gib in B2 die SVERWEIS-Formel fuer die Bezeichnung ein: =SVERWEIS(A2;Stammdaten!A:C;2;0) und in C2 fuer den Preis: =SVERWEIS(A2;Stammdaten!A:C;3;0)",
+        "step2": "Berechne die Zwischensumme in E2: =C2*D2 (Preis mal Menge)",
+        "step3": "Berechne den Rabatt in F2: =WENN(E2>100;E2*0,05;0) — 5% Rabatt ab 100 EUR",
+        "step4": "Berechne den Gesamtbetrag in G2: =E2-F2 (Zwischensumme minus Rabatt)",
+        "hint1": "SVERWEIS holt Bezeichnung (Spalte 2) und Preis (Spalte 3) aus der Stammdaten-Tabelle",
+        "hint2": "Rabatt: Nur wenn Zwischensumme > 100 EUR → 5% des Betrags, sonst 0"
+      },
+      "ex2": {
+        "title": "Quartalsanalyse",
+        "story": "Werte die Verkaufsdaten deines Shops nach Produkten aus — berechne den Gesamtumsatz pro Produkt mit SUMMEWENN und zaehle die Quartale mit ZÄHLENWENN.",
+        "step1": "Berechne in B16 den Gesamtumsatz des Laptops: =SUMMEWENN(A2:A13;\"Laptop\";C2:C13)",
+        "step2": "Berechne in B17 den Umsatz der Tastatur: =SUMMEWENN(A2:A13;\"Tastatur\";C2:C13) und in B18 fuer das Headset",
+        "step3": "Zaehle in C16 die Laptop-Quartale: =ZÄHLENWENN(A2:A13;\"Laptop\")",
+        "step4": "Erstelle ein Saeulendiagramm mit dem Diagramm-Assistenten: Daten B16:B18, Beschriftung A16:A18",
+        "hint1": "SUMMEWENN(A2:A13;\"Laptop\";C2:C13) summiert alle Umsaetze in Spalte C, wo Spalte A 'Laptop' ist",
+        "hint2": "Laptop-Gesamtumsatz: 58.500 EUR, Tastatur: 13.700 EUR, Headset: 24.600 EUR"
+      },
+      "ex3": {
+        "title": "Lieferantenbewertung komplett",
+        "story": "Hole die Bewertungsscores per SVERWEIS aus den Stammdaten und vergib mit WENN+UND automatisch die Note A, B oder C. Faerbe A-Lieferanten gruen und C-Lieferanten rot.",
+        "step1": "Hole Preis-Score (B2), Qualitaet (C2) und Lieferung (D2) per SVERWEIS aus Stammdaten: =SVERWEIS(A2;Stammdaten!A:D;2;0)",
+        "step2": "Vergib in E2 die Bewertung: =WENN(UND(B2>=7;C2>=7);"A";WENN(ODER(B2>=5;C2>=5);"B";"C"))",
+        "step3": "Kopiere alle Formeln fuer die Zeilen 3 bis 5",
+        "step4": "Erstelle bedingte Formatierung: A = gruen (#00B050), C = rot (#FF0000)",
+        "hint1": "A-Note: Preis-Score UND Qualitaet beide >= 7. B-Note: mindestens einer >= 5. C = alles darunter",
+        "hint2": "Alpha GmbH (8/9): Note A — gruen. Gamma AG (3/4): Note C — rot. Beta KG (6/5): Note B"
+      },
+      "ex4": {
+        "title": "Geschaeftsbericht",
+        "story": "Erstelle den Jahresbericht deines Shops: berechne Jahresumsatz, Monatsdurchschnitt, besten und schlechtesten Monat — und visualisiere den Trend als Liniendiagramm.",
+        "step1": "Berechne in B15 den Jahresumsatz: =SUMME(B2:B13)",
+        "step2": "Berechne in B16 den Monatsdurchschnitt: =MITTELWERT(B2:B13)",
+        "step3": "Berechne in B17 den besten Monat: =MAX(B2:B13) und in B18 den schlechtesten: =MIN(B2:B13)",
+        "step4": "Erstelle ein Liniendiagramm: Daten B2:B13, Beschriftung A2:A13 — zeige den Jahrestrend",
+        "hint1": "SUMME, MITTELWERT, MAX, MIN — du kennst alle vier! Jetzt kombinierst du sie in einem Bericht",
+        "hint2": "Jahresumsatz: 287.200 EUR, Durchschnitt: ca. 23.933 EUR, Bester Monat: Dezember (35.600 EUR)"
       }
     }
   },

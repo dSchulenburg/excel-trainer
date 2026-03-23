@@ -478,6 +478,50 @@
         "hint2": "Firma A: 1.000 EUR, 3 pedidos, Ø 333,33 EUR. Firma B: 730 EUR, 3 pedidos, Ø 243,33 EUR"
       }
     },
+    "level7": {
+      "title": "Mes 6: Presentación de la tienda",
+      "story": "¡Vas a presentar tu tienda online al banco para solicitar un préstamo — haz que los datos sean convincentes y visualmente impactantes!",
+      "ex1": {
+        "title": "Colorear beneficios/pérdidas",
+        "story": "El banco quiere ver de un vistazo qué meses fueron positivos y cuáles negativos. Colorea los resultados con formato condicional.",
+        "step1": "Observa los resultados mensuales: los valores positivos son beneficios, los negativos son pérdidas.",
+        "step2": "Abre el editor de formato con el botón.",
+        "step3": "Crea la regla 1: valor mayor que 0 → verde (beneficio)",
+        "step4": "Crea la regla 2: valor menor que 0 → rojo (pérdida) y haz clic en Aplicar.",
+        "hint1": "El formato condicional colorea las celdas automáticamente según su contenido — no es necesario colorear manualmente",
+        "hint2": "Verde = beneficio (>0), Rojo = pérdida (<0). Los colores ayudan al banco a obtener una visión rápida."
+      },
+      "ex2": {
+        "title": "Semáforo de inventario",
+        "story": "Antes de la reunión con el banco revisas el inventario. Marca el stock crítico en rojo y el bien abastecido en verde.",
+        "step1": "Observa los niveles de stock: por debajo de 10 es crítico, por encima de 50 es bueno.",
+        "step2": "Abre el editor de formato con el botón.",
+        "step3": "Crea la regla 1: valor menor que 10 → rojo (crítico, ¡reordenar!)",
+        "step4": "Crea la regla 2: valor mayor que 50 → verde (bien abastecido) y haz clic en Aplicar.",
+        "hint1": "Necesitas dos reglas: una para el rango crítico (rojo) y otra para el bueno (verde)",
+        "hint2": "Ordner (5) y Kleber (8) son críticos → rojo. Stifte (120) y Marker (55) están bien → verde."
+      },
+      "ex3": {
+        "title": "Gráfico de barras de ventas",
+        "story": "Un gráfico de barras muestra al banco la evolución de las ventas de un vistazo. Créalo con el Asistente de gráficos.",
+        "step1": "Observa las cifras de ventas mensuales — seis meses con tendencia al alza.",
+        "step2": "Haz clic en el Asistente de gráficos.",
+        "step3": "Selecciona gráfico de barras, rango de datos B2:B7 (ventas) y etiquetas A2:A7 (meses).",
+        "step4": "Introduce un título (p. ej. 'Ventas mensuales') y haz clic en Finalizar.",
+        "hint1": "Los gráficos de barras son ideales para comparaciones a lo largo del tiempo — perfectos para las ventas mensuales",
+        "hint2": "Rango de datos = los números (columna B), etiquetas = los nombres (columna A)"
+      },
+      "ex4": {
+        "title": "Gráfico circular por categorías",
+        "story": "El banco pregunta por la distribución de ventas. Un gráfico circular muestra las cuotas de cada categoría de producto.",
+        "step1": "Observa las cuatro categorías con sus cuotas de ventas en porcentaje.",
+        "step2": "Haz clic en el Asistente de gráficos.",
+        "step3": "Selecciona gráfico circular, rango de datos B2:B5 (cuotas) y etiquetas A2:A5 (categorías).",
+        "step4": "Introduce un título (p. ej. 'Distribución de ventas') y haz clic en Finalizar.",
+        "hint1": "Los gráficos circulares muestran cuotas del total — ideales para distribuciones porcentuales",
+        "hint2": "Las cuotas deben sumar 100%: 42 + 28 + 18 + 12 = 100%"
+      }
+    },
     "level5": {
       "title": "Mes 4: Comparación de proveedores",
       "story": "Mes 4 en Schulz & Partner. Has dominado BUSCARV — ahora lo combinas con SI, MIN y SI.ERROR para tomar decisiones empresariales reales.",

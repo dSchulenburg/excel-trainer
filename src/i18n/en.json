@@ -478,6 +478,50 @@
         "hint2": "Firma A: 1,000 EUR, 3 orders, avg 333.33 EUR. Firma B: 730 EUR, 3 orders, avg 243.33 EUR"
       }
     },
+    "level7": {
+      "title": "Month 6: Shop Presentation",
+      "story": "You are presenting your online shop to the bank for a loan — make the data visually convincing!",
+      "ex1": {
+        "title": "Colour Profit/Loss",
+        "story": "The bank wants to see at a glance which months were positive and which were negative. Colour the results using conditional formatting.",
+        "step1": "Look at the monthly results: positive values are profits, negative values are losses.",
+        "step2": "Open the formatting editor using the button.",
+        "step3": "Create Rule 1: value greater than 0 → green (profit)",
+        "step4": "Create Rule 2: value less than 0 → red (loss) and click Apply.",
+        "hint1": "Conditional formatting colours cells automatically based on their content — no manual colouring needed",
+        "hint2": "Green = profit (>0), Red = loss (<0). The colours help the bank get a quick overview."
+      },
+      "ex2": {
+        "title": "Stock Traffic Light",
+        "story": "Before the bank meeting you check stock levels. Mark critical stock in red and well-stocked items in green.",
+        "step1": "Look at the stock levels: below 10 is critical, above 50 is good.",
+        "step2": "Open the formatting editor using the button.",
+        "step3": "Create Rule 1: value less than 10 → red (critical, reorder!)",
+        "step4": "Create Rule 2: value greater than 50 → green (well stocked) and click Apply.",
+        "hint1": "You need two rules: one for the critical range (red) and one for good stock (green)",
+        "hint2": "Ordner (5) and Kleber (8) are critical → red. Stifte (120) and Marker (55) are good → green."
+      },
+      "ex3": {
+        "title": "Revenue Bar Chart",
+        "story": "A bar chart shows the bank your revenue trend at a glance. Create it using the Chart Wizard.",
+        "step1": "Look at the monthly revenue figures — six months with an upward trend.",
+        "step2": "Click the Chart Wizard.",
+        "step3": "Select bar chart, data range B2:B7 (revenue) and labels A2:A7 (months).",
+        "step4": "Enter a title (e.g. 'Monthly Revenue') and click Finish.",
+        "hint1": "Bar charts are great for comparisons over time — perfect for monthly revenue figures",
+        "hint2": "Data range = the numbers (column B), labels = the names (column A)"
+      },
+      "ex4": {
+        "title": "Category Pie Chart",
+        "story": "The bank asks about revenue distribution. A pie chart shows the shares of each product category.",
+        "step1": "Look at the four categories with their revenue shares in percent.",
+        "step2": "Click the Chart Wizard.",
+        "step3": "Select pie chart, data range B2:B5 (shares) and labels A2:A5 (categories).",
+        "step4": "Enter a title (e.g. 'Revenue Distribution') and click Finish.",
+        "hint1": "Pie charts show shares of a whole — ideal for percentage distributions",
+        "hint2": "The shares must add up to 100%: 42 + 28 + 18 + 12 = 100%"
+      }
+    },
     "level5": {
       "title": "Month 4: Supplier Comparison",
       "story": "Month 4 at Schulz & Partner. You have mastered VLOOKUP — now you combine it with IF, MIN and IFERROR for real business decisions.",

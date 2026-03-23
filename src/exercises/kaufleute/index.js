@@ -22,7 +22,14 @@ import kl6ex1 from './level6/ex1-umsatz-kategorie';
 import kl6ex2 from './level6/ex2-bestellungen';
 import kl6ex3 from './level6/ex3-filialvergleich';
 import kl6ex4 from './level6/ex4-topkunden';
-// Levels 7-8 will be added in later tasks
+import kl7ex1 from './level7/ex1-gewinnverlust';
+import kl7ex2 from './level7/ex2-lagerampel';
+import kl7ex3 from './level7/ex3-saeulendiagramm';
+import kl7ex4 from './level7/ex4-kreisdiagramm';
+import kl8ex1 from './level8/ex1-auftragsabwicklung';
+import kl8ex2 from './level8/ex2-quartalsanalyse';
+import kl8ex3 from './level8/ex3-lieferantenbewertung';
+import kl8ex4 from './level8/ex4-geschaeftsbericht';
 
 export const kaufleuteExercises = [
   kl1ex1, kl1ex2, kl1ex3, kl1ex4,
@@ -31,6 +38,8 @@ export const kaufleuteExercises = [
   kl4ex1, kl4ex2, kl4ex3, kl4ex4,
   kl5ex1, kl5ex2, kl5ex3, kl5ex4,
   kl6ex1, kl6ex2, kl6ex3, kl6ex4,
+  kl7ex1, kl7ex2, kl7ex3, kl7ex4,
+  kl8ex1, kl8ex2, kl8ex3, kl8ex4,
 ];
 
 export const kaufleuteLevels = [
@@ -82,5 +91,20 @@ export const kaufleuteLevels = [
     icon: '\u{1F4CA}',
     exercises: kaufleuteExercises.filter((e) => e.levelId === 6),
   },
-  // Levels 7-8 will be added in later tasks
+  {
+    id: 7,
+    trackId: 'kaufleute',
+    titleKey: 'kaufleute.level7.title',
+    storyKey: 'kaufleute.level7.story',
+    icon: '\u{1F3A8}',
+    exercises: kaufleuteExercises.filter((e) => e.levelId === 7),
+  },
+  {
+    id: 8,
+    trackId: 'kaufleute',
+    titleKey: 'kaufleute.level8.title',
+    storyKey: 'kaufleute.level8.story',
+    icon: '\u{1F680}',
+    exercises: kaufleuteExercises.filter((e) => e.levelId === 8),
+  },
 ];
