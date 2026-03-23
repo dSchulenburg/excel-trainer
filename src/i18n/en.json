@@ -655,6 +655,20 @@
       }
     }
   },
+  "chart": {
+    "title": "Create Chart",
+    "selectType": "Select chart type",
+    "bar": "Bar Chart",
+    "line": "Line Chart",
+    "pie": "Pie Chart",
+    "dataRange": "Data range (e.g. B2:B6)",
+    "labelRange": "Labels (e.g. A2:A6)",
+    "chartTitle": "Title",
+    "preview": "Preview",
+    "finish": "Done",
+    "back": "Back",
+    "next": "Next"
+  },
   "condFormat": {
     "title": "Conditional Formatting",
     "addRule": "Add Rule",

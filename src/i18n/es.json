@@ -655,6 +655,20 @@
       }
     }
   },
+  "chart": {
+    "title": "Crear gráfico",
+    "selectType": "Seleccionar tipo de gráfico",
+    "bar": "Gráfico de barras",
+    "line": "Gráfico de líneas",
+    "pie": "Gráfico circular",
+    "dataRange": "Rango de datos (p.ej. B2:B6)",
+    "labelRange": "Etiquetas (p.ej. A2:A6)",
+    "chartTitle": "Título",
+    "preview": "Vista previa",
+    "finish": "Listo",
+    "back": "Atrás",
+    "next": "Siguiente"
+  },
   "condFormat": {
     "title": "Formato Condicional",
     "addRule": "Añadir regla",

@@ -655,6 +655,20 @@
       }
     }
   },
+  "chart": {
+    "title": "Diagramm erstellen",
+    "selectType": "Diagrammtyp wählen",
+    "bar": "Säulendiagramm",
+    "line": "Liniendiagramm",
+    "pie": "Kreisdiagramm",
+    "dataRange": "Datenbereich (z.B. B2:B6)",
+    "labelRange": "Beschriftung (z.B. A2:A6)",
+    "chartTitle": "Titel",
+    "preview": "Vorschau",
+    "finish": "Fertig",
+    "back": "Zurück",
+    "next": "Weiter"
+  },
   "condFormat": {
     "title": "Bedingte Formatierung",
     "addRule": "Regel hinzufügen",

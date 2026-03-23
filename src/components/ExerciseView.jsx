@@ -1,4 +1,4 @@
-import { useState, useCallback, useRef } from 'react';
+import { useState, useCallback, useRef, Suspense, lazy } from 'react';
 import { useI18n } from '../context/I18nContext';
 import { useGame } from '../context/GameContext';
 import { validateExercise, getCompletedSteps } from '../utils/validation';
@@ -11,6 +11,8 @@ import LevelComplete from './LevelComplete';
 import AudioPlayer from './AudioPlayer';
 import ConditionalFormatEditor from './ConditionalFormatEditor';
 
+const ChartWizard = lazy(() => import('./ChartWizard'));
+
 export default function ExerciseView({ exercise, onBack, onNextExercise }) {
   const { t } = useI18n();
   const { completeExercise, skipExercise } = useGame();
@@ -21,10 +23,12 @@ export default function ExerciseView({ exercise, onBack, onNextExercise }) {
   const [earnedXP, setEarnedXP] = useState(0);
   const [stars, setStars] = useState(0);
   const [condFormatRules, setCondFormatRules] = useState([]);
+  const [chartConfig, setChartConfig] = useState(null);
   const startTime = useRef(Date.now());
   const totalErrors = useRef(0);
 
   const hasCondFormat = exercise.validations?.some(v => v.type === 'conditionalFormat');
+  const hasChart = exercise.validations?.some(v => v.type === 'chartConfig');
 
   const handleDataChange = useCallback(
     (data) => {
@@ -39,6 +43,9 @@ export default function ExerciseView({ exercise, onBack, onNextExercise }) {
     if (!sheetData) return;
     if (condFormatRules.length > 0 && sheetData) {
       sheetData.__condFormatRules = condFormatRules;
+    }
+    if (chartConfig && sheetData) {
+      sheetData.__chartConfig = chartConfig;
     }
     const result = validateExercise(exercise.validations, sheetData);
     setValidationResult(result);
@@ -103,6 +110,11 @@ export default function ExerciseView({ exercise, onBack, onNextExercise }) {
             onApplyRules={setCondFormatRules}
             onRulesChange={setCondFormatRules}
           />
+        )}
+        {hasChart && (
+          <Suspense fallback={null}>
+            <ChartWizard sheetData={sheetData} onComplete={setChartConfig} />
+          </Suspense>
         )}
         <ValidationFeedback
           validationResult={validationResult}

@@ -905,3 +905,59 @@ body {
   gap: 0.5rem;
   margin-top: 0.5rem;
 }
+
+/* ── ChartWizard ────────────────────────────────────────────────────────────── */
+.chart-wizard {
+  background: white;
+  border-top: 2px solid #e0e0e0;
+  padding: 1rem;
+  flex-shrink: 0;
+}
+
+.chart-wizard__types {
+  display: flex;
+  gap: 0.75rem;
+  margin: 0.75rem 0;
+}
+
+.chart-type-btn {
+  padding: 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  background: white;
+}
+
+.chart-type-btn.active {
+  border-color: var(--bswi-lightblue);
+  background: #f0f9ff;
+}
+
+.chart-type-btn__icon {
+  font-size: 2rem;
+  display: block;
+}
+
+.chart-wizard__inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.chart-wizard__inputs input {
+  padding: 0.4rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.chart-wizard__preview {
+  margin: 1rem 0;
+  min-height: 250px;
+}
+
+.chart-wizard__actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
