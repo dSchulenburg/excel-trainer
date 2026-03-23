@@ -9,6 +9,7 @@ import MultiSheetArea from './MultiSheetArea';
 import ValidationFeedback from './ValidationFeedback';
 import LevelComplete from './LevelComplete';
 import AudioPlayer from './AudioPlayer';
+import ConditionalFormatEditor from './ConditionalFormatEditor';
 
 export default function ExerciseView({ exercise, onBack, onNextExercise }) {
   const { t } = useI18n();
@@ -19,8 +20,11 @@ export default function ExerciseView({ exercise, onBack, onNextExercise }) {
   const [showComplete, setShowComplete] = useState(false);
   const [earnedXP, setEarnedXP] = useState(0);
   const [stars, setStars] = useState(0);
+  const [condFormatRules, setCondFormatRules] = useState([]);
   const startTime = useRef(Date.now());
   const totalErrors = useRef(0);
+
+  const hasCondFormat = exercise.validations?.some(v => v.type === 'conditionalFormat');
 
   const handleDataChange = useCallback(
     (data) => {
@@ -33,6 +37,9 @@ export default function ExerciseView({ exercise, onBack, onNextExercise }) {
 
   const handleCheck = useCallback(() => {
     if (!sheetData) return;
+    if (condFormatRules.length > 0 && sheetData) {
+      sheetData.__condFormatRules = condFormatRules;
+    }
     const result = validateExercise(exercise.validations, sheetData);
     setValidationResult(result);
     setCompletedSteps(getCompletedSteps(exercise.validations, sheetData));
@@ -91,6 +98,12 @@ export default function ExerciseView({ exercise, onBack, onNextExercise }) {
             <SpreadsheetArea exercise={exercise} onDataChange={handleDataChange} />
           )}
         </div>
+        {hasCondFormat && (
+          <ConditionalFormatEditor
+            onApplyRules={setCondFormatRules}
+            onRulesChange={setCondFormatRules}
+          />
+        )}
         <ValidationFeedback
           validationResult={validationResult}
           onCheck={handleCheck}

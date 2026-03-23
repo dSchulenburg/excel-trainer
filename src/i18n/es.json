@@ -654,5 +654,16 @@
         "hint2": "La función SI devuelve aquí números, no textos. Por eso no se usan comillas."
       }
     }
+  },
+  "condFormat": {
+    "title": "Formato Condicional",
+    "addRule": "Añadir regla",
+    "apply": "Aplicar",
+    "greaterThan": "mayor que",
+    "lessThan": "menor que",
+    "equals": "igual a",
+    "colorGreen": "Verde",
+    "colorRed": "Rojo",
+    "colorYellow": "Amarillo"
   }
 }

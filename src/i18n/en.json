@@ -654,5 +654,16 @@
         "hint2": "The IF function returns numbers here, not text. Therefore no quotation marks."
       }
     }
+  },
+  "condFormat": {
+    "title": "Conditional Formatting",
+    "addRule": "Add Rule",
+    "apply": "Apply",
+    "greaterThan": "greater than",
+    "lessThan": "less than",
+    "equals": "equals",
+    "colorGreen": "Green",
+    "colorRed": "Red",
+    "colorYellow": "Yellow"
   }
 }

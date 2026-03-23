@@ -654,5 +654,16 @@
         "hint2": "Die WENN-Funktion gibt hier Zahlen zurück, keine Texte. Daher keine Anführungszeichen."
       }
     }
+  },
+  "condFormat": {
+    "title": "Bedingte Formatierung",
+    "addRule": "Regel hinzufügen",
+    "apply": "Anwenden",
+    "greaterThan": "größer als",
+    "lessThan": "kleiner als",
+    "equals": "gleich",
+    "colorGreen": "Grün",
+    "colorRed": "Rot",
+    "colorYellow": "Gelb"
   }
 }
