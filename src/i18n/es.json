@@ -1,0 +1,771 @@
+{
+  "app": {
+    "title": "Entrenador Excel",
+    "subtitle": "Mi Primer Apartamento"
+  },
+  "audio": {
+    "levelIntro": "Introducción al nivel",
+    "exerciseIntro": "Introducción al ejercicio"
+  },
+  "nav": {
+    "levels": "Mapa de Niveles",
+    "badges": "Insignias",
+    "glossary": "Glosario",
+    "profile": "Perfil"
+  },
+  "playerLevel": {
+    "avm": {
+      "1": "Principiante",
+      "2": "Explorador",
+      "3": "Experto en Tablas",
+      "4": "Profesional de Fórmulas",
+      "5": "Héroe de Excel"
+    },
+    "kaufleute": {
+      "1": "Practicante",
+      "2": "Empleado",
+      "3": "Especialista",
+      "4": "Jefe de Departamento",
+      "5": "Director General"
+    }
+  },
+  "trackSelect": {
+    "title": "Elige tu camino",
+    "avm": {
+      "title": "Mi Primer Apartamento",
+      "desc": "Aprende los fundamentos de Excel con tareas cotidianas"
+    },
+    "kaufleute": {
+      "title": "Comercio al por Mayor",
+      "desc": "Excel profesional para aprendices de comercio"
+    }
+  },
+  "common": {
+    "back": "Atrás",
+    "next": "Siguiente",
+    "check": "Comprobar",
+    "hint": "Pista",
+    "stars": "Estrellas",
+    "xp": "XP",
+    "level": "Nivel",
+    "locked": "Bloqueado",
+    "completed": "Completado",
+    "streak": "Racha",
+    "day": "Día",
+    "days": "Días",
+    "errors": "Errores",
+    "perfect": "¡Perfecto!",
+    "tryAgain": "Intentar de nuevo",
+    "start": "Empezar",
+    "close": "Cerrar",
+    "name": "Nombre",
+    "save": "Guardar",
+    "reset": "Reiniciar progreso",
+    "yes": "¡Sí, continuar!",
+    "no": "Mejor no"
+  },
+  "levelMap": {
+    "title": "Tu Camino al Excel Pro",
+    "exercise": "Ejercicio"
+  },
+  "exercise": {
+    "step": "Paso",
+    "instructions": "Instrucciones",
+    "checkAnswer": "Comprobar respuesta",
+    "stepComplete": "¡Paso completado!",
+    "allComplete": "¡Todos los pasos completados!",
+    "hintAvailable": "Pista disponible",
+    "skip": "Omitir",
+    "skipConfirm": "¿Realmente omitir? ¡Puedes intentarlo más tarde!",
+    "skipped": "Omitido",
+    "formulaHint": "SUM = SUMA, AVERAGE = PROMEDIO — ¡ambas funcionan!"
+  },
+  "complete": {
+    "title": "¡Completado!",
+    "xpEarned": "+{xp} XP ganados",
+    "newBadge": "¡Nueva insignia!",
+    "nextExercise": "Siguiente ejercicio",
+    "backToMap": "Volver al mapa"
+  },
+  "badges": {
+    "title": "Muro de Insignias",
+    "earned": "Obtenida",
+    "locked": "Aún no desbloqueada"
+  },
+  "badge": {
+    "firstCell": "Primera Celda",
+    "firstFormula": "Primera Fórmula",
+    "shoppingDone": "Compras realizadas",
+    "alltagDone": "Vida diaria organizada",
+    "cookingMaster": "Maestro de Cocina",
+    "financePro": "Profesional Financiero",
+    "travelExpert": "Experto en Viajes",
+    "proComplete": "Excel Pro",
+    "sumMaster": "Maestro de Sumas",
+    "streak3": "Racha de 3 días",
+    "perfectScore": "Puntuación perfecta",
+    "speedDemon": "Velocidad relámpago",
+    "polyglot": "Multilingüe",
+    "referenzMeister": "Maestro de Referencias",
+    "entscheider": "Tomador de Decisiones",
+    "sverweisMeister": "Maestro de BUSCARV",
+    "datenProfi": "Profesional de Datos",
+    "visualisierer": "Visualizador",
+    "chartCreator": "Creador de Gráficos",
+    "geschaeftsfuehrer": "Director General",
+    "kaufmannKomplett": "Comercio Completo"
+  },
+  "profile": {
+    "title": "Mi Perfil",
+    "chooseAvatar": "Elegir avatar",
+    "enterName": "Tu nombre"
+  },
+  "glossary": {
+    "title": "Glosario Excel",
+    "term": "Término",
+    "german": "Deutsch",
+    "english": "English",
+    "description": "Descripción"
+  },
+  "level1": {
+    "title": "Compras",
+    "story": "¡Te mudas a tu primer apartamento! Primero necesitas una lista de compras. ¡Usemos Excel!",
+    "ex1": {
+      "title": "Lista de compras",
+      "story": "Escribe tu primera lista de compras en una hoja de cálculo.",
+      "step1": "Escribe 'Arroz' en la celda A2",
+      "step2": "Escribe 'Pasta' en la celda A3",
+      "step3": "Escribe 'Aceite' en la celda A4",
+      "step4": "Escribe 'Sal' en la celda A5",
+      "hint1": "Haz clic en la celda A2 y escribe 'Arroz'",
+      "hint2": "Las celdas son como una cuadrícula: A es la columna, 2 es la fila"
+    },
+    "ex2": {
+      "title": "Introducir precios",
+      "story": "Ahora introducimos los precios junto a los artículos.",
+      "step1": "Introduce el precio 1,99 en la celda B2",
+      "step2": "Introduce el precio 0,89 en la celda B3",
+      "step3": "Introduce el precio 2,49 en la celda B4",
+      "step4": "Introduce el precio 0,59 en la celda B5",
+      "hint1": "Haz clic en B2 y escribe el número 1,99",
+      "hint2": "Usa una coma como separador decimal (p. ej. 1,99)"
+    },
+    "ex3": {
+      "title": "Calcular suma",
+      "story": "¿Cuánto cuesta todo? ¡Usa tu primera fórmula!",
+      "step1": "Escribe 'Total' en la celda A6",
+      "step2": "Escribe la fórmula =SUMA(B2:B5) en la celda B6",
+      "hint1": "Una fórmula siempre empieza con el signo igual =",
+      "hint2": "SUMA() suma todos los números del rango. B2:B5 significa de B2 a B5."
+    },
+    "ex4": {
+      "title": "Comprobar presupuesto",
+      "story": "Tienes 10 euros. ¿Es suficiente el dinero?",
+      "step1": "Escribe 'Presupuesto' en la celda A8",
+      "step2": "Escribe 10 en la celda B8",
+      "step3": "Escribe 'Restante' en la celda A9",
+      "step4": "Escribe la fórmula =B8-B6 en la celda B9",
+      "hint1": "B8 es tu presupuesto, B6 es la suma de tus compras",
+      "hint2": "Con = empiezas una fórmula. El signo menos - resta."
+    }
+  },
+  "level2": {
+    "title": "Mi vida diaria",
+    "story": "¡Tu primera semana en el nuevo apartamento! Organiza tu vida diaria con Excel.",
+    "ex1": {
+      "title": "Planificador semanal",
+      "story": "Planifica tu primera semana en el nuevo apartamento.",
+      "step1": "Escribe 'Lunes' en la celda A2",
+      "step2": "Escribe 'Martes' en la celda A3",
+      "step3": "Escribe 'Miércoles' en la celda A4",
+      "step4": "Introduce una actividad para el lunes en B2",
+      "hint1": "Haz clic en A2 y escribe 'Lunes'",
+      "hint2": "En la columna B van tus actividades"
+    },
+    "ex2": {
+      "title": "Comparación de precios",
+      "story": "Compara los precios de dos supermercados.",
+      "step1": "Introduce el precio Aldi 1,29 en B2",
+      "step2": "Introduce el precio Rewe 1,59 en C2",
+      "step3": "Introduce el precio Aldi 0,79 en B3",
+      "step4": "Introduce el precio Rewe 0,99 en C3",
+      "hint1": "La columna B es para Aldi, la columna C es para Rewe",
+      "hint2": "¡Observa qué tienda es más barata!"
+    },
+    "ex3": {
+      "title": "Gastos mensuales",
+      "story": "Lleva el control de tus gastos mensuales.",
+      "step1": "Introduce 350 por alquiler en B2",
+      "step2": "Introduce 150 por comida en B3",
+      "step3": "Introduce 30 por teléfono en B4",
+      "step4": "Calcula la suma con =SUMA(B2:B5) en B6",
+      "hint1": "Estas cifras son tus costos mensuales en euros",
+      "hint2": "SUMA suma automáticamente todos los valores del rango"
+    },
+    "ex4": {
+      "title": "Calcular promedio",
+      "story": "¿Cuánto gastas en promedio por categoría?",
+      "step1": "Introduce 45 en B2 (Semana 1)",
+      "step2": "Introduce 52 en B3 (Semana 2)",
+      "step3": "Introduce 38 en B4 (Semana 3)",
+      "step4": "Calcula el promedio con =PROMEDIO(B2:B4) en B6",
+      "hint1": "PROMEDIO calcula la media de todos los números",
+      "hint2": "El promedio es la suma dividida entre la cantidad"
+    }
+  },
+  "level3": {
+    "title": "Cocina y Recetas",
+    "story": "¡Ahora cocinas tú mismo! Planifica recetas, compras y calorías con Excel.",
+    "ex1": {
+      "title": "Escalar una receta",
+      "story": "Una receta es para 2 personas. ¡Pero tienes 4 invitados! Convierte las cantidades.",
+      "step1": "Introduce las cantidades: 200g pasta (B2), 100g queso (B3), 2 huevos (B4), 150ml nata (B5)",
+      "step2": "Introduce el factor 2 en la celda C2 (para el doble de cantidad)",
+      "step3": "Calcula la nueva cantidad para la pasta: =B2*C2 en la celda D2",
+      "step4": "Calcula también queso (D3), huevos (D4) y nata (D5) con la misma fórmula",
+      "hint1": "El asterisco * es el signo de multiplicación en Excel",
+      "hint2": "Copia la fórmula: D3 necesita =B3*C3, D4 necesita =B4*C4"
+    },
+    "ex2": {
+      "title": "Menú semanal",
+      "story": "Planifica tus comidas para la semana y calcula los costos por día.",
+      "step1": "Introduce los costos del lunes: Desayuno 2 (B2), Almuerzo 5 (C2), Cena 4 (D2)",
+      "step2": "Calcula los costos diarios del lunes: =SUMA(B2:D2) en E2",
+      "step3": "Introduce los costos del martes y calcula los costos diarios (E3)",
+      "step4": "Calcula los costos semanales: =SUMA(E2:E6) en E8",
+      "hint1": "Cada fila es un día, cada columna es una comida",
+      "hint2": "SUMA(B2:D2) suma todas las comidas de un día"
+    },
+    "ex3": {
+      "title": "Contador de calorías",
+      "story": "Cuenta tus calorías del día y compara con tu objetivo diario.",
+      "step1": "Introduce las calorías: Desayuno 400 (B2), Almuerzo 600 (B3), Cena 500 (B4), Snacks 200 (B5)",
+      "step2": "Calcula las calorías totales: =SUMA(B2:B5) en B7",
+      "step3": "Introduce tu objetivo diario 2000 en B8",
+      "step4": "Calcula las calorías restantes: =B8-B7 en B9",
+      "hint1": "SUMA suma todas las calorías del día",
+      "hint2": "Restante = objetivo menos consumido"
+    },
+    "ex4": {
+      "title": "Compras para la receta",
+      "story": "Calcula los costos de todos los ingredientes de tu receta favorita.",
+      "step1": "Introduce precio y cantidad: Pollo 6,99 (B2), 1 pieza (C2)",
+      "step2": "Calcula el precio total del pollo: =B2*C2 en D2",
+      "step3": "Calcula también arroz (D3), verduras (D4) y especias (D5)",
+      "step4": "Calcula el total de la compra: =SUMA(D2:D5) en D7",
+      "hint1": "Precio total = precio por pieza multiplicado por cantidad",
+      "hint2": "Usa una coma como separador decimal (p. ej. 6,99)"
+    }
+  },
+  "level4": {
+    "title": "Piso compartido y Finanzas",
+    "story": "¡Ahora vives en un piso compartido! Divide gastos, planifica ahorros y mantén el control.",
+    "ex1": {
+      "title": "Dividir gastos comunes",
+      "story": "Los gastos comunes deben dividirse equitativamente entre 2 compañeros.",
+      "step1": "Introduce los gastos: Electricidad 80 (B2), Agua 40 (B3), Internet 30 (B4)",
+      "step2": "Calcula la parte de cada persona para electricidad: =B2/2 en C2",
+      "step3": "Calcula también agua (C3) e internet (C4) por persona",
+      "step4": "Calcula la suma por persona: =SUMA(C2:C4) en C6",
+      "hint1": "La barra diagonal / es el signo de división en Excel",
+      "hint2": "Cada uno paga la mitad: importe dividido entre 2"
+    },
+    "ex2": {
+      "title": "Plan de ahorro",
+      "story": "Quieres ahorrar 600 para una bicicleta nueva. ¡Crea un plan de ahorro!",
+      "step1": "Introduce: Objetivo de ahorro 600 (B2), Cuota mensual 50 (B3)",
+      "step2": "Calcula la duración en meses: =B2/B3 en B4",
+      "step3": "Introduce lo que ya has ahorrado: Meses 1-3 de 50 cada uno (B7, B8, B9)",
+      "step4": "Calcula Total ahorrado =SUMA(B7:B9) en B10, Pendiente =B2-B10 en B11",
+      "hint1": "Duración = objetivo de ahorro dividido entre cuota mensual",
+      "hint2": "Pendiente = objetivo de ahorro menos lo ya ahorrado"
+    },
+    "ex3": {
+      "title": "Calcular descuento",
+      "story": "¡La tienda de muebles tiene rebajas! Calcula los precios finales después del descuento.",
+      "step1": "Introduce precios y descuentos: Lámpara 40 (B2), 20% descuento (C2)",
+      "step2": "Calcula el ahorro para la lámpara: =B2*C2/100 en D2",
+      "step3": "Calcula el precio final: =B2-D2 en E2. Haz lo mismo para alfombra y estantería.",
+      "step4": "Calcula el precio final total: =SUMA(E2:E4) en E6",
+      "hint1": "Ahorro = precio multiplicado por descuento dividido entre 100",
+      "hint2": "Precio final = precio original menos ahorro"
+    },
+    "ex4": {
+      "title": "Resumen mensual",
+      "story": "Crea un resumen mensual completo con ingresos, gastos y saldo.",
+      "step1": "Introduce tus ingresos: Salario de formación 800 (B2), Ayuda familiar 250 (B3)",
+      "step2": "Calcula Total ingresos =SUMA(B2:B3) en B4, Total gastos =SUMA(B7:B10) en B11",
+      "step3": "Calcula el saldo (ingresos menos gastos): =B4-B11 en B13",
+      "step4": "Encuentra el mayor gasto =MAX(B7:B10) en B14 y el menor =MIN(B7:B10) en B15",
+      "hint1": "MAX encuentra el valor mayor, MIN el menor",
+      "hint2": "Saldo = lo que entra menos lo que sale"
+    }
+  },
+  "level5": {
+    "title": "Viaje escolar",
+    "story": "¡Tu clase planifica un viaje escolar! Calcula costos, distribuye habitaciones y haz el balance al final.",
+    "ex1": {
+      "title": "Costos de viaje",
+      "story": "Calcula los costos totales del viaje escolar para 25 alumnos.",
+      "step1": "Introduce el número de participantes 25 en todas las celdas de cantidad (C2 a C5)",
+      "step2": "Calcula los costos totales del autobús: =B2*C2 en D2",
+      "step3": "Calcula también alojamiento (D3), comidas (D4) y museo (D5)",
+      "step4": "Costos totales =SUMA(D2:D5) en D7, costo por persona =D7/C2 en D8",
+      "hint1": "Costo total = precio por persona multiplicado por número de participantes",
+      "hint2": "Costo por persona = costos totales divididos entre el número de participantes"
+    },
+    "ex2": {
+      "title": "Dinero de bolsillo",
+      "story": "Tienes 60 euros de dinero de bolsillo para 5 días. ¡Lleva el control!",
+      "step1": "Introduce tus gastos diarios: Lu 8, Ma 12, Mi 5, Ju 15, Vi 10 (B2 a B6)",
+      "step2": "Calcula los gastos totales: =SUMA(B2:B6) en B8",
+      "step3": "Calcula el promedio diario: =PROMEDIO(B2:B6) en B9",
+      "step4": "Introduce presupuesto 60 en B11, calcula restante =B11-B8 en B12, porcentaje =B8/B11*100 en B13",
+      "hint1": "PROMEDIO calcula la media de todos los días",
+      "hint2": "Porcentaje gastado = gastos divididos entre presupuesto multiplicado por 100"
+    },
+    "ex3": {
+      "title": "Distribución de habitaciones",
+      "story": "Distribuye la clase en diferentes tipos de habitaciones y calcula los costos.",
+      "step1": "Introduce: 3 noches (C2-C4), 2 habitaciones individuales (D2), 5 dobles (D3), 3 triples (D4)",
+      "step2": "Calcula los costos de las habitaciones individuales: =B2*C2*D2 en E2",
+      "step3": "Calcula también dobles (E3) y triples (E4)",
+      "step4": "Total habitaciones =SUMA(D2:D4) en E6, costos totales =SUMA(E2:E4) en E7, promedio =E7/E6 en E8, más barato =MIN(B2:B4) en E9",
+      "hint1": "Costo = precio por noche multiplicado por noches multiplicado por número de habitaciones",
+      "hint2": "Costo promedio = costos totales divididos entre número de habitaciones"
+    },
+    "ex4": {
+      "title": "Liquidación",
+      "story": "Después del viaje: ¿quién pagó cuánto? Calcula las diferencias.",
+      "step1": "Introduce cuánto pagó cada uno: Ana 120, Ben 45, Clara 80, David 55 (B2-B5)",
+      "step2": "Calcula Total =SUMA(B2:B5) en B7, parte justa =B7/4 en B8",
+      "step3": "Introduce la parte justa =B$8 en C2, calcula la diferencia =B2-C2 en D2 (también para B3-B5)",
+      "step4": "Mayor aportación =MAX(B2:B5) en B10, menor =MIN(B2:B5) en B11, rango =B10-B11 en B12",
+      "hint1": "Positivo = recibe dinero de vuelta, negativo = aún debe pagar",
+      "hint2": "Rango = mayor menos menor aportación"
+    }
+  },
+  "level6": {
+    "title": "Hojas de cálculo Pro",
+    "story": "¡Casi eres un Excel Pro! Resuelve tareas complejas con fórmulas anidadas y cálculos de porcentajes.",
+    "ex1": {
+      "title": "Calculadora de notas",
+      "story": "Calcula tu media de notas y analiza tu rendimiento.",
+      "step1": "Introduce notas y puntuaciones: Matemáticas 2/85%, Alemán 3/72%, Inglés 1/91%, Economía 3/68%, IT 2/80%",
+      "step2": "Calcula la media de notas: =PROMEDIO(B2:B6) en B8",
+      "step3": "Mejor nota =MIN(B2:B6) en B9, peor =MAX(B2:B6) en B10, rango =B10-B9 en B11",
+      "step4": "Calcula promedio de puntos =PROMEDIO(C2:C6) en C13, máx. puntos =MAX(C2:C6) en C14",
+      "hint1": "En notas, MIN es la mejor (1) y MAX la peor (6)",
+      "hint2": "El rango de notas muestra cuán variado es tu rendimiento"
+    },
+    "ex2": {
+      "title": "Calculadora de salario",
+      "story": "Calcula tu sueldo como aprendiz – desde la tarifa por hora hasta el neto.",
+      "step1": "Introduce: Tarifa por hora 12,50 (B2), Horas/semana 20 (B3)",
+      "step2": "Calcula salario semanal =B2*B3 en B6, salario mensual =B6*B4 en B7",
+      "step3": "Calcula salario anual =B7*12 en B8, cotizaciones =B7*0,2 en B10, neto =B7-B10 en B11",
+      "step4": "Calcula neto/día =B11/22 en B13 (22 días laborables), neto/hora =B11/B3/B4 en B14",
+      "hint1": "Semanas/mes (B4) ya está introducido: 4",
+      "hint2": "Neto = bruto menos cotizaciones. 22 días laborables al mes es estándar."
+    },
+    "ex3": {
+      "title": "Inventario",
+      "story": "Haz un inventario para tu pequeña tienda online. Calcula valores y beneficios.",
+      "step1": "Introduce: Camisetas coste 8/precio 20/50 uds, Gorras 5/15/30, Tazas 3/10/80, Pegatinas 1/5/200",
+      "step2": "Calcula el beneficio por pieza: =C2-B2 en E2, igualmente para todos los productos",
+      "step3": "Stock total =SUMA(D2:D5) en D7, promedio beneficio =PROMEDIO(E2:E5) en E8, mejor beneficio =MAX(E2:E5) en E9",
+      "step4": "Valor de stock precio coste =SUMA(B2*D2,B3*D3,B4*D4,B5*D5) en E11, precio venta análogo en E12, beneficio potencial =E12-E11 en E13",
+      "hint1": "Beneficio por pieza = precio de venta menos precio de compra",
+      "hint2": "Valor de stock = suma de (precio multiplicado por stock) para cada producto"
+    },
+    "ex4": {
+      "title": "Comparación anual",
+      "story": "Compara los ingresos de este año con el año anterior – por trimestre y total.",
+      "step1": "Introduce los ingresos de este año: T1 1400, T2 1650, T3 1900, T4 2200 (C2-C5)",
+      "step2": "Calcula la diferencia por trimestre: =C2-B2 en D2, para todos los trimestres",
+      "step3": "Calcula el cambio porcentual: =D2/B2*100 en E2, para todos los trimestres",
+      "step4": "Total anual año anterior =SUMA(B2:B5) en B7, este año =SUMA(C2:C5) en C7, promedio trimestre =PROMEDIO(C2:C5) en C8, mejor trimestre =MAX(C2:C5) en C9, diferencia total =C7-B7 en D12, crecimiento total =D12/B7*100 en E12",
+      "hint1": "Cambio porcentual = diferencia dividida entre el valor del año anterior multiplicado por 100",
+      "hint2": "Un valor positivo significa crecimiento, un valor negativo significa descenso"
+    }
+  },
+  "kaufleute": {
+    "level1": {
+      "title": "Dominar las referencias de celdas",
+      "story": "Primer día de prácticas en Schulz & Partner GmbH – un mayorista de material de oficina. Tu tarea: actualizar la lista de precios usando referencias absolutas de celda.",
+      "ex1": {
+        "title": "Calcular el IVA",
+        "story": "Debes calcular los precios brutos de todos los artículos. El factor del IVA 1,19 está en la celda C1 y se aplica a todos los productos.",
+        "step1": "Introduce la fórmula =B2*$C$1 en la celda D2 para calcular el precio bruto de la carpeta",
+        "step2": "Copia la fórmula a D3 – observa: $C$1 permanece fijo, B3 se adapta automáticamente",
+        "step3": "Calcula también los precios brutos para bolígrafos (D4) y pegamento (D5)",
+        "step4": "Verifica: todas las fórmulas en D2:D5 deben referenciar $C$1",
+        "hint1": "El signo de dólar $ hace que una referencia sea absoluta – no cambia al copiar",
+        "hint2": "=B2*$C$1 significa: precio neto de B2 multiplicado por el factor de IVA fijo de C1"
+      },
+      "ex2": {
+        "title": "Conversión de moneda",
+        "story": "Un cliente estadounidense quiere ver los precios en USD. El tipo de cambio EUR/USD está en la celda E1.",
+        "step1": "Introduce la fórmula =B2*$E$1 en la celda C2 para calcular el precio en USD del papel de copia",
+        "step2": "Copia la fórmula a C3 – el tipo de cambio en $E$1 permanece fijo",
+        "step3": "Calcula también los precios en USD para la impresora (C4) y el portátil (C5)",
+        "step4": "Verifica: todas las fórmulas en C2:C5 deben usar $E$1 como tipo de cambio fijo",
+        "hint1": "$E$1 fija tanto la columna E como la fila 1 – la referencia nunca cambia",
+        "hint2": "Precio en USD = precio en EUR multiplicado por el tipo de cambio"
+      },
+      "ex3": {
+        "title": "Escala de descuentos",
+        "story": "Schulz & Partner ofrece descuentos distintos a dos grupos de clientes: Estándar (10%) y Premium (20%). Calcula los precios netos después del descuento.",
+        "step1": "Introduce =B3*(1-C$2) en C3 – la tasa de descuento en la fila 2 está fija, pero la columna puede cambiar",
+        "step2": "Copia la fórmula a C4, C5 y C6 para todos los artículos (descuento Estándar)",
+        "step3": "Introduce =B3*(1-D$2) en D3 para el precio Premium del primer artículo",
+        "step4": "Copia también la fórmula Premium a D4, D5 y D6",
+        "hint1": "C$2 fija solo la fila (2), no la columna – así la fórmula se puede copiar horizontalmente",
+        "hint2": "(1-descuento) da el factor: 1-0,1 = 0,9 significa el 90% del precio original"
+      },
+      "ex4": {
+        "title": "Calcular comisión",
+        "story": "El equipo de ventas gana un 5% de comisión sobre los ingresos. La tasa de comisión está en C1 y se aplica a todos los vendedores.",
+        "step1": "Introduce =B2*$C$1 en D2 para calcular la comisión de Müller, A.",
+        "step2": "Copia la fórmula a D3 para Schmidt, B.",
+        "step3": "Calcula también la comisión para Weber, C. (D4) y Fischer, D. (D5)",
+        "step4": "Nota: sin el $ el C1 se desplazaría a C2, C3 etc. al copiar – ¡eso sería incorrecto!",
+        "hint1": "$C$1 garantiza que siempre se use la tasa de comisión de C1",
+        "hint2": "Comisión = ingresos × tasa (p. ej. 12.500 × 0,05 = 625 EUR)"
+      }
+    },
+    "level6": {
+      "title": "Mes 5: Análisis de ventas",
+      "story": "¡Has abierto tu propia tienda online! Es hora de analizar los datos de ventas con SUMAR.SI y CONTAR.SI.",
+      "ex1": {
+        "title": "Ingresos por categoría",
+        "story": "Averigua cuántos ingresos genera cada categoría de producto — SUMAR.SI permite sumar de forma selectiva por categoría.",
+        "step1": "Introduce en B12: =SUMAR.SI(B2:B9;\"Elektronik\";C2:C9)",
+        "step2": "Calcula los ingresos de Buerobedarf en B13: =SUMAR.SI(B2:B9;\"Buerobedarf\";C2:C9)",
+        "step3": "Calcula los ingresos de Moebel en B14: =SUMAR.SI(B2:B9;\"Moebel\";C2:C9)",
+        "step4": "Comprobación: Electrónica = 479,96 EUR, Material de oficina = 77,50 EUR, Muebles = 449,00 EUR",
+        "hint1": "SUMAR.SI(rango;criterio;rango_suma): la columna B contiene las categorías, la columna C los importes",
+        "hint2": "El texto del criterio debe coincidir exactamente con el contenido de la celda"
+      },
+      "ex2": {
+        "title": "Contar pedidos",
+        "story": "Analiza cuántos pedidos cumplen determinadas condiciones — CONTAR.SI cuenta las celdas que cumplen un criterio.",
+        "step1": "Cuenta los pedidos mayores de 50 EUR en B12: =CONTAR.SI(C2:C9;\">50\")",
+        "step2": "Cuenta los pedidos menores de 50 EUR en B13: =CONTAR.SI(C2:C9;\"<50\")",
+        "step3": "Cuenta los pedidos de electrónica en B14: =CONTAR.SI(B2:B9;\"Elektronik\")",
+        "step4": "Comprobación: >50 EUR = 6 pedidos, <50 EUR = 2 pedidos, Electrónica = 4 pedidos",
+        "hint1": "CONTAR.SI(rango;criterio): los operadores de comparación como >50 deben ir entre comillas",
+        "hint2": "Tanto los criterios de texto (\"Elektronik\") como las comparaciones numéricas (\">50\") necesitan comillas"
+      },
+      "ex3": {
+        "title": "Comparación de sucursales",
+        "story": "¡Tu tienda tiene tres sucursales! Compara los ingresos y el número de pedidos por sucursal con SUMAR.SI y CONTAR.SI.",
+        "step1": "Calcula los ingresos de Hamburgo en B13: =SUMAR.SI(B2:B10;\"Hamburg\";D2:D10)",
+        "step2": "Calcula los ingresos de Berlín en B14: =SUMAR.SI(B2:B10;\"Berlin\";D2:D10)",
+        "step3": "Calcula los ingresos de Múnich en B15: =SUMAR.SI(B2:B10;\"Muenchen\";D2:D10)",
+        "step4": "Cuenta los pedidos de Hamburgo en C13: =CONTAR.SI(B2:B10;\"Hamburg\")",
+        "hint1": "La sucursal está en la columna B, el importe en la columna D — ajusta el rango_suma en consecuencia",
+        "hint2": "Hamburgo = 578,99 EUR (3 pedidos), Berlín = 305,48 EUR (3), Múnich = 341,99 EUR (3)"
+      },
+      "ex4": {
+        "title": "Encontrar los mejores clientes",
+        "story": "¿Quiénes son tus mejores clientes? Calcula los ingresos totales, el número de pedidos y el valor medio por cliente.",
+        "step1": "Calcula los ingresos totales de Firma A en B12: =SUMAR.SI(B2:B9;\"Firma A\";C2:C9)",
+        "step2": "Cuenta los pedidos de Firma A en C12: =CONTAR.SI(B2:B9;\"Firma A\")",
+        "step3": "Calcula el promedio en D12: =B12/C12",
+        "step4": "Completa las fórmulas también para Firma B (fila 13) y Firma C (fila 14)",
+        "hint1": "Promedio = ingresos totales ÷ número de pedidos. Usa las celdas calculadas B12 y C12",
+        "hint2": "Firma A: 1.000 EUR, 3 pedidos, Ø 333,33 EUR. Firma B: 730 EUR, 3 pedidos, Ø 243,33 EUR"
+      }
+    },
+    "level7": {
+      "title": "Mes 6: Presentación de la tienda",
+      "story": "¡Vas a presentar tu tienda online al banco para solicitar un préstamo — haz que los datos sean convincentes y visualmente impactantes!",
+      "ex1": {
+        "title": "Colorear beneficios/pérdidas",
+        "story": "El banco quiere ver de un vistazo qué meses fueron positivos y cuáles negativos. Colorea los resultados con formato condicional.",
+        "step1": "Observa los resultados mensuales: los valores positivos son beneficios, los negativos son pérdidas.",
+        "step2": "Abre el editor de formato con el botón.",
+        "step3": "Crea la regla 1: valor mayor que 0 → verde (beneficio)",
+        "step4": "Crea la regla 2: valor menor que 0 → rojo (pérdida) y haz clic en Aplicar.",
+        "hint1": "El formato condicional colorea las celdas automáticamente según su contenido — no es necesario colorear manualmente",
+        "hint2": "Verde = beneficio (>0), Rojo = pérdida (<0). Los colores ayudan al banco a obtener una visión rápida."
+      },
+      "ex2": {
+        "title": "Semáforo de inventario",
+        "story": "Antes de la reunión con el banco revisas el inventario. Marca el stock crítico en rojo y el bien abastecido en verde.",
+        "step1": "Observa los niveles de stock: por debajo de 10 es crítico, por encima de 50 es bueno.",
+        "step2": "Abre el editor de formato con el botón.",
+        "step3": "Crea la regla 1: valor menor que 10 → rojo (crítico, ¡reordenar!)",
+        "step4": "Crea la regla 2: valor mayor que 50 → verde (bien abastecido) y haz clic en Aplicar.",
+        "hint1": "Necesitas dos reglas: una para el rango crítico (rojo) y otra para el bueno (verde)",
+        "hint2": "Ordner (5) y Kleber (8) son críticos → rojo. Stifte (120) y Marker (55) están bien → verde."
+      },
+      "ex3": {
+        "title": "Gráfico de barras de ventas",
+        "story": "Un gráfico de barras muestra al banco la evolución de las ventas de un vistazo. Créalo con el Asistente de gráficos.",
+        "step1": "Observa las cifras de ventas mensuales — seis meses con tendencia al alza.",
+        "step2": "Haz clic en el Asistente de gráficos.",
+        "step3": "Selecciona gráfico de barras, rango de datos B2:B7 (ventas) y etiquetas A2:A7 (meses).",
+        "step4": "Introduce un título (p. ej. 'Ventas mensuales') y haz clic en Finalizar.",
+        "hint1": "Los gráficos de barras son ideales para comparaciones a lo largo del tiempo — perfectos para las ventas mensuales",
+        "hint2": "Rango de datos = los números (columna B), etiquetas = los nombres (columna A)"
+      },
+      "ex4": {
+        "title": "Gráfico circular por categorías",
+        "story": "El banco pregunta por la distribución de ventas. Un gráfico circular muestra las cuotas de cada categoría de producto.",
+        "step1": "Observa las cuatro categorías con sus cuotas de ventas en porcentaje.",
+        "step2": "Haz clic en el Asistente de gráficos.",
+        "step3": "Selecciona gráfico circular, rango de datos B2:B5 (cuotas) y etiquetas A2:A5 (categorías).",
+        "step4": "Introduce un título (p. ej. 'Distribución de ventas') y haz clic en Finalizar.",
+        "hint1": "Los gráficos circulares muestran cuotas del total — ideales para distribuciones porcentuales",
+        "hint2": "Las cuotas deben sumar 100%: 42 + 28 + 18 + 12 = 100%"
+      }
+    },
+    "level5": {
+      "title": "Mes 4: Comparación de proveedores",
+      "story": "Mes 4 en Schulz & Partner. Has dominado BUSCARV — ahora lo combinas con SI, MIN y SI.ERROR para tomar decisiones empresariales reales.",
+      "ex1": {
+        "title": "Mejor precio",
+        "story": "Tres proveedores, un artículo — ¿quién es más barato? Usa BUSCARV para cada proveedor y MIN para el mejor precio.",
+        "step1": "Introduce en B2: =BUSCARV(A2;Stammdaten!A:D;2;0) para el precio del Proveedor 1",
+        "step2": "Introduce en C2: =BUSCARV(A2;Stammdaten!A:D;3;0) para el precio del Proveedor 2",
+        "step3": "Introduce en D2: =BUSCARV(A2;Stammdaten!A:D;4;0) para el precio del Proveedor 3",
+        "step4": "Calcula el mejor precio en E2: =MIN(B2;C2;D2)",
+        "hint1": "BUSCARV devuelve el valor de una columna específica — índice de columna 2, 3 o 4",
+        "hint2": "MIN(B2;C2;D2) encuentra automáticamente el menor de los tres precios"
+      },
+      "ex2": {
+        "title": "Propuesta de pedido",
+        "story": "Comprueba el stock mediante BUSCARV y decide con SI si hay que hacer un pedido.",
+        "step1": "Obtén el stock con BUSCARV: =BUSCARV(A2;Stammdaten!A:D;3;0) en B2",
+        "step2": "Obtén el stock mínimo: =BUSCARV(A2;Stammdaten!A:D;4;0) en C2",
+        "step3": "Crea la propuesta de pedido: =SI(B2<C2;\"Nachbestellen\";\"OK\") en D2",
+        "step4": "Copia las tres fórmulas para los demás artículos en las filas 3 y 4",
+        "hint1": "Índice de columna 3 = stock, índice de columna 4 = stock mínimo en la tabla de referencia",
+        "hint2": "SI(stock < mínimo) → 'Nachbestellen', de lo contrario → 'OK'"
+      },
+      "ex3": {
+        "title": "Factura completa al cliente",
+        "story": "Crea una factura completa: nombre y precio mediante BUSCARV, precio total con IVA mediante fórmula.",
+        "step1": "Obtén el nombre: =BUSCARV(A2;Stammdaten!A:C;2;0) en B2",
+        "step2": "Obtén el precio: =BUSCARV(A2;Stammdaten!A:C;3;0) en C2",
+        "step3": "Calcula el total con IVA: =C2*D2*(1+$E$1) en F2",
+        "step4": "Copia todas las fórmulas para los demás artículos (filas 3 y 4)",
+        "hint1": "$E$1 fija la celda del IVA — permanece en E1 al copiar",
+        "hint2": "Total = precio × cantidad × (1 + IVA). Con 19% IVA: × 1,19"
+      },
+      "ex4": {
+        "title": "Detección de errores",
+        "story": "¡Algunos números de artículo son incorrectos! Protege tu fórmula con SI.ERROR — los números desconocidos deben mostrar 'Nicht gefunden'.",
+        "step1": "Introduce en B2: =SI.ERROR(BUSCARV(A2;Stammdaten!A:C;2;0);\"Nicht gefunden\")",
+        "step2": "Introduce en C2: =SI.ERROR(BUSCARV(A2;Stammdaten!A:C;3;0);\"Nicht gefunden\")",
+        "step3": "Copia ambas fórmulas a la fila 3 (artículo X-9999 — ¡este no existe!)",
+        "step4": "Copia las fórmulas también a las filas 4 y 5",
+        "hint1": "SI.ERROR(fórmula;valor_error): si BUSCARV no encuentra nada (#N/A), se muestra el valor de error",
+        "hint2": "X-9999 y X-8888 son números inválidos — deben mostrar 'Nicht gefunden'"
+      }
+    },
+    "level3": {
+      "title": "Mes 2: Evaluación de clientes",
+      "story": "En tu segundo mes en Schulz & Partner analizas datos de clientes y tomas decisiones empresariales complejas con SI+Y/O.",
+      "ex1": {
+        "title": "Estado del cliente",
+        "story": "Clasifica a los clientes como Premium o Estándar — pero solo cuando se cumplan AMBOS criterios.",
+        "step1": "Introduce en D2: =SI(Y(B2>5000;C2>3);\"Premium\";\"Standard\")",
+        "step2": "Copia la fórmula para la fila 3: =SI(Y(B3>5000;C3>3);\"Premium\";\"Standard\")",
+        "step3": "Copia la fórmula para la fila 4: =SI(Y(B4>5000;C4>3);\"Premium\";\"Standard\")",
+        "step4": "Copia la fórmula también para las filas 5 y 6",
+        "hint1": "Y() significa: TODAS las condiciones deben cumplirse al mismo tiempo",
+        "hint2": "Premium = ingresos superiores a 5.000 EUR Y más de 3 pedidos"
+      },
+      "ex2": {
+        "title": "Envío exprés",
+        "story": "Determina el método de envío — peso elevado O valor elevado activa la empresa de transporte.",
+        "step1": "Introduce en D2: =SI(O(B2>20;C2>500);\"Spedition\";\"Paket\")",
+        "step2": "Copia la fórmula para la fila 3: =SI(O(B3>20;C3>500);\"Spedition\";\"Paket\")",
+        "step3": "Copia la fórmula para la fila 4: =SI(O(B4>20;C4>500);\"Spedition\";\"Paket\")",
+        "step4": "Copia la fórmula también para las filas 5 y 6",
+        "hint1": "O() significa: AL MENOS UNA condición debe cumplirse",
+        "hint2": "Transporte = más de 20 kg O valor superior a 500 EUR"
+      },
+      "ex3": {
+        "title": "Clase de descuento",
+        "story": "Calcula el porcentaje de descuento para cada cliente — usando funciones SI anidadas para tres niveles.",
+        "step1": "Introduce en C2: =SI(B2>10000;10;SI(B2>5000;5;0))",
+        "step2": "Copia la fórmula para la fila 3: =SI(B3>10000;10;SI(B3>5000;5;0))",
+        "step3": "Copia la fórmula para la fila 4: =SI(B4>10000;10;SI(B4>5000;5;0))",
+        "step4": "Copia la fórmula también para las filas 5 y 6",
+        "hint1": "SI anidado: =SI(condición1;valor1;SI(condición2;valor2;valor3))",
+        "hint2": "Más de 10.000 EUR = 10%, más de 5.000 EUR = 5%, en caso contrario = 0%"
+      },
+      "ex4": {
+        "title": "Evaluación de proveedores",
+        "story": "Evalúa a los proveedores con A, B o C — combina Y y O en fórmulas SI anidadas.",
+        "step1": "Introduce en E2: =SI(Y(B2>=7;C2>=7);\"A\";SI(O(B2>=5;C2>=5);\"B\";\"C\"))",
+        "step2": "Copia la fórmula para la fila 3: =SI(Y(B3>=7;C3>=7);\"A\";SI(O(B3>=5;C3>=5);\"B\";\"C\"))",
+        "step3": "Copia la fórmula para la fila 4: =SI(Y(B4>=7;C4>=7);\"A\";SI(O(B4>=5;C4>=5);\"B\";\"C\"))",
+        "step4": "Copia la fórmula para la fila 5: =SI(Y(B5>=7;C5>=7);\"A\";SI(O(B5>=5;C5>=5);\"B\";\"C\"))",
+        "hint1": "A = Precio Y Calidad ambos >= 7",
+        "hint2": "B = Precio >= 5 O Calidad >= 5 (cuando no hay A). C = ambos por debajo de 5"
+      }
+    },
+    "level4": {
+      "title": "Mes 3: Gestión de inventario",
+      "story": "Mes 3 en Schulz & Partner. Gestionas la base de datos de productos y necesitas encontrar información al instante. ¡Con BUSCARV obtienes exactamente los datos que necesitas!",
+      "ex1": {
+        "title": "Buscar precio del artículo",
+        "story": "El jefe necesita inmediatamente los precios actuales de cuatro artículos. Usa BUSCARV para encontrar los precios en la tabla de datos maestros.",
+        "step1": "Observa la hoja Stammdaten: columna A = número de artículo, B = descripción, C = precio",
+        "step2": "Introduce en B2 la fórmula: =BUSCARV(A2;Stammdaten!A:C;3;0)",
+        "step3": "Copia la fórmula a B3 y B4",
+        "step4": "Completa también B5 — comprueba que los cuatro precios se muestren correctamente",
+        "hint1": "BUSCARV(valor_buscado;rango;columna;0) — el 3 significa: devolver el valor de la 3.ª columna",
+        "hint2": "El 0 al final significa coincidencia exacta. Stammdaten!A:C significa: buscar en la hoja 'Stammdaten'"
+      },
+      "ex2": {
+        "title": "Encontrar proveedor",
+        "story": "Para un nuevo pedido necesitas saber rápidamente qué proveedor suministra cada artículo. Usa BUSCARV sobre la columna de proveedores.",
+        "step1": "Observa la hoja Stammdaten: ahora hay 4 columnas — A = número de artículo, B = descripción, C = precio, D = proveedor",
+        "step2": "Introduce en B2 la fórmula: =BUSCARV(A2;Stammdaten!A:D;4;0)",
+        "step3": "Copia la fórmula a B3 y B4",
+        "step4": "Completa también B5 y comprueba todos los nombres de proveedores",
+        "hint1": "El 4 indica la 4.ª columna del rango de búsqueda — esa es la columna del proveedor",
+        "hint2": "Compara con el ejercicio 1: allí era la columna 3 (precio), aquí es la columna 4 (proveedor)"
+      },
+      "ex3": {
+        "title": "Crear factura",
+        "story": "Estás creando un pedido. Introduce descripción y precio mediante BUSCARV y luego calcula el importe total.",
+        "step1": "Observa la tarea: el número de artículo y la cantidad ya están introducidos. Necesitas descripción, precio y total.",
+        "step2": "Introduce en B2: =BUSCARV(A2;Stammdaten!A:C;2;0) para la descripción",
+        "step3": "Introduce en C2: =BUSCARV(A2;Stammdaten!A:C;3;0) para el precio. Copia ambas fórmulas hacia abajo.",
+        "step4": "Calcula el total: introduce =C2*D2 en E2 y cópialo hacia abajo",
+        "hint1": "Para descripción: columna 2 en BUSCARV. Para precio: columna 3. Ambos del mismo rango.",
+        "hint2": "Total = precio × cantidad. Cuando el precio se calcula con BUSCARV, =C2*D2 funciona igual."
+      },
+      "ex4": {
+        "title": "Determinar ubicación en almacén",
+        "story": "En el almacén necesitas localizar 3 artículos. Usa BUSCARV tres veces por fila — para almacén, estantería y compartimento.",
+        "step1": "Observa Stammdaten: columna C = almacén, D = estantería, E = compartimento",
+        "step2": "Introduce en B2: =BUSCARV(A2;Stammdaten!A:E;3;0) para el almacén",
+        "step3": "Introduce en C2: =BUSCARV(A2;Stammdaten!A:E;4;0) para la estantería, en D2: =BUSCARV(A2;Stammdaten!A:E;5;0) para el compartimento",
+        "step4": "Copia las tres fórmulas para las filas 3 y 4",
+        "hint1": "Almacén = columna 3, estantería = columna 4, compartimento = columna 5 — siempre de Stammdaten!A:E",
+        "hint2": "Las tres fórmulas BUSCARV buscan en la misma tabla — solo cambia el número de columna"
+      }
+    },
+    "level2": {
+      "title": "Tomar decisiones",
+      "story": "Semana 2 en Schulz & Partner. Ahora te encargas de la revisión de facturas. ¡Con la función SI tomas decisiones de forma automática!",
+      "ex1": {
+        "title": "Comprobar estado de pago",
+        "story": "Revisa las facturas abiertas: ¿cuáles ya están pagadas y cuáles siguen pendientes?",
+        "step1": "Observa la tabla: la columna A contiene los números de factura, la columna B el importe pendiente.",
+        "step2": "Escribe la fórmula en C2: =SI(B2=0;\"pagado\";\"pendiente\")",
+        "step3": "Copia la fórmula para las facturas C3 a C5",
+        "step4": "Comprueba C6: introduce también allí la fórmula SI",
+        "hint1": "SI evalúa una condición: SI(condición;entonces;si_no). Si el importe es 0, la factura está pagada.",
+        "hint2": "Copia la fórmula hacia abajo: haz clic en C2 y arrastra el pequeño cuadrado de la esquina hacia abajo."
+      },
+      "ex2": {
+        "title": "Calcular descuento por pronto pago",
+        "story": "Schulz & Partner concede un descuento del 2% si el pago se realiza dentro de 10 días. ¡Calcula el importe del descuento!",
+        "step1": "Observa la tabla: la columna B muestra el importe de la factura, la columna C los días hasta el pago.",
+        "step2": "Escribe la fórmula en D2: =SI(C2<=10;B2*0,02;0)",
+        "step3": "Copia la fórmula para las filas D3 a D5",
+        "step4": "Completa también la fórmula en D6",
+        "hint1": "El descuento por pronto pago solo se aplica si el pago se realiza dentro de 10 días. De lo contrario el descuento es 0.",
+        "hint2": "B2*0,02 equivale al 2% de B2. La coma es aquí el separador decimal."
+      },
+      "ex3": {
+        "title": "Alerta de stock",
+        "story": "Hay que vigilar el inventario. ¡Los artículos con menos de 10 unidades deben reponerse!",
+        "step1": "Observa la tabla: la columna A contiene los artículos, la columna B el stock actual.",
+        "step2": "Escribe la fórmula en C2: =SI(B2<10;\"Reponer\";\"OK\")",
+        "step3": "Copia la fórmula para C3 a C5",
+        "step4": "Completa también C6 con la fórmula SI",
+        "hint1": "El operador de comparación < significa 'menor que'. Si stock < 10 hay que reponer el artículo.",
+        "hint2": "Los textos en fórmulas se escriben entre comillas: \"Reponer\" y \"OK\"."
+      },
+      "ex4": {
+        "title": "Calcular gastos de envío",
+        "story": "Los pedidos superiores a 100 EUR tienen envío gratuito. Por debajo de 100 EUR el envío cuesta 5,99 EUR.",
+        "step1": "Observa la tabla: la columna A son los números de pedido, la columna B el valor del pedido.",
+        "step2": "Escribe la fórmula en C2: =SI(B2>100;0;5,99)",
+        "step3": "Copia la fórmula para C3 a C5",
+        "step4": "Completa también C6 con la fórmula SI",
+        "hint1": "El operador de comparación > significa 'mayor que'. Más de 100 EUR = envío gratuito (0).",
+        "hint2": "La función SI devuelve aquí números, no textos. Por eso no se usan comillas."
+      }
+    },
+    "level8": {
+      "title": "Cierre anual: tu tienda crece",
+      "story": "¡El año ha terminado! Combina todo lo aprendido para el informe anual de tu tienda — BUSCARV, SUMAR.SI, formato condicional y gráficos.",
+      "ex1": {
+        "title": "Tramitación de pedidos",
+        "story": "Crea un pedido completo: obtén el nombre y el precio con BUSCARV del catálogo y calcula subtotal, descuento e importe total.",
+        "step1": "Introduce la fórmula BUSCARV para el nombre en B2: =BUSCARV(A2;Stammdaten!A:C;2;0) y para el precio en C2: =BUSCARV(A2;Stammdaten!A:C;3;0)",
+        "step2": "Calcula el subtotal en E2: =C2*D2 (precio por cantidad)",
+        "step3": "Calcula el descuento en F2: =SI(E2>100;E2*0,05;0) — 5% de descuento para pedidos superiores a 100 EUR",
+        "step4": "Calcula el total en G2: =E2-F2 (subtotal menos descuento)",
+        "hint1": "BUSCARV obtiene el nombre (columna 2) y el precio (columna 3) de la hoja Stammdaten",
+        "hint2": "Descuento: solo si subtotal > 100 EUR → 5% del importe, de lo contrario 0"
+      },
+      "ex2": {
+        "title": "Análisis trimestral",
+        "story": "Analiza los datos de ventas de tu tienda por producto — calcula los ingresos totales por producto con SUMAR.SI y cuenta los trimestres con CONTAR.SI.",
+        "step1": "Calcula los ingresos totales del Laptop en B16: =SUMAR.SI(A2:A13;\"Laptop\";C2:C13)",
+        "step2": "Calcula los ingresos de Tastatur en B17: =SUMAR.SI(A2:A13;\"Tastatur\";C2:C13) y del Headset en B18",
+        "step3": "Cuenta los trimestres del Laptop en C16: =CONTAR.SI(A2:A13;\"Laptop\")",
+        "step4": "Crea un gráfico de barras con el asistente: datos B16:B18, etiquetas A16:A18",
+        "hint1": "SUMAR.SI(A2:A13;\"Laptop\";C2:C13) suma todos los ingresos en la columna C donde A = 'Laptop'",
+        "hint2": "Laptop total: 58.500 EUR, Tastatur: 13.700 EUR, Headset: 24.600 EUR"
+      },
+      "ex3": {
+        "title": "Evaluación completa de proveedores",
+        "story": "Obtén las puntuaciones con BUSCARV de Stammdaten y asigna automáticamente la nota A, B o C con SI+Y. Colorea los proveedores A en verde y los C en rojo.",
+        "step1": "Obtén la puntuación de precio (B2), calidad (C2) y entrega (D2) con BUSCARV: =BUSCARV(A2;Stammdaten!A:D;2;0)",
+        "step2": "Asigna la evaluación en E2: =SI(Y(B2>=7;C2>=7);\"A\";SI(O(B2>=5;C2>=5);\"B\";\"C\"))",
+        "step3": "Copia todas las fórmulas para las filas 3 a 5",
+        "step4": "Crea formato condicional: A = verde (#00B050), C = rojo (#FF0000)",
+        "hint1": "Nota A: puntuación de precio Y calidad ambas >= 7. Nota B: al menos una >= 5. C = ambas bajo 5",
+        "hint2": "Alpha GmbH (8/9): nota A — verde. Gamma AG (3/4): nota C — rojo. Beta KG (6/5): nota B"
+      },
+      "ex4": {
+        "title": "Informe anual",
+        "story": "Crea el informe anual de tu tienda: calcula los ingresos totales, la media mensual, el mejor y el peor mes — y visualiza la tendencia como gráfico de líneas.",
+        "step1": "Calcula los ingresos anuales en B15: =SUMA(B2:B13)",
+        "step2": "Calcula la media mensual en B16: =PROMEDIO(B2:B13)",
+        "step3": "Calcula el mejor mes en B17: =MAX(B2:B13) y el peor en B18: =MIN(B2:B13)",
+        "step4": "Crea un gráfico de líneas: datos B2:B13, etiquetas A2:A13 — muestra la tendencia anual",
+        "hint1": "SUMA, PROMEDIO, MAX, MIN — ¡ya conoces las cuatro! Ahora las combinas en un informe",
+        "hint2": "Ingresos anuales: 287.200 EUR, media: aprox. 23.933 EUR, mejor mes: diciembre (35.600 EUR)"
+      }
+    }
+  },
+  "chart": {
+    "title": "Crear gráfico",
+    "selectType": "Seleccionar tipo de gráfico",
+    "bar": "Gráfico de barras",
+    "line": "Gráfico de líneas",
+    "pie": "Gráfico circular",
+    "dataRange": "Rango de datos (p.ej. B2:B6)",
+    "labelRange": "Etiquetas (p.ej. A2:A6)",
+    "chartTitle": "Título",
+    "preview": "Vista previa",
+    "finish": "Listo",
+    "back": "Atrás",
+    "next": "Siguiente"
+  },
+  "condFormat": {
+    "title": "Formato Condicional",
+    "addRule": "Añadir regla",
+    "apply": "Aplicar",
+    "greaterThan": "mayor que",
+    "lessThan": "menor que",
+    "equals": "igual a",
+    "colorGreen": "Verde",
+    "colorRed": "Rojo",
+    "colorYellow": "Amarillo"
+  }
+}

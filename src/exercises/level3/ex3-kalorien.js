@@ -1,5 +1,6 @@
 export default {
-  id: 'L3-EX3',
+  id: 'A-L3-EX3',
+  trackId: 'avm',
   levelId: 3,
   order: 3,
   titleKey: 'level3.ex3.title',

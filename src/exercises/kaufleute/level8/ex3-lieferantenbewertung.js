@@ -1,0 +1,127 @@
+export default {
+  id: 'K-L8-EX3',
+  trackId: 'kaufleute',
+  levelId: 8,
+  order: 3,
+  titleKey: 'kaufleute.level8.ex3.title',
+  storyKey: 'kaufleute.level8.ex3.story',
+  steps: [
+    'kaufleute.level8.ex3.step1',
+    'kaufleute.level8.ex3.step2',
+    'kaufleute.level8.ex3.step3',
+    'kaufleute.level8.ex3.step4',
+  ],
+  hints: ['kaufleute.level8.ex3.hint1', 'kaufleute.level8.ex3.hint2'],
+  initialData: [
+    {
+      name: 'Aufgabe',
+      order: 0,
+      row: 10,
+      column: 7,
+      celldata: [
+        // Headers
+        { r: 0, c: 0, v: { v: 'Lieferant', m: 'Lieferant', ct: { fa: 'General', t: 's' }, bl: 1 } },
+        { r: 0, c: 1, v: { v: 'Preis-Score', m: 'Preis-Score', ct: { fa: 'General', t: 's' }, bl: 1 } },
+        { r: 0, c: 2, v: { v: 'Qualitaet', m: 'Qualitaet', ct: { fa: 'General', t: 's' }, bl: 1 } },
+        { r: 0, c: 3, v: { v: 'Lieferung', m: 'Lieferung', ct: { fa: 'General', t: 's' }, bl: 1 } },
+        { r: 0, c: 4, v: { v: 'Bewertung', m: 'Bewertung', ct: { fa: 'General', t: 's' }, bl: 1 } },
+        // Supplier names (pre-filled)
+        { r: 1, c: 0, v: { v: 'Alpha GmbH', m: 'Alpha GmbH', ct: { fa: 'General', t: 's' } } },
+        { r: 2, c: 0, v: { v: 'Beta KG', m: 'Beta KG', ct: { fa: 'General', t: 's' } } },
+        { r: 3, c: 0, v: { v: 'Gamma AG', m: 'Gamma AG', ct: { fa: 'General', t: 's' } } },
+        { r: 4, c: 0, v: { v: 'Delta OHG', m: 'Delta OHG', ct: { fa: 'General', t: 's' } } },
+      ],
+      config: { columnlen: { 0: 120, 1: 110, 2: 100, 3: 100, 4: 100 } },
+    },
+    {
+      name: 'Stammdaten',
+      order: 1,
+      row: 10,
+      column: 4,
+      celldata: [
+        // Headers
+        { r: 0, c: 0, v: { v: 'Lieferant', m: 'Lieferant', ct: { fa: 'General', t: 's' }, bl: 1 } },
+        { r: 0, c: 1, v: { v: 'Preis-Score', m: 'Preis-Score', ct: { fa: 'General', t: 's' }, bl: 1 } },
+        { r: 0, c: 2, v: { v: 'Qualitaet', m: 'Qualitaet', ct: { fa: 'General', t: 's' }, bl: 1 } },
+        { r: 0, c: 3, v: { v: 'Lieferung', m: 'Lieferung', ct: { fa: 'General', t: 's' }, bl: 1 } },
+        // Supplier data
+        { r: 1, c: 0, v: { v: 'Alpha GmbH', m: 'Alpha GmbH', ct: { fa: 'General', t: 's' } } },
+        { r: 1, c: 1, v: { v: 8, m: '8', ct: { fa: 'General', t: 'n' } } },
+        { r: 1, c: 2, v: { v: 9, m: '9', ct: { fa: 'General', t: 'n' } } },
+        { r: 1, c: 3, v: { v: 7, m: '7', ct: { fa: 'General', t: 'n' } } },
+        { r: 2, c: 0, v: { v: 'Beta KG', m: 'Beta KG', ct: { fa: 'General', t: 's' } } },
+        { r: 2, c: 1, v: { v: 6, m: '6', ct: { fa: 'General', t: 'n' } } },
+        { r: 2, c: 2, v: { v: 5, m: '5', ct: { fa: 'General', t: 'n' } } },
+        { r: 2, c: 3, v: { v: 8, m: '8', ct: { fa: 'General', t: 'n' } } },
+        { r: 3, c: 0, v: { v: 'Gamma AG', m: 'Gamma AG', ct: { fa: 'General', t: 's' } } },
+        { r: 3, c: 1, v: { v: 3, m: '3', ct: { fa: 'General', t: 'n' } } },
+        { r: 3, c: 2, v: { v: 4, m: '4', ct: { fa: 'General', t: 'n' } } },
+        { r: 3, c: 3, v: { v: 4, m: '4', ct: { fa: 'General', t: 'n' } } },
+        { r: 4, c: 0, v: { v: 'Delta OHG', m: 'Delta OHG', ct: { fa: 'General', t: 's' } } },
+        { r: 4, c: 1, v: { v: 7, m: '7', ct: { fa: 'General', t: 'n' } } },
+        { r: 4, c: 2, v: { v: 8, m: '8', ct: { fa: 'General', t: 'n' } } },
+        { r: 4, c: 3, v: { v: 9, m: '9', ct: { fa: 'General', t: 'n' } } },
+      ],
+      config: { columnlen: { 0: 120, 1: 110, 2: 100, 3: 100 } },
+    },
+  ],
+  lockedCells: [
+    { r: 0, c: 0 }, { r: 0, c: 1 }, { r: 0, c: 2 }, { r: 0, c: 3 }, { r: 0, c: 4 },
+    { r: 1, c: 0 }, { r: 2, c: 0 }, { r: 3, c: 0 }, { r: 4, c: 0 },
+  ],
+  ui: { showToolbar: false, showFormulaBar: true, showSheetTabs: true },
+  xp: { base: 75, bonus: 28 },
+  validations: [
+    {
+      type: 'cellFormulaAny',
+      cell: { r: 1, c: 1 },
+      expected: [
+        'VLOOKUP(A2,Stammdaten!A:D,2,0)',
+        'VLOOKUP(A2,Stammdaten!$A:$D,2,0)',
+        'VLOOKUP(A2,Stammdaten!A:D,2,FALSE)',
+        'VLOOKUP(A2,Stammdaten!$A:$D,2,FALSE)',
+      ],
+      stepIndex: 0,
+    },
+    {
+      type: 'cellFormulaAny',
+      cell: { r: 1, c: 2 },
+      expected: [
+        'VLOOKUP(A2,Stammdaten!A:D,3,0)',
+        'VLOOKUP(A2,Stammdaten!$A:$D,3,0)',
+        'VLOOKUP(A2,Stammdaten!A:D,3,FALSE)',
+        'VLOOKUP(A2,Stammdaten!$A:$D,3,FALSE)',
+      ],
+      stepIndex: 0,
+    },
+    {
+      type: 'cellFormulaAny',
+      cell: { r: 1, c: 3 },
+      expected: [
+        'VLOOKUP(A2,Stammdaten!A:D,4,0)',
+        'VLOOKUP(A2,Stammdaten!$A:$D,4,0)',
+        'VLOOKUP(A2,Stammdaten!A:D,4,FALSE)',
+        'VLOOKUP(A2,Stammdaten!$A:$D,4,FALSE)',
+      ],
+      stepIndex: 0,
+    },
+    {
+      type: 'cellFormulaAny',
+      cell: { r: 1, c: 4 },
+      expected: [
+        'IF(AND(B2>=7,C2>=7,D2>=7),"A",IF(AND(B2>=5,C2>=5,D2>=5),"B","C"))',
+        'IF(AND(B2>=7,C2>=7),"A",IF(OR(B2>=5,C2>=5),"B","C"))',
+        'IF(AND(B2>=7,C2>=7,D2>=7),"A",IF(OR(B2>=5,C2>=5,D2>=5),"B","C"))',
+      ],
+      stepIndex: 1,
+    },
+    {
+      type: 'conditionalFormat',
+      rules: [
+        { operator: 'equals', value: 'A', color: '#00B050' },
+        { operator: 'equals', value: 'C', color: '#FF0000' },
+      ],
+      stepIndex: 3,
+    },
+  ],
+};

@@ -1,0 +1,771 @@
+{
+  "app": {
+    "title": "Excel Trainer",
+    "subtitle": "First Own Apartment"
+  },
+  "audio": {
+    "levelIntro": "Level Introduction",
+    "exerciseIntro": "Exercise Introduction"
+  },
+  "nav": {
+    "levels": "Level Map",
+    "badges": "Badges",
+    "glossary": "Glossary",
+    "profile": "Profile"
+  },
+  "playerLevel": {
+    "avm": {
+      "1": "Beginner",
+      "2": "Explorer",
+      "3": "Table Expert",
+      "4": "Formula Pro",
+      "5": "Excel Hero"
+    },
+    "kaufleute": {
+      "1": "Intern",
+      "2": "Clerk",
+      "3": "Specialist",
+      "4": "Department Head",
+      "5": "CEO"
+    }
+  },
+  "trackSelect": {
+    "title": "Choose your track",
+    "avm": {
+      "title": "First Own Apartment",
+      "desc": "Learn Excel basics with everyday tasks"
+    },
+    "kaufleute": {
+      "title": "Wholesale Commerce",
+      "desc": "Professional Excel for business apprentices"
+    }
+  },
+  "common": {
+    "back": "Back",
+    "next": "Next",
+    "check": "Check",
+    "hint": "Hint",
+    "stars": "Stars",
+    "xp": "XP",
+    "level": "Level",
+    "locked": "Locked",
+    "completed": "Completed",
+    "streak": "Streak",
+    "day": "Day",
+    "days": "Days",
+    "errors": "Errors",
+    "perfect": "Perfect!",
+    "tryAgain": "Try Again",
+    "start": "Start",
+    "close": "Close",
+    "name": "Name",
+    "save": "Save",
+    "reset": "Reset Progress",
+    "yes": "Yes, continue!",
+    "no": "Never mind"
+  },
+  "levelMap": {
+    "title": "Your Path to Excel Pro",
+    "exercise": "Exercise"
+  },
+  "exercise": {
+    "step": "Step",
+    "instructions": "Instructions",
+    "checkAnswer": "Check Answer",
+    "stepComplete": "Step complete!",
+    "allComplete": "All steps complete!",
+    "hintAvailable": "Hint available",
+    "skip": "Skip",
+    "skipConfirm": "Really skip? You can try again later!",
+    "skipped": "Skipped",
+    "formulaHint": "SUM = SUMME, AVERAGE = MITTELWERT — both work!"
+  },
+  "complete": {
+    "title": "Done!",
+    "xpEarned": "+{xp} XP earned",
+    "newBadge": "New Badge!",
+    "nextExercise": "Next Exercise",
+    "backToMap": "Back to Map"
+  },
+  "badges": {
+    "title": "Badge Wall",
+    "earned": "Earned",
+    "locked": "Not yet unlocked"
+  },
+  "badge": {
+    "firstCell": "First Cell",
+    "firstFormula": "First Formula",
+    "shoppingDone": "Shopping Done",
+    "alltagDone": "Daily Life Organized",
+    "cookingMaster": "Kitchen Master",
+    "financePro": "Finance Pro",
+    "travelExpert": "Travel Expert",
+    "proComplete": "Excel Pro",
+    "sumMaster": "Sum Master",
+    "streak3": "3-Day Streak",
+    "perfectScore": "Perfect Score",
+    "speedDemon": "Speed Demon",
+    "polyglot": "Multilingual",
+    "referenzMeister": "Reference Master",
+    "entscheider": "Decision Maker",
+    "sverweisMeister": "VLOOKUP Master",
+    "datenProfi": "Data Pro",
+    "visualisierer": "Visualizer",
+    "chartCreator": "Chart Creator",
+    "geschaeftsfuehrer": "CEO",
+    "kaufmannKomplett": "Commerce Complete"
+  },
+  "profile": {
+    "title": "My Profile",
+    "chooseAvatar": "Choose Avatar",
+    "enterName": "Your Name"
+  },
+  "glossary": {
+    "title": "Excel Glossary",
+    "term": "Term",
+    "german": "Deutsch",
+    "english": "English",
+    "description": "Description"
+  },
+  "level1": {
+    "title": "Shopping",
+    "story": "You are moving into your first apartment! First you need a shopping list. Let's use Excel!",
+    "ex1": {
+      "title": "Shopping List",
+      "story": "Write your first shopping list in a spreadsheet.",
+      "step1": "Write 'Rice' in cell A2",
+      "step2": "Write 'Pasta' in cell A3",
+      "step3": "Write 'Oil' in cell A4",
+      "step4": "Write 'Salt' in cell A5",
+      "hint1": "Click on cell A2 and type 'Rice'",
+      "hint2": "Cells are like a grid – A is the column, 2 is the row"
+    },
+    "ex2": {
+      "title": "Enter Prices",
+      "story": "Now let's enter the prices next to the items.",
+      "step1": "Enter the price 1.99 in cell B2",
+      "step2": "Enter the price 0.89 in cell B3",
+      "step3": "Enter the price 2.49 in cell B4",
+      "step4": "Enter the price 0.59 in cell B5",
+      "hint1": "Click on B2 and type the number 1.99",
+      "hint2": "Use a period as decimal separator (e.g. 1.99)"
+    },
+    "ex3": {
+      "title": "Calculate Sum",
+      "story": "How much does everything cost? Use your first formula!",
+      "step1": "Write 'Total' in cell A6",
+      "step2": "Write the formula =SUM(B2:B5) in cell B6",
+      "hint1": "A formula always starts with an equals sign =",
+      "hint2": "SUM() adds all numbers in the range. B2:B5 means from B2 to B5."
+    },
+    "ex4": {
+      "title": "Check Budget",
+      "story": "You have 10 euros. Is that enough?",
+      "step1": "Write 'Budget' in cell A8",
+      "step2": "Write 10 in cell B8",
+      "step3": "Write 'Remaining' in cell A9",
+      "step4": "Write the formula =B8-B6 in cell B9",
+      "hint1": "B8 is your budget, B6 is the sum of your purchases",
+      "hint2": "Start a formula with =. The minus sign - subtracts."
+    }
+  },
+  "level2": {
+    "title": "My Daily Life",
+    "story": "Your first week in the new apartment! Organize your daily life with Excel.",
+    "ex1": {
+      "title": "Weekly Planner",
+      "story": "Plan your first week in the new apartment.",
+      "step1": "Write 'Monday' in cell A2",
+      "step2": "Write 'Tuesday' in cell A3",
+      "step3": "Write 'Wednesday' in cell A4",
+      "step4": "Enter an activity for Monday in B2",
+      "hint1": "Click on A2 and type 'Monday'",
+      "hint2": "Column B holds your activities"
+    },
+    "ex2": {
+      "title": "Price Comparison",
+      "story": "Compare prices from two supermarkets.",
+      "step1": "Enter the Aldi price 1.29 in cell B2",
+      "step2": "Enter the Rewe price 1.59 in cell C2",
+      "step3": "Enter the Aldi price 0.79 in cell B3",
+      "step4": "Enter the Rewe price 0.99 in cell C3",
+      "hint1": "Column B is for Aldi, column C is for Rewe",
+      "hint2": "Look carefully which store is cheaper!"
+    },
+    "ex3": {
+      "title": "Monthly Expenses",
+      "story": "Keep track of your monthly expenses.",
+      "step1": "Enter 350 for rent in cell B2",
+      "step2": "Enter 150 for food in cell B3",
+      "step3": "Enter 30 for phone in cell B4",
+      "step4": "Calculate the sum with =SUM(B2:B5) in cell B6",
+      "hint1": "These numbers are your monthly costs in euros",
+      "hint2": "SUM automatically adds all values in the range"
+    },
+    "ex4": {
+      "title": "Calculate Average",
+      "story": "What is your average spending per category?",
+      "step1": "Enter 45 in cell B2 (Week 1)",
+      "step2": "Enter 52 in cell B3 (Week 2)",
+      "step3": "Enter 38 in cell B4 (Week 3)",
+      "step4": "Calculate the average with =AVERAGE(B2:B4) in cell B6",
+      "hint1": "AVERAGE calculates the mean of all numbers",
+      "hint2": "The average is the sum divided by the count"
+    }
+  },
+  "level3": {
+    "title": "Cooking & Recipes",
+    "story": "You are cooking for yourself now! Plan recipes, shopping and calories with Excel.",
+    "ex1": {
+      "title": "Scale a Recipe",
+      "story": "A recipe is for 2 people. But you have 4 guests! Scale the quantities.",
+      "step1": "Enter the quantities: 200g pasta (B2), 100g cheese (B3), 2 eggs (B4), 150ml cream (B5)",
+      "step2": "Enter the factor 2 in cell C2 (for double quantity)",
+      "step3": "Calculate the new quantity for pasta: =B2*C2 in cell D2",
+      "step4": "Calculate also cheese (D3), eggs (D4) and cream (D5) with the same formula",
+      "hint1": "The asterisk * is the multiplication sign in Excel",
+      "hint2": "Copy the formula: D3 needs =B3*C3, D4 needs =B4*C4"
+    },
+    "ex2": {
+      "title": "Weekly Menu",
+      "story": "Plan your meals for the week and calculate the costs per day.",
+      "step1": "Enter Monday's costs: Breakfast 2 (B2), Lunch 5 (C2), Dinner 4 (D2)",
+      "step2": "Calculate the daily costs for Monday: =SUM(B2:D2) in cell E2",
+      "step3": "Enter Tuesday's costs and calculate daily costs (E3)",
+      "step4": "Calculate weekly costs: =SUM(E2:E6) in cell E8",
+      "hint1": "Each row is a day, each column is a meal",
+      "hint2": "SUM(B2:D2) adds all meals for one day"
+    },
+    "ex3": {
+      "title": "Calorie Tracker",
+      "story": "Count your calories for a day and compare with your daily goal.",
+      "step1": "Enter the calories: Breakfast 400 (B2), Lunch 600 (B3), Dinner 500 (B4), Snacks 200 (B5)",
+      "step2": "Calculate total calories: =SUM(B2:B5) in cell B7",
+      "step3": "Enter your daily goal 2000 in cell B8",
+      "step4": "Calculate remaining calories: =B8-B7 in cell B9",
+      "hint1": "SUM adds all calories for the day",
+      "hint2": "Remaining = goal minus consumed"
+    },
+    "ex4": {
+      "title": "Recipe Shopping",
+      "story": "Calculate the costs for all ingredients of your favorite recipe.",
+      "step1": "Enter price and quantity: Chicken 6.99 (B2), 1 piece (C2)",
+      "step2": "Calculate total price for chicken: =B2*C2 in cell D2",
+      "step3": "Calculate also rice (D3), vegetables (D4) and spices (D5)",
+      "step4": "Calculate shopping total: =SUM(D2:D5) in cell D7",
+      "hint1": "Total price = price per piece times quantity",
+      "hint2": "Use a period as decimal separator (e.g. 6.99)"
+    }
+  },
+  "level4": {
+    "title": "Shared Apartment & Finances",
+    "story": "You now live in a shared apartment! Split costs, plan savings and keep track.",
+    "ex1": {
+      "title": "Split Utility Bills",
+      "story": "The utility bills need to be split fairly between 2 roommates.",
+      "step1": "Enter the costs: Electricity 80 (B2), Water 40 (B3), Internet 30 (B4)",
+      "step2": "Calculate each person's share for electricity: =B2/2 in cell C2",
+      "step3": "Calculate also water (C3) and internet (C4) per person",
+      "step4": "Calculate total per person: =SUM(C2:C4) in cell C6",
+      "hint1": "The slash / is the division sign in Excel",
+      "hint2": "Each person pays half: amount divided by 2"
+    },
+    "ex2": {
+      "title": "Savings Plan",
+      "story": "You want to save 600 for a new bicycle. Create a savings plan!",
+      "step1": "Enter: Savings goal 600 (B2), Monthly rate 50 (B3)",
+      "step2": "Calculate the duration in months: =B2/B3 in cell B4",
+      "step3": "Enter what you have already saved: Months 1-3 at 50 each (B7, B8, B9)",
+      "step4": "Calculate Total saved =SUM(B7:B9) in B10, Remaining =B2-B10 in B11",
+      "hint1": "Duration = savings goal divided by monthly rate",
+      "hint2": "Remaining = savings goal minus already saved"
+    },
+    "ex3": {
+      "title": "Calculate Discount",
+      "story": "The furniture store has a sale! Calculate the final prices after discount.",
+      "step1": "Enter prices and discounts: Lamp 40 (B2), 20% discount (C2)",
+      "step2": "Calculate the savings for the lamp: =B2*C2/100 in cell D2",
+      "step3": "Calculate the final price: =B2-D2 in cell E2. Do the same for carpet and shelf.",
+      "step4": "Calculate total final price: =SUM(E2:E4) in cell E6",
+      "hint1": "Savings = price times discount divided by 100",
+      "hint2": "Final price = original price minus savings"
+    },
+    "ex4": {
+      "title": "Monthly Overview",
+      "story": "Create a complete monthly overview with income, expenses and balance.",
+      "step1": "Enter your income: Training allowance 800 (B2), Child benefit 250 (B3)",
+      "step2": "Calculate Total income =SUM(B2:B3) in B4, Total expenses =SUM(B7:B10) in B11",
+      "step3": "Calculate the balance (income minus expenses): =B4-B11 in cell B13",
+      "step4": "Find the highest expense =MAX(B7:B10) in B14 and the lowest =MIN(B7:B10) in B15",
+      "hint1": "MAX finds the largest value, MIN the smallest",
+      "hint2": "Balance = what comes in minus what goes out"
+    }
+  },
+  "level5": {
+    "title": "Class Trip",
+    "story": "Your class is planning a class trip! Calculate costs, distribute rooms and settle accounts at the end.",
+    "ex1": {
+      "title": "Travel Costs",
+      "story": "Calculate the total costs of the class trip for 25 students.",
+      "step1": "Enter the participant count 25 in all quantity cells (C2 to C5)",
+      "step2": "Calculate total costs for bus: =B2*C2 in cell D2",
+      "step3": "Calculate also accommodation (D3), meals (D4) and museum (D5)",
+      "step4": "Total costs =SUM(D2:D5) in D7, cost per person =D7/C2 in D8",
+      "hint1": "Total cost = price per person times number of participants",
+      "hint2": "Cost per person = total costs divided by number of participants"
+    },
+    "ex2": {
+      "title": "Pocket Money",
+      "story": "You have 60 euros pocket money for 5 days. Keep track!",
+      "step1": "Enter your daily expenses: Mon 8, Tue 12, Wed 5, Thu 15, Fri 10 (B2 to B6)",
+      "step2": "Calculate total expenses: =SUM(B2:B6) in cell B8",
+      "step3": "Calculate daily average: =AVERAGE(B2:B6) in cell B9",
+      "step4": "Enter budget 60 in B11, calculate remaining =B11-B8 in B12, percentage =B8/B11*100 in B13",
+      "hint1": "AVERAGE calculates the mean across all days",
+      "hint2": "Percentage spent = expenses divided by budget times 100"
+    },
+    "ex3": {
+      "title": "Room Distribution",
+      "story": "Distribute the class across different room types and calculate the costs.",
+      "step1": "Enter: 3 nights (C2-C4), 2 single rooms (D2), 5 double rooms (D3), 3 triple rooms (D4)",
+      "step2": "Calculate costs for single rooms: =B2*C2*D2 in cell E2",
+      "step3": "Calculate also double rooms (E3) and triple rooms (E4)",
+      "step4": "Total rooms =SUM(D2:D4) in E6, total costs =SUM(E2:E4) in E7, avg costs =E7/E6 in E8, cheapest =MIN(B2:B4) in E9",
+      "hint1": "Cost = price per night times nights times number of rooms",
+      "hint2": "Average cost = total costs divided by number of rooms"
+    },
+    "ex4": {
+      "title": "Settlement",
+      "story": "After the trip: who paid how much? Calculate the differences.",
+      "step1": "Enter how much each person paid: Anna 120, Ben 45, Clara 80, David 55 (B2-B5)",
+      "step2": "Calculate Total =SUM(B2:B5) in B7, fair share =B7/4 in B8",
+      "step3": "Enter the fair share =B$8 in C2, calculate difference =B2-C2 in D2 (also for B3-B5)",
+      "step4": "Highest contribution =MAX(B2:B5) in B10, lowest =MIN(B2:B5) in B11, range =B10-B11 in B12",
+      "hint1": "Positive = gets money back, negative = still needs to pay",
+      "hint2": "Range = highest minus lowest contribution"
+    }
+  },
+  "level6": {
+    "title": "Pro Spreadsheets",
+    "story": "You are almost an Excel pro! Solve complex tasks with nested formulas and percentage calculations.",
+    "ex1": {
+      "title": "Grade Calculator",
+      "story": "Calculate your grade average and analyze your performance.",
+      "step1": "Enter grades and scores: Math 2/85%, German 3/72%, English 1/91%, Business 3/68%, IT 2/80%",
+      "step2": "Calculate grade average: =AVERAGE(B2:B6) in B8",
+      "step3": "Best grade =MIN(B2:B6) in B9, worst =MAX(B2:B6) in B10, range =B10-B9 in B11",
+      "step4": "Calculate avg score =AVERAGE(C2:C6) in C13, max score =MAX(C2:C6) in C14",
+      "hint1": "For grades, MIN is best (1) and MAX is worst (6)",
+      "hint2": "The grade range shows how varied your performance is"
+    },
+    "ex2": {
+      "title": "Salary Calculator",
+      "story": "Calculate your wages as a trainee – from hourly rate to net pay.",
+      "step1": "Enter: Hourly rate 12.50 (B2), Hours/week 20 (B3)",
+      "step2": "Calculate weekly wage =B2*B3 in B6, monthly wage =B6*B4 in B7",
+      "step3": "Calculate annual wage =B7*12 in B8, social contributions =B7*0.2 in B10, net =B7-B10 in B11",
+      "step4": "Calculate net/day =B11/22 in B13 (22 working days), net/hour =B11/B3/B4 in B14",
+      "hint1": "Weeks/month (B4) is already entered: 4",
+      "hint2": "Net = gross minus deductions. 22 working days per month is standard."
+    },
+    "ex3": {
+      "title": "Inventory",
+      "story": "Take inventory for your small online shop. Calculate values and profits.",
+      "step1": "Enter: T-Shirts cost 8/price 20/50 pcs, Caps 5/15/30, Mugs 3/10/80, Stickers 1/5/200",
+      "step2": "Calculate profit per piece: =C2-B2 in E2, likewise for all products",
+      "step3": "Total stock =SUM(D2:D5) in D7, avg profit =AVERAGE(E2:E5) in E8, best profit =MAX(E2:E5) in E9",
+      "step4": "Inventory value cost =SUM(B2*D2,B3*D3,B4*D4,B5*D5) in E11, sales price analog in E12, potential profit =E12-E11 in E13",
+      "hint1": "Profit per piece = selling price minus purchase price",
+      "hint2": "Inventory value = sum of (price times stock) for each product"
+    },
+    "ex4": {
+      "title": "Year Comparison",
+      "story": "Compare this year's revenue with last year – per quarter and total.",
+      "step1": "Enter this year's revenue: Q1 1400, Q2 1650, Q3 1900, Q4 2200 (C2-C5)",
+      "step2": "Calculate the difference per quarter: =C2-B2 in D2, for all quarters",
+      "step3": "Calculate the percentage change: =D2/B2*100 in E2, for all quarters",
+      "step4": "Annual total last year =SUM(B2:B5) in B7, this year =SUM(C2:C5) in C7, avg quarter =AVERAGE(C2:C5) in C8, best quarter =MAX(C2:C5) in C9, total difference =C7-B7 in D12, total growth =D12/B7*100 in E12",
+      "hint1": "Percentage change = difference divided by last year's value times 100",
+      "hint2": "A positive value means growth, a negative value means decline"
+    }
+  },
+  "kaufleute": {
+    "level1": {
+      "title": "Mastering Cell References",
+      "story": "Internship Day 1 at Schulz & Partner GmbH – a wholesale office supply company. Your task: update the price list using absolute cell references.",
+      "ex1": {
+        "title": "Calculate VAT",
+        "story": "You need to calculate the gross prices for all items. The VAT factor 1.19 is stored in cell C1 and applies to all products.",
+        "step1": "Enter the formula =B2*$C$1 in cell D2 to calculate the gross price for the folder",
+        "step2": "Copy the formula to D3 – note: $C$1 stays fixed, B3 adjusts automatically",
+        "step3": "Calculate the gross prices for pens (D4) and glue (D5) as well",
+        "step4": "Verify: all formulas in D2:D5 must reference $C$1",
+        "hint1": "The dollar sign $ makes a reference absolute – it does not change when copied",
+        "hint2": "=B2*$C$1 means: net price from B2 times the fixed VAT factor from C1"
+      },
+      "ex2": {
+        "title": "Currency Conversion",
+        "story": "A US customer wants to see prices in USD. The EUR/USD exchange rate is stored in cell E1.",
+        "step1": "Enter the formula =B2*$E$1 in cell C2 to calculate the USD price for copy paper",
+        "step2": "Copy the formula to C3 – the exchange rate in $E$1 stays fixed",
+        "step3": "Calculate the USD prices for the printer (C4) and laptop (C5) as well",
+        "step4": "Verify: all formulas in C2:C5 must use $E$1 as the fixed exchange rate",
+        "hint1": "$E$1 locks both column E and row 1 – the reference never changes",
+        "hint2": "USD price = EUR price multiplied by the exchange rate"
+      },
+      "ex3": {
+        "title": "Discount Tiers",
+        "story": "Schulz & Partner offers two customer groups different discounts: Standard (10%) and Premium (20%). Calculate the net prices after the discount.",
+        "step1": "Enter =B3*(1-C$2) in C3 – the discount rate in row 2 is locked, but the column can change",
+        "step2": "Copy the formula to C4, C5 and C6 for all items (Standard discount)",
+        "step3": "Enter =B3*(1-D$2) in D3 for the Premium price of the first item",
+        "step4": "Copy the Premium formula to D4, D5 and D6 as well",
+        "hint1": "C$2 locks only the row (2), not the column – so the formula can be copied horizontally",
+        "hint2": "(1-discount) gives the factor: 1-0.1 = 0.9 means 90% of the original price"
+      },
+      "ex4": {
+        "title": "Calculate Commission",
+        "story": "The sales team earns a 5% commission on revenue. The commission rate is stored in C1 and applies to all salespeople.",
+        "step1": "Enter =B2*$C$1 in D2 to calculate the commission for Müller, A.",
+        "step2": "Copy the formula to D3 for Schmidt, B.",
+        "step3": "Calculate the commission for Weber, C. (D4) and Fischer, D. (D5) as well",
+        "step4": "Note: without the $ signs, C1 would shift to C2, C3 etc. when copying – that would be wrong!",
+        "hint1": "$C$1 ensures the commission rate from C1 is always used",
+        "hint2": "Commission = revenue × rate (e.g. 12,500 × 0.05 = 625 EUR)"
+      }
+    },
+    "level6": {
+      "title": "Month 5: Sales Analysis",
+      "story": "You have opened your own online shop! Time to analyse your sales data using SUMIF and COUNTIF.",
+      "ex1": {
+        "title": "Revenue by Category",
+        "story": "Find out how much revenue each product category generates — SUMIF lets you sum selectively by category.",
+        "step1": "Enter in B12: =SUMIF(B2:B9,\"Elektronik\",C2:C9)",
+        "step2": "Calculate revenue for Buerobedarf in B13: =SUMIF(B2:B9,\"Buerobedarf\",C2:C9)",
+        "step3": "Calculate revenue for Moebel in B14: =SUMIF(B2:B9,\"Moebel\",C2:C9)",
+        "step4": "Check: Electronics = 479.96 EUR, Office supplies = 77.50 EUR, Furniture = 449.00 EUR",
+        "hint1": "SUMIF(range,criterion,sum_range): column B holds the categories, column C the amounts",
+        "hint2": "The criterion text must match the cell content exactly — case-insensitive"
+      },
+      "ex2": {
+        "title": "Counting Orders",
+        "story": "Analyse how many orders meet certain conditions — COUNTIF counts cells matching a criterion.",
+        "step1": "Count orders above 50 EUR in B12: =COUNTIF(C2:C9,\">50\")",
+        "step2": "Count orders below 50 EUR in B13: =COUNTIF(C2:C9,\"<50\")",
+        "step3": "Count electronics orders in B14: =COUNTIF(B2:B9,\"Elektronik\")",
+        "step4": "Check: >50 EUR = 6 orders, <50 EUR = 2 orders, Electronics = 4 orders",
+        "hint1": "COUNTIF(range,criterion): comparison operators like >50 must be inside quotation marks",
+        "hint2": "Both text criteria (e.g. \"Elektronik\") and numeric comparisons (e.g. \">50\") need quotation marks"
+      },
+      "ex3": {
+        "title": "Branch Comparison",
+        "story": "Your shop has three branches! Compare revenue and order count per branch using SUMIF and COUNTIF.",
+        "step1": "Calculate Hamburg revenue in B13: =SUMIF(B2:B10,\"Hamburg\",D2:D10)",
+        "step2": "Calculate Berlin revenue in B14: =SUMIF(B2:B10,\"Berlin\",D2:D10)",
+        "step3": "Calculate Munich revenue in B15: =SUMIF(B2:B10,\"Muenchen\",D2:D10)",
+        "step4": "Count Hamburg orders in C13: =COUNTIF(B2:B10,\"Hamburg\")",
+        "hint1": "The branch is in column B, the amount in column D — adjust the sum_range accordingly",
+        "hint2": "Hamburg = 578.99 EUR (3 orders), Berlin = 305.48 EUR (3), Munich = 341.99 EUR (3)"
+      },
+      "ex4": {
+        "title": "Finding Top Customers",
+        "story": "Who are your best customers? Calculate total revenue, order count and average order value per customer.",
+        "step1": "Calculate total revenue for Firma A in B12: =SUMIF(B2:B9,\"Firma A\",C2:C9)",
+        "step2": "Count Firma A orders in C12: =COUNTIF(B2:B9,\"Firma A\")",
+        "step3": "Calculate the average in D12: =B12/C12",
+        "step4": "Fill in the formulas for Firma B (row 13) and Firma C (row 14) as well",
+        "hint1": "Average = total revenue ÷ number of orders. Use the calculated cells B12 and C12",
+        "hint2": "Firma A: 1,000 EUR, 3 orders, avg 333.33 EUR. Firma B: 730 EUR, 3 orders, avg 243.33 EUR"
+      }
+    },
+    "level7": {
+      "title": "Month 6: Shop Presentation",
+      "story": "You are presenting your online shop to the bank for a loan — make the data visually convincing!",
+      "ex1": {
+        "title": "Colour Profit/Loss",
+        "story": "The bank wants to see at a glance which months were positive and which were negative. Colour the results using conditional formatting.",
+        "step1": "Look at the monthly results: positive values are profits, negative values are losses.",
+        "step2": "Open the formatting editor using the button.",
+        "step3": "Create Rule 1: value greater than 0 → green (profit)",
+        "step4": "Create Rule 2: value less than 0 → red (loss) and click Apply.",
+        "hint1": "Conditional formatting colours cells automatically based on their content — no manual colouring needed",
+        "hint2": "Green = profit (>0), Red = loss (<0). The colours help the bank get a quick overview."
+      },
+      "ex2": {
+        "title": "Stock Traffic Light",
+        "story": "Before the bank meeting you check stock levels. Mark critical stock in red and well-stocked items in green.",
+        "step1": "Look at the stock levels: below 10 is critical, above 50 is good.",
+        "step2": "Open the formatting editor using the button.",
+        "step3": "Create Rule 1: value less than 10 → red (critical, reorder!)",
+        "step4": "Create Rule 2: value greater than 50 → green (well stocked) and click Apply.",
+        "hint1": "You need two rules: one for the critical range (red) and one for good stock (green)",
+        "hint2": "Ordner (5) and Kleber (8) are critical → red. Stifte (120) and Marker (55) are good → green."
+      },
+      "ex3": {
+        "title": "Revenue Bar Chart",
+        "story": "A bar chart shows the bank your revenue trend at a glance. Create it using the Chart Wizard.",
+        "step1": "Look at the monthly revenue figures — six months with an upward trend.",
+        "step2": "Click the Chart Wizard.",
+        "step3": "Select bar chart, data range B2:B7 (revenue) and labels A2:A7 (months).",
+        "step4": "Enter a title (e.g. 'Monthly Revenue') and click Finish.",
+        "hint1": "Bar charts are great for comparisons over time — perfect for monthly revenue figures",
+        "hint2": "Data range = the numbers (column B), labels = the names (column A)"
+      },
+      "ex4": {
+        "title": "Category Pie Chart",
+        "story": "The bank asks about revenue distribution. A pie chart shows the shares of each product category.",
+        "step1": "Look at the four categories with their revenue shares in percent.",
+        "step2": "Click the Chart Wizard.",
+        "step3": "Select pie chart, data range B2:B5 (shares) and labels A2:A5 (categories).",
+        "step4": "Enter a title (e.g. 'Revenue Distribution') and click Finish.",
+        "hint1": "Pie charts show shares of a whole — ideal for percentage distributions",
+        "hint2": "The shares must add up to 100%: 42 + 28 + 18 + 12 = 100%"
+      }
+    },
+    "level5": {
+      "title": "Month 4: Supplier Comparison",
+      "story": "Month 4 at Schulz & Partner. You have mastered VLOOKUP — now you combine it with IF, MIN and IFERROR for real business decisions.",
+      "ex1": {
+        "title": "Best Price",
+        "story": "Three suppliers, one product — who is cheapest? Use VLOOKUP for each supplier and MIN for the best price.",
+        "step1": "Enter in B2: =VLOOKUP(A2,Stammdaten!A:D,2,0) for Supplier 1 price",
+        "step2": "Enter in C2: =VLOOKUP(A2,Stammdaten!A:D,3,0) for Supplier 2 price",
+        "step3": "Enter in D2: =VLOOKUP(A2,Stammdaten!A:D,4,0) for Supplier 3 price",
+        "step4": "Calculate the best price in E2: =MIN(B2,C2,D2)",
+        "hint1": "VLOOKUP returns the value from a specific column — column index 2, 3 or 4",
+        "hint2": "MIN(B2,C2,D2) automatically finds the smallest of the three prices"
+      },
+      "ex2": {
+        "title": "Reorder Proposal",
+        "story": "Check stock levels via VLOOKUP and decide with IF whether to reorder.",
+        "step1": "Fetch the stock with VLOOKUP: =VLOOKUP(A2,Stammdaten!A:D,3,0) in B2",
+        "step2": "Fetch the minimum stock: =VLOOKUP(A2,Stammdaten!A:D,4,0) in C2",
+        "step3": "Create the reorder proposal: =IF(B2<C2,\"Nachbestellen\",\"OK\") in D2",
+        "step4": "Copy all three formulas for the remaining articles in rows 3 and 4",
+        "hint1": "Column index 3 = stock, column index 4 = minimum stock in the reference table",
+        "hint2": "IF(stock < minimum) → 'Nachbestellen', otherwise → 'OK'"
+      },
+      "ex3": {
+        "title": "Complete Customer Invoice",
+        "story": "Create a full invoice: name and price via VLOOKUP, total price including VAT via formula.",
+        "step1": "Fetch the name: =VLOOKUP(A2,Stammdaten!A:C,2,0) in B2",
+        "step2": "Fetch the price: =VLOOKUP(A2,Stammdaten!A:C,3,0) in C2",
+        "step3": "Calculate the total including VAT: =C2*D2*(1+$E$1) in F2",
+        "step4": "Copy all formulas for the remaining articles (rows 3 and 4)",
+        "hint1": "$E$1 locks the VAT cell — it stays on E1 when copying",
+        "hint2": "Total = price × quantity × (1 + VAT). With 19% VAT: × 1.19"
+      },
+      "ex4": {
+        "title": "Error Detection",
+        "story": "Some article numbers are wrong! Protect your formula with IFERROR — unknown numbers should show 'Nicht gefunden'.",
+        "step1": "Enter in B2: =IFERROR(VLOOKUP(A2,Stammdaten!A:C,2,0),\"Nicht gefunden\")",
+        "step2": "Enter in C2: =IFERROR(VLOOKUP(A2,Stammdaten!A:C,3,0),\"Nicht gefunden\")",
+        "step3": "Copy both formulas to row 3 (article X-9999 — this does not exist!)",
+        "step4": "Copy the formulas to rows 4 and 5 as well",
+        "hint1": "IFERROR(formula,error_value): if VLOOKUP finds nothing (#N/A), the error value is shown",
+        "hint2": "X-9999 and X-8888 are invalid numbers — they should display 'Nicht gefunden'"
+      }
+    },
+    "level3": {
+      "title": "Month 2: Customer Evaluation",
+      "story": "In your second month at Schulz & Partner you analyse customer data and make complex business decisions using IF+AND/OR.",
+      "ex1": {
+        "title": "Customer Status",
+        "story": "Classify customers as Premium or Standard — but only when BOTH criteria are met.",
+        "step1": "Enter in D2: =IF(AND(B2>5000,C2>3),\"Premium\",\"Standard\")",
+        "step2": "Copy the formula to row 3: =IF(AND(B3>5000,C3>3),\"Premium\",\"Standard\")",
+        "step3": "Copy the formula to row 4: =IF(AND(B4>5000,C4>3),\"Premium\",\"Standard\")",
+        "step4": "Copy the formula to rows 5 and 6 as well",
+        "hint1": "AND() means: ALL conditions must be true at the same time",
+        "hint2": "Premium = revenue above 5,000 EUR AND more than 3 orders"
+      },
+      "ex2": {
+        "title": "Express Shipping",
+        "story": "Determine the shipping method — high weight OR high value triggers freight forwarding.",
+        "step1": "Enter in D2: =IF(OR(B2>20,C2>500),\"Spedition\",\"Paket\")",
+        "step2": "Copy the formula to row 3: =IF(OR(B3>20,C3>500),\"Spedition\",\"Paket\")",
+        "step3": "Copy the formula to row 4: =IF(OR(B4>20,C4>500),\"Spedition\",\"Paket\")",
+        "step4": "Copy the formula to rows 5 and 6 as well",
+        "hint1": "OR() means: AT LEAST ONE condition must be true",
+        "hint2": "Freight = over 20 kg OR value over 500 EUR"
+      },
+      "ex3": {
+        "title": "Discount Class",
+        "story": "Calculate the discount rate for each customer — using nested IF functions for three tiers.",
+        "step1": "Enter in C2: =IF(B2>10000,10,IF(B2>5000,5,0))",
+        "step2": "Copy the formula to row 3: =IF(B3>10000,10,IF(B3>5000,5,0))",
+        "step3": "Copy the formula to row 4: =IF(B4>10000,10,IF(B4>5000,5,0))",
+        "step4": "Copy the formula to rows 5 and 6 as well",
+        "hint1": "Nested IF: =IF(condition1,value1,IF(condition2,value2,value3))",
+        "hint2": "Over 10,000 EUR = 10%, over 5,000 EUR = 5%, otherwise = 0%"
+      },
+      "ex4": {
+        "title": "Supplier Rating",
+        "story": "Rate suppliers A, B or C — combine AND and OR in nested IF formulas.",
+        "step1": "Enter in E2: =IF(AND(B2>=7,C2>=7),\"A\",IF(OR(B2>=5,C2>=5),\"B\",\"C\"))",
+        "step2": "Copy the formula to row 3: =IF(AND(B3>=7,C3>=7),\"A\",IF(OR(B3>=5,C3>=5),\"B\",\"C\"))",
+        "step3": "Copy the formula to row 4: =IF(AND(B4>=7,C4>=7),\"A\",IF(OR(B4>=5,C4>=5),\"B\",\"C\"))",
+        "step4": "Copy the formula to row 5: =IF(AND(B5>=7,C5>=7),\"A\",IF(OR(B5>=5,C5>=5),\"B\",\"C\"))",
+        "hint1": "A = Price AND Quality both >= 7",
+        "hint2": "B = Price >= 5 OR Quality >= 5 (when no A applies). C = both below 5"
+      }
+    },
+    "level4": {
+      "title": "Month 3: Inventory Management",
+      "story": "Month 3 at Schulz & Partner. You manage the product database and need to look up information instantly. With VLOOKUP you get exactly the data you need!",
+      "ex1": {
+        "title": "Look Up Article Price",
+        "story": "The boss needs the current prices for four articles right away. Use VLOOKUP to find the prices from the master data table.",
+        "step1": "Look at the Stammdaten sheet: column A = article number, column B = description, column C = price",
+        "step2": "Enter the formula in B2: =VLOOKUP(A2,Stammdaten!A:C,3,0)",
+        "step3": "Copy the formula to B3 and B4",
+        "step4": "Complete B5 as well — check that all four prices are displayed correctly",
+        "hint1": "VLOOKUP(search_value,range,column,0) — the 3 means: return the value from the 3rd column",
+        "hint2": "The 0 at the end means exact match. Stammdaten!A:C means: search in the 'Stammdaten' sheet"
+      },
+      "ex2": {
+        "title": "Find Supplier",
+        "story": "For a reorder you need to quickly find out which supplier delivers which article. Use VLOOKUP on the supplier column.",
+        "step1": "Look at the Stammdaten sheet: now there are 4 columns — A = article number, B = description, C = price, D = supplier",
+        "step2": "Enter the formula in B2: =VLOOKUP(A2,Stammdaten!A:D,4,0)",
+        "step3": "Copy the formula to B3 and B4",
+        "step4": "Complete B5 as well and check all supplier names",
+        "hint1": "The 4 refers to the 4th column in the lookup range — that is the supplier column",
+        "hint2": "Compare with exercise 1: there it was column 3 (price), here it is column 4 (supplier)"
+      },
+      "ex3": {
+        "title": "Create Invoice",
+        "story": "You are creating a purchase order. Enter description and price via VLOOKUP and then calculate the total amount.",
+        "step1": "Look at the task: article number and quantity are already filled in. You need description, price and total.",
+        "step2": "Enter in B2: =VLOOKUP(A2,Stammdaten!A:C,2,0) for the description",
+        "step3": "Enter in C2: =VLOOKUP(A2,Stammdaten!A:C,3,0) for the price. Copy both formulas downward.",
+        "step4": "Calculate the total: enter =C2*D2 in E2 and copy it downward",
+        "hint1": "For description: column 2 in VLOOKUP. For price: column 3. Both from the same lookup range.",
+        "hint2": "Total = price × quantity. When price is calculated via VLOOKUP, =C2*D2 works the same way."
+      },
+      "ex4": {
+        "title": "Determine Storage Location",
+        "story": "In the warehouse you need to locate 3 articles. Use VLOOKUP three times per row — for warehouse, shelf and compartment.",
+        "step1": "Look at Stammdaten: column C = warehouse, D = shelf, E = compartment",
+        "step2": "Enter in B2: =VLOOKUP(A2,Stammdaten!A:E,3,0) for the warehouse",
+        "step3": "Enter in C2: =VLOOKUP(A2,Stammdaten!A:E,4,0) for the shelf, and in D2: =VLOOKUP(A2,Stammdaten!A:E,5,0) for the compartment",
+        "step4": "Copy all three formulas for rows 3 and 4",
+        "hint1": "Warehouse = column 3, shelf = column 4, compartment = column 5 — always from Stammdaten!A:E",
+        "hint2": "All three VLOOKUP formulas search in the same table — only the column number changes"
+      }
+    },
+    "level2": {
+      "title": "Making Decisions",
+      "story": "Week 2 at Schulz & Partner. You are now taking over invoice checking. With the IF function you make decisions automatically!",
+      "ex1": {
+        "title": "Payment Status Check",
+        "story": "Check the open invoices: which ones are already paid, which are still outstanding?",
+        "step1": "Look at the table: column A contains invoice numbers, column B the outstanding amount.",
+        "step2": "Enter the formula in C2: =IF(B2=0,\"paid\",\"open\")",
+        "step3": "Copy the formula for invoices C3 to C5",
+        "step4": "Check C6: enter the IF formula there as well",
+        "hint1": "IF checks a condition: IF(condition,then,else). If the amount is 0, the invoice is paid.",
+        "hint2": "Copy the formula downward: click on C2, then drag the small square in the corner downward."
+      },
+      "ex2": {
+        "title": "Cash Discount Calculation",
+        "story": "Schulz & Partner grants a 2% cash discount if payment is made within 10 days. Calculate the discount amount!",
+        "step1": "Look at the table: column B shows the invoice amount, column C the days until payment.",
+        "step2": "Enter the formula in D2: =IF(C2<=10,B2*0.02,0)",
+        "step3": "Copy the formula for rows D3 to D5",
+        "step4": "Complete the formula in D6 as well",
+        "hint1": "The cash discount only applies when payment is made within 10 days. Otherwise the discount is 0.",
+        "hint2": "B2*0.02 equals 2% of B2. The period here is the decimal separator."
+      },
+      "ex3": {
+        "title": "Stock Alert",
+        "story": "Stock levels must be monitored. Items with fewer than 10 units must be reordered!",
+        "step1": "Look at the table: column A contains the items, column B the current stock level.",
+        "step2": "Enter the formula in C2: =IF(B2<10,\"Reorder\",\"OK\")",
+        "step3": "Copy the formula for C3 to C5",
+        "step4": "Complete C6 with the IF formula as well",
+        "hint1": "The comparison operator < means 'less than'. If stock < 10 the item must be reordered.",
+        "hint2": "Text values in formulas are written in quotation marks: \"Reorder\" and \"OK\"."
+      },
+      "ex4": {
+        "title": "Shipping Costs",
+        "story": "Orders over 100 EUR get free shipping. Below 100 EUR shipping costs 5.99 EUR.",
+        "step1": "Look at the table: column A contains order numbers, column B the order value.",
+        "step2": "Enter the formula in C2: =IF(B2>100,0,5.99)",
+        "step3": "Copy the formula for C3 to C5",
+        "step4": "Complete C6 with the IF formula as well",
+        "hint1": "The comparison operator > means 'greater than'. Over 100 EUR = free shipping (0).",
+        "hint2": "The IF function returns numbers here, not text. Therefore no quotation marks."
+      }
+    },
+    "level8": {
+      "title": "Year-end: Your Shop is Growing",
+      "story": "The year is over! Combine everything you have learned for your shop's annual report — VLOOKUP, SUMIF, conditional formatting and charts.",
+      "ex1": {
+        "title": "Order Processing",
+        "story": "Create a complete order: fetch name and price via VLOOKUP from the product catalogue, then calculate subtotal, discount and total.",
+        "step1": "Enter the VLOOKUP formula for the name in B2: =VLOOKUP(A2,Stammdaten!A:C,2,0) and for the price in C2: =VLOOKUP(A2,Stammdaten!A:C,3,0)",
+        "step2": "Calculate the subtotal in E2: =C2*D2 (price times quantity)",
+        "step3": "Calculate the discount in F2: =IF(E2>100,E2*0.05,0) — 5% discount for orders over 100 EUR",
+        "step4": "Calculate the total in G2: =E2-F2 (subtotal minus discount)",
+        "hint1": "VLOOKUP fetches the name (column 2) and price (column 3) from the Stammdaten sheet",
+        "hint2": "Discount: only if subtotal > 100 EUR → 5% of the amount, otherwise 0"
+      },
+      "ex2": {
+        "title": "Quarterly Analysis",
+        "story": "Analyse your shop's sales data by product — calculate total revenue per product with SUMIF and count the quarters with COUNTIF.",
+        "step1": "Calculate the total revenue for Laptop in B16: =SUMIF(A2:A13,\"Laptop\",C2:C13)",
+        "step2": "Calculate revenue for Tastatur in B17: =SUMIF(A2:A13,\"Tastatur\",C2:C13) and for Headset in B18",
+        "step3": "Count the Laptop quarters in C16: =COUNTIF(A2:A13,\"Laptop\")",
+        "step4": "Create a bar chart with the Chart Wizard: data B16:B18, labels A16:A18",
+        "hint1": "SUMIF(A2:A13,\"Laptop\",C2:C13) sums all revenues in column C where column A is 'Laptop'",
+        "hint2": "Laptop total: 58,500 EUR, Tastatur: 13,700 EUR, Headset: 24,600 EUR"
+      },
+      "ex3": {
+        "title": "Complete Supplier Evaluation",
+        "story": "Fetch evaluation scores via VLOOKUP from Stammdaten and automatically assign grade A, B or C with IF+AND. Colour A suppliers green and C suppliers red.",
+        "step1": "Fetch price score (B2), quality (C2) and delivery (D2) via VLOOKUP from Stammdaten: =VLOOKUP(A2,Stammdaten!A:D,2,0)",
+        "step2": "Assign the rating in E2: =IF(AND(B2>=7,C2>=7),\"A\",IF(OR(B2>=5,C2>=5),\"B\",\"C\"))",
+        "step3": "Copy all formulas for rows 3 to 5",
+        "step4": "Create conditional formatting: A = green (#00B050), C = red (#FF0000)",
+        "hint1": "Grade A: price score AND quality both >= 7. Grade B: at least one >= 5. Grade C = both below 5",
+        "hint2": "Alpha GmbH (8/9): Grade A — green. Gamma AG (3/4): Grade C — red. Beta KG (6/5): Grade B"
+      },
+      "ex4": {
+        "title": "Annual Report",
+        "story": "Create your shop's annual report: calculate total revenue, monthly average, best and worst month — and visualise the trend as a line chart.",
+        "step1": "Calculate the annual revenue in B15: =SUM(B2:B13)",
+        "step2": "Calculate the monthly average in B16: =AVERAGE(B2:B13)",
+        "step3": "Calculate the best month in B17: =MAX(B2:B13) and the worst in B18: =MIN(B2:B13)",
+        "step4": "Create a line chart: data B2:B13, labels A2:A13 — show the annual trend",
+        "hint1": "SUM, AVERAGE, MAX, MIN — you know all four! Now you combine them in one report",
+        "hint2": "Annual revenue: 287,200 EUR, average: approx. 23,933 EUR, best month: December (35,600 EUR)"
+      }
+    }
+  },
+  "chart": {
+    "title": "Create Chart",
+    "selectType": "Select chart type",
+    "bar": "Bar Chart",
+    "line": "Line Chart",
+    "pie": "Pie Chart",
+    "dataRange": "Data range (e.g. B2:B6)",
+    "labelRange": "Labels (e.g. A2:A6)",
+    "chartTitle": "Title",
+    "preview": "Preview",
+    "finish": "Done",
+    "back": "Back",
+    "next": "Next"
+  },
+  "condFormat": {
+    "title": "Conditional Formatting",
+    "addRule": "Add Rule",
+    "apply": "Apply",
+    "greaterThan": "greater than",
+    "lessThan": "less than",
+    "equals": "equals",
+    "colorGreen": "Green",
+    "colorRed": "Red",
+    "colorYellow": "Yellow"
+  }
+}

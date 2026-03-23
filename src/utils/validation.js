@@ -1,11 +1,25 @@
-import { DE_TO_EN } from './formulaTranslation';
+import { ALL_TO_EN, ES_DOT_FUNCTIONS, ES_SHORT } from './formulaTranslation';
 
 /** Normalize formula functions to English for comparison. */
 function toEN(s) {
   let result = s;
-  for (const [de, en] of Object.entries(DE_TO_EN)) {
-    result = result.replace(new RegExp(de + '\\(', 'g'), en + '(');
+
+  // 1. ES dot functions first (contain dots, must precede word patterns)
+  for (const [es, en] of Object.entries(ES_DOT_FUNCTIONS)) {
+    const escaped = es.replace('.', '\\.');
+    result = result.replace(new RegExp(escaped + '\\(', 'g'), en + '(');
   }
+
+  // 2. ALL_TO_EN entries (German + Spanish longer names)
+  for (const [local, en] of Object.entries(ALL_TO_EN)) {
+    result = result.replace(new RegExp(local + '\\(', 'g'), en + '(');
+  }
+
+  // 3. Short ES keywords — word boundary before + ( after
+  for (const [es, en] of Object.entries(ES_SHORT)) {
+    result = result.replace(new RegExp('\\b' + es + '\\(', 'g'), en + '(');
+  }
+
   return result;
 }
 
@@ -129,6 +143,45 @@ function validateSingle(v, sheetData) {
         }
       }
       return { type, stepIndex, passed: allNumbers };
+    }
+
+    case 'cellFormulaAny': {
+      const f = getCellFormula(sheetData, v.cell.r, v.cell.c);
+      const normActual = normalizeFormula(f);
+      const passed = v.expected.some((exp) => toEN(normActual) === toEN(normalizeFormula(exp)));
+      return { type, stepIndex, passed, expected: v.expected[0], actual: f };
+    }
+
+    case 'chartConfig': {
+      const chart = sheetData?.__chartConfig;
+      if (!chart) return { type, stepIndex, passed: false, expected: v.expected.chartType, actual: 'no chart' };
+      const typeMatch = chart.chartType === v.expected.chartType;
+      const dataMatch = chart.dataRange?.startRow === v.expected.dataRange?.startRow
+        && chart.dataRange?.endRow === v.expected.dataRange?.endRow
+        && chart.dataRange?.col === v.expected.dataRange?.col;
+      const labelMatch = !v.expected.labelRange || (
+        chart.labelRange?.startRow === v.expected.labelRange?.startRow
+        && chart.labelRange?.endRow === v.expected.labelRange?.endRow
+        && chart.labelRange?.col === v.expected.labelRange?.col
+      );
+      const passed = typeMatch && dataMatch && labelMatch;
+      return { type, stepIndex, passed, expected: v.expected.chartType, actual: chart?.chartType || 'none' };
+    }
+
+    case 'conditionalFormat': {
+      const rules = sheetData?.__condFormatRules || [];
+      const expected = v.rules || [];
+      if (rules.length < expected.length) {
+        return { type, stepIndex, passed: false, expected: `${expected.length} rules`, actual: `${rules.length} rules` };
+      }
+      const passed = expected.every((exp, i) => {
+        const actual = rules[i];
+        if (!actual) return false;
+        return actual.operator === exp.operator
+          && Math.abs(Number(actual.value) - Number(exp.value)) < 0.01
+          && actual.color === exp.color;
+      });
+      return { type, stepIndex, passed, expected: `${expected.length} rules`, actual: `${rules.length} rules` };
     }
 
     default:

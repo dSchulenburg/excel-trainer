@@ -1,13 +1,17 @@
 import { createContext, useContext, useState, useCallback, useEffect } from 'react';
 import de from '../i18n/de.json';
+import en from '../i18n/en.json';
 import uk from '../i18n/uk.json';
+import es from '../i18n/es.json';
 
-const translations = { de, uk };
+const translations = { de, en, uk, es };
 const RTL_LANGUAGES = ['ar', 'fa'];
 
 export const LANGUAGES = [
   { code: 'de', label: 'Deutsch', flag: '🇩🇪' },
+  { code: 'en', label: 'English', flag: '🇬🇧' },
   { code: 'uk', label: 'Українська', flag: '🇺🇦' },
+  { code: 'es', label: 'Español', flag: '🇪🇸' },
 ];
 
 const I18nContext = createContext();

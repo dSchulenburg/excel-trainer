@@ -1,13 +1,17 @@
-import { useState, useCallback, useRef } from 'react';
+import { useState, useCallback, useRef, Suspense, lazy } from 'react';
 import { useI18n } from '../context/I18nContext';
 import { useGame } from '../context/GameContext';
 import { validateExercise, getCompletedSteps } from '../utils/validation';
 import { calculateExerciseXP, calculateStars } from '../utils/xp';
 import ExerciseInstructions from './ExerciseInstructions';
 import SpreadsheetArea from './SpreadsheetArea';
+import MultiSheetArea from './MultiSheetArea';
 import ValidationFeedback from './ValidationFeedback';
 import LevelComplete from './LevelComplete';
 import AudioPlayer from './AudioPlayer';
+import ConditionalFormatEditor from './ConditionalFormatEditor';
+
+const ChartWizard = lazy(() => import('./ChartWizard'));
 
 export default function ExerciseView({ exercise, onBack, onNextExercise }) {
   const { t } = useI18n();
@@ -18,8 +22,13 @@ export default function ExerciseView({ exercise, onBack, onNextExercise }) {
   const [showComplete, setShowComplete] = useState(false);
   const [earnedXP, setEarnedXP] = useState(0);
   const [stars, setStars] = useState(0);
+  const [condFormatRules, setCondFormatRules] = useState([]);
+  const [chartConfig, setChartConfig] = useState(null);
   const startTime = useRef(Date.now());
   const totalErrors = useRef(0);
+
+  const hasCondFormat = exercise.validations?.some(v => v.type === 'conditionalFormat');
+  const hasChart = exercise.validations?.some(v => v.type === 'chartConfig');
 
   const handleDataChange = useCallback(
     (data) => {
@@ -32,6 +41,12 @@ export default function ExerciseView({ exercise, onBack, onNextExercise }) {
 
   const handleCheck = useCallback(() => {
     if (!sheetData) return;
+    if (condFormatRules.length > 0 && sheetData) {
+      sheetData.__condFormatRules = condFormatRules;
+    }
+    if (chartConfig && sheetData) {
+      sheetData.__chartConfig = chartConfig;
+    }
     const result = validateExercise(exercise.validations, sheetData);
     setValidationResult(result);
     setCompletedSteps(getCompletedSteps(exercise.validations, sheetData));
@@ -84,8 +99,23 @@ export default function ExerciseView({ exercise, onBack, onNextExercise }) {
       </div>
       <div className="exercise-view__sheet">
         <div style={{ flex: 1, minHeight: 0 }}>
-          <SpreadsheetArea exercise={exercise} onDataChange={handleDataChange} />
+          {exercise.initialData?.length > 1 ? (
+            <MultiSheetArea exercise={exercise} onDataChange={handleDataChange} />
+          ) : (
+            <SpreadsheetArea exercise={exercise} onDataChange={handleDataChange} />
+          )}
         </div>
+        {hasCondFormat && (
+          <ConditionalFormatEditor
+            onApplyRules={setCondFormatRules}
+            onRulesChange={setCondFormatRules}
+          />
+        )}
+        {hasChart && (
+          <Suspense fallback={null}>
+            <ChartWizard sheetData={sheetData} onComplete={setChartConfig} />
+          </Suspense>
+        )}
         <ValidationFeedback
           validationResult={validationResult}
           onCheck={handleCheck}

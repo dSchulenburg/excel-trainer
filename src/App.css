@@ -743,3 +743,221 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* ── Track Select ───────────────────────────────────────────────────────────── */
+.track-select {
+  padding: 2rem 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.track-select__title {
+  color: var(--bswi-navy);
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+.track-select__cards {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.track-card {
+  flex: 1 1 280px;
+  max-width: 360px;
+  border: none;
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  cursor: pointer;
+  color: white;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.track-card__icon {
+  font-size: 3.5rem;
+  line-height: 1;
+}
+
+.track-card__title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.track-card__desc {
+  font-size: 0.9rem;
+  opacity: 0.85;
+  line-height: 1.5;
+}
+
+.track-card__meta {
+  font-size: 0.8rem;
+  opacity: 0.75;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 0.25rem 0.75rem;
+  margin-top: 0.25rem;
+}
+
+/* ── Track indicator in header ──────────────────────────────────────────────── */
+.app-header__track-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: var(--radius);
+  color: white;
+  padding: 0.3rem 0.65rem;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.app-header__track-btn:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.app-header__track-name {
+  max-width: 130px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .track-select__cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .track-card {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .app-header__track-name {
+    display: none;
+  }
+}
+
+/* ── ConditionalFormatEditor ─────────────────────────────────────────────── */
+.cond-format-editor {
+  background: white;
+  border-top: 2px solid #e0e0e0;
+  padding: 0.6rem 1rem;
+  flex-shrink: 0;
+}
+
+.cond-format-editor h4 {
+  margin: 0 0 0.4rem 0;
+  font-size: 0.85rem;
+  color: var(--bswi-navy);
+}
+
+.cond-format-rule {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.cond-format-rule select,
+.cond-format-rule input {
+  padding: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+.cond-format-rule input {
+  width: 80px;
+}
+
+.cond-format-colors {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.cond-format-color {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.cond-format-color.active {
+  border-color: var(--bswi-navy);
+}
+
+.cond-format-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+/* ── ChartWizard ────────────────────────────────────────────────────────────── */
+.chart-wizard {
+  background: white;
+  border-top: 2px solid #e0e0e0;
+  padding: 1rem;
+  flex-shrink: 0;
+}
+
+.chart-wizard__types {
+  display: flex;
+  gap: 0.75rem;
+  margin: 0.75rem 0;
+}
+
+.chart-type-btn {
+  padding: 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  background: white;
+}
+
+.chart-type-btn.active {
+  border-color: var(--bswi-lightblue);
+  background: #f0f9ff;
+}
+
+.chart-type-btn__icon {
+  font-size: 2rem;
+  display: block;
+}
+
+.chart-wizard__inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.chart-wizard__inputs input {
+  padding: 0.4rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.chart-wizard__preview {
+  margin: 1rem 0;
+  min-height: 250px;
+}
+
+.chart-wizard__actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}

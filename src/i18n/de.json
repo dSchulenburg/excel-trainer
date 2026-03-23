@@ -14,11 +14,31 @@
     "profile": "Profil"
   },
   "playerLevel": {
-    "1": "Anfänger",
-    "2": "Entdecker",
-    "3": "Tabellenkenner",
-    "4": "Formelprofi",
-    "5": "Excel-Held"
+    "avm": {
+      "1": "Anfänger",
+      "2": "Entdecker",
+      "3": "Tabellenkenner",
+      "4": "Formelprofi",
+      "5": "Excel-Held"
+    },
+    "kaufleute": {
+      "1": "Praktikant",
+      "2": "Sachbearbeiter",
+      "3": "Fachkraft",
+      "4": "Abteilungsleiter",
+      "5": "Geschäftsführer"
+    }
+  },
+  "trackSelect": {
+    "title": "Waehle deinen Track",
+    "avm": {
+      "title": "Erste eigene Wohnung",
+      "desc": "Lerne Excel-Grundlagen mit Alltagsaufgaben"
+    },
+    "kaufleute": {
+      "title": "Kaufleute im Grosshandel",
+      "desc": "Professionelles Excel fuer Berufsschueler"
+    }
   },
   "common": {
     "back": "Zurück",
@@ -85,7 +105,15 @@
     "streak3": "3-Tage-Streak",
     "perfectScore": "Perfekte Bewertung",
     "speedDemon": "Blitzschnell",
-    "polyglot": "Mehrsprachig"
+    "polyglot": "Mehrsprachig",
+    "referenzMeister": "Referenz-Meister",
+    "entscheider": "Entscheider",
+    "sverweisMeister": "SVERWEIS-Meister",
+    "datenProfi": "Daten-Profi",
+    "visualisierer": "Visualisierer",
+    "chartCreator": "Diagramm-Ersteller",
+    "geschaeftsfuehrer": "Geschaeftsfuehrer",
+    "kaufmannKomplett": "Kaufmann komplett"
   },
   "profile": {
     "title": "Mein Profil",
@@ -360,5 +388,384 @@
       "hint1": "Prozentuale Veränderung = Differenz geteilt durch Vorjahreswert mal 100",
       "hint2": "Ein positiver Wert bedeutet Wachstum, ein negativer Rückgang"
     }
+  },
+  "kaufleute": {
+    "level1": {
+      "title": "Zellreferenzen meistern",
+      "story": "Praktikum Tag 1 bei Schulz & Partner GmbH – einem Bürobedarfs-Großhändler. Deine Aufgabe: die Preisliste aktualisieren und dabei absolute Zellreferenzen einsetzen.",
+      "ex1": {
+        "title": "MwSt berechnen",
+        "story": "Du sollst die Bruttopreise der Artikel berechnen. Der MwSt-Faktor 1,19 steht in Zelle C1 und gilt für alle Artikel.",
+        "step1": "Trage die Formel =B2*$C$1 in Zelle D2 ein, um den Bruttopreis für Ordner zu berechnen",
+        "step2": "Kopiere die Formel nach D3 – beachte: $C$1 bleibt fest, B3 passt sich an",
+        "step3": "Berechne auch die Bruttopreise für Stifte (D4) und Kleber (D5)",
+        "step4": "Prüfe: Alle Formeln in D2:D5 müssen auf $C$1 verweisen",
+        "hint1": "Das Dollarzeichen $ macht eine Referenz absolut – sie ändert sich beim Kopieren nicht",
+        "hint2": "=B2*$C$1 bedeutet: Nettopreis aus B2 mal fester MwSt-Faktor aus C1"
+      },
+      "ex2": {
+        "title": "Währungsumrechnung",
+        "story": "Ein US-amerikanischer Kunde möchte Preise in USD sehen. Der Wechselkurs EUR/USD steht in Zelle E1.",
+        "step1": "Trage die Formel =B2*$E$1 in Zelle C2 ein, um den USD-Preis für Kopierpapier zu berechnen",
+        "step2": "Kopiere die Formel nach C3 – der Wechselkurs in $E$1 bleibt fest",
+        "step3": "Berechne auch die USD-Preise für Drucker (C4) und Laptop (C5)",
+        "step4": "Prüfe: Alle Formeln in C2:C5 müssen $E$1 als festen Wechselkurs verwenden",
+        "hint1": "$E$1 fixiert sowohl Spalte E als auch Zeile 1 – die Referenz bleibt immer gleich",
+        "hint2": "USD-Preis = EUR-Preis multipliziert mit dem Wechselkurs"
+      },
+      "ex3": {
+        "title": "Rabattstaffel",
+        "story": "Schulz & Partner bietet zwei Kundengruppen unterschiedliche Rabatte: Standard (10%) und Premium (20%). Berechne die Nettopreise nach Abzug.",
+        "step1": "Trage =B3*(1-C$2) in C3 ein – der Rabattsatz in Zeile 2 bleibt fixiert, die Spalte kann sich ändern",
+        "step2": "Kopiere die Formel nach C4, C5 und C6 für alle Artikel (Standard-Rabatt)",
+        "step3": "Trage =B3*(1-D$2) in D3 ein für den Premium-Preis des ersten Artikels",
+        "step4": "Kopiere auch die Premium-Formel nach D4, D5 und D6",
+        "hint1": "C$2 fixiert nur die Zeile (2), nicht die Spalte – so kann die Formel horizontal kopiert werden",
+        "hint2": "(1-Rabatt) ergibt den Faktor: 1-0,1 = 0,9 bedeutet 90% des Originalpreises"
+      },
+      "ex4": {
+        "title": "Provision berechnen",
+        "story": "Das Vertriebsteam erhält 5% Provision auf den Umsatz. Der Provisionssatz steht in C1 und gilt für alle Verkäufer.",
+        "step1": "Trage =B2*$C$1 in D2 ein, um die Provision für Müller, A. zu berechnen",
+        "step2": "Kopiere die Formel nach D3 für Schmidt, B.",
+        "step3": "Berechne auch die Provision für Weber, C. (D4) und Fischer, D. (D5)",
+        "step4": "Prüfe: Ohne das $ würde C1 beim Kopieren zu C2, C3 usw. werden – das wäre falsch!",
+        "hint1": "$C$1 stellt sicher, dass immer der Provisionssatz aus C1 verwendet wird",
+        "hint2": "Provision = Umsatz × Provisionssatz (z.B. 12.500 × 0,05 = 625 EUR)"
+      }
+    },
+    "level6": {
+      "title": "Monat 5: Verkaufsanalyse",
+      "story": "Du hast deinen eigenen Online-Shop eröffnet! Zeit, die Verkaufsdaten mit SUMMEWENN und ZÄHLENWENN auszuwerten.",
+      "ex1": {
+        "title": "Umsatz pro Kategorie",
+        "story": "Werte aus, wie viel Umsatz jede Produktkategorie erzielt — mit SUMMEWENN kannst du gezielt nach Kategorien summieren.",
+        "step1": "Gib in B12 die Formel ein: =SUMMEWENN(B2:B9;\"Elektronik\";C2:C9)",
+        "step2": "Berechne in B13 den Umsatz für Buerobedarf: =SUMMEWENN(B2:B9;\"Buerobedarf\";C2:C9)",
+        "step3": "Berechne in B14 den Umsatz für Moebel: =SUMMEWENN(B2:B9;\"Moebel\";C2:C9)",
+        "step4": "Prüfe: Elektronik = 479,96 EUR, Buerobedarf = 77,50 EUR, Moebel = 449,00 EUR",
+        "hint1": "SUMMEWENN(Bereich;Kriterium;Summe_Bereich): Spalte B enthält die Kategorien, Spalte C die Beträge",
+        "hint2": "Der Kriteriumstext muss genau mit dem Zellinhalt übereinstimmen — Groß-/Kleinschreibung beachten"
+      },
+      "ex2": {
+        "title": "Bestellungen zählen",
+        "story": "Analysiere, wie viele Bestellungen bestimmte Bedingungen erfüllen — ZÄHLENWENN zählt Zellen nach Kriterien.",
+        "step1": "Zähle in B12 die Bestellungen über 50 EUR: =ZÄHLENWENN(C2:C9;\">50\")",
+        "step2": "Zähle in B13 die Bestellungen unter 50 EUR: =ZÄHLENWENN(C2:C9;\"<50\")",
+        "step3": "Zähle in B14 die Elektronik-Bestellungen: =ZÄHLENWENN(B2:B9;\"Elektronik\")",
+        "step4": "Prüfe: >50 EUR = 6 Bestellungen, <50 EUR = 2 Bestellungen, Elektronik = 4 Bestellungen",
+        "hint1": "ZÄHLENWENN(Bereich;Kriterium): Vergleichsoperatoren wie >50 müssen in Anführungszeichen stehen",
+        "hint2": "Für Textkriterien (z.B. \"Elektronik\") und Zahlenvergleiche (z.B. \">50\") gelten Anführungszeichen"
+      },
+      "ex3": {
+        "title": "Filialvergleich",
+        "story": "Dein Shop hat drei Filialen! Vergleiche Umsatz und Bestellanzahl pro Filiale mit SUMMEWENN und ZÄHLENWENN.",
+        "step1": "Berechne in B13 den Hamburger Umsatz: =SUMMEWENN(B2:B10;\"Hamburg\";D2:D10)",
+        "step2": "Berechne in B14 den Berliner Umsatz: =SUMMEWENN(B2:B10;\"Berlin\";D2:D10)",
+        "step3": "Berechne in B15 den Münchener Umsatz: =SUMMEWENN(B2:B10;\"Muenchen\";D2:D10)",
+        "step4": "Zähle in C13 die Hamburg-Bestellungen: =ZÄHLENWENN(B2:B10;\"Hamburg\")",
+        "hint1": "Die Filiale steht in Spalte B, der Betrag in Spalte D — passe den Summe_Bereich entsprechend an",
+        "hint2": "Hamburg = 578,99 EUR (3 Bestellungen), Berlin = 305,48 EUR (3), München = 341,99 EUR (3)"
+      },
+      "ex4": {
+        "title": "Top-Kunden finden",
+        "story": "Wer sind deine besten Kunden? Berechne Gesamtumsatz, Bestellanzahl und Durchschnittswert pro Kunde.",
+        "step1": "Berechne in B12 den Gesamtumsatz von Firma A: =SUMMEWENN(B2:B9;\"Firma A\";C2:C9)",
+        "step2": "Zähle in C12 die Bestellungen von Firma A: =ZÄHLENWENN(B2:B9;\"Firma A\")",
+        "step3": "Berechne in D12 den Durchschnitt: =B12/C12",
+        "step4": "Fülle die Formeln auch für Firma B (Zeile 13) und Firma C (Zeile 14) aus",
+        "hint1": "Durchschnitt = Gesamtumsatz ÷ Anzahl Bestellungen. Verwende die berechneten Zellen B12 und C12",
+        "hint2": "Firma A: 1000 EUR, 3 Bestellungen, Ø 333,33 EUR. Firma B: 730 EUR, 3 Bestellungen, Ø 243,33 EUR"
+      }
+    },
+    "level7": {
+      "title": "Monat 6: Shop-Präsentation",
+      "story": "Du präsentierst deinen Online-Shop der Bank für einen Kredit — mach die Daten visuell überzeugend!",
+      "ex1": {
+        "title": "Gewinn/Verlust färben",
+        "story": "Die Bank möchte auf einen Blick sehen, welche Monate positiv und welche negativ waren. Färbe die Ergebnisse mit bedingter Formatierung.",
+        "step1": "Schau dir die Monatsergebnisse an: positive Werte sind Gewinne, negative Verluste.",
+        "step2": "Öffne den Formatierungs-Editor über die Schaltfläche.",
+        "step3": "Erstelle Regel 1: Wert größer als 0 → grün (Gewinn)",
+        "step4": "Erstelle Regel 2: Wert kleiner als 0 → rot (Verlust) und klicke Anwenden.",
+        "hint1": "Bedingte Formatierung färbt Zellen automatisch je nach Inhalt — kein manuelles Einfärben nötig",
+        "hint2": "Grün = Gewinn (>0), Rot = Verlust (<0). Die Farben helfen der Bank beim schnellen Überblick."
+      },
+      "ex2": {
+        "title": "Lagerampel",
+        "story": "Vor dem Bankgespräch prüfst du noch den Lagerstand. Markiere kritische Bestände rot und gute grün.",
+        "step1": "Schau dir die Bestände an: unter 10 ist kritisch, über 50 ist gut.",
+        "step2": "Öffne den Formatierungs-Editor über die Schaltfläche.",
+        "step3": "Erstelle Regel 1: Wert kleiner als 10 → rot (kritisch, nachbestellen!)",
+        "step4": "Erstelle Regel 2: Wert größer als 50 → grün (gut bevorratet) und klicke Anwenden.",
+        "hint1": "Du brauchst zwei Regeln: eine für den kritischen Bereich (rot) und eine für gut (grün)",
+        "hint2": "Ordner (5) und Kleber (8) sind kritisch → rot. Stifte (120) und Marker (55) sind gut → grün."
+      },
+      "ex3": {
+        "title": "Umsatz-Säulendiagramm",
+        "story": "Ein Säulendiagramm zeigt der Bank den Umsatzverlauf auf einen Blick. Erstelle es mit dem Diagramm-Assistenten.",
+        "step1": "Schau dir die Monatsumsätze an — sechs Monate, steigender Trend.",
+        "step2": "Klicke auf den Diagramm-Assistenten.",
+        "step3": "Wähle Säulendiagramm, Datenbereich B2:B7 (Umsätze) und Beschriftung A2:A7 (Monate).",
+        "step4": "Gib einen Titel ein (z.B. 'Monatsumsatz') und klicke Fertig.",
+        "hint1": "Säulendiagramme eignen sich gut für Vergleiche über Zeit — perfekt für monatliche Umsätze",
+        "hint2": "Datenbereich = die Zahlen (Spalte B), Beschriftung = die Namen (Spalte A)"
+      },
+      "ex4": {
+        "title": "Kategorie-Kreisdiagramm",
+        "story": "Die Bank fragt nach der Umsatzverteilung. Ein Kreisdiagramm zeigt die Anteile der Produktkategorien.",
+        "step1": "Schau dir die vier Kategorien mit ihren Umsatzanteilen in Prozent an.",
+        "step2": "Klicke auf den Diagramm-Assistenten.",
+        "step3": "Wähle Kreisdiagramm, Datenbereich B2:B5 (Anteile) und Beschriftung A2:A5 (Kategorien).",
+        "step4": "Gib einen Titel ein (z.B. 'Umsatzverteilung') und klicke Fertig.",
+        "hint1": "Kreisdiagramme zeigen Anteile am Ganzen — ideal für Prozentverteilungen",
+        "hint2": "Die Anteile müssen zusammen 100% ergeben: 42 + 28 + 18 + 12 = 100%"
+      }
+    },
+    "level5": {
+      "title": "Monat 4: Lieferantenvergleich",
+      "story": "Monat 4 bei Schulz & Partner. Du hast SVERWEIS gemeistert — jetzt kombinierst du ihn mit WENN, MIN und WENNFEHLER für echte Geschäftsentscheidungen.",
+      "ex1": {
+        "title": "Bester Preis",
+        "story": "Drei Lieferanten, ein Artikel — wer ist am günstigsten? Nutze SVERWEIS für jeden Lieferanten und MIN für den besten Preis.",
+        "step1": "Gib in B2 die Formel ein: =SVERWEIS(A2;Stammdaten!A:D;2;0) für Preis Lieferant 1",
+        "step2": "Gib in C2 die Formel ein: =SVERWEIS(A2;Stammdaten!A:D;3;0) für Preis Lieferant 2",
+        "step3": "Gib in D2 die Formel ein: =SVERWEIS(A2;Stammdaten!A:D;4;0) für Preis Lieferant 3",
+        "step4": "Berechne in E2 den besten Preis: =MIN(B2;C2;D2)",
+        "hint1": "SVERWEIS gibt den Wert in einer bestimmten Spalte zurück — Spaltenindex 2, 3 oder 4",
+        "hint2": "MIN(B2;C2;D2) findet automatisch den kleinsten der drei Preise"
+      },
+      "ex2": {
+        "title": "Bestellvorschlag",
+        "story": "Prüfe den Lagerbestand per SVERWEIS und entscheide mit WENN, ob nachbestellt werden muss.",
+        "step1": "Hole den Bestand per SVERWEIS: =SVERWEIS(A2;Stammdaten!A:D;3;0) in B2",
+        "step2": "Hole den Mindestbestand: =SVERWEIS(A2;Stammdaten!A:D;4;0) in C2",
+        "step3": "Erstelle den Bestellvorschlag: =WENN(B2<C2;\"Nachbestellen\";\"OK\") in D2",
+        "step4": "Kopiere alle drei Formeln für die weiteren Artikel in Zeile 3 und 4",
+        "hint1": "Spaltenindex 3 = Bestand, Spaltenindex 4 = Mindestbestand in der Stammdaten-Tabelle",
+        "hint2": "WENN(Bestand < Mindestbestand) → 'Nachbestellen', sonst → 'OK'"
+      },
+      "ex3": {
+        "title": "Kundenrechnung komplett",
+        "story": "Erstelle eine vollständige Rechnung: Bezeichnung und Preis per SVERWEIS, Gesamtpreis mit MwSt per Formel.",
+        "step1": "Hole die Bezeichnung: =SVERWEIS(A2;Stammdaten!A:C;2;0) in B2",
+        "step2": "Hole den Preis: =SVERWEIS(A2;Stammdaten!A:C;3;0) in C2",
+        "step3": "Berechne den Gesamtpreis mit MwSt: =C2*D2*(1+$E$1) in F2",
+        "step4": "Kopiere alle Formeln für die weiteren Artikel (Zeilen 3 und 4)",
+        "hint1": "$E$1 fixiert die MwSt-Zelle — beim Kopieren bleibt sie immer auf E1",
+        "hint2": "Gesamt = Preis × Menge × (1 + MwSt). Bei 19% MwSt: × 1,19"
+      },
+      "ex4": {
+        "title": "Fehlererkennung",
+        "story": "Manche Artikelnummern sind falsch! Schütze deine Formel mit WENNFEHLER — bei unbekannten Nummern soll 'Nicht gefunden' erscheinen.",
+        "step1": "Gib in B2 ein: =WENNFEHLER(SVERWEIS(A2;Stammdaten!A:C;2;0);\"Nicht gefunden\")",
+        "step2": "Gib in C2 ein: =WENNFEHLER(SVERWEIS(A2;Stammdaten!A:C;3;0);\"Nicht gefunden\")",
+        "step3": "Kopiere beide Formeln für Zeile 3 (Artikelnr X-9999 — diese existiert nicht!)",
+        "step4": "Kopiere die Formeln auch für Zeilen 4 und 5",
+        "hint1": "WENNFEHLER(Formel;Fehlerwert): Wenn SVERWEIS nichts findet (#NV), wird der Fehlerwert angezeigt",
+        "hint2": "X-9999 und X-8888 sind ungültige Nummern — dort soll 'Nicht gefunden' stehen"
+      }
+    },
+    "level3": {
+      "title": "Monat 2: Kundenbewertung",
+      "story": "Im zweiten Monat bei Schulz & Partner wertest du Kundendaten aus und triffst komplexe Geschäftsentscheidungen mit WENN+UND/ODER.",
+      "ex1": {
+        "title": "Kundenstatus",
+        "story": "Klassifiziere Kunden als Premium oder Standard — aber nur wenn BEIDE Kriterien erfüllt sind.",
+        "step1": "Gib in D2 die Formel ein: =WENN(UND(B2>5000;C2>3);\"Premium\";\"Standard\")",
+        "step2": "Kopiere die Formel für Zeile 3: =WENN(UND(B3>5000;C3>3);\"Premium\";\"Standard\")",
+        "step3": "Kopiere die Formel für Zeile 4: =WENN(UND(B4>5000;C4>3);\"Premium\";\"Standard\")",
+        "step4": "Kopiere die Formel auch für die Zeilen 5 und 6",
+        "hint1": "UND() bedeutet: ALLE Bedingungen müssen gleichzeitig wahr sein",
+        "hint2": "Premium = Umsatz über 5.000 EUR UND mehr als 3 Bestellungen"
+      },
+      "ex2": {
+        "title": "Expressversand",
+        "story": "Bestimme die Versandart für Sendungen — bei hohem Gewicht ODER hohem Warenwert kommt die Spedition.",
+        "step1": "Gib in D2 die Formel ein: =WENN(ODER(B2>20;C2>500);\"Spedition\";\"Paket\")",
+        "step2": "Kopiere die Formel für Zeile 3: =WENN(ODER(B3>20;C3>500);\"Spedition\";\"Paket\")",
+        "step3": "Kopiere die Formel für Zeile 4: =WENN(ODER(B4>20;C4>500);\"Spedition\";\"Paket\")",
+        "step4": "Kopiere die Formel auch für die Zeilen 5 und 6",
+        "hint1": "ODER() bedeutet: MINDESTENS EINE Bedingung muss wahr sein",
+        "hint2": "Spedition = über 20 kg ODER Warenwert über 500 EUR"
+      },
+      "ex3": {
+        "title": "Rabattklasse",
+        "story": "Berechne den Rabattsatz für jeden Kunden — mit verschachtelten WENN-Funktionen für drei Stufen.",
+        "step1": "Gib in C2 die Formel ein: =WENN(B2>10000;10;WENN(B2>5000;5;0))",
+        "step2": "Kopiere die Formel für Zeile 3: =WENN(B3>10000;10;WENN(B3>5000;5;0))",
+        "step3": "Kopiere die Formel für Zeile 4: =WENN(B4>10000;10;WENN(B4>5000;5;0))",
+        "step4": "Kopiere die Formel auch für die Zeilen 5 und 6",
+        "hint1": "Verschachtelte WENN: =WENN(Bedingung1;Wert1;WENN(Bedingung2;Wert2;Wert3))",
+        "hint2": "Über 10.000 EUR = 10%, über 5.000 EUR = 5%, sonst = 0%"
+      },
+      "ex4": {
+        "title": "Lieferantenbewertung",
+        "story": "Bewerte Lieferanten mit A, B oder C — kombiniere UND und ODER in verschachtelten WENN-Formeln.",
+        "step1": "Gib in E2 die Formel ein: =WENN(UND(B2>=7;C2>=7);\"A\";WENN(ODER(B2>=5;C2>=5);\"B\";\"C\"))",
+        "step2": "Kopiere die Formel für Zeile 3: =WENN(UND(B3>=7;C3>=7);\"A\";WENN(ODER(B3>=5;C3>=5);\"B\";\"C\"))",
+        "step3": "Kopiere die Formel für Zeile 4: =WENN(UND(B4>=7;C4>=7);\"A\";WENN(ODER(B4>=5;C4>=5);\"B\";\"C\"))",
+        "step4": "Kopiere die Formel für Zeile 5: =WENN(UND(B5>=7;C5>=7);\"A\";WENN(ODER(B5>=5;C5>=5);\"B\";\"C\"))",
+        "hint1": "A = Preis UND Qualität beide >= 7",
+        "hint2": "B = Preis >= 5 ODER Qualität >= 5 (wenn kein A). C = beides unter 5"
+      }
+    },
+    "level4": {
+      "title": "Monat 3: Warenwirtschaft",
+      "story": "Monat 3 bei Schulz & Partner. Du verwaltest die Produktdatenbank und musst Informationen blitzschnell nachschlagen. Mit SVERWEIS holst du dir genau die Daten, die du brauchst!",
+      "ex1": {
+        "title": "Artikelpreis suchen",
+        "story": "Der Chef braucht sofort die aktuellen Preise für vier Artikel. Schlage die Preise mit SVERWEIS aus der Stammdatentabelle heraus.",
+        "step1": "Schau dir die Stammdaten-Tabelle an: Spalte A = Artikelnr, Spalte B = Bezeichnung, Spalte C = Preis",
+        "step2": "Trage in B2 die Formel ein: =SVERWEIS(A2;Stammdaten!A:C;3;0)",
+        "step3": "Kopiere die Formel nach B3 und B4",
+        "step4": "Vervollständige auch B5 — prüfe ob alle vier Preise korrekt angezeigt werden",
+        "hint1": "SVERWEIS(Suchbegriff;Bereich;Spalte;0) — die 3 bedeutet: gib den Wert aus der 3. Spalte zurück",
+        "hint2": "Das 0 am Ende steht für exakte Übereinstimmung. Stammdaten!A:C bedeutet: suche im Blatt 'Stammdaten'"
+      },
+      "ex2": {
+        "title": "Lieferant finden",
+        "story": "Für eine Nachbestellung musst du schnell herausfinden, welcher Lieferant welchen Artikel liefert. Nutze SVERWEIS auf die Lieferanten-Spalte.",
+        "step1": "Schau dir die Stammdaten-Tabelle an: jetzt gibt es 4 Spalten — A = Artikelnr, B = Bezeichnung, C = Preis, D = Lieferant",
+        "step2": "Trage in B2 die Formel ein: =SVERWEIS(A2;Stammdaten!A:D;4;0)",
+        "step3": "Kopiere die Formel nach B3 und B4",
+        "step4": "Vervollständige auch B5 und prüfe alle Lieferantennamen",
+        "hint1": "Die 4 steht für die 4. Spalte im Suchbereich — das ist die Lieferanten-Spalte",
+        "hint2": "Vergleiche mit Übung 1: dort war es Spalte 3 (Preis), hier ist es Spalte 4 (Lieferant)"
+      },
+      "ex3": {
+        "title": "Rechnung erstellen",
+        "story": "Du erstellst eine Bestellung. Trage Bezeichnung und Preis per SVERWEIS ein und berechne dann den Gesamtbetrag.",
+        "step1": "Schau dir die Aufgabe an: Artikelnr und Menge sind schon eingetragen. Du brauchst Bezeichnung, Preis und Gesamt.",
+        "step2": "Trage in B2 die Formel ein: =SVERWEIS(A2;Stammdaten!A:C;2;0) für die Bezeichnung",
+        "step3": "Trage in C2 die Formel ein: =SVERWEIS(A2;Stammdaten!A:C;3;0) für den Preis. Kopiere beide Formeln nach unten.",
+        "step4": "Berechne den Gesamtbetrag: trage in E2 die Formel =C2*D2 ein und kopiere sie nach unten",
+        "hint1": "Für Bezeichnung: Spalte 2 im SVERWEIS. Für Preis: Spalte 3. Beides aus demselben Suchbereich.",
+        "hint2": "Gesamt = Preis × Menge. Wenn Preis per SVERWEIS berechnet wird, funktioniert =C2*D2 genauso."
+      },
+      "ex4": {
+        "title": "Lagerort bestimmen",
+        "story": "Im Lager musst du 3 Artikel auffinden. Nutze SVERWEIS dreimal pro Zeile — für Lager, Regal und Fach.",
+        "step1": "Schau dir die Stammdaten an: Spalte C = Lager, D = Regal, E = Fach",
+        "step2": "Trage in B2 die Formel ein: =SVERWEIS(A2;Stammdaten!A:E;3;0) für das Lager",
+        "step3": "Trage in C2 die Formel =SVERWEIS(A2;Stammdaten!A:E;4;0) für das Regal ein, in D2 =SVERWEIS(A2;Stammdaten!A:E;5;0) für das Fach",
+        "step4": "Kopiere alle drei Formeln für die Zeilen 3 und 4",
+        "hint1": "Für Lager = Spalte 3, für Regal = Spalte 4, für Fach = Spalte 5 — immer aus Stammdaten!A:E",
+        "hint2": "Alle drei SVERWEIS-Formeln suchen in derselben Tabelle — nur die Spaltennummer ändert sich"
+      }
+    },
+    "level2": {
+      "title": "Entscheidungen treffen",
+      "story": "Woche 2 bei Schulz & Partner. Du übernimmst jetzt die Rechnungsprüfung. Mit der WENN-Funktion triffst du automatisch Entscheidungen!",
+      "ex1": {
+        "title": "Zahlungsziel prüfen",
+        "story": "Prüfe die offenen Rechnungen: Welche sind bereits bezahlt, welche noch offen?",
+        "step1": "Schau dir die Tabelle an: Spalte A enthält die Rechnungsnummern, Spalte B den offenen Betrag.",
+        "step2": "Schreibe in C2 die Formel: =WENN(B2=0;\"bezahlt\";\"offen\")",
+        "step3": "Kopiere die Formel für die Rechnungen C3 bis C5",
+        "step4": "Prüfe C6: Trage auch dort die WENN-Formel ein",
+        "hint1": "WENN prüft eine Bedingung: WENN(Bedingung;dann;sonst). Ist der Betrag 0, ist die Rechnung bezahlt.",
+        "hint2": "Kopiere die Formel nach unten: Klick auf C2, dann ziehe das kleine Quadrat in der Ecke nach unten."
+      },
+      "ex2": {
+        "title": "Skonto berechnen",
+        "story": "Schulz & Partner gewährt 2% Skonto bei Zahlung innerhalb von 10 Tagen. Berechne den Skontobetrag!",
+        "step1": "Schau dir die Tabelle an: Spalte B zeigt den Rechnungsbetrag, Spalte C die Tage bis zur Zahlung.",
+        "step2": "Schreibe in D2 die Formel: =WENN(C2<=10;B2*0,02;0)",
+        "step3": "Kopiere die Formel für die Zeilen D3 bis D5",
+        "step4": "Vervollständige die Formel auch in D6",
+        "hint1": "Skonto gilt nur bei Zahlung innerhalb von 10 Tagen. Sonst ist der Skontobetrag 0.",
+        "hint2": "B2*0,02 entspricht 2% von B2. Das Komma ist hier das Dezimaltrennzeichen."
+      },
+      "ex3": {
+        "title": "Lagerampel",
+        "story": "Der Lagerbestand muss überwacht werden. Artikel mit weniger als 10 Einheiten müssen nachbestellt werden!",
+        "step1": "Schau dir die Tabelle an: Spalte A enthält die Artikel, Spalte B den aktuellen Bestand.",
+        "step2": "Schreibe in C2 die Formel: =WENN(B2<10;\"Nachbestellen\";\"OK\")",
+        "step3": "Kopiere die Formel für C3 bis C5",
+        "step4": "Vervollständige auch C6 mit der WENN-Formel",
+        "hint1": "Der Vergleichsoperator < bedeutet 'kleiner als'. Bei Bestand < 10 muss nachbestellt werden.",
+        "hint2": "Texte in Formeln werden in Anführungszeichen geschrieben: \"Nachbestellen\" und \"OK\"."
+      },
+      "ex4": {
+        "title": "Versandkosten berechnen",
+        "story": "Ab 100 EUR Bestellwert ist der Versand kostenlos. Unter 100 EUR kostet er 5,99 EUR.",
+        "step1": "Schau dir die Tabelle an: Spalte A sind die Bestellnummern, Spalte B der Bestellwert.",
+        "step2": "Schreibe in C2 die Formel: =WENN(B2>100;0;5,99)",
+        "step3": "Kopiere die Formel für C3 bis C5",
+        "step4": "Vervollständige auch C6 mit der WENN-Formel",
+        "hint1": "Der Vergleichsoperator > bedeutet 'größer als'. Über 100 EUR = kostenloser Versand (0).",
+        "hint2": "Die WENN-Funktion gibt hier Zahlen zurück, keine Texte. Daher keine Anführungszeichen."
+      }
+    },
+    "level8": {
+      "title": "Jahresabschluss: Dein Shop waechst",
+      "story": "Das Jahr ist zu Ende! Du kombinierst alles Gelernte fuer den Jahresbericht deines Shops — SVERWEIS, SUMMEWENN, bedingte Formatierung und Diagramme.",
+      "ex1": {
+        "title": "Auftragsabwicklung",
+        "story": "Erstelle eine vollstaendige Auftragsabwicklung: hole Bezeichnung und Preis per SVERWEIS aus den Stammdaten und berechne Zwischensumme, Rabatt und Gesamtbetrag.",
+        "step1": "Gib in B2 die SVERWEIS-Formel fuer die Bezeichnung ein: =SVERWEIS(A2;Stammdaten!A:C;2;0) und in C2 fuer den Preis: =SVERWEIS(A2;Stammdaten!A:C;3;0)",
+        "step2": "Berechne die Zwischensumme in E2: =C2*D2 (Preis mal Menge)",
+        "step3": "Berechne den Rabatt in F2: =WENN(E2>100;E2*0,05;0) — 5% Rabatt ab 100 EUR",
+        "step4": "Berechne den Gesamtbetrag in G2: =E2-F2 (Zwischensumme minus Rabatt)",
+        "hint1": "SVERWEIS holt Bezeichnung (Spalte 2) und Preis (Spalte 3) aus der Stammdaten-Tabelle",
+        "hint2": "Rabatt: Nur wenn Zwischensumme > 100 EUR → 5% des Betrags, sonst 0"
+      },
+      "ex2": {
+        "title": "Quartalsanalyse",
+        "story": "Werte die Verkaufsdaten deines Shops nach Produkten aus — berechne den Gesamtumsatz pro Produkt mit SUMMEWENN und zaehle die Quartale mit ZÄHLENWENN.",
+        "step1": "Berechne in B16 den Gesamtumsatz des Laptops: =SUMMEWENN(A2:A13;\"Laptop\";C2:C13)",
+        "step2": "Berechne in B17 den Umsatz der Tastatur: =SUMMEWENN(A2:A13;\"Tastatur\";C2:C13) und in B18 fuer das Headset",
+        "step3": "Zaehle in C16 die Laptop-Quartale: =ZÄHLENWENN(A2:A13;\"Laptop\")",
+        "step4": "Erstelle ein Saeulendiagramm mit dem Diagramm-Assistenten: Daten B16:B18, Beschriftung A16:A18",
+        "hint1": "SUMMEWENN(A2:A13;\"Laptop\";C2:C13) summiert alle Umsaetze in Spalte C, wo Spalte A 'Laptop' ist",
+        "hint2": "Laptop-Gesamtumsatz: 58.500 EUR, Tastatur: 13.700 EUR, Headset: 24.600 EUR"
+      },
+      "ex3": {
+        "title": "Lieferantenbewertung komplett",
+        "story": "Hole die Bewertungsscores per SVERWEIS aus den Stammdaten und vergib mit WENN+UND automatisch die Note A, B oder C. Faerbe A-Lieferanten gruen und C-Lieferanten rot.",
+        "step1": "Hole Preis-Score (B2), Qualitaet (C2) und Lieferung (D2) per SVERWEIS aus Stammdaten: =SVERWEIS(A2;Stammdaten!A:D;2;0)",
+        "step2": "Vergib in E2 die Bewertung: =WENN(UND(B2>=7;C2>=7);\"A\";WENN(ODER(B2>=5;C2>=5);\"B\";\"C\"))",
+        "step3": "Kopiere alle Formeln fuer die Zeilen 3 bis 5",
+        "step4": "Erstelle bedingte Formatierung: A = gruen (#00B050), C = rot (#FF0000)",
+        "hint1": "A-Note: Preis-Score UND Qualitaet beide >= 7. B-Note: mindestens einer >= 5. C = alles darunter",
+        "hint2": "Alpha GmbH (8/9): Note A — gruen. Gamma AG (3/4): Note C — rot. Beta KG (6/5): Note B"
+      },
+      "ex4": {
+        "title": "Geschaeftsbericht",
+        "story": "Erstelle den Jahresbericht deines Shops: berechne Jahresumsatz, Monatsdurchschnitt, besten und schlechtesten Monat — und visualisiere den Trend als Liniendiagramm.",
+        "step1": "Berechne in B15 den Jahresumsatz: =SUMME(B2:B13)",
+        "step2": "Berechne in B16 den Monatsdurchschnitt: =MITTELWERT(B2:B13)",
+        "step3": "Berechne in B17 den besten Monat: =MAX(B2:B13) und in B18 den schlechtesten: =MIN(B2:B13)",
+        "step4": "Erstelle ein Liniendiagramm: Daten B2:B13, Beschriftung A2:A13 — zeige den Jahrestrend",
+        "hint1": "SUMME, MITTELWERT, MAX, MIN — du kennst alle vier! Jetzt kombinierst du sie in einem Bericht",
+        "hint2": "Jahresumsatz: 287.200 EUR, Durchschnitt: ca. 23.933 EUR, Bester Monat: Dezember (35.600 EUR)"
+      }
+    }
+  },
+  "chart": {
+    "title": "Diagramm erstellen",
+    "selectType": "Diagrammtyp wählen",
+    "bar": "Säulendiagramm",
+    "line": "Liniendiagramm",
+    "pie": "Kreisdiagramm",
+    "dataRange": "Datenbereich (z.B. B2:B6)",
+    "labelRange": "Beschriftung (z.B. A2:A6)",
+    "chartTitle": "Titel",
+    "preview": "Vorschau",
+    "finish": "Fertig",
+    "back": "Zurück",
+    "next": "Weiter"
+  },
+  "condFormat": {
+    "title": "Bedingte Formatierung",
+    "addRule": "Regel hinzufügen",
+    "apply": "Anwenden",
+    "greaterThan": "größer als",
+    "lessThan": "kleiner als",
+    "equals": "gleich",
+    "colorGreen": "Grün",
+    "colorRed": "Rot",
+    "colorYellow": "Gelb"
   }
 }

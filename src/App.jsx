@@ -2,8 +2,10 @@ import { useState, useCallback } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { GameProvider } from './context/GameContext';
 import { I18nProvider } from './context/I18nContext';
+import { useGame } from './context/GameContext';
 import Layout from './components/Layout';
 import LevelMap from './components/LevelMap';
+import TrackSelect from './components/TrackSelect';
 import ExerciseView from './components/ExerciseView';
 import StoryIntro from './components/StoryIntro';
 import BadgeWall from './components/BadgeWall';
@@ -19,22 +21,36 @@ const pageVariants = {
 };
 
 function AppContent() {
-  const [view, setView] = useState('levels'); // levels, badges, glossary, profile, story, exercise
+  const { selectedTrack, setTrack } = useGame();
+  // If no track selected yet, start at trackSelect; otherwise go straight to levels
+  const [view, setView] = useState(selectedTrack ? 'levels' : 'trackSelect');
   const [currentExerciseId, setCurrentExerciseId] = useState(null);
   const [storyShown, setStoryShown] = useState(new Set());
+
+  const handleSelectTrack = useCallback(
+    (trackId) => {
+      setTrack(trackId);
+      setView('levels');
+    },
+    [setTrack]
+  );
 
   const handleStartExercise = useCallback(
     (exerciseId) => {
       setCurrentExerciseId(exerciseId);
-      const levelId = exerciseId.split('-')[0]; // e.g. "L1"
-      if (!storyShown.has(levelId)) {
+      // IDs are like "A-L1-EX1" — the level segment is at index 1
+      const parts = exerciseId.split('-');
+      const levelId = parts.length >= 2 ? parts[1] : parts[0]; // e.g. "L1"
+      // Scope story tracking per track+level to avoid cross-track conflicts
+      const storyKey = `${selectedTrack}-${levelId}`;
+      if (!storyShown.has(storyKey)) {
         setView('story');
-        setStoryShown((prev) => new Set(prev).add(levelId));
+        setStoryShown((prev) => new Set(prev).add(storyKey));
       } else {
         setView('exercise');
       }
     },
-    [storyShown]
+    [storyShown, selectedTrack]
   );
 
   const handleStoryStart = useCallback(() => {
@@ -51,17 +67,23 @@ function AppContent() {
     setView('exercise');
   }, []);
 
-  const handleNavigate = useCallback((target) => {
-    setView(target);
-    setCurrentExerciseId(null);
-  }, []);
+  const handleNavigate = useCallback(
+    (target) => {
+      setView(target);
+      setCurrentExerciseId(null);
+    },
+    []
+  );
 
   const exercise = currentExerciseId ? getExercise(currentExerciseId) : null;
 
   let content;
   switch (view) {
+    case 'trackSelect':
+      content = <TrackSelect onSelectTrack={handleSelectTrack} />;
+      break;
     case 'levels':
-      content = <LevelMap onStartExercise={handleStartExercise} />;
+      content = <LevelMap track={selectedTrack} onStartExercise={handleStartExercise} />;
       break;
     case 'story':
       content = <StoryIntro exerciseId={currentExerciseId} onStart={handleStoryStart} />;
@@ -86,7 +108,7 @@ function AppContent() {
       content = <ProfileCard />;
       break;
     default:
-      content = <LevelMap onStartExercise={handleStartExercise} />;
+      content = <LevelMap track={selectedTrack} onStartExercise={handleStartExercise} />;
   }
 
   return (

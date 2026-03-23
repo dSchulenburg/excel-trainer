@@ -6,25 +6,44 @@ export const PLAYER_LEVELS = [
   { level: 5, title: 'Excel-Held', titleKey: 'playerLevel.5', xpRequired: 1000 },
 ];
 
-export function getPlayerLevel(xp) {
-  let current = PLAYER_LEVELS[0];
-  for (const pl of PLAYER_LEVELS) {
+export const KAUFLEUTE_LEVELS = [
+  { level: 1, titleKey: 'playerLevel.kaufleute.1', xpRequired: 0 },
+  { level: 2, titleKey: 'playerLevel.kaufleute.2', xpRequired: 150 },
+  { level: 3, titleKey: 'playerLevel.kaufleute.3', xpRequired: 400 },
+  { level: 4, titleKey: 'playerLevel.kaufleute.4', xpRequired: 800 },
+  { level: 5, titleKey: 'playerLevel.kaufleute.5', xpRequired: 1400 },
+];
+
+export const PLAYER_LEVELS_BY_TRACK = {
+  avm: PLAYER_LEVELS,
+  kaufleute: KAUFLEUTE_LEVELS,
+};
+
+function getLevelsForTrack(track) {
+  return PLAYER_LEVELS_BY_TRACK[track] || PLAYER_LEVELS;
+}
+
+export function getPlayerLevel(xp, track = 'avm') {
+  const levels = getLevelsForTrack(track);
+  let current = levels[0];
+  for (const pl of levels) {
     if (xp >= pl.xpRequired) current = pl;
     else break;
   }
   return current;
 }
 
-export function getNextLevel(xp) {
-  for (const pl of PLAYER_LEVELS) {
+export function getNextLevel(xp, track = 'avm') {
+  const levels = getLevelsForTrack(track);
+  for (const pl of levels) {
     if (xp < pl.xpRequired) return pl;
   }
   return null;
 }
 
-export function getXPProgress(xp) {
-  const current = getPlayerLevel(xp);
-  const next = getNextLevel(xp);
+export function getXPProgress(xp, track = 'avm') {
+  const current = getPlayerLevel(xp, track);
+  const next = getNextLevel(xp, track);
   if (!next) return 1;
   const range = next.xpRequired - current.xpRequired;
   const progress = xp - current.xpRequired;

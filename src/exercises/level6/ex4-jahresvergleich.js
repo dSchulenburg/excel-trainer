@@ -1,5 +1,6 @@
 export default {
-  id: 'L6-EX4',
+  id: 'A-L6-EX4',
+  trackId: 'avm',
   levelId: 6,
   order: 4,
   titleKey: 'level6.ex4.title',
