@@ -434,6 +434,94 @@
         "hint2": "Comisión = ingresos × tasa (p. ej. 12.500 × 0,05 = 625 EUR)"
       }
     },
+    "level6": {
+      "title": "Mes 5: Análisis de ventas",
+      "story": "¡Has abierto tu propia tienda online! Es hora de analizar los datos de ventas con SUMAR.SI y CONTAR.SI.",
+      "ex1": {
+        "title": "Ingresos por categoría",
+        "story": "Averigua cuántos ingresos genera cada categoría de producto — SUMAR.SI permite sumar de forma selectiva por categoría.",
+        "step1": "Introduce en B12: =SUMAR.SI(B2:B9;\"Elektronik\";C2:C9)",
+        "step2": "Calcula los ingresos de Buerobedarf en B13: =SUMAR.SI(B2:B9;\"Buerobedarf\";C2:C9)",
+        "step3": "Calcula los ingresos de Moebel en B14: =SUMAR.SI(B2:B9;\"Moebel\";C2:C9)",
+        "step4": "Comprobación: Electrónica = 479,96 EUR, Material de oficina = 77,50 EUR, Muebles = 449,00 EUR",
+        "hint1": "SUMAR.SI(rango;criterio;rango_suma): la columna B contiene las categorías, la columna C los importes",
+        "hint2": "El texto del criterio debe coincidir exactamente con el contenido de la celda"
+      },
+      "ex2": {
+        "title": "Contar pedidos",
+        "story": "Analiza cuántos pedidos cumplen determinadas condiciones — CONTAR.SI cuenta las celdas que cumplen un criterio.",
+        "step1": "Cuenta los pedidos mayores de 50 EUR en B12: =CONTAR.SI(C2:C9;\">50\")",
+        "step2": "Cuenta los pedidos menores de 50 EUR en B13: =CONTAR.SI(C2:C9;\"<50\")",
+        "step3": "Cuenta los pedidos de electrónica en B14: =CONTAR.SI(B2:B9;\"Elektronik\")",
+        "step4": "Comprobación: >50 EUR = 6 pedidos, <50 EUR = 2 pedidos, Electrónica = 4 pedidos",
+        "hint1": "CONTAR.SI(rango;criterio): los operadores de comparación como >50 deben ir entre comillas",
+        "hint2": "Tanto los criterios de texto (\"Elektronik\") como las comparaciones numéricas (\">50\") necesitan comillas"
+      },
+      "ex3": {
+        "title": "Comparación de sucursales",
+        "story": "¡Tu tienda tiene tres sucursales! Compara los ingresos y el número de pedidos por sucursal con SUMAR.SI y CONTAR.SI.",
+        "step1": "Calcula los ingresos de Hamburgo en B13: =SUMAR.SI(B2:B10;\"Hamburg\";D2:D10)",
+        "step2": "Calcula los ingresos de Berlín en B14: =SUMAR.SI(B2:B10;\"Berlin\";D2:D10)",
+        "step3": "Calcula los ingresos de Múnich en B15: =SUMAR.SI(B2:B10;\"Muenchen\";D2:D10)",
+        "step4": "Cuenta los pedidos de Hamburgo en C13: =CONTAR.SI(B2:B10;\"Hamburg\")",
+        "hint1": "La sucursal está en la columna B, el importe en la columna D — ajusta el rango_suma en consecuencia",
+        "hint2": "Hamburgo = 578,99 EUR (3 pedidos), Berlín = 305,48 EUR (3), Múnich = 341,99 EUR (3)"
+      },
+      "ex4": {
+        "title": "Encontrar los mejores clientes",
+        "story": "¿Quiénes son tus mejores clientes? Calcula los ingresos totales, el número de pedidos y el valor medio por cliente.",
+        "step1": "Calcula los ingresos totales de Firma A en B12: =SUMAR.SI(B2:B9;\"Firma A\";C2:C9)",
+        "step2": "Cuenta los pedidos de Firma A en C12: =CONTAR.SI(B2:B9;\"Firma A\")",
+        "step3": "Calcula el promedio en D12: =B12/C12",
+        "step4": "Completa las fórmulas también para Firma B (fila 13) y Firma C (fila 14)",
+        "hint1": "Promedio = ingresos totales ÷ número de pedidos. Usa las celdas calculadas B12 y C12",
+        "hint2": "Firma A: 1.000 EUR, 3 pedidos, Ø 333,33 EUR. Firma B: 730 EUR, 3 pedidos, Ø 243,33 EUR"
+      }
+    },
+    "level5": {
+      "title": "Mes 4: Comparación de proveedores",
+      "story": "Mes 4 en Schulz & Partner. Has dominado BUSCARV — ahora lo combinas con SI, MIN y SI.ERROR para tomar decisiones empresariales reales.",
+      "ex1": {
+        "title": "Mejor precio",
+        "story": "Tres proveedores, un artículo — ¿quién es más barato? Usa BUSCARV para cada proveedor y MIN para el mejor precio.",
+        "step1": "Introduce en B2: =BUSCARV(A2;Stammdaten!A:D;2;0) para el precio del Proveedor 1",
+        "step2": "Introduce en C2: =BUSCARV(A2;Stammdaten!A:D;3;0) para el precio del Proveedor 2",
+        "step3": "Introduce en D2: =BUSCARV(A2;Stammdaten!A:D;4;0) para el precio del Proveedor 3",
+        "step4": "Calcula el mejor precio en E2: =MIN(B2;C2;D2)",
+        "hint1": "BUSCARV devuelve el valor de una columna específica — índice de columna 2, 3 o 4",
+        "hint2": "MIN(B2;C2;D2) encuentra automáticamente el menor de los tres precios"
+      },
+      "ex2": {
+        "title": "Propuesta de pedido",
+        "story": "Comprueba el stock mediante BUSCARV y decide con SI si hay que hacer un pedido.",
+        "step1": "Obtén el stock con BUSCARV: =BUSCARV(A2;Stammdaten!A:D;3;0) en B2",
+        "step2": "Obtén el stock mínimo: =BUSCARV(A2;Stammdaten!A:D;4;0) en C2",
+        "step3": "Crea la propuesta de pedido: =SI(B2<C2;\"Nachbestellen\";\"OK\") en D2",
+        "step4": "Copia las tres fórmulas para los demás artículos en las filas 3 y 4",
+        "hint1": "Índice de columna 3 = stock, índice de columna 4 = stock mínimo en la tabla de referencia",
+        "hint2": "SI(stock < mínimo) → 'Nachbestellen', de lo contrario → 'OK'"
+      },
+      "ex3": {
+        "title": "Factura completa al cliente",
+        "story": "Crea una factura completa: nombre y precio mediante BUSCARV, precio total con IVA mediante fórmula.",
+        "step1": "Obtén el nombre: =BUSCARV(A2;Stammdaten!A:C;2;0) en B2",
+        "step2": "Obtén el precio: =BUSCARV(A2;Stammdaten!A:C;3;0) en C2",
+        "step3": "Calcula el total con IVA: =C2*D2*(1+$E$1) en F2",
+        "step4": "Copia todas las fórmulas para los demás artículos (filas 3 y 4)",
+        "hint1": "$E$1 fija la celda del IVA — permanece en E1 al copiar",
+        "hint2": "Total = precio × cantidad × (1 + IVA). Con 19% IVA: × 1,19"
+      },
+      "ex4": {
+        "title": "Detección de errores",
+        "story": "¡Algunos números de artículo son incorrectos! Protege tu fórmula con SI.ERROR — los números desconocidos deben mostrar 'Nicht gefunden'.",
+        "step1": "Introduce en B2: =SI.ERROR(BUSCARV(A2;Stammdaten!A:C;2;0);\"Nicht gefunden\")",
+        "step2": "Introduce en C2: =SI.ERROR(BUSCARV(A2;Stammdaten!A:C;3;0);\"Nicht gefunden\")",
+        "step3": "Copia ambas fórmulas a la fila 3 (artículo X-9999 — ¡este no existe!)",
+        "step4": "Copia las fórmulas también a las filas 4 y 5",
+        "hint1": "SI.ERROR(fórmula;valor_error): si BUSCARV no encuentra nada (#N/A), se muestra el valor de error",
+        "hint2": "X-9999 y X-8888 son números inválidos — deben mostrar 'Nicht gefunden'"
+      }
+    },
     "level3": {
       "title": "Mes 2: Evaluación de clientes",
       "story": "En tu segundo mes en Schulz & Partner analizas datos de clientes y tomas decisiones empresariales complejas con SI+Y/O.",
@@ -476,6 +564,50 @@
         "step4": "Copia la fórmula para la fila 5: =SI(Y(B5>=7;C5>=7);\"A\";SI(O(B5>=5;C5>=5);\"B\";\"C\"))",
         "hint1": "A = Precio Y Calidad ambos >= 7",
         "hint2": "B = Precio >= 5 O Calidad >= 5 (cuando no hay A). C = ambos por debajo de 5"
+      }
+    },
+    "level4": {
+      "title": "Mes 3: Gestión de inventario",
+      "story": "Mes 3 en Schulz & Partner. Gestionas la base de datos de productos y necesitas encontrar información al instante. ¡Con BUSCARV obtienes exactamente los datos que necesitas!",
+      "ex1": {
+        "title": "Buscar precio del artículo",
+        "story": "El jefe necesita inmediatamente los precios actuales de cuatro artículos. Usa BUSCARV para encontrar los precios en la tabla de datos maestros.",
+        "step1": "Observa la hoja Stammdaten: columna A = número de artículo, B = descripción, C = precio",
+        "step2": "Introduce en B2 la fórmula: =BUSCARV(A2;Stammdaten!A:C;3;0)",
+        "step3": "Copia la fórmula a B3 y B4",
+        "step4": "Completa también B5 — comprueba que los cuatro precios se muestren correctamente",
+        "hint1": "BUSCARV(valor_buscado;rango;columna;0) — el 3 significa: devolver el valor de la 3.ª columna",
+        "hint2": "El 0 al final significa coincidencia exacta. Stammdaten!A:C significa: buscar en la hoja 'Stammdaten'"
+      },
+      "ex2": {
+        "title": "Encontrar proveedor",
+        "story": "Para un nuevo pedido necesitas saber rápidamente qué proveedor suministra cada artículo. Usa BUSCARV sobre la columna de proveedores.",
+        "step1": "Observa la hoja Stammdaten: ahora hay 4 columnas — A = número de artículo, B = descripción, C = precio, D = proveedor",
+        "step2": "Introduce en B2 la fórmula: =BUSCARV(A2;Stammdaten!A:D;4;0)",
+        "step3": "Copia la fórmula a B3 y B4",
+        "step4": "Completa también B5 y comprueba todos los nombres de proveedores",
+        "hint1": "El 4 indica la 4.ª columna del rango de búsqueda — esa es la columna del proveedor",
+        "hint2": "Compara con el ejercicio 1: allí era la columna 3 (precio), aquí es la columna 4 (proveedor)"
+      },
+      "ex3": {
+        "title": "Crear factura",
+        "story": "Estás creando un pedido. Introduce descripción y precio mediante BUSCARV y luego calcula el importe total.",
+        "step1": "Observa la tarea: el número de artículo y la cantidad ya están introducidos. Necesitas descripción, precio y total.",
+        "step2": "Introduce en B2: =BUSCARV(A2;Stammdaten!A:C;2;0) para la descripción",
+        "step3": "Introduce en C2: =BUSCARV(A2;Stammdaten!A:C;3;0) para el precio. Copia ambas fórmulas hacia abajo.",
+        "step4": "Calcula el total: introduce =C2*D2 en E2 y cópialo hacia abajo",
+        "hint1": "Para descripción: columna 2 en BUSCARV. Para precio: columna 3. Ambos del mismo rango.",
+        "hint2": "Total = precio × cantidad. Cuando el precio se calcula con BUSCARV, =C2*D2 funciona igual."
+      },
+      "ex4": {
+        "title": "Determinar ubicación en almacén",
+        "story": "En el almacén necesitas localizar 3 artículos. Usa BUSCARV tres veces por fila — para almacén, estantería y compartimento.",
+        "step1": "Observa Stammdaten: columna C = almacén, D = estantería, E = compartimento",
+        "step2": "Introduce en B2: =BUSCARV(A2;Stammdaten!A:E;3;0) para el almacén",
+        "step3": "Introduce en C2: =BUSCARV(A2;Stammdaten!A:E;4;0) para la estantería, en D2: =BUSCARV(A2;Stammdaten!A:E;5;0) para el compartimento",
+        "step4": "Copia las tres fórmulas para las filas 3 y 4",
+        "hint1": "Almacén = columna 3, estantería = columna 4, compartimento = columna 5 — siempre de Stammdaten!A:E",
+        "hint2": "Las tres fórmulas BUSCARV buscan en la misma tabla — solo cambia el número de columna"
       }
     },
     "level2": {

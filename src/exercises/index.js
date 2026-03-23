@@ -22,6 +22,7 @@ import l6ex1 from './level6/ex1-noten';
 import l6ex2 from './level6/ex2-gehalt';
 import l6ex3 from './level6/ex3-inventur';
 import l6ex4 from './level6/ex4-jahresvergleich';
+import { kaufleuteExercises, kaufleuteLevels } from './kaufleute/index';
 
 export const exercises = [
   l1ex1, l1ex2, l1ex3, l1ex4,
@@ -30,6 +31,7 @@ export const exercises = [
   l4ex1, l4ex2, l4ex3, l4ex4,
   l5ex1, l5ex2, l5ex3, l5ex4,
   l6ex1, l6ex2, l6ex3, l6ex4,
+  ...kaufleuteExercises,
 ];
 
 export const levels = [
@@ -81,6 +83,7 @@ export const levels = [
     icon: '\u{1F4BC}',
     exercises: exercises.filter((e) => e.levelId === 6 && e.trackId === 'avm'),
   },
+  ...kaufleuteLevels,
 ];
 
 export function getExercise(id) {

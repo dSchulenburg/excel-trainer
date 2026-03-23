@@ -434,6 +434,94 @@
         "hint2": "Commission = revenue × rate (e.g. 12,500 × 0.05 = 625 EUR)"
       }
     },
+    "level6": {
+      "title": "Month 5: Sales Analysis",
+      "story": "You have opened your own online shop! Time to analyse your sales data using SUMIF and COUNTIF.",
+      "ex1": {
+        "title": "Revenue by Category",
+        "story": "Find out how much revenue each product category generates — SUMIF lets you sum selectively by category.",
+        "step1": "Enter in B12: =SUMIF(B2:B9,\"Elektronik\",C2:C9)",
+        "step2": "Calculate revenue for Buerobedarf in B13: =SUMIF(B2:B9,\"Buerobedarf\",C2:C9)",
+        "step3": "Calculate revenue for Moebel in B14: =SUMIF(B2:B9,\"Moebel\",C2:C9)",
+        "step4": "Check: Electronics = 479.96 EUR, Office supplies = 77.50 EUR, Furniture = 449.00 EUR",
+        "hint1": "SUMIF(range,criterion,sum_range): column B holds the categories, column C the amounts",
+        "hint2": "The criterion text must match the cell content exactly — case-insensitive"
+      },
+      "ex2": {
+        "title": "Counting Orders",
+        "story": "Analyse how many orders meet certain conditions — COUNTIF counts cells matching a criterion.",
+        "step1": "Count orders above 50 EUR in B12: =COUNTIF(C2:C9,\">50\")",
+        "step2": "Count orders below 50 EUR in B13: =COUNTIF(C2:C9,\"<50\")",
+        "step3": "Count electronics orders in B14: =COUNTIF(B2:B9,\"Elektronik\")",
+        "step4": "Check: >50 EUR = 6 orders, <50 EUR = 2 orders, Electronics = 4 orders",
+        "hint1": "COUNTIF(range,criterion): comparison operators like >50 must be inside quotation marks",
+        "hint2": "Both text criteria (e.g. \"Elektronik\") and numeric comparisons (e.g. \">50\") need quotation marks"
+      },
+      "ex3": {
+        "title": "Branch Comparison",
+        "story": "Your shop has three branches! Compare revenue and order count per branch using SUMIF and COUNTIF.",
+        "step1": "Calculate Hamburg revenue in B13: =SUMIF(B2:B10,\"Hamburg\",D2:D10)",
+        "step2": "Calculate Berlin revenue in B14: =SUMIF(B2:B10,\"Berlin\",D2:D10)",
+        "step3": "Calculate Munich revenue in B15: =SUMIF(B2:B10,\"Muenchen\",D2:D10)",
+        "step4": "Count Hamburg orders in C13: =COUNTIF(B2:B10,\"Hamburg\")",
+        "hint1": "The branch is in column B, the amount in column D — adjust the sum_range accordingly",
+        "hint2": "Hamburg = 578.99 EUR (3 orders), Berlin = 305.48 EUR (3), Munich = 341.99 EUR (3)"
+      },
+      "ex4": {
+        "title": "Finding Top Customers",
+        "story": "Who are your best customers? Calculate total revenue, order count and average order value per customer.",
+        "step1": "Calculate total revenue for Firma A in B12: =SUMIF(B2:B9,\"Firma A\",C2:C9)",
+        "step2": "Count Firma A orders in C12: =COUNTIF(B2:B9,\"Firma A\")",
+        "step3": "Calculate the average in D12: =B12/C12",
+        "step4": "Fill in the formulas for Firma B (row 13) and Firma C (row 14) as well",
+        "hint1": "Average = total revenue ÷ number of orders. Use the calculated cells B12 and C12",
+        "hint2": "Firma A: 1,000 EUR, 3 orders, avg 333.33 EUR. Firma B: 730 EUR, 3 orders, avg 243.33 EUR"
+      }
+    },
+    "level5": {
+      "title": "Month 4: Supplier Comparison",
+      "story": "Month 4 at Schulz & Partner. You have mastered VLOOKUP — now you combine it with IF, MIN and IFERROR for real business decisions.",
+      "ex1": {
+        "title": "Best Price",
+        "story": "Three suppliers, one product — who is cheapest? Use VLOOKUP for each supplier and MIN for the best price.",
+        "step1": "Enter in B2: =VLOOKUP(A2,Stammdaten!A:D,2,0) for Supplier 1 price",
+        "step2": "Enter in C2: =VLOOKUP(A2,Stammdaten!A:D,3,0) for Supplier 2 price",
+        "step3": "Enter in D2: =VLOOKUP(A2,Stammdaten!A:D,4,0) for Supplier 3 price",
+        "step4": "Calculate the best price in E2: =MIN(B2,C2,D2)",
+        "hint1": "VLOOKUP returns the value from a specific column — column index 2, 3 or 4",
+        "hint2": "MIN(B2,C2,D2) automatically finds the smallest of the three prices"
+      },
+      "ex2": {
+        "title": "Reorder Proposal",
+        "story": "Check stock levels via VLOOKUP and decide with IF whether to reorder.",
+        "step1": "Fetch the stock with VLOOKUP: =VLOOKUP(A2,Stammdaten!A:D,3,0) in B2",
+        "step2": "Fetch the minimum stock: =VLOOKUP(A2,Stammdaten!A:D,4,0) in C2",
+        "step3": "Create the reorder proposal: =IF(B2<C2,\"Nachbestellen\",\"OK\") in D2",
+        "step4": "Copy all three formulas for the remaining articles in rows 3 and 4",
+        "hint1": "Column index 3 = stock, column index 4 = minimum stock in the reference table",
+        "hint2": "IF(stock < minimum) → 'Nachbestellen', otherwise → 'OK'"
+      },
+      "ex3": {
+        "title": "Complete Customer Invoice",
+        "story": "Create a full invoice: name and price via VLOOKUP, total price including VAT via formula.",
+        "step1": "Fetch the name: =VLOOKUP(A2,Stammdaten!A:C,2,0) in B2",
+        "step2": "Fetch the price: =VLOOKUP(A2,Stammdaten!A:C,3,0) in C2",
+        "step3": "Calculate the total including VAT: =C2*D2*(1+$E$1) in F2",
+        "step4": "Copy all formulas for the remaining articles (rows 3 and 4)",
+        "hint1": "$E$1 locks the VAT cell — it stays on E1 when copying",
+        "hint2": "Total = price × quantity × (1 + VAT). With 19% VAT: × 1.19"
+      },
+      "ex4": {
+        "title": "Error Detection",
+        "story": "Some article numbers are wrong! Protect your formula with IFERROR — unknown numbers should show 'Nicht gefunden'.",
+        "step1": "Enter in B2: =IFERROR(VLOOKUP(A2,Stammdaten!A:C,2,0),\"Nicht gefunden\")",
+        "step2": "Enter in C2: =IFERROR(VLOOKUP(A2,Stammdaten!A:C,3,0),\"Nicht gefunden\")",
+        "step3": "Copy both formulas to row 3 (article X-9999 — this does not exist!)",
+        "step4": "Copy the formulas to rows 4 and 5 as well",
+        "hint1": "IFERROR(formula,error_value): if VLOOKUP finds nothing (#N/A), the error value is shown",
+        "hint2": "X-9999 and X-8888 are invalid numbers — they should display 'Nicht gefunden'"
+      }
+    },
     "level3": {
       "title": "Month 2: Customer Evaluation",
       "story": "In your second month at Schulz & Partner you analyse customer data and make complex business decisions using IF+AND/OR.",
@@ -476,6 +564,50 @@
         "step4": "Copy the formula to row 5: =IF(AND(B5>=7,C5>=7),\"A\",IF(OR(B5>=5,C5>=5),\"B\",\"C\"))",
         "hint1": "A = Price AND Quality both >= 7",
         "hint2": "B = Price >= 5 OR Quality >= 5 (when no A applies). C = both below 5"
+      }
+    },
+    "level4": {
+      "title": "Month 3: Inventory Management",
+      "story": "Month 3 at Schulz & Partner. You manage the product database and need to look up information instantly. With VLOOKUP you get exactly the data you need!",
+      "ex1": {
+        "title": "Look Up Article Price",
+        "story": "The boss needs the current prices for four articles right away. Use VLOOKUP to find the prices from the master data table.",
+        "step1": "Look at the Stammdaten sheet: column A = article number, column B = description, column C = price",
+        "step2": "Enter the formula in B2: =VLOOKUP(A2,Stammdaten!A:C,3,0)",
+        "step3": "Copy the formula to B3 and B4",
+        "step4": "Complete B5 as well — check that all four prices are displayed correctly",
+        "hint1": "VLOOKUP(search_value,range,column,0) — the 3 means: return the value from the 3rd column",
+        "hint2": "The 0 at the end means exact match. Stammdaten!A:C means: search in the 'Stammdaten' sheet"
+      },
+      "ex2": {
+        "title": "Find Supplier",
+        "story": "For a reorder you need to quickly find out which supplier delivers which article. Use VLOOKUP on the supplier column.",
+        "step1": "Look at the Stammdaten sheet: now there are 4 columns — A = article number, B = description, C = price, D = supplier",
+        "step2": "Enter the formula in B2: =VLOOKUP(A2,Stammdaten!A:D,4,0)",
+        "step3": "Copy the formula to B3 and B4",
+        "step4": "Complete B5 as well and check all supplier names",
+        "hint1": "The 4 refers to the 4th column in the lookup range — that is the supplier column",
+        "hint2": "Compare with exercise 1: there it was column 3 (price), here it is column 4 (supplier)"
+      },
+      "ex3": {
+        "title": "Create Invoice",
+        "story": "You are creating a purchase order. Enter description and price via VLOOKUP and then calculate the total amount.",
+        "step1": "Look at the task: article number and quantity are already filled in. You need description, price and total.",
+        "step2": "Enter in B2: =VLOOKUP(A2,Stammdaten!A:C,2,0) for the description",
+        "step3": "Enter in C2: =VLOOKUP(A2,Stammdaten!A:C,3,0) for the price. Copy both formulas downward.",
+        "step4": "Calculate the total: enter =C2*D2 in E2 and copy it downward",
+        "hint1": "For description: column 2 in VLOOKUP. For price: column 3. Both from the same lookup range.",
+        "hint2": "Total = price × quantity. When price is calculated via VLOOKUP, =C2*D2 works the same way."
+      },
+      "ex4": {
+        "title": "Determine Storage Location",
+        "story": "In the warehouse you need to locate 3 articles. Use VLOOKUP three times per row — for warehouse, shelf and compartment.",
+        "step1": "Look at Stammdaten: column C = warehouse, D = shelf, E = compartment",
+        "step2": "Enter in B2: =VLOOKUP(A2,Stammdaten!A:E,3,0) for the warehouse",
+        "step3": "Enter in C2: =VLOOKUP(A2,Stammdaten!A:E,4,0) for the shelf, and in D2: =VLOOKUP(A2,Stammdaten!A:E,5,0) for the compartment",
+        "step4": "Copy all three formulas for rows 3 and 4",
+        "hint1": "Warehouse = column 3, shelf = column 4, compartment = column 5 — always from Stammdaten!A:E",
+        "hint2": "All three VLOOKUP formulas search in the same table — only the column number changes"
       }
     },
     "level2": {
