@@ -30,14 +30,14 @@
     }
   },
   "trackSelect": {
-    "title": "Waehle deinen Track",
+    "title": "Wähle deinen Track",
     "avm": {
       "title": "Erste eigene Wohnung",
       "desc": "Lerne Excel-Grundlagen mit Alltagsaufgaben"
     },
     "kaufleute": {
-      "title": "Kaufleute im Grosshandel",
-      "desc": "Professionelles Excel fuer Berufsschueler"
+      "title": "Kaufleute im Großhandel",
+      "desc": "Professionelles Excel für Berufsschüler"
     }
   },
   "common": {
@@ -112,7 +112,7 @@
     "datenProfi": "Daten-Profi",
     "visualisierer": "Visualisierer",
     "chartCreator": "Diagramm-Ersteller",
-    "geschaeftsfuehrer": "Geschaeftsfuehrer",
+    "geschaeftsfuehrer": "Geschäftsführer",
     "kaufmannKomplett": "Kaufmann komplett"
   },
   "profile": {
@@ -441,9 +441,9 @@
         "title": "Umsatz pro Kategorie",
         "story": "Werte aus, wie viel Umsatz jede Produktkategorie erzielt — mit SUMMEWENN kannst du gezielt nach Kategorien summieren.",
         "step1": "Gib in B12 die Formel ein: =SUMMEWENN(B2:B9;\"Elektronik\";C2:C9)",
-        "step2": "Berechne in B13 den Umsatz für Buerobedarf: =SUMMEWENN(B2:B9;\"Buerobedarf\";C2:C9)",
-        "step3": "Berechne in B14 den Umsatz für Moebel: =SUMMEWENN(B2:B9;\"Moebel\";C2:C9)",
-        "step4": "Prüfe: Elektronik = 479,96 EUR, Buerobedarf = 77,50 EUR, Moebel = 449,00 EUR",
+        "step2": "Berechne in B13 den Umsatz für Bürobedarf: =SUMMEWENN(B2:B9;\"Buerobedarf\";C2:C9)",
+        "step3": "Berechne in B14 den Umsatz für Möbel: =SUMMEWENN(B2:B9;\"Moebel\";C2:C9)",
+        "step4": "Prüfe: Elektronik = 479,96 EUR, Bürobedarf = 77,50 EUR, Möbel = 449,00 EUR",
         "hint1": "SUMMEWENN(Bereich;Kriterium;Summe_Bereich): Spalte B enthält die Kategorien, Spalte C die Beträge",
         "hint2": "Der Kriteriumstext muss genau mit dem Zellinhalt übereinstimmen — Groß-/Kleinschreibung beachten"
       },
@@ -699,12 +699,12 @@
       }
     },
     "level8": {
-      "title": "Jahresabschluss: Dein Shop waechst",
-      "story": "Das Jahr ist zu Ende! Du kombinierst alles Gelernte fuer den Jahresbericht deines Shops — SVERWEIS, SUMMEWENN, bedingte Formatierung und Diagramme.",
+      "title": "Jahresabschluss: Dein Shop wächst",
+      "story": "Das Jahr ist zu Ende! Du kombinierst alles Gelernte für den Jahresbericht deines Shops — SVERWEIS, SUMMEWENN, bedingte Formatierung und Diagramme.",
       "ex1": {
         "title": "Auftragsabwicklung",
-        "story": "Erstelle eine vollstaendige Auftragsabwicklung: hole Bezeichnung und Preis per SVERWEIS aus den Stammdaten und berechne Zwischensumme, Rabatt und Gesamtbetrag.",
-        "step1": "Gib in B2 die SVERWEIS-Formel fuer die Bezeichnung ein: =SVERWEIS(A2;Stammdaten!A:C;2;0) und in C2 fuer den Preis: =SVERWEIS(A2;Stammdaten!A:C;3;0)",
+        "story": "Erstelle eine vollständige Auftragsabwicklung: hole Bezeichnung und Preis per SVERWEIS aus den Stammdaten und berechne Zwischensumme, Rabatt und Gesamtbetrag.",
+        "step1": "Gib in B2 die SVERWEIS-Formel für die Bezeichnung ein: =SVERWEIS(A2;Stammdaten!A:C;2;0) und in C2 für den Preis: =SVERWEIS(A2;Stammdaten!A:C;3;0)",
         "step2": "Berechne die Zwischensumme in E2: =C2*D2 (Preis mal Menge)",
         "step3": "Berechne den Rabatt in F2: =WENN(E2>100;E2*0,05;0) — 5% Rabatt ab 100 EUR",
         "step4": "Berechne den Gesamtbetrag in G2: =E2-F2 (Zwischensumme minus Rabatt)",
@@ -713,26 +713,26 @@
       },
       "ex2": {
         "title": "Quartalsanalyse",
-        "story": "Werte die Verkaufsdaten deines Shops nach Produkten aus — berechne den Gesamtumsatz pro Produkt mit SUMMEWENN und zaehle die Quartale mit ZÄHLENWENN.",
+        "story": "Werte die Verkaufsdaten deines Shops nach Produkten aus — berechne den Gesamtumsatz pro Produkt mit SUMMEWENN und zähle die Quartale mit ZÄHLENWENN.",
         "step1": "Berechne in B16 den Gesamtumsatz des Laptops: =SUMMEWENN(A2:A13;\"Laptop\";C2:C13)",
-        "step2": "Berechne in B17 den Umsatz der Tastatur: =SUMMEWENN(A2:A13;\"Tastatur\";C2:C13) und in B18 fuer das Headset",
-        "step3": "Zaehle in C16 die Laptop-Quartale: =ZÄHLENWENN(A2:A13;\"Laptop\")",
-        "step4": "Erstelle ein Saeulendiagramm mit dem Diagramm-Assistenten: Daten B16:B18, Beschriftung A16:A18",
-        "hint1": "SUMMEWENN(A2:A13;\"Laptop\";C2:C13) summiert alle Umsaetze in Spalte C, wo Spalte A 'Laptop' ist",
+        "step2": "Berechne in B17 den Umsatz der Tastatur: =SUMMEWENN(A2:A13;\"Tastatur\";C2:C13) und in B18 für das Headset",
+        "step3": "Zähle in C16 die Laptop-Quartale: =ZÄHLENWENN(A2:A13;\"Laptop\")",
+        "step4": "Erstelle ein Säulendiagramm mit dem Diagramm-Assistenten: Daten B16:B18, Beschriftung A16:A18",
+        "hint1": "SUMMEWENN(A2:A13;\"Laptop\";C2:C13) summiert alle Umsätze in Spalte C, wo Spalte A 'Laptop' ist",
         "hint2": "Laptop-Gesamtumsatz: 58.500 EUR, Tastatur: 13.700 EUR, Headset: 24.600 EUR"
       },
       "ex3": {
         "title": "Lieferantenbewertung komplett",
-        "story": "Hole die Bewertungsscores per SVERWEIS aus den Stammdaten und vergib mit WENN+UND automatisch die Note A, B oder C. Faerbe A-Lieferanten gruen und C-Lieferanten rot.",
-        "step1": "Hole Preis-Score (B2), Qualitaet (C2) und Lieferung (D2) per SVERWEIS aus Stammdaten: =SVERWEIS(A2;Stammdaten!A:D;2;0)",
+        "story": "Hole die Bewertungsscores per SVERWEIS aus den Stammdaten und vergib mit WENN+UND automatisch die Note A, B oder C. Färbe A-Lieferanten grün und C-Lieferanten rot.",
+        "step1": "Hole Preis-Score (B2), Qualität (C2) und Lieferung (D2) per SVERWEIS aus Stammdaten: =SVERWEIS(A2;Stammdaten!A:D;2;0)",
         "step2": "Vergib in E2 die Bewertung: =WENN(UND(B2>=7;C2>=7);\"A\";WENN(ODER(B2>=5;C2>=5);\"B\";\"C\"))",
-        "step3": "Kopiere alle Formeln fuer die Zeilen 3 bis 5",
-        "step4": "Erstelle bedingte Formatierung: A = gruen (#00B050), C = rot (#FF0000)",
-        "hint1": "A-Note: Preis-Score UND Qualitaet beide >= 7. B-Note: mindestens einer >= 5. C = alles darunter",
-        "hint2": "Alpha GmbH (8/9): Note A — gruen. Gamma AG (3/4): Note C — rot. Beta KG (6/5): Note B"
+        "step3": "Kopiere alle Formeln für die Zeilen 3 bis 5",
+        "step4": "Erstelle bedingte Formatierung: A = grün (#00B050), C = rot (#FF0000)",
+        "hint1": "A-Note: Preis-Score UND Qualität beide >= 7. B-Note: mindestens einer >= 5. C = alles darunter",
+        "hint2": "Alpha GmbH (8/9): Note A — grün. Gamma AG (3/4): Note C — rot. Beta KG (6/5): Note B"
       },
       "ex4": {
-        "title": "Geschaeftsbericht",
+        "title": "Geschäftsbericht",
         "story": "Erstelle den Jahresbericht deines Shops: berechne Jahresumsatz, Monatsdurchschnitt, besten und schlechtesten Monat — und visualisiere den Trend als Liniendiagramm.",
         "step1": "Berechne in B15 den Jahresumsatz: =SUMME(B2:B13)",
         "step2": "Berechne in B16 den Monatsdurchschnitt: =MITTELWERT(B2:B13)",
