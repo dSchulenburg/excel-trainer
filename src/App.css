@@ -743,3 +743,109 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* ── Track Select ───────────────────────────────────────────────────────────── */
+.track-select {
+  padding: 2rem 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.track-select__title {
+  color: var(--bswi-navy);
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+.track-select__cards {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.track-card {
+  flex: 1 1 280px;
+  max-width: 360px;
+  border: none;
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  cursor: pointer;
+  color: white;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.track-card__icon {
+  font-size: 3.5rem;
+  line-height: 1;
+}
+
+.track-card__title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.track-card__desc {
+  font-size: 0.9rem;
+  opacity: 0.85;
+  line-height: 1.5;
+}
+
+.track-card__meta {
+  font-size: 0.8rem;
+  opacity: 0.75;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 0.25rem 0.75rem;
+  margin-top: 0.25rem;
+}
+
+/* ── Track indicator in header ──────────────────────────────────────────────── */
+.app-header__track-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: var(--radius);
+  color: white;
+  padding: 0.3rem 0.65rem;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.app-header__track-btn:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.app-header__track-name {
+  max-width: 130px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .track-select__cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .track-card {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .app-header__track-name {
+    display: none;
+  }
+}

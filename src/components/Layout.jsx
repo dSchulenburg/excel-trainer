@@ -5,9 +5,11 @@ import { getPlayerLevel, getXPProgress } from '../utils/xp';
 import ProgressBar from './ui/ProgressBar';
 import LanguagePicker from './ui/LanguagePicker';
 
+const TRACK_ICONS = { avm: '🛒', kaufleute: '📊' };
+
 export default function Layout({ children, currentView, onNavigate }) {
   const { t } = useI18n();
-  const { xp, streak } = useGame();
+  const { xp, streak, selectedTrack } = useGame();
   const playerLevel = getPlayerLevel(xp);
   const xpProgress = getXPProgress(xp);
 
@@ -25,6 +27,20 @@ export default function Layout({ children, currentView, onNavigate }) {
           <div className="app-header__title">{t('app.title')}</div>
           <div className="app-header__subtitle">{t('app.subtitle')}</div>
         </div>
+        {selectedTrack && currentView !== 'trackSelect' && (
+          <motion.button
+            className="app-header__track-btn"
+            onClick={() => onNavigate('trackSelect')}
+            title={t('trackSelect.title')}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <span>{TRACK_ICONS[selectedTrack] || '📚'}</span>
+            <span className="app-header__track-name">
+              {t(`trackSelect.${selectedTrack}.title`)}
+            </span>
+          </motion.button>
+        )}
         <div className="app-header__spacer" />
         <div className="app-header__xp">
           <span>{xp} XP</span>

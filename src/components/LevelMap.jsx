@@ -1,11 +1,14 @@
 import { motion } from 'framer-motion';
 import { useI18n } from '../context/I18nContext';
 import { useGame } from '../context/GameContext';
-import { levels, exercises } from '../exercises';
+import { getLevelsByTrack, getExercisesByTrack } from '../exercises';
 
-export default function LevelMap({ onStartExercise }) {
+export default function LevelMap({ track = 'avm', onStartExercise }) {
   const { t } = useI18n();
   const { exerciseResults, isExerciseUnlocked } = useGame();
+
+  const levels = getLevelsByTrack(track);
+  const exercises = getExercisesByTrack(track);
 
   return (
     <div className="level-map">
