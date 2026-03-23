@@ -477,6 +477,50 @@
         "hint1": "A = Precio Y Calidad ambos >= 7",
         "hint2": "B = Precio >= 5 O Calidad >= 5 (cuando no hay A). C = ambos por debajo de 5"
       }
+    },
+    "level2": {
+      "title": "Tomar decisiones",
+      "story": "Semana 2 en Schulz & Partner. Ahora te encargas de la revisión de facturas. ¡Con la función SI tomas decisiones de forma automática!",
+      "ex1": {
+        "title": "Comprobar estado de pago",
+        "story": "Revisa las facturas abiertas: ¿cuáles ya están pagadas y cuáles siguen pendientes?",
+        "step1": "Observa la tabla: la columna A contiene los números de factura, la columna B el importe pendiente.",
+        "step2": "Escribe la fórmula en C2: =SI(B2=0;\"pagado\";\"pendiente\")",
+        "step3": "Copia la fórmula para las facturas C3 a C5",
+        "step4": "Comprueba C6: introduce también allí la fórmula SI",
+        "hint1": "SI evalúa una condición: SI(condición;entonces;si_no). Si el importe es 0, la factura está pagada.",
+        "hint2": "Copia la fórmula hacia abajo: haz clic en C2 y arrastra el pequeño cuadrado de la esquina hacia abajo."
+      },
+      "ex2": {
+        "title": "Calcular descuento por pronto pago",
+        "story": "Schulz & Partner concede un descuento del 2% si el pago se realiza dentro de 10 días. ¡Calcula el importe del descuento!",
+        "step1": "Observa la tabla: la columna B muestra el importe de la factura, la columna C los días hasta el pago.",
+        "step2": "Escribe la fórmula en D2: =SI(C2<=10;B2*0,02;0)",
+        "step3": "Copia la fórmula para las filas D3 a D5",
+        "step4": "Completa también la fórmula en D6",
+        "hint1": "El descuento por pronto pago solo se aplica si el pago se realiza dentro de 10 días. De lo contrario el descuento es 0.",
+        "hint2": "B2*0,02 equivale al 2% de B2. La coma es aquí el separador decimal."
+      },
+      "ex3": {
+        "title": "Alerta de stock",
+        "story": "Hay que vigilar el inventario. ¡Los artículos con menos de 10 unidades deben reponerse!",
+        "step1": "Observa la tabla: la columna A contiene los artículos, la columna B el stock actual.",
+        "step2": "Escribe la fórmula en C2: =SI(B2<10;\"Reponer\";\"OK\")",
+        "step3": "Copia la fórmula para C3 a C5",
+        "step4": "Completa también C6 con la fórmula SI",
+        "hint1": "El operador de comparación < significa 'menor que'. Si stock < 10 hay que reponer el artículo.",
+        "hint2": "Los textos en fórmulas se escriben entre comillas: \"Reponer\" y \"OK\"."
+      },
+      "ex4": {
+        "title": "Calcular gastos de envío",
+        "story": "Los pedidos superiores a 100 EUR tienen envío gratuito. Por debajo de 100 EUR el envío cuesta 5,99 EUR.",
+        "step1": "Observa la tabla: la columna A son los números de pedido, la columna B el valor del pedido.",
+        "step2": "Escribe la fórmula en C2: =SI(B2>100;0;5,99)",
+        "step3": "Copia la fórmula para C3 a C5",
+        "step4": "Completa también C6 con la fórmula SI",
+        "hint1": "El operador de comparación > significa 'mayor que'. Más de 100 EUR = envío gratuito (0).",
+        "hint2": "La función SI devuelve aquí números, no textos. Por eso no se usan comillas."
+      }
     }
   }
 }

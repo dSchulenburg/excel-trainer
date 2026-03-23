@@ -477,6 +477,50 @@
         "hint1": "A = Price AND Quality both >= 7",
         "hint2": "B = Price >= 5 OR Quality >= 5 (when no A applies). C = both below 5"
       }
+    },
+    "level2": {
+      "title": "Making Decisions",
+      "story": "Week 2 at Schulz & Partner. You are now taking over invoice checking. With the IF function you make decisions automatically!",
+      "ex1": {
+        "title": "Payment Status Check",
+        "story": "Check the open invoices: which ones are already paid, which are still outstanding?",
+        "step1": "Look at the table: column A contains invoice numbers, column B the outstanding amount.",
+        "step2": "Enter the formula in C2: =IF(B2=0,\"paid\",\"open\")",
+        "step3": "Copy the formula for invoices C3 to C5",
+        "step4": "Check C6: enter the IF formula there as well",
+        "hint1": "IF checks a condition: IF(condition,then,else). If the amount is 0, the invoice is paid.",
+        "hint2": "Copy the formula downward: click on C2, then drag the small square in the corner downward."
+      },
+      "ex2": {
+        "title": "Cash Discount Calculation",
+        "story": "Schulz & Partner grants a 2% cash discount if payment is made within 10 days. Calculate the discount amount!",
+        "step1": "Look at the table: column B shows the invoice amount, column C the days until payment.",
+        "step2": "Enter the formula in D2: =IF(C2<=10,B2*0.02,0)",
+        "step3": "Copy the formula for rows D3 to D5",
+        "step4": "Complete the formula in D6 as well",
+        "hint1": "The cash discount only applies when payment is made within 10 days. Otherwise the discount is 0.",
+        "hint2": "B2*0.02 equals 2% of B2. The period here is the decimal separator."
+      },
+      "ex3": {
+        "title": "Stock Alert",
+        "story": "Stock levels must be monitored. Items with fewer than 10 units must be reordered!",
+        "step1": "Look at the table: column A contains the items, column B the current stock level.",
+        "step2": "Enter the formula in C2: =IF(B2<10,\"Reorder\",\"OK\")",
+        "step3": "Copy the formula for C3 to C5",
+        "step4": "Complete C6 with the IF formula as well",
+        "hint1": "The comparison operator < means 'less than'. If stock < 10 the item must be reordered.",
+        "hint2": "Text values in formulas are written in quotation marks: \"Reorder\" and \"OK\"."
+      },
+      "ex4": {
+        "title": "Shipping Costs",
+        "story": "Orders over 100 EUR get free shipping. Below 100 EUR shipping costs 5.99 EUR.",
+        "step1": "Look at the table: column A contains order numbers, column B the order value.",
+        "step2": "Enter the formula in C2: =IF(B2>100,0,5.99)",
+        "step3": "Copy the formula for C3 to C5",
+        "step4": "Complete C6 with the IF formula as well",
+        "hint1": "The comparison operator > means 'greater than'. Over 100 EUR = free shipping (0).",
+        "hint2": "The IF function returns numbers here, not text. Therefore no quotation marks."
+      }
     }
   }
 }
