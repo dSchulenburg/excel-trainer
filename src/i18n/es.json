@@ -697,6 +697,50 @@
         "hint1": "El operador de comparación > significa 'mayor que'. Más de 100 EUR = envío gratuito (0).",
         "hint2": "La función SI devuelve aquí números, no textos. Por eso no se usan comillas."
       }
+    },
+    "level8": {
+      "title": "Cierre anual: tu tienda crece",
+      "story": "¡El año ha terminado! Combina todo lo aprendido para el informe anual de tu tienda — BUSCARV, SUMAR.SI, formato condicional y gráficos.",
+      "ex1": {
+        "title": "Tramitación de pedidos",
+        "story": "Crea un pedido completo: obtén el nombre y el precio con BUSCARV del catálogo y calcula subtotal, descuento e importe total.",
+        "step1": "Introduce la fórmula BUSCARV para el nombre en B2: =BUSCARV(A2;Stammdaten!A:C;2;0) y para el precio en C2: =BUSCARV(A2;Stammdaten!A:C;3;0)",
+        "step2": "Calcula el subtotal en E2: =C2*D2 (precio por cantidad)",
+        "step3": "Calcula el descuento en F2: =SI(E2>100;E2*0,05;0) — 5% de descuento para pedidos superiores a 100 EUR",
+        "step4": "Calcula el total en G2: =E2-F2 (subtotal menos descuento)",
+        "hint1": "BUSCARV obtiene el nombre (columna 2) y el precio (columna 3) de la hoja Stammdaten",
+        "hint2": "Descuento: solo si subtotal > 100 EUR → 5% del importe, de lo contrario 0"
+      },
+      "ex2": {
+        "title": "Análisis trimestral",
+        "story": "Analiza los datos de ventas de tu tienda por producto — calcula los ingresos totales por producto con SUMAR.SI y cuenta los trimestres con CONTAR.SI.",
+        "step1": "Calcula los ingresos totales del Laptop en B16: =SUMAR.SI(A2:A13;\"Laptop\";C2:C13)",
+        "step2": "Calcula los ingresos de Tastatur en B17: =SUMAR.SI(A2:A13;\"Tastatur\";C2:C13) y del Headset en B18",
+        "step3": "Cuenta los trimestres del Laptop en C16: =CONTAR.SI(A2:A13;\"Laptop\")",
+        "step4": "Crea un gráfico de barras con el asistente: datos B16:B18, etiquetas A16:A18",
+        "hint1": "SUMAR.SI(A2:A13;\"Laptop\";C2:C13) suma todos los ingresos en la columna C donde A = 'Laptop'",
+        "hint2": "Laptop total: 58.500 EUR, Tastatur: 13.700 EUR, Headset: 24.600 EUR"
+      },
+      "ex3": {
+        "title": "Evaluación completa de proveedores",
+        "story": "Obtén las puntuaciones con BUSCARV de Stammdaten y asigna automáticamente la nota A, B o C con SI+Y. Colorea los proveedores A en verde y los C en rojo.",
+        "step1": "Obtén la puntuación de precio (B2), calidad (C2) y entrega (D2) con BUSCARV: =BUSCARV(A2;Stammdaten!A:D;2;0)",
+        "step2": "Asigna la evaluación en E2: =SI(Y(B2>=7;C2>=7);\"A\";SI(O(B2>=5;C2>=5);\"B\";\"C\"))",
+        "step3": "Copia todas las fórmulas para las filas 3 a 5",
+        "step4": "Crea formato condicional: A = verde (#00B050), C = rojo (#FF0000)",
+        "hint1": "Nota A: puntuación de precio Y calidad ambas >= 7. Nota B: al menos una >= 5. C = ambas bajo 5",
+        "hint2": "Alpha GmbH (8/9): nota A — verde. Gamma AG (3/4): nota C — rojo. Beta KG (6/5): nota B"
+      },
+      "ex4": {
+        "title": "Informe anual",
+        "story": "Crea el informe anual de tu tienda: calcula los ingresos totales, la media mensual, el mejor y el peor mes — y visualiza la tendencia como gráfico de líneas.",
+        "step1": "Calcula los ingresos anuales en B15: =SUMA(B2:B13)",
+        "step2": "Calcula la media mensual en B16: =PROMEDIO(B2:B13)",
+        "step3": "Calcula el mejor mes en B17: =MAX(B2:B13) y el peor en B18: =MIN(B2:B13)",
+        "step4": "Crea un gráfico de líneas: datos B2:B13, etiquetas A2:A13 — muestra la tendencia anual",
+        "hint1": "SUMA, PROMEDIO, MAX, MIN — ¡ya conoces las cuatro! Ahora las combinas en un informe",
+        "hint2": "Ingresos anuales: 287.200 EUR, media: aprox. 23.933 EUR, mejor mes: diciembre (35.600 EUR)"
+      }
     }
   },
   "chart": {

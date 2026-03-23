@@ -697,6 +697,50 @@
         "hint1": "The comparison operator > means 'greater than'. Over 100 EUR = free shipping (0).",
         "hint2": "The IF function returns numbers here, not text. Therefore no quotation marks."
       }
+    },
+    "level8": {
+      "title": "Year-end: Your Shop is Growing",
+      "story": "The year is over! Combine everything you have learned for your shop's annual report — VLOOKUP, SUMIF, conditional formatting and charts.",
+      "ex1": {
+        "title": "Order Processing",
+        "story": "Create a complete order: fetch name and price via VLOOKUP from the product catalogue, then calculate subtotal, discount and total.",
+        "step1": "Enter the VLOOKUP formula for the name in B2: =VLOOKUP(A2,Stammdaten!A:C,2,0) and for the price in C2: =VLOOKUP(A2,Stammdaten!A:C,3,0)",
+        "step2": "Calculate the subtotal in E2: =C2*D2 (price times quantity)",
+        "step3": "Calculate the discount in F2: =IF(E2>100,E2*0.05,0) — 5% discount for orders over 100 EUR",
+        "step4": "Calculate the total in G2: =E2-F2 (subtotal minus discount)",
+        "hint1": "VLOOKUP fetches the name (column 2) and price (column 3) from the Stammdaten sheet",
+        "hint2": "Discount: only if subtotal > 100 EUR → 5% of the amount, otherwise 0"
+      },
+      "ex2": {
+        "title": "Quarterly Analysis",
+        "story": "Analyse your shop's sales data by product — calculate total revenue per product with SUMIF and count the quarters with COUNTIF.",
+        "step1": "Calculate the total revenue for Laptop in B16: =SUMIF(A2:A13,\"Laptop\",C2:C13)",
+        "step2": "Calculate revenue for Tastatur in B17: =SUMIF(A2:A13,\"Tastatur\",C2:C13) and for Headset in B18",
+        "step3": "Count the Laptop quarters in C16: =COUNTIF(A2:A13,\"Laptop\")",
+        "step4": "Create a bar chart with the Chart Wizard: data B16:B18, labels A16:A18",
+        "hint1": "SUMIF(A2:A13,\"Laptop\",C2:C13) sums all revenues in column C where column A is 'Laptop'",
+        "hint2": "Laptop total: 58,500 EUR, Tastatur: 13,700 EUR, Headset: 24,600 EUR"
+      },
+      "ex3": {
+        "title": "Complete Supplier Evaluation",
+        "story": "Fetch evaluation scores via VLOOKUP from Stammdaten and automatically assign grade A, B or C with IF+AND. Colour A suppliers green and C suppliers red.",
+        "step1": "Fetch price score (B2), quality (C2) and delivery (D2) via VLOOKUP from Stammdaten: =VLOOKUP(A2,Stammdaten!A:D,2,0)",
+        "step2": "Assign the rating in E2: =IF(AND(B2>=7,C2>=7),\"A\",IF(OR(B2>=5,C2>=5),\"B\",\"C\"))",
+        "step3": "Copy all formulas for rows 3 to 5",
+        "step4": "Create conditional formatting: A = green (#00B050), C = red (#FF0000)",
+        "hint1": "Grade A: price score AND quality both >= 7. Grade B: at least one >= 5. Grade C = both below 5",
+        "hint2": "Alpha GmbH (8/9): Grade A — green. Gamma AG (3/4): Grade C — red. Beta KG (6/5): Grade B"
+      },
+      "ex4": {
+        "title": "Annual Report",
+        "story": "Create your shop's annual report: calculate total revenue, monthly average, best and worst month — and visualise the trend as a line chart.",
+        "step1": "Calculate the annual revenue in B15: =SUM(B2:B13)",
+        "step2": "Calculate the monthly average in B16: =AVERAGE(B2:B13)",
+        "step3": "Calculate the best month in B17: =MAX(B2:B13) and the worst in B18: =MIN(B2:B13)",
+        "step4": "Create a line chart: data B2:B13, labels A2:A13 — show the annual trend",
+        "hint1": "SUM, AVERAGE, MAX, MIN — you know all four! Now you combine them in one report",
+        "hint2": "Annual revenue: 287,200 EUR, average: approx. 23,933 EUR, best month: December (35,600 EUR)"
+      }
     }
   },
   "chart": {

@@ -725,7 +725,7 @@
         "title": "Lieferantenbewertung komplett",
         "story": "Hole die Bewertungsscores per SVERWEIS aus den Stammdaten und vergib mit WENN+UND automatisch die Note A, B oder C. Faerbe A-Lieferanten gruen und C-Lieferanten rot.",
         "step1": "Hole Preis-Score (B2), Qualitaet (C2) und Lieferung (D2) per SVERWEIS aus Stammdaten: =SVERWEIS(A2;Stammdaten!A:D;2;0)",
-        "step2": "Vergib in E2 die Bewertung: =WENN(UND(B2>=7;C2>=7);"A";WENN(ODER(B2>=5;C2>=5);"B";"C"))",
+        "step2": "Vergib in E2 die Bewertung: =WENN(UND(B2>=7;C2>=7);\"A\";WENN(ODER(B2>=5;C2>=5);\"B\";\"C\"))",
         "step3": "Kopiere alle Formeln fuer die Zeilen 3 bis 5",
         "step4": "Erstelle bedingte Formatierung: A = gruen (#00B050), C = rot (#FF0000)",
         "hint1": "A-Note: Preis-Score UND Qualitaet beide >= 7. B-Note: mindestens einer >= 5. C = alles darunter",
