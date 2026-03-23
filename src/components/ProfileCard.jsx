@@ -1,17 +1,19 @@
 import { useState } from 'react';
 import { useI18n } from '../context/I18nContext';
 import { useGame } from '../context/GameContext';
-import { getPlayerLevel } from '../utils/xp';
+import { getPlayerLevel, getNextLevel, getXPProgress } from '../utils/xp';
 import { exercises } from '../exercises';
 
 const AVATARS = ['🧑‍💻', '👩‍💻', '🧑‍🎓', '👨‍🎓', '🦸', '🦸‍♀️', '🧙', '🧑‍🚀'];
 
 export default function ProfileCard() {
   const { t } = useI18n();
-  const { playerName, avatarId, xp, badges, exerciseResults, streak, setProfile, resetProgress } = useGame();
+  const { playerName, avatarId, xp, badges, exerciseResults, streak, selectedTrack, setProfile, resetProgress } = useGame();
   const [name, setName] = useState(playerName);
   const [avatar, setAvatar] = useState(avatarId);
-  const playerLevel = getPlayerLevel(xp);
+  const playerLevel = getPlayerLevel(xp, selectedTrack);
+  const nextLevel = getNextLevel(xp, selectedTrack);
+  const xpProgress = getXPProgress(xp, selectedTrack);
 
   const completedCount = Object.keys(exerciseResults).length;
   const totalExercises = exercises.length;
@@ -49,11 +51,20 @@ export default function ProfileCard() {
         <div className="profile__stats">
           <div className="stat-card">
             <div className="stat-card__value">{xp}</div>
-            <div className="stat-card__label">XP</div>
+            <div className="stat-card__label">
+              XP{nextLevel ? ` / ${nextLevel.xpRequired}` : ''}
+            </div>
           </div>
           <div className="stat-card">
             <div className="stat-card__value">{t(playerLevel.titleKey)}</div>
-            <div className="stat-card__label">{t('common.level')}</div>
+            <div className="stat-card__label">
+              {t('common.level')}
+              {nextLevel && (
+                <span style={{ display: 'block', fontSize: '0.7em', opacity: 0.7 }}>
+                  {Math.round(xpProgress * 100)}%
+                </span>
+              )}
+            </div>
           </div>
           <div className="stat-card">
             <div className="stat-card__value">{completedCount}/{totalExercises}</div>

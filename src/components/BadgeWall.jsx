@@ -3,16 +3,43 @@ import { useI18n } from '../context/I18nContext';
 import { useGame, BADGE_DEFS } from '../context/GameContext';
 import Badge from './ui/Badge';
 
+const GENERIC_BADGES = [
+  'first-cell',
+  'first-formula',
+  'sum-master',
+  'streak-3',
+  'perfect-score',
+  'speed-demon',
+  'polyglot',
+];
+
+const TRACK_BADGES = {
+  avm: ['shopping-done', 'alltag-done', 'cooking-master', 'finance-pro', 'travel-expert', 'pro-complete'],
+  kaufleute: [
+    'referenz-meister',
+    'entscheider',
+    'sverweis-meister',
+    'daten-profi',
+    'visualisierer',
+    'chart-creator',
+    'geschaeftsfuehrer',
+    'kaufmann-komplett',
+  ],
+};
+
 export default function BadgeWall() {
   const { t } = useI18n();
-  const { badges } = useGame();
-  const allBadgeIds = Object.keys(BADGE_DEFS);
+  const { badges, selectedTrack } = useGame();
+  const visibleBadgeIds = [
+    ...GENERIC_BADGES,
+    ...(TRACK_BADGES[selectedTrack] || []),
+  ].filter((id) => id in BADGE_DEFS);
 
   return (
     <div className="badge-wall">
       <h1 className="badge-wall__title">{t('badges.title')}</h1>
       <div className="badge-grid">
-        {allBadgeIds.map((id, index) => (
+        {visibleBadgeIds.map((id, index) => (
           <motion.div
             key={id}
             initial={{ scale: 0, opacity: 0 }}
