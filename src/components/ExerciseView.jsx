@@ -5,6 +5,7 @@ import { validateExercise, getCompletedSteps } from '../utils/validation';
 import { calculateExerciseXP, calculateStars } from '../utils/xp';
 import ExerciseInstructions from './ExerciseInstructions';
 import SpreadsheetArea from './SpreadsheetArea';
+import MultiSheetArea from './MultiSheetArea';
 import ValidationFeedback from './ValidationFeedback';
 import LevelComplete from './LevelComplete';
 import AudioPlayer from './AudioPlayer';
@@ -84,7 +85,11 @@ export default function ExerciseView({ exercise, onBack, onNextExercise }) {
       </div>
       <div className="exercise-view__sheet">
         <div style={{ flex: 1, minHeight: 0 }}>
-          <SpreadsheetArea exercise={exercise} onDataChange={handleDataChange} />
+          {exercise.initialData?.length > 1 ? (
+            <MultiSheetArea exercise={exercise} onDataChange={handleDataChange} />
+          ) : (
+            <SpreadsheetArea exercise={exercise} onDataChange={handleDataChange} />
+          )}
         </div>
         <ValidationFeedback
           validationResult={validationResult}
