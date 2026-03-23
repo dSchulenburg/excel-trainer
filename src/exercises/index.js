@@ -35,45 +35,51 @@ export const exercises = [
 export const levels = [
   {
     id: 1,
+    trackId: 'avm',
     titleKey: 'level1.title',
     storyKey: 'level1.story',
-    icon: '🛒',
-    exercises: exercises.filter((e) => e.levelId === 1),
+    icon: '\u{1F6D2}',
+    exercises: exercises.filter((e) => e.levelId === 1 && e.trackId === 'avm'),
   },
   {
     id: 2,
+    trackId: 'avm',
     titleKey: 'level2.title',
     storyKey: 'level2.story',
-    icon: '📅',
-    exercises: exercises.filter((e) => e.levelId === 2),
+    icon: '\u{1F4C5}',
+    exercises: exercises.filter((e) => e.levelId === 2 && e.trackId === 'avm'),
   },
   {
     id: 3,
+    trackId: 'avm',
     titleKey: 'level3.title',
     storyKey: 'level3.story',
-    icon: '🍳',
-    exercises: exercises.filter((e) => e.levelId === 3),
+    icon: '\u{1F373}',
+    exercises: exercises.filter((e) => e.levelId === 3 && e.trackId === 'avm'),
   },
   {
     id: 4,
+    trackId: 'avm',
     titleKey: 'level4.title',
     storyKey: 'level4.story',
-    icon: '🏠',
-    exercises: exercises.filter((e) => e.levelId === 4),
+    icon: '\u{1F3E0}',
+    exercises: exercises.filter((e) => e.levelId === 4 && e.trackId === 'avm'),
   },
   {
     id: 5,
+    trackId: 'avm',
     titleKey: 'level5.title',
     storyKey: 'level5.story',
-    icon: '✈️',
-    exercises: exercises.filter((e) => e.levelId === 5),
+    icon: '\u{2708}\u{FE0F}',
+    exercises: exercises.filter((e) => e.levelId === 5 && e.trackId === 'avm'),
   },
   {
     id: 6,
+    trackId: 'avm',
     titleKey: 'level6.title',
     storyKey: 'level6.story',
-    icon: '💼',
-    exercises: exercises.filter((e) => e.levelId === 6),
+    icon: '\u{1F4BC}',
+    exercises: exercises.filter((e) => e.levelId === 6 && e.trackId === 'avm'),
   },
 ];
 
@@ -82,6 +88,18 @@ export function getExercise(id) {
 }
 
 export function getNextExercise(currentId) {
-  const idx = exercises.findIndex((e) => e.id === currentId);
-  return idx >= 0 && idx < exercises.length - 1 ? exercises[idx + 1] : null;
+  const current = exercises.find((e) => e.id === currentId);
+  if (!current) return null;
+  // Only navigate to next exercise within the same track
+  const trackExercises = exercises.filter((e) => e.trackId === current.trackId);
+  const idx = trackExercises.findIndex((e) => e.id === currentId);
+  return idx >= 0 && idx < trackExercises.length - 1 ? trackExercises[idx + 1] : null;
+}
+
+export function getExercisesByTrack(trackId) {
+  return exercises.filter((e) => e.trackId === trackId);
+}
+
+export function getLevelsByTrack(trackId) {
+  return levels.filter((l) => l.trackId === trackId);
 }
