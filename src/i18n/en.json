@@ -1,0 +1,392 @@
+{
+  "app": {
+    "title": "Excel Trainer",
+    "subtitle": "First Own Apartment"
+  },
+  "audio": {
+    "levelIntro": "Level Introduction",
+    "exerciseIntro": "Exercise Introduction"
+  },
+  "nav": {
+    "levels": "Level Map",
+    "badges": "Badges",
+    "glossary": "Glossary",
+    "profile": "Profile"
+  },
+  "playerLevel": {
+    "avm": {
+      "1": "Beginner",
+      "2": "Explorer",
+      "3": "Table Expert",
+      "4": "Formula Pro",
+      "5": "Excel Hero"
+    },
+    "kaufleute": {
+      "1": "Intern",
+      "2": "Clerk",
+      "3": "Specialist",
+      "4": "Department Head",
+      "5": "CEO"
+    }
+  },
+  "trackSelect": {
+    "title": "Choose your track",
+    "avm": {
+      "title": "First Own Apartment",
+      "desc": "Learn Excel basics with everyday tasks"
+    },
+    "kaufleute": {
+      "title": "Wholesale Commerce",
+      "desc": "Professional Excel for business apprentices"
+    }
+  },
+  "common": {
+    "back": "Back",
+    "next": "Next",
+    "check": "Check",
+    "hint": "Hint",
+    "stars": "Stars",
+    "xp": "XP",
+    "level": "Level",
+    "locked": "Locked",
+    "completed": "Completed",
+    "streak": "Streak",
+    "day": "Day",
+    "days": "Days",
+    "errors": "Errors",
+    "perfect": "Perfect!",
+    "tryAgain": "Try Again",
+    "start": "Start",
+    "close": "Close",
+    "name": "Name",
+    "save": "Save",
+    "reset": "Reset Progress",
+    "yes": "Yes, continue!",
+    "no": "Never mind"
+  },
+  "levelMap": {
+    "title": "Your Path to Excel Pro",
+    "exercise": "Exercise"
+  },
+  "exercise": {
+    "step": "Step",
+    "instructions": "Instructions",
+    "checkAnswer": "Check Answer",
+    "stepComplete": "Step complete!",
+    "allComplete": "All steps complete!",
+    "hintAvailable": "Hint available",
+    "skip": "Skip",
+    "skipConfirm": "Really skip? You can try again later!",
+    "skipped": "Skipped",
+    "formulaHint": "SUM = SUMME, AVERAGE = MITTELWERT — both work!"
+  },
+  "complete": {
+    "title": "Done!",
+    "xpEarned": "+{xp} XP earned",
+    "newBadge": "New Badge!",
+    "nextExercise": "Next Exercise",
+    "backToMap": "Back to Map"
+  },
+  "badges": {
+    "title": "Badge Wall",
+    "earned": "Earned",
+    "locked": "Not yet unlocked"
+  },
+  "badge": {
+    "firstCell": "First Cell",
+    "firstFormula": "First Formula",
+    "shoppingDone": "Shopping Done",
+    "alltagDone": "Daily Life Organized",
+    "cookingMaster": "Kitchen Master",
+    "financePro": "Finance Pro",
+    "travelExpert": "Travel Expert",
+    "proComplete": "Excel Pro",
+    "sumMaster": "Sum Master",
+    "streak3": "3-Day Streak",
+    "perfectScore": "Perfect Score",
+    "speedDemon": "Speed Demon",
+    "polyglot": "Multilingual",
+    "referenzMeister": "Reference Master",
+    "entscheider": "Decision Maker",
+    "sverweisMeister": "VLOOKUP Master",
+    "datenProfi": "Data Pro",
+    "visualisierer": "Visualizer",
+    "chartCreator": "Chart Creator",
+    "geschaeftsfuehrer": "CEO",
+    "kaufmannKomplett": "Commerce Complete"
+  },
+  "profile": {
+    "title": "My Profile",
+    "chooseAvatar": "Choose Avatar",
+    "enterName": "Your Name"
+  },
+  "glossary": {
+    "title": "Excel Glossary",
+    "term": "Term",
+    "german": "Deutsch",
+    "english": "English",
+    "description": "Description"
+  },
+  "level1": {
+    "title": "Shopping",
+    "story": "You are moving into your first apartment! First you need a shopping list. Let's use Excel!",
+    "ex1": {
+      "title": "Shopping List",
+      "story": "Write your first shopping list in a spreadsheet.",
+      "step1": "Write 'Rice' in cell A2",
+      "step2": "Write 'Pasta' in cell A3",
+      "step3": "Write 'Oil' in cell A4",
+      "step4": "Write 'Salt' in cell A5",
+      "hint1": "Click on cell A2 and type 'Rice'",
+      "hint2": "Cells are like a grid – A is the column, 2 is the row"
+    },
+    "ex2": {
+      "title": "Enter Prices",
+      "story": "Now let's enter the prices next to the items.",
+      "step1": "Enter the price 1.99 in cell B2",
+      "step2": "Enter the price 0.89 in cell B3",
+      "step3": "Enter the price 2.49 in cell B4",
+      "step4": "Enter the price 0.59 in cell B5",
+      "hint1": "Click on B2 and type the number 1.99",
+      "hint2": "Use a period as decimal separator (e.g. 1.99)"
+    },
+    "ex3": {
+      "title": "Calculate Sum",
+      "story": "How much does everything cost? Use your first formula!",
+      "step1": "Write 'Total' in cell A6",
+      "step2": "Write the formula =SUM(B2:B5) in cell B6",
+      "hint1": "A formula always starts with an equals sign =",
+      "hint2": "SUM() adds all numbers in the range. B2:B5 means from B2 to B5."
+    },
+    "ex4": {
+      "title": "Check Budget",
+      "story": "You have 10 euros. Is that enough?",
+      "step1": "Write 'Budget' in cell A8",
+      "step2": "Write 10 in cell B8",
+      "step3": "Write 'Remaining' in cell A9",
+      "step4": "Write the formula =B8-B6 in cell B9",
+      "hint1": "B8 is your budget, B6 is the sum of your purchases",
+      "hint2": "Start a formula with =. The minus sign - subtracts."
+    }
+  },
+  "level2": {
+    "title": "My Daily Life",
+    "story": "Your first week in the new apartment! Organize your daily life with Excel.",
+    "ex1": {
+      "title": "Weekly Planner",
+      "story": "Plan your first week in the new apartment.",
+      "step1": "Write 'Monday' in cell A2",
+      "step2": "Write 'Tuesday' in cell A3",
+      "step3": "Write 'Wednesday' in cell A4",
+      "step4": "Enter an activity for Monday in B2",
+      "hint1": "Click on A2 and type 'Monday'",
+      "hint2": "Column B holds your activities"
+    },
+    "ex2": {
+      "title": "Price Comparison",
+      "story": "Compare prices from two supermarkets.",
+      "step1": "Enter the Aldi price 1.29 in cell B2",
+      "step2": "Enter the Rewe price 1.59 in cell C2",
+      "step3": "Enter the Aldi price 0.79 in cell B3",
+      "step4": "Enter the Rewe price 0.99 in cell C3",
+      "hint1": "Column B is for Aldi, column C is for Rewe",
+      "hint2": "Look carefully which store is cheaper!"
+    },
+    "ex3": {
+      "title": "Monthly Expenses",
+      "story": "Keep track of your monthly expenses.",
+      "step1": "Enter 350 for rent in cell B2",
+      "step2": "Enter 150 for food in cell B3",
+      "step3": "Enter 30 for phone in cell B4",
+      "step4": "Calculate the sum with =SUM(B2:B5) in cell B6",
+      "hint1": "These numbers are your monthly costs in euros",
+      "hint2": "SUM automatically adds all values in the range"
+    },
+    "ex4": {
+      "title": "Calculate Average",
+      "story": "What is your average spending per category?",
+      "step1": "Enter 45 in cell B2 (Week 1)",
+      "step2": "Enter 52 in cell B3 (Week 2)",
+      "step3": "Enter 38 in cell B4 (Week 3)",
+      "step4": "Calculate the average with =AVERAGE(B2:B4) in cell B6",
+      "hint1": "AVERAGE calculates the mean of all numbers",
+      "hint2": "The average is the sum divided by the count"
+    }
+  },
+  "level3": {
+    "title": "Cooking & Recipes",
+    "story": "You are cooking for yourself now! Plan recipes, shopping and calories with Excel.",
+    "ex1": {
+      "title": "Scale a Recipe",
+      "story": "A recipe is for 2 people. But you have 4 guests! Scale the quantities.",
+      "step1": "Enter the quantities: 200g pasta (B2), 100g cheese (B3), 2 eggs (B4), 150ml cream (B5)",
+      "step2": "Enter the factor 2 in cell C2 (for double quantity)",
+      "step3": "Calculate the new quantity for pasta: =B2*C2 in cell D2",
+      "step4": "Calculate also cheese (D3), eggs (D4) and cream (D5) with the same formula",
+      "hint1": "The asterisk * is the multiplication sign in Excel",
+      "hint2": "Copy the formula: D3 needs =B3*C3, D4 needs =B4*C4"
+    },
+    "ex2": {
+      "title": "Weekly Menu",
+      "story": "Plan your meals for the week and calculate the costs per day.",
+      "step1": "Enter Monday's costs: Breakfast 2 (B2), Lunch 5 (C2), Dinner 4 (D2)",
+      "step2": "Calculate the daily costs for Monday: =SUM(B2:D2) in cell E2",
+      "step3": "Enter Tuesday's costs and calculate daily costs (E3)",
+      "step4": "Calculate weekly costs: =SUM(E2:E6) in cell E8",
+      "hint1": "Each row is a day, each column is a meal",
+      "hint2": "SUM(B2:D2) adds all meals for one day"
+    },
+    "ex3": {
+      "title": "Calorie Tracker",
+      "story": "Count your calories for a day and compare with your daily goal.",
+      "step1": "Enter the calories: Breakfast 400 (B2), Lunch 600 (B3), Dinner 500 (B4), Snacks 200 (B5)",
+      "step2": "Calculate total calories: =SUM(B2:B5) in cell B7",
+      "step3": "Enter your daily goal 2000 in cell B8",
+      "step4": "Calculate remaining calories: =B8-B7 in cell B9",
+      "hint1": "SUM adds all calories for the day",
+      "hint2": "Remaining = goal minus consumed"
+    },
+    "ex4": {
+      "title": "Recipe Shopping",
+      "story": "Calculate the costs for all ingredients of your favorite recipe.",
+      "step1": "Enter price and quantity: Chicken 6.99 (B2), 1 piece (C2)",
+      "step2": "Calculate total price for chicken: =B2*C2 in cell D2",
+      "step3": "Calculate also rice (D3), vegetables (D4) and spices (D5)",
+      "step4": "Calculate shopping total: =SUM(D2:D5) in cell D7",
+      "hint1": "Total price = price per piece times quantity",
+      "hint2": "Use a period as decimal separator (e.g. 6.99)"
+    }
+  },
+  "level4": {
+    "title": "Shared Apartment & Finances",
+    "story": "You now live in a shared apartment! Split costs, plan savings and keep track.",
+    "ex1": {
+      "title": "Split Utility Bills",
+      "story": "The utility bills need to be split fairly between 2 roommates.",
+      "step1": "Enter the costs: Electricity 80 (B2), Water 40 (B3), Internet 30 (B4)",
+      "step2": "Calculate each person's share for electricity: =B2/2 in cell C2",
+      "step3": "Calculate also water (C3) and internet (C4) per person",
+      "step4": "Calculate total per person: =SUM(C2:C4) in cell C6",
+      "hint1": "The slash / is the division sign in Excel",
+      "hint2": "Each person pays half: amount divided by 2"
+    },
+    "ex2": {
+      "title": "Savings Plan",
+      "story": "You want to save 600 for a new bicycle. Create a savings plan!",
+      "step1": "Enter: Savings goal 600 (B2), Monthly rate 50 (B3)",
+      "step2": "Calculate the duration in months: =B2/B3 in cell B4",
+      "step3": "Enter what you have already saved: Months 1-3 at 50 each (B7, B8, B9)",
+      "step4": "Calculate Total saved =SUM(B7:B9) in B10, Remaining =B2-B10 in B11",
+      "hint1": "Duration = savings goal divided by monthly rate",
+      "hint2": "Remaining = savings goal minus already saved"
+    },
+    "ex3": {
+      "title": "Calculate Discount",
+      "story": "The furniture store has a sale! Calculate the final prices after discount.",
+      "step1": "Enter prices and discounts: Lamp 40 (B2), 20% discount (C2)",
+      "step2": "Calculate the savings for the lamp: =B2*C2/100 in cell D2",
+      "step3": "Calculate the final price: =B2-D2 in cell E2. Do the same for carpet and shelf.",
+      "step4": "Calculate total final price: =SUM(E2:E4) in cell E6",
+      "hint1": "Savings = price times discount divided by 100",
+      "hint2": "Final price = original price minus savings"
+    },
+    "ex4": {
+      "title": "Monthly Overview",
+      "story": "Create a complete monthly overview with income, expenses and balance.",
+      "step1": "Enter your income: Training allowance 800 (B2), Child benefit 250 (B3)",
+      "step2": "Calculate Total income =SUM(B2:B3) in B4, Total expenses =SUM(B7:B10) in B11",
+      "step3": "Calculate the balance (income minus expenses): =B4-B11 in cell B13",
+      "step4": "Find the highest expense =MAX(B7:B10) in B14 and the lowest =MIN(B7:B10) in B15",
+      "hint1": "MAX finds the largest value, MIN the smallest",
+      "hint2": "Balance = what comes in minus what goes out"
+    }
+  },
+  "level5": {
+    "title": "Class Trip",
+    "story": "Your class is planning a class trip! Calculate costs, distribute rooms and settle accounts at the end.",
+    "ex1": {
+      "title": "Travel Costs",
+      "story": "Calculate the total costs of the class trip for 25 students.",
+      "step1": "Enter the participant count 25 in all quantity cells (C2 to C5)",
+      "step2": "Calculate total costs for bus: =B2*C2 in cell D2",
+      "step3": "Calculate also accommodation (D3), meals (D4) and museum (D5)",
+      "step4": "Total costs =SUM(D2:D5) in D7, cost per person =D7/C2 in D8",
+      "hint1": "Total cost = price per person times number of participants",
+      "hint2": "Cost per person = total costs divided by number of participants"
+    },
+    "ex2": {
+      "title": "Pocket Money",
+      "story": "You have 60 euros pocket money for 5 days. Keep track!",
+      "step1": "Enter your daily expenses: Mon 8, Tue 12, Wed 5, Thu 15, Fri 10 (B2 to B6)",
+      "step2": "Calculate total expenses: =SUM(B2:B6) in cell B8",
+      "step3": "Calculate daily average: =AVERAGE(B2:B6) in cell B9",
+      "step4": "Enter budget 60 in B11, calculate remaining =B11-B8 in B12, percentage =B8/B11*100 in B13",
+      "hint1": "AVERAGE calculates the mean across all days",
+      "hint2": "Percentage spent = expenses divided by budget times 100"
+    },
+    "ex3": {
+      "title": "Room Distribution",
+      "story": "Distribute the class across different room types and calculate the costs.",
+      "step1": "Enter: 3 nights (C2-C4), 2 single rooms (D2), 5 double rooms (D3), 3 triple rooms (D4)",
+      "step2": "Calculate costs for single rooms: =B2*C2*D2 in cell E2",
+      "step3": "Calculate also double rooms (E3) and triple rooms (E4)",
+      "step4": "Total rooms =SUM(D2:D4) in E6, total costs =SUM(E2:E4) in E7, avg costs =E7/E6 in E8, cheapest =MIN(B2:B4) in E9",
+      "hint1": "Cost = price per night times nights times number of rooms",
+      "hint2": "Average cost = total costs divided by number of rooms"
+    },
+    "ex4": {
+      "title": "Settlement",
+      "story": "After the trip: who paid how much? Calculate the differences.",
+      "step1": "Enter how much each person paid: Anna 120, Ben 45, Clara 80, David 55 (B2-B5)",
+      "step2": "Calculate Total =SUM(B2:B5) in B7, fair share =B7/4 in B8",
+      "step3": "Enter the fair share =B$8 in C2, calculate difference =B2-C2 in D2 (also for B3-B5)",
+      "step4": "Highest contribution =MAX(B2:B5) in B10, lowest =MIN(B2:B5) in B11, range =B10-B11 in B12",
+      "hint1": "Positive = gets money back, negative = still needs to pay",
+      "hint2": "Range = highest minus lowest contribution"
+    }
+  },
+  "level6": {
+    "title": "Pro Spreadsheets",
+    "story": "You are almost an Excel pro! Solve complex tasks with nested formulas and percentage calculations.",
+    "ex1": {
+      "title": "Grade Calculator",
+      "story": "Calculate your grade average and analyze your performance.",
+      "step1": "Enter grades and scores: Math 2/85%, German 3/72%, English 1/91%, Business 3/68%, IT 2/80%",
+      "step2": "Calculate grade average: =AVERAGE(B2:B6) in B8",
+      "step3": "Best grade =MIN(B2:B6) in B9, worst =MAX(B2:B6) in B10, range =B10-B9 in B11",
+      "step4": "Calculate avg score =AVERAGE(C2:C6) in C13, max score =MAX(C2:C6) in C14",
+      "hint1": "For grades, MIN is best (1) and MAX is worst (6)",
+      "hint2": "The grade range shows how varied your performance is"
+    },
+    "ex2": {
+      "title": "Salary Calculator",
+      "story": "Calculate your wages as a trainee – from hourly rate to net pay.",
+      "step1": "Enter: Hourly rate 12.50 (B2), Hours/week 20 (B3)",
+      "step2": "Calculate weekly wage =B2*B3 in B6, monthly wage =B6*B4 in B7",
+      "step3": "Calculate annual wage =B7*12 in B8, social contributions =B7*0.2 in B10, net =B7-B10 in B11",
+      "step4": "Calculate net/day =B11/22 in B13 (22 working days), net/hour =B11/B3/B4 in B14",
+      "hint1": "Weeks/month (B4) is already entered: 4",
+      "hint2": "Net = gross minus deductions. 22 working days per month is standard."
+    },
+    "ex3": {
+      "title": "Inventory",
+      "story": "Take inventory for your small online shop. Calculate values and profits.",
+      "step1": "Enter: T-Shirts cost 8/price 20/50 pcs, Caps 5/15/30, Mugs 3/10/80, Stickers 1/5/200",
+      "step2": "Calculate profit per piece: =C2-B2 in E2, likewise for all products",
+      "step3": "Total stock =SUM(D2:D5) in D7, avg profit =AVERAGE(E2:E5) in E8, best profit =MAX(E2:E5) in E9",
+      "step4": "Inventory value cost =SUM(B2*D2,B3*D3,B4*D4,B5*D5) in E11, sales price analog in E12, potential profit =E12-E11 in E13",
+      "hint1": "Profit per piece = selling price minus purchase price",
+      "hint2": "Inventory value = sum of (price times stock) for each product"
+    },
+    "ex4": {
+      "title": "Year Comparison",
+      "story": "Compare this year's revenue with last year – per quarter and total.",
+      "step1": "Enter this year's revenue: Q1 1400, Q2 1650, Q3 1900, Q4 2200 (C2-C5)",
+      "step2": "Calculate the difference per quarter: =C2-B2 in D2, for all quarters",
+      "step3": "Calculate the percentage change: =D2/B2*100 in E2, for all quarters",
+      "step4": "Annual total last year =SUM(B2:B5) in B7, this year =SUM(C2:C5) in C7, avg quarter =AVERAGE(C2:C5) in C8, best quarter =MAX(C2:C5) in C9, total difference =C7-B7 in D12, total growth =D12/B7*100 in E12",
+      "hint1": "Percentage change = difference divided by last year's value times 100",
+      "hint2": "A positive value means growth, a negative value means decline"
+    }
+  }
+}

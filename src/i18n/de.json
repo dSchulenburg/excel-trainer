@@ -14,11 +14,31 @@
     "profile": "Profil"
   },
   "playerLevel": {
-    "1": "Anfänger",
-    "2": "Entdecker",
-    "3": "Tabellenkenner",
-    "4": "Formelprofi",
-    "5": "Excel-Held"
+    "avm": {
+      "1": "Anfänger",
+      "2": "Entdecker",
+      "3": "Tabellenkenner",
+      "4": "Formelprofi",
+      "5": "Excel-Held"
+    },
+    "kaufleute": {
+      "1": "Praktikant",
+      "2": "Sachbearbeiter",
+      "3": "Fachkraft",
+      "4": "Abteilungsleiter",
+      "5": "Geschäftsführer"
+    }
+  },
+  "trackSelect": {
+    "title": "Waehle deinen Track",
+    "avm": {
+      "title": "Erste eigene Wohnung",
+      "desc": "Lerne Excel-Grundlagen mit Alltagsaufgaben"
+    },
+    "kaufleute": {
+      "title": "Kaufleute im Grosshandel",
+      "desc": "Professionelles Excel fuer Berufsschueler"
+    }
   },
   "common": {
     "back": "Zurück",
@@ -85,7 +105,15 @@
     "streak3": "3-Tage-Streak",
     "perfectScore": "Perfekte Bewertung",
     "speedDemon": "Blitzschnell",
-    "polyglot": "Mehrsprachig"
+    "polyglot": "Mehrsprachig",
+    "referenzMeister": "Referenz-Meister",
+    "entscheider": "Entscheider",
+    "sverweisMeister": "SVERWEIS-Meister",
+    "datenProfi": "Daten-Profi",
+    "visualisierer": "Visualisierer",
+    "chartCreator": "Diagramm-Ersteller",
+    "geschaeftsfuehrer": "Geschaeftsfuehrer",
+    "kaufmannKomplett": "Kaufmann komplett"
   },
   "profile": {
     "title": "Mein Profil",
