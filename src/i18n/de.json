@@ -441,8 +441,8 @@
         "title": "Umsatz pro Kategorie",
         "story": "Werte aus, wie viel Umsatz jede Produktkategorie erzielt — mit SUMMEWENN kannst du gezielt nach Kategorien summieren.",
         "step1": "Gib in B12 die Formel ein: =SUMMEWENN(B2:B9;\"Elektronik\";C2:C9)",
-        "step2": "Berechne in B13 den Umsatz für Bürobedarf: =SUMMEWENN(B2:B9;\"Buerobedarf\";C2:C9)",
-        "step3": "Berechne in B14 den Umsatz für Möbel: =SUMMEWENN(B2:B9;\"Moebel\";C2:C9)",
+        "step2": "Berechne in B13 den Umsatz für Bürobedarf: =SUMMEWENN(B2:B9;\"Bürobedarf\";C2:C9)",
+        "step3": "Berechne in B14 den Umsatz für Möbel: =SUMMEWENN(B2:B9;\"Möbel\";C2:C9)",
         "step4": "Prüfe: Elektronik = 479,96 EUR, Bürobedarf = 77,50 EUR, Möbel = 449,00 EUR",
         "hint1": "SUMMEWENN(Bereich;Kriterium;Summe_Bereich): Spalte B enthält die Kategorien, Spalte C die Beträge",
         "hint2": "Der Kriteriumstext muss genau mit dem Zellinhalt übereinstimmen — Groß-/Kleinschreibung beachten"
@@ -462,7 +462,7 @@
         "story": "Dein Shop hat drei Filialen! Vergleiche Umsatz und Bestellanzahl pro Filiale mit SUMMEWENN und ZÄHLENWENN.",
         "step1": "Berechne in B13 den Hamburger Umsatz: =SUMMEWENN(B2:B10;\"Hamburg\";D2:D10)",
         "step2": "Berechne in B14 den Berliner Umsatz: =SUMMEWENN(B2:B10;\"Berlin\";D2:D10)",
-        "step3": "Berechne in B15 den Münchener Umsatz: =SUMMEWENN(B2:B10;\"Muenchen\";D2:D10)",
+        "step3": "Berechne in B15 den Münchener Umsatz: =SUMMEWENN(B2:B10;\"München\";D2:D10)",
         "step4": "Zähle in C13 die Hamburg-Bestellungen: =ZÄHLENWENN(B2:B10;\"Hamburg\")",
         "hint1": "Die Filiale steht in Spalte B, der Betrag in Spalte D — passe den Summe_Bereich entsprechend an",
         "hint2": "Hamburg = 578,99 EUR (3 Bestellungen), Berlin = 305,48 EUR (3), München = 341,99 EUR (3)"

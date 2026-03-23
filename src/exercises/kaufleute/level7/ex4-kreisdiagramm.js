@@ -25,9 +25,9 @@ export default {
         // Data rows - 4 categories pre-filled
         { r: 1, c: 0, v: { v: 'Elektronik', m: 'Elektronik', ct: { fa: 'General', t: 's' } } },
         { r: 1, c: 1, v: { v: 42, m: '42', ct: { fa: 'General', t: 'n' } } },
-        { r: 2, c: 0, v: { v: 'Buerobedarf', m: 'Buerobedarf', ct: { fa: 'General', t: 's' } } },
+        { r: 2, c: 0, v: { v: 'Bürobedarf', m: 'Bürobedarf', ct: { fa: 'General', t: 's' } } },
         { r: 2, c: 1, v: { v: 28, m: '28', ct: { fa: 'General', t: 'n' } } },
-        { r: 3, c: 0, v: { v: 'Moebel', m: 'Moebel', ct: { fa: 'General', t: 's' } } },
+        { r: 3, c: 0, v: { v: 'Möbel', m: 'Möbel', ct: { fa: 'General', t: 's' } } },
         { r: 3, c: 1, v: { v: 18, m: '18', ct: { fa: 'General', t: 'n' } } },
         { r: 4, c: 0, v: { v: 'Sonstiges', m: 'Sonstiges', ct: { fa: 'General', t: 's' } } },
         { r: 4, c: 1, v: { v: 12, m: '12', ct: { fa: 'General', t: 'n' } } },

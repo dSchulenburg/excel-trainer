@@ -441,8 +441,8 @@
         "title": "Ingresos por categoría",
         "story": "Averigua cuántos ingresos genera cada categoría de producto — SUMAR.SI permite sumar de forma selectiva por categoría.",
         "step1": "Introduce en B12: =SUMAR.SI(B2:B9;\"Elektronik\";C2:C9)",
-        "step2": "Calcula los ingresos de Buerobedarf en B13: =SUMAR.SI(B2:B9;\"Buerobedarf\";C2:C9)",
-        "step3": "Calcula los ingresos de Moebel en B14: =SUMAR.SI(B2:B9;\"Moebel\";C2:C9)",
+        "step2": "Calcula los ingresos de Bürobedarf en B13: =SUMAR.SI(B2:B9;\"Bürobedarf\";C2:C9)",
+        "step3": "Calcula los ingresos de Möbel en B14: =SUMAR.SI(B2:B9;\"Möbel\";C2:C9)",
         "step4": "Comprobación: Electrónica = 479,96 EUR, Material de oficina = 77,50 EUR, Muebles = 449,00 EUR",
         "hint1": "SUMAR.SI(rango;criterio;rango_suma): la columna B contiene las categorías, la columna C los importes",
         "hint2": "El texto del criterio debe coincidir exactamente con el contenido de la celda"
@@ -462,7 +462,7 @@
         "story": "¡Tu tienda tiene tres sucursales! Compara los ingresos y el número de pedidos por sucursal con SUMAR.SI y CONTAR.SI.",
         "step1": "Calcula los ingresos de Hamburgo en B13: =SUMAR.SI(B2:B10;\"Hamburg\";D2:D10)",
         "step2": "Calcula los ingresos de Berlín en B14: =SUMAR.SI(B2:B10;\"Berlin\";D2:D10)",
-        "step3": "Calcula los ingresos de Múnich en B15: =SUMAR.SI(B2:B10;\"Muenchen\";D2:D10)",
+        "step3": "Calcula los ingresos de Múnich en B15: =SUMAR.SI(B2:B10;\"München\";D2:D10)",
         "step4": "Cuenta los pedidos de Hamburgo en C13: =CONTAR.SI(B2:B10;\"Hamburg\")",
         "hint1": "La sucursal está en la columna B, el importe en la columna D — ajusta el rango_suma en consecuencia",
         "hint2": "Hamburgo = 578,99 EUR (3 pedidos), Berlín = 305,48 EUR (3), Múnich = 341,99 EUR (3)"

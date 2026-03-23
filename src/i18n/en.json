@@ -441,8 +441,8 @@
         "title": "Revenue by Category",
         "story": "Find out how much revenue each product category generates — SUMIF lets you sum selectively by category.",
         "step1": "Enter in B12: =SUMIF(B2:B9,\"Elektronik\",C2:C9)",
-        "step2": "Calculate revenue for Buerobedarf in B13: =SUMIF(B2:B9,\"Buerobedarf\",C2:C9)",
-        "step3": "Calculate revenue for Moebel in B14: =SUMIF(B2:B9,\"Moebel\",C2:C9)",
+        "step2": "Calculate revenue for Bürobedarf in B13: =SUMIF(B2:B9,\"Bürobedarf\",C2:C9)",
+        "step3": "Calculate revenue for Möbel in B14: =SUMIF(B2:B9,\"Möbel\",C2:C9)",
         "step4": "Check: Electronics = 479.96 EUR, Office supplies = 77.50 EUR, Furniture = 449.00 EUR",
         "hint1": "SUMIF(range,criterion,sum_range): column B holds the categories, column C the amounts",
         "hint2": "The criterion text must match the cell content exactly — case-insensitive"
@@ -462,7 +462,7 @@
         "story": "Your shop has three branches! Compare revenue and order count per branch using SUMIF and COUNTIF.",
         "step1": "Calculate Hamburg revenue in B13: =SUMIF(B2:B10,\"Hamburg\",D2:D10)",
         "step2": "Calculate Berlin revenue in B14: =SUMIF(B2:B10,\"Berlin\",D2:D10)",
-        "step3": "Calculate Munich revenue in B15: =SUMIF(B2:B10,\"Muenchen\",D2:D10)",
+        "step3": "Calculate Munich revenue in B15: =SUMIF(B2:B10,\"München\",D2:D10)",
         "step4": "Count Hamburg orders in C13: =COUNTIF(B2:B10,\"Hamburg\")",
         "hint1": "The branch is in column B, the amount in column D — adjust the sum_range accordingly",
         "hint2": "Hamburg = 578.99 EUR (3 orders), Berlin = 305.48 EUR (3), Munich = 341.99 EUR (3)"
