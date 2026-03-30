@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Lottie from 'lottie-react';
 import { useI18n } from '../context/I18nContext';
-import { levels } from '../exercises';
+import { getExercise, levels } from '../exercises';
 import AudioPlayer from './AudioPlayer';
 
 const STORY_ANIMATIONS = {
@@ -16,8 +16,10 @@ const STORY_ANIMATIONS = {
 
 export default function StoryIntro({ exerciseId, onStart }) {
   const { t } = useI18n();
-  const levelId = parseInt(exerciseId.split('-')[0].replace('L', ''));
-  const level = levels.find((l) => l.id === levelId);
+  const exercise = getExercise(exerciseId);
+  const levelId = exercise?.levelId || 1;
+  const trackId = exercise?.trackId || 'avm';
+  const level = levels.find((l) => l.id === levelId && l.trackId === trackId);
   const [animData, setAnimData] = useState(null);
 
   useEffect(() => {
@@ -60,7 +62,7 @@ export default function StoryIntro({ exerciseId, onStart }) {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3 }}
       >
-        {t(`level${levelId}.title`)}
+        {level ? t(level.titleKey) : `Level ${levelId}`}
       </motion.h2>
       <motion.p
         className="story-intro__text"
@@ -68,7 +70,7 @@ export default function StoryIntro({ exerciseId, onStart }) {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.4 }}
       >
-        {t(`level${levelId}.story`)}
+        {level ? t(level.storyKey) : ''}
       </motion.p>
       <motion.div
         initial={{ opacity: 0, y: 5 }}

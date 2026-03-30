@@ -10,8 +10,8 @@ const TRACK_ICONS = { avm: '🛒', kaufleute: '📊' };
 export default function Layout({ children, currentView, onNavigate }) {
   const { t } = useI18n();
   const { xp, streak, selectedTrack } = useGame();
-  const playerLevel = getPlayerLevel(xp);
-  const xpProgress = getXPProgress(xp);
+  const playerLevel = getPlayerLevel(xp, selectedTrack);
+  const xpProgress = getXPProgress(xp, selectedTrack);
 
   const navItems = [
     { key: 'levels', label: t('nav.levels') },

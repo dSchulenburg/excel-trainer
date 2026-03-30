@@ -1,9 +1,9 @@
 export const PLAYER_LEVELS = [
-  { level: 1, title: 'Anfaenger', titleKey: 'playerLevel.1', xpRequired: 0 },
-  { level: 2, title: 'Entdecker', titleKey: 'playerLevel.2', xpRequired: 100 },
-  { level: 3, title: 'Tabellenkenner', titleKey: 'playerLevel.3', xpRequired: 300 },
-  { level: 4, title: 'Formelprofi', titleKey: 'playerLevel.4', xpRequired: 600 },
-  { level: 5, title: 'Excel-Held', titleKey: 'playerLevel.5', xpRequired: 1000 },
+  { level: 1, title: 'Anfaenger', titleKey: 'playerLevel.avm.1', xpRequired: 0 },
+  { level: 2, title: 'Entdecker', titleKey: 'playerLevel.avm.2', xpRequired: 100 },
+  { level: 3, title: 'Tabellenkenner', titleKey: 'playerLevel.avm.3', xpRequired: 300 },
+  { level: 4, title: 'Formelprofi', titleKey: 'playerLevel.avm.4', xpRequired: 600 },
+  { level: 5, title: 'Excel-Held', titleKey: 'playerLevel.avm.5', xpRequired: 1000 },
 ];
 
 export const KAUFLEUTE_LEVELS = [
