@@ -395,22 +395,22 @@
       "story": "Internship Day 1 at Schulz & Partner GmbH – a wholesale office supply company. Your task: update the price list using absolute cell references.",
       "ex1": {
         "title": "Calculate VAT",
-        "story": "You need to calculate the gross prices for all items. The VAT factor 1.19 is stored in cell C1 and applies to all products.",
-        "step1": "Enter the formula =B2*$C$1 in cell D2 to calculate the gross price for the folder",
-        "step2": "Copy the formula to D3 – note: $C$1 stays fixed, B3 adjusts automatically",
+        "story": "You need to calculate the gross prices for all items. The VAT factor 1.19 is stored in cell C2 and applies to all products.",
+        "step1": "Enter the formula =B2*$C$2 in cell D2 to calculate the gross price for the folder",
+        "step2": "Copy the formula to D3 – note: $C$2 stays fixed, B3 adjusts automatically",
         "step3": "Calculate the gross prices for pens (D4) and glue (D5) as well",
-        "step4": "Verify: all formulas in D2:D5 must reference $C$1",
+        "step4": "Verify: all formulas in D2:D5 must reference $C$2",
         "hint1": "The dollar sign $ makes a reference absolute – it does not change when copied",
-        "hint2": "=B2*$C$1 means: net price from B2 times the fixed VAT factor from C1"
+        "hint2": "=B2*$C$2 means: net price from B2 times the fixed VAT factor from C2"
       },
       "ex2": {
         "title": "Currency Conversion",
-        "story": "A US customer wants to see prices in USD. The EUR/USD exchange rate is stored in cell E1.",
-        "step1": "Enter the formula =B2*$E$1 in cell C2 to calculate the USD price for copy paper",
-        "step2": "Copy the formula to C3 – the exchange rate in $E$1 stays fixed",
+        "story": "A US customer wants to see prices in USD. The EUR/USD exchange rate is stored in cell E2.",
+        "step1": "Enter the formula =B2*$E$2 in cell C2 to calculate the USD price for copy paper",
+        "step2": "Copy the formula to C3 – the exchange rate in $E$2 stays fixed",
         "step3": "Calculate the USD prices for the printer (C4) and laptop (C5) as well",
-        "step4": "Verify: all formulas in C2:C5 must use $E$1 as the fixed exchange rate",
-        "hint1": "$E$1 locks both column E and row 1 – the reference never changes",
+        "step4": "Verify: all formulas in C2:C5 must use $E$2 as the fixed exchange rate",
+        "hint1": "$E$2 locks both column E and row 2 – the reference never changes",
         "hint2": "USD price = EUR price multiplied by the exchange rate"
       },
       "ex3": {
@@ -425,12 +425,12 @@
       },
       "ex4": {
         "title": "Calculate Commission",
-        "story": "The sales team earns a 5% commission on revenue. The commission rate is stored in C1 and applies to all salespeople.",
-        "step1": "Enter =B2*$C$1 in D2 to calculate the commission for Müller, A.",
+        "story": "The sales team earns a 5% commission on revenue. The commission rate is stored in C2 and applies to all salespeople.",
+        "step1": "Enter =B2*$C$2 in D2 to calculate the commission for Müller, A.",
         "step2": "Copy the formula to D3 for Schmidt, B.",
         "step3": "Calculate the commission for Weber, C. (D4) and Fischer, D. (D5) as well",
-        "step4": "Note: without the $ signs, C1 would shift to C2, C3 etc. when copying – that would be wrong!",
-        "hint1": "$C$1 ensures the commission rate from C1 is always used",
+        "step4": "Note: without the $ signs, C2 would shift to C3, C4 etc. when copying – that would be wrong!",
+        "hint1": "$C$2 ensures the commission rate from C2 is always used",
         "hint2": "Commission = revenue × rate (e.g. 12,500 × 0.05 = 625 EUR)"
       }
     },
@@ -550,9 +550,9 @@
         "story": "Create a full invoice: name and price via VLOOKUP, total price including VAT via formula.",
         "step1": "Fetch the name: =VLOOKUP(A2,Stammdaten!A:C,2,0) in B2",
         "step2": "Fetch the price: =VLOOKUP(A2,Stammdaten!A:C,3,0) in C2",
-        "step3": "Calculate the total including VAT: =C2*D2*(1+$E$1) in F2",
+        "step3": "Calculate the total including VAT: =C2*D2*(1+$E$2) in F2",
         "step4": "Copy all formulas for the remaining articles (rows 3 and 4)",
-        "hint1": "$E$1 locks the VAT cell — it stays on E1 when copying",
+        "hint1": "$E$2 locks the VAT cell — it stays on E2 when copying",
         "hint2": "Total = price × quantity × (1 + VAT). With 19% VAT: × 1.19"
       },
       "ex4": {

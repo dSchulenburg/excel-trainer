@@ -395,22 +395,22 @@
       "story": "Praktikum Tag 1 bei Schulz & Partner GmbH – einem Bürobedarfs-Großhändler. Deine Aufgabe: die Preisliste aktualisieren und dabei absolute Zellreferenzen einsetzen.",
       "ex1": {
         "title": "MwSt berechnen",
-        "story": "Du sollst die Bruttopreise der Artikel berechnen. Der MwSt-Faktor 1,19 steht in Zelle C1 und gilt für alle Artikel.",
-        "step1": "Trage die Formel =B2*$C$1 in Zelle D2 ein, um den Bruttopreis für Ordner zu berechnen",
-        "step2": "Kopiere die Formel nach D3 – beachte: $C$1 bleibt fest, B3 passt sich an",
+        "story": "Du sollst die Bruttopreise der Artikel berechnen. Der MwSt-Faktor 1,19 steht in Zelle C2 und gilt für alle Artikel.",
+        "step1": "Trage die Formel =B2*$C$2 in Zelle D2 ein, um den Bruttopreis für Ordner zu berechnen",
+        "step2": "Kopiere die Formel nach D3 – beachte: $C$2 bleibt fest, B3 passt sich an",
         "step3": "Berechne auch die Bruttopreise für Stifte (D4) und Kleber (D5)",
-        "step4": "Prüfe: Alle Formeln in D2:D5 müssen auf $C$1 verweisen",
+        "step4": "Prüfe: Alle Formeln in D2:D5 müssen auf $C$2 verweisen",
         "hint1": "Das Dollarzeichen $ macht eine Referenz absolut – sie ändert sich beim Kopieren nicht",
-        "hint2": "=B2*$C$1 bedeutet: Nettopreis aus B2 mal fester MwSt-Faktor aus C1"
+        "hint2": "=B2*$C$2 bedeutet: Nettopreis aus B2 mal fester MwSt-Faktor aus C2"
       },
       "ex2": {
         "title": "Währungsumrechnung",
-        "story": "Ein US-amerikanischer Kunde möchte Preise in USD sehen. Der Wechselkurs EUR/USD steht in Zelle E1.",
-        "step1": "Trage die Formel =B2*$E$1 in Zelle C2 ein, um den USD-Preis für Kopierpapier zu berechnen",
-        "step2": "Kopiere die Formel nach C3 – der Wechselkurs in $E$1 bleibt fest",
+        "story": "Ein US-amerikanischer Kunde möchte Preise in USD sehen. Der Wechselkurs EUR/USD steht in Zelle E2.",
+        "step1": "Trage die Formel =B2*$E$2 in Zelle C2 ein, um den USD-Preis für Kopierpapier zu berechnen",
+        "step2": "Kopiere die Formel nach C3 – der Wechselkurs in $E$2 bleibt fest",
         "step3": "Berechne auch die USD-Preise für Drucker (C4) und Laptop (C5)",
-        "step4": "Prüfe: Alle Formeln in C2:C5 müssen $E$1 als festen Wechselkurs verwenden",
-        "hint1": "$E$1 fixiert sowohl Spalte E als auch Zeile 1 – die Referenz bleibt immer gleich",
+        "step4": "Prüfe: Alle Formeln in C2:C5 müssen $E$2 als festen Wechselkurs verwenden",
+        "hint1": "$E$2 fixiert sowohl Spalte E als auch Zeile 2 – die Referenz bleibt immer gleich",
         "hint2": "USD-Preis = EUR-Preis multipliziert mit dem Wechselkurs"
       },
       "ex3": {
@@ -425,12 +425,12 @@
       },
       "ex4": {
         "title": "Provision berechnen",
-        "story": "Das Vertriebsteam erhält 5% Provision auf den Umsatz. Der Provisionssatz steht in C1 und gilt für alle Verkäufer.",
-        "step1": "Trage =B2*$C$1 in D2 ein, um die Provision für Müller, A. zu berechnen",
+        "story": "Das Vertriebsteam erhält 5% Provision auf den Umsatz. Der Provisionssatz steht in C2 und gilt für alle Verkäufer.",
+        "step1": "Trage =B2*$C$2 in D2 ein, um die Provision für Müller, A. zu berechnen",
         "step2": "Kopiere die Formel nach D3 für Schmidt, B.",
         "step3": "Berechne auch die Provision für Weber, C. (D4) und Fischer, D. (D5)",
-        "step4": "Prüfe: Ohne das $ würde C1 beim Kopieren zu C2, C3 usw. werden – das wäre falsch!",
-        "hint1": "$C$1 stellt sicher, dass immer der Provisionssatz aus C1 verwendet wird",
+        "step4": "Prüfe: Ohne das $ würde C2 beim Kopieren zu C3, C4 usw. werden – das wäre falsch!",
+        "hint1": "$C$2 stellt sicher, dass immer der Provisionssatz aus C2 verwendet wird",
         "hint2": "Provision = Umsatz × Provisionssatz (z.B. 12.500 × 0,05 = 625 EUR)"
       }
     },
@@ -550,9 +550,9 @@
         "story": "Erstelle eine vollständige Rechnung: Bezeichnung und Preis per SVERWEIS, Gesamtpreis mit MwSt per Formel.",
         "step1": "Hole die Bezeichnung: =SVERWEIS(A2;Stammdaten!A:C;2;0) in B2",
         "step2": "Hole den Preis: =SVERWEIS(A2;Stammdaten!A:C;3;0) in C2",
-        "step3": "Berechne den Gesamtpreis mit MwSt: =C2*D2*(1+$E$1) in F2",
+        "step3": "Berechne den Gesamtpreis mit MwSt: =C2*D2*(1+$E$2) in F2",
         "step4": "Kopiere alle Formeln für die weiteren Artikel (Zeilen 3 und 4)",
-        "hint1": "$E$1 fixiert die MwSt-Zelle — beim Kopieren bleibt sie immer auf E1",
+        "hint1": "$E$2 fixiert die MwSt-Zelle — beim Kopieren bleibt sie immer auf E2",
         "hint2": "Gesamt = Preis × Menge × (1 + MwSt). Bei 19% MwSt: × 1,19"
       },
       "ex4": {

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import Lottie from 'lottie-react';
 import { useI18n } from '../context/I18nContext';
 import { levels } from '../exercises';
+import AudioPlayer from './AudioPlayer';
 
 const STORY_ANIMATIONS = {
   1: '/excel-trainer/animations/shopping.json',
@@ -69,6 +70,17 @@ export default function StoryIntro({ exerciseId, onStart }) {
       >
         {t(`level${levelId}.story`)}
       </motion.p>
+      <motion.div
+        initial={{ opacity: 0, y: 5 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.45 }}
+        style={{ marginBottom: '0.5rem' }}
+      >
+        <AudioPlayer
+          src={`level${levelId}-intro`}
+          label={t('audio.levelIntro')}
+        />
+      </motion.div>
       <motion.button
         className="btn btn--primary"
         onClick={onStart}

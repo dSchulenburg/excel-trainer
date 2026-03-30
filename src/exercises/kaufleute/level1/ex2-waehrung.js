@@ -45,9 +45,9 @@ export default {
   ui: { showToolbar: false, showFormulaBar: true, showSheetTabs: false },
   xp: { base: 32, bonus: 12 },
   validations: [
-    { type: 'cellFormula', cell: { r: 1, c: 2 }, expected: 'B2*$E$1', stepIndex: 0 },
-    { type: 'cellFormula', cell: { r: 2, c: 2 }, expected: 'B3*$E$1', stepIndex: 1 },
-    { type: 'cellFormula', cell: { r: 3, c: 2 }, expected: 'B4*$E$1', stepIndex: 2 },
-    { type: 'cellFormula', cell: { r: 4, c: 2 }, expected: 'B5*$E$1', stepIndex: 3 },
+    { type: 'cellFormula', cell: { r: 1, c: 2 }, expected: 'B2*$E$2', stepIndex: 0 },
+    { type: 'cellFormula', cell: { r: 2, c: 2 }, expected: 'B3*$E$2', stepIndex: 1 },
+    { type: 'cellFormula', cell: { r: 3, c: 2 }, expected: 'B4*$E$2', stepIndex: 2 },
+    { type: 'cellFormula', cell: { r: 4, c: 2 }, expected: 'B5*$E$2', stepIndex: 3 },
   ],
 };

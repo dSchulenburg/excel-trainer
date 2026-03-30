@@ -395,22 +395,22 @@
       "story": "Primer día de prácticas en Schulz & Partner GmbH – un mayorista de material de oficina. Tu tarea: actualizar la lista de precios usando referencias absolutas de celda.",
       "ex1": {
         "title": "Calcular el IVA",
-        "story": "Debes calcular los precios brutos de todos los artículos. El factor del IVA 1,19 está en la celda C1 y se aplica a todos los productos.",
-        "step1": "Introduce la fórmula =B2*$C$1 en la celda D2 para calcular el precio bruto de la carpeta",
-        "step2": "Copia la fórmula a D3 – observa: $C$1 permanece fijo, B3 se adapta automáticamente",
+        "story": "Debes calcular los precios brutos de todos los artículos. El factor del IVA 1,19 está en la celda C2 y se aplica a todos los productos.",
+        "step1": "Introduce la fórmula =B2*$C$2 en la celda D2 para calcular el precio bruto de la carpeta",
+        "step2": "Copia la fórmula a D3 – observa: $C$2 permanece fijo, B3 se adapta automáticamente",
         "step3": "Calcula también los precios brutos para bolígrafos (D4) y pegamento (D5)",
-        "step4": "Verifica: todas las fórmulas en D2:D5 deben referenciar $C$1",
+        "step4": "Verifica: todas las fórmulas en D2:D5 deben referenciar $C$2",
         "hint1": "El signo de dólar $ hace que una referencia sea absoluta – no cambia al copiar",
-        "hint2": "=B2*$C$1 significa: precio neto de B2 multiplicado por el factor de IVA fijo de C1"
+        "hint2": "=B2*$C$2 significa: precio neto de B2 multiplicado por el factor de IVA fijo de C2"
       },
       "ex2": {
         "title": "Conversión de moneda",
-        "story": "Un cliente estadounidense quiere ver los precios en USD. El tipo de cambio EUR/USD está en la celda E1.",
-        "step1": "Introduce la fórmula =B2*$E$1 en la celda C2 para calcular el precio en USD del papel de copia",
-        "step2": "Copia la fórmula a C3 – el tipo de cambio en $E$1 permanece fijo",
+        "story": "Un cliente estadounidense quiere ver los precios en USD. El tipo de cambio EUR/USD está en la celda E2.",
+        "step1": "Introduce la fórmula =B2*$E$2 en la celda C2 para calcular el precio en USD del papel de copia",
+        "step2": "Copia la fórmula a C3 – el tipo de cambio en $E$2 permanece fijo",
         "step3": "Calcula también los precios en USD para la impresora (C4) y el portátil (C5)",
-        "step4": "Verifica: todas las fórmulas en C2:C5 deben usar $E$1 como tipo de cambio fijo",
-        "hint1": "$E$1 fija tanto la columna E como la fila 1 – la referencia nunca cambia",
+        "step4": "Verifica: todas las fórmulas en C2:C5 deben usar $E$2 como tipo de cambio fijo",
+        "hint1": "$E$2 fija tanto la columna E como la fila 2 – la referencia nunca cambia",
         "hint2": "Precio en USD = precio en EUR multiplicado por el tipo de cambio"
       },
       "ex3": {
@@ -425,12 +425,12 @@
       },
       "ex4": {
         "title": "Calcular comisión",
-        "story": "El equipo de ventas gana un 5% de comisión sobre los ingresos. La tasa de comisión está en C1 y se aplica a todos los vendedores.",
-        "step1": "Introduce =B2*$C$1 en D2 para calcular la comisión de Müller, A.",
+        "story": "El equipo de ventas gana un 5% de comisión sobre los ingresos. La tasa de comisión está en C2 y se aplica a todos los vendedores.",
+        "step1": "Introduce =B2*$C$2 en D2 para calcular la comisión de Müller, A.",
         "step2": "Copia la fórmula a D3 para Schmidt, B.",
         "step3": "Calcula también la comisión para Weber, C. (D4) y Fischer, D. (D5)",
-        "step4": "Nota: sin el $ el C1 se desplazaría a C2, C3 etc. al copiar – ¡eso sería incorrecto!",
-        "hint1": "$C$1 garantiza que siempre se use la tasa de comisión de C1",
+        "step4": "Nota: sin el $ el C2 se desplazaría a C3, C4 etc. al copiar – ¡eso sería incorrecto!",
+        "hint1": "$C$2 garantiza que siempre se use la tasa de comisión de C2",
         "hint2": "Comisión = ingresos × tasa (p. ej. 12.500 × 0,05 = 625 EUR)"
       }
     },
@@ -550,9 +550,9 @@
         "story": "Crea una factura completa: nombre y precio mediante BUSCARV, precio total con IVA mediante fórmula.",
         "step1": "Obtén el nombre: =BUSCARV(A2;Stammdaten!A:C;2;0) en B2",
         "step2": "Obtén el precio: =BUSCARV(A2;Stammdaten!A:C;3;0) en C2",
-        "step3": "Calcula el total con IVA: =C2*D2*(1+$E$1) en F2",
+        "step3": "Calcula el total con IVA: =C2*D2*(1+$E$2) en F2",
         "step4": "Copia todas las fórmulas para los demás artículos (filas 3 y 4)",
-        "hint1": "$E$1 fija la celda del IVA — permanece en E1 al copiar",
+        "hint1": "$E$2 fija la celda del IVA — permanece en E2 al copiar",
         "hint2": "Total = precio × cantidad × (1 + IVA). Con 19% IVA: × 1,19"
       },
       "ex4": {

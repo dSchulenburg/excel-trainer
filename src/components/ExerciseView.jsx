@@ -90,7 +90,7 @@ export default function ExerciseView({ exercise, onBack, onNextExercise }) {
           </button>
           <h2 className="exercise-sidebar__title">{t(exercise.titleKey)}</h2>
           <AudioPlayer
-            src={`level${exercise.levelId}-${exercise.id.split('-')[1].toLowerCase()}`}
+            src={`level${exercise.levelId}-${exercise.id.split('-')[2].toLowerCase()}`}
             label={t('audio.exerciseIntro')}
             compact
           />
