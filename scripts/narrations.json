@@ -1,0 +1,20 @@
+{
+  "de": {
+    "level1": {
+      "intro": "Willkommen beim Excel-Trainer! Du ziehst in deine erste eigene Wohnung und lernst dabei Excel kennen. Los geht's mit einer Einkaufsliste!",
+      "L1-EX1": "In dieser Übung schreibst du deine erste Einkaufsliste in eine Tabelle. Klicke einfach in die Zellen und tippe die Artikelnamen ein.",
+      "L1-EX2": "Super, die Artikel stehen schon da! Jetzt trägst du die Preise daneben ein. Achte auf das Komma als Dezimalzeichen.",
+      "L1-EX3": "Jetzt wird es spannend: Du schreibst deine erste Formel! Mit der Funktion SUMME addierst du alle Preise automatisch.",
+      "L1-EX4": "Letzte Übung in diesem Level: Prüfe, ob dein Budget von zehn Euro reicht. Berechne den Rest mit einer einfachen Formel."
+    }
+  },
+  "uk": {
+    "level1": {
+      "intro": "Ласкаво просимо до Excel-тренажера! Ти переїжджаєш у свою першу квартиру і вчишся працювати з Excel. Почнемо зі списку покупок!",
+      "L1-EX1": "У цій вправі ти напишеш свій перший список покупок у таблиці. Просто клікни на комірку і введи назву товару.",
+      "L1-EX2": "Чудово, товари вже записані! Тепер впиши ціни поруч. Зверни увагу на кому як десятковий розділювач.",
+      "L1-EX3": "Тепер стає цікаво: ти напишеш свою першу формулу! Функція SUMME автоматично додає всі ціни.",
+      "L1-EX4": "Остання вправа цього рівня: перевір, чи вистачить бюджету в десять євро. Обчисли залишок за допомогою простої формули."
+    }
+  }
+}
