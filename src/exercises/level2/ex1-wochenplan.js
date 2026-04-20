@@ -25,9 +25,10 @@ export default {
   ui: { showToolbar: false, showFormulaBar: true, showSheetTabs: false },
   xp: { base: 25, bonus: 5 },
   validations: [
-    { type: 'cellValue', cell: { r: 1, c: 0 }, expected: 'Montag', caseInsensitive: true, stepIndex: 0 },
-    { type: 'cellValue', cell: { r: 2, c: 0 }, expected: 'Dienstag', caseInsensitive: true, stepIndex: 1 },
-    { type: 'cellValue', cell: { r: 3, c: 0 }, expected: 'Mittwoch', caseInsensitive: true, stepIndex: 2 },
+    // Accept DE/EN/UK/ES weekday names
+    { type: 'cellValue', cell: { r: 1, c: 0 }, expected: ['Montag', 'Monday', 'Понеділок', 'Lunes'], caseInsensitive: true, stepIndex: 0 },
+    { type: 'cellValue', cell: { r: 2, c: 0 }, expected: ['Dienstag', 'Tuesday', 'Вівторок', 'Martes'], caseInsensitive: true, stepIndex: 1 },
+    { type: 'cellValue', cell: { r: 3, c: 0 }, expected: ['Mittwoch', 'Wednesday', 'Середа', 'Miércoles'], caseInsensitive: true, stepIndex: 2 },
     { type: 'cellNotEmpty', cells: [{ r: 1, c: 1 }], stepIndex: 3 },
   ],
 };

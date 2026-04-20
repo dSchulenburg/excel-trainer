@@ -46,11 +46,21 @@ export default {
   ],
   ui: { showToolbar: false, showFormulaBar: true, showSheetTabs: false },
   xp: { base: 35, bonus: 12 },
-  validations: [
-    { type: 'cellFormula', cell: { r: 1, c: 2 }, expected: 'IF(B2=0,"bezahlt","offen")', stepIndex: 1 },
-    { type: 'cellFormula', cell: { r: 2, c: 2 }, expected: 'IF(B3=0,"bezahlt","offen")', stepIndex: 2 },
-    { type: 'cellFormula', cell: { r: 3, c: 2 }, expected: 'IF(B4=0,"bezahlt","offen")', stepIndex: 2 },
-    { type: 'cellFormula', cell: { r: 4, c: 2 }, expected: 'IF(B5=0,"bezahlt","offen")', stepIndex: 2 },
-    { type: 'cellFormula', cell: { r: 5, c: 2 }, expected: 'IF(B6=0,"bezahlt","offen")', stepIndex: 3 },
-  ],
+  validations: (() => {
+    // Accept localized status labels (DE/EN/UK/ES) — students type from their localized prompt
+    const labels = [
+      ['bezahlt', 'offen'],
+      ['paid', 'open'],
+      ['оплачено', 'відкрито'],
+      ['pagado', 'pendiente'],
+    ];
+    const formula = (row) => labels.map(([a, b]) => `IF(B${row}=0,"${a}","${b}")`);
+    return [
+      { type: 'cellFormula', cell: { r: 1, c: 2 }, expected: formula(2), stepIndex: 1 },
+      { type: 'cellFormula', cell: { r: 2, c: 2 }, expected: formula(3), stepIndex: 2 },
+      { type: 'cellFormula', cell: { r: 3, c: 2 }, expected: formula(4), stepIndex: 2 },
+      { type: 'cellFormula', cell: { r: 4, c: 2 }, expected: formula(5), stepIndex: 2 },
+      { type: 'cellFormula', cell: { r: 5, c: 2 }, expected: formula(6), stepIndex: 3 },
+    ];
+  })(),
 };
