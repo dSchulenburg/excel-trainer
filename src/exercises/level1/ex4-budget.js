@@ -41,9 +41,10 @@ export default {
   ui: { showToolbar: false, showFormulaBar: true, showSheetTabs: false },
   xp: { base: 20, bonus: 10 },
   validations: [
-    { type: 'cellValue', cell: { r: 7, c: 0 }, expected: 'Budget', caseInsensitive: true, stepIndex: 0 },
+    // Accept DE/EN/UK/ES labels
+    { type: 'cellValue', cell: { r: 7, c: 0 }, expected: ['Budget', 'Бюджет', 'Presupuesto'], caseInsensitive: true, stepIndex: 0 },
     { type: 'cellValue', cell: { r: 7, c: 1 }, expected: 10, stepIndex: 1 },
-    { type: 'cellValue', cell: { r: 8, c: 0 }, expected: 'Rest', caseInsensitive: true, stepIndex: 2 },
+    { type: 'cellValue', cell: { r: 8, c: 0 }, expected: ['Rest', 'Remaining', 'Залишок', 'Restante'], caseInsensitive: true, stepIndex: 2 },
     { type: 'cellFormula', cell: { r: 8, c: 1 }, expected: 'B8-B6', stepIndex: 3 },
   ],
 };

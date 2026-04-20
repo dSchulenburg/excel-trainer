@@ -50,11 +50,20 @@ export default {
   ],
   ui: { showToolbar: false, showFormulaBar: true, showSheetTabs: false },
   xp: { base: 42, bonus: 15 },
-  validations: [
-    { type: 'cellFormula', cell: { r: 1, c: 3 }, expected: 'IF(AND(B2>5000,C2>3),"Premium","Standard")', stepIndex: 0 },
-    { type: 'cellFormula', cell: { r: 2, c: 3 }, expected: 'IF(AND(B3>5000,C3>3),"Premium","Standard")', stepIndex: 1 },
-    { type: 'cellFormula', cell: { r: 3, c: 3 }, expected: 'IF(AND(B4>5000,C4>3),"Premium","Standard")', stepIndex: 2 },
-    { type: 'cellFormula', cell: { r: 4, c: 3 }, expected: 'IF(AND(B5>5000,C5>3),"Premium","Standard")', stepIndex: 3 },
-    { type: 'cellFormula', cell: { r: 5, c: 3 }, expected: 'IF(AND(B6>5000,C6>3),"Premium","Standard")', stepIndex: 3 },
-  ],
+  validations: (() => {
+    // Accept localized customer tier labels (DE/EN/UK/ES)
+    const labels = [
+      ['Premium', 'Standard'],
+      ['Преміум', 'Стандарт'],
+      ['Premium', 'Estándar'],
+    ];
+    const formula = (row) => labels.map(([a, b]) => `IF(AND(B${row}>5000,C${row}>3),"${a}","${b}")`);
+    return [
+      { type: 'cellFormula', cell: { r: 1, c: 3 }, expected: formula(2), stepIndex: 0 },
+      { type: 'cellFormula', cell: { r: 2, c: 3 }, expected: formula(3), stepIndex: 1 },
+      { type: 'cellFormula', cell: { r: 3, c: 3 }, expected: formula(4), stepIndex: 2 },
+      { type: 'cellFormula', cell: { r: 4, c: 3 }, expected: formula(5), stepIndex: 3 },
+      { type: 'cellFormula', cell: { r: 5, c: 3 }, expected: formula(6), stepIndex: 3 },
+    ];
+  })(),
 };

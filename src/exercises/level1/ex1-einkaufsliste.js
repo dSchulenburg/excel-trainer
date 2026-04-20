@@ -24,9 +24,10 @@ export default {
   ui: { showToolbar: false, showFormulaBar: true, showSheetTabs: false },
   xp: { base: 15, bonus: 5 },
   validations: [
-    { type: 'cellValue', cell: { r: 1, c: 0 }, expected: 'Reis', caseInsensitive: true, stepIndex: 0 },
-    { type: 'cellValue', cell: { r: 2, c: 0 }, expected: 'Nudeln', caseInsensitive: true, stepIndex: 1 },
-    { type: 'cellValue', cell: { r: 3, c: 0 }, expected: 'Öl', caseInsensitive: true, stepIndex: 2 },
-    { type: 'cellValue', cell: { r: 4, c: 0 }, expected: 'Salz', caseInsensitive: true, stepIndex: 3 },
+    // Accept DE/EN/UK/ES item names — students enter from their localized prompt
+    { type: 'cellValue', cell: { r: 1, c: 0 }, expected: ['Reis', 'Rice', 'Рис', 'Arroz'], caseInsensitive: true, stepIndex: 0 },
+    { type: 'cellValue', cell: { r: 2, c: 0 }, expected: ['Nudeln', 'Pasta', 'Макарони'], caseInsensitive: true, stepIndex: 1 },
+    { type: 'cellValue', cell: { r: 3, c: 0 }, expected: ['Öl', 'Oil', 'Олія', 'Aceite'], caseInsensitive: true, stepIndex: 2 },
+    { type: 'cellValue', cell: { r: 4, c: 0 }, expected: ['Salz', 'Salt', 'Сіль', 'Sal'], caseInsensitive: true, stepIndex: 3 },
   ],
 };

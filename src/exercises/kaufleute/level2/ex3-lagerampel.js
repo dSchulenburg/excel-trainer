@@ -46,11 +46,22 @@ export default {
   ],
   ui: { showToolbar: false, showFormulaBar: true, showSheetTabs: false },
   xp: { base: 40, bonus: 12 },
-  validations: [
-    { type: 'cellFormula', cell: { r: 1, c: 2 }, expected: 'IF(B2<10,"Nachbestellen","OK")', stepIndex: 1 },
-    { type: 'cellFormula', cell: { r: 2, c: 2 }, expected: 'IF(B3<10,"Nachbestellen","OK")', stepIndex: 2 },
-    { type: 'cellFormula', cell: { r: 3, c: 2 }, expected: 'IF(B4<10,"Nachbestellen","OK")', stepIndex: 2 },
-    { type: 'cellFormula', cell: { r: 4, c: 2 }, expected: 'IF(B5<10,"Nachbestellen","OK")', stepIndex: 2 },
-    { type: 'cellFormula', cell: { r: 5, c: 2 }, expected: 'IF(B6<10,"Nachbestellen","OK")', stepIndex: 3 },
-  ],
+  validations: (() => {
+    // Accept localized reorder labels (DE/EN/UK/ES) — students type from their localized prompt
+    const labels = [
+      ['Nachbestellen', 'OK'],
+      ['Reorder', 'OK'],
+      ['Замовити', 'OK'],
+      ['Reponer', 'OK'],
+      ['Pedir', 'OK'],
+    ];
+    const formula = (row) => labels.map(([a, b]) => `IF(B${row}<10,"${a}","${b}")`);
+    return [
+      { type: 'cellFormula', cell: { r: 1, c: 2 }, expected: formula(2), stepIndex: 1 },
+      { type: 'cellFormula', cell: { r: 2, c: 2 }, expected: formula(3), stepIndex: 2 },
+      { type: 'cellFormula', cell: { r: 3, c: 2 }, expected: formula(4), stepIndex: 2 },
+      { type: 'cellFormula', cell: { r: 4, c: 2 }, expected: formula(5), stepIndex: 2 },
+      { type: 'cellFormula', cell: { r: 5, c: 2 }, expected: formula(6), stepIndex: 3 },
+    ];
+  })(),
 };

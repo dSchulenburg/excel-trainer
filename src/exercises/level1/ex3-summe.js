@@ -38,7 +38,8 @@ export default {
   ui: { showToolbar: false, showFormulaBar: true, showSheetTabs: false },
   xp: { base: 25, bonus: 15 },
   validations: [
-    { type: 'cellValue', cell: { r: 5, c: 0 }, expected: 'Gesamt', caseInsensitive: true, stepIndex: 0 },
+    // Accept DE/EN/UK/ES labels
+    { type: 'cellValue', cell: { r: 5, c: 0 }, expected: ['Gesamt', 'Total', 'Разом'], caseInsensitive: true, stepIndex: 0 },
     { type: 'cellFormula', cell: { r: 5, c: 1 }, expected: 'SUMME(B2:B5)', stepIndex: 1 },
   ],
 };

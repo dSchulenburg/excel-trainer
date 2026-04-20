@@ -89,27 +89,37 @@ function validateSingle(v, sheetData) {
   switch (type) {
     case 'cellValue': {
       const val = getCellValue(sheetData, v.cell.r, v.cell.c);
-      let expected = v.expected;
-      let actual = val;
-      if (v.caseInsensitive && typeof actual === 'string' && typeof expected === 'string') {
-        actual = actual.toLowerCase().trim();
-        expected = expected.toLowerCase().trim();
+      const expectedList = Array.isArray(v.expected) ? v.expected : [v.expected];
+      const displayExpected = Array.isArray(v.expected) ? v.expected[0] : v.expected;
+      for (const exp of expectedList) {
+        let actual = val;
+        let expected = exp;
+        if (v.caseInsensitive && typeof actual === 'string' && typeof expected === 'string') {
+          actual = actual.toLowerCase().trim();
+          expected = expected.toLowerCase().trim();
+        }
+        if (typeof expected === 'number') {
+          const num = parseLocalNumber(val);
+          if (!isNaN(num) && Math.abs(num - expected) < 0.01) {
+            return { type, stepIndex, passed: true, expected: displayExpected, actual: val };
+          }
+          continue;
+        }
+        if (actual === expected) {
+          return { type, stepIndex, passed: true, expected: displayExpected, actual: val };
+        }
       }
-      if (typeof expected === 'number') {
-        actual = parseLocalNumber(actual);
-        const passed = !isNaN(actual) && Math.abs(actual - expected) < 0.01;
-        return { type, stepIndex, passed, expected: v.expected, actual: val };
-      }
-      return { type, stepIndex, passed: actual === expected, expected: v.expected, actual: val };
+      return { type, stepIndex, passed: false, expected: displayExpected, actual: val };
     }
 
     case 'cellFormula': {
       const f = getCellFormula(sheetData, v.cell.r, v.cell.c);
       const normActual = normalizeFormula(f);
-      const normExpected = normalizeFormula(v.expected);
+      const expectedList = Array.isArray(v.expected) ? v.expected : [v.expected];
+      const displayExpected = Array.isArray(v.expected) ? v.expected[0] : v.expected;
       // Normalize both sides to English for comparison (bidirectional)
-      const passed = toEN(normActual) === toEN(normExpected);
-      return { type, stepIndex, passed, expected: v.expected, actual: f };
+      const passed = expectedList.some((exp) => toEN(normActual) === toEN(normalizeFormula(exp)));
+      return { type, stepIndex, passed, expected: displayExpected, actual: f };
     }
 
     case 'cellFormulaResult': {

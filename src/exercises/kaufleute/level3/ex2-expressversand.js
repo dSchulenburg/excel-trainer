@@ -50,11 +50,21 @@ export default {
   ],
   ui: { showToolbar: false, showFormulaBar: true, showSheetTabs: false },
   xp: { base: 44, bonus: 15 },
-  validations: [
-    { type: 'cellFormula', cell: { r: 1, c: 3 }, expected: 'IF(OR(B2>20,C2>500),"Spedition","Paket")', stepIndex: 0 },
-    { type: 'cellFormula', cell: { r: 2, c: 3 }, expected: 'IF(OR(B3>20,C3>500),"Spedition","Paket")', stepIndex: 1 },
-    { type: 'cellFormula', cell: { r: 3, c: 3 }, expected: 'IF(OR(B4>20,C4>500),"Spedition","Paket")', stepIndex: 2 },
-    { type: 'cellFormula', cell: { r: 4, c: 3 }, expected: 'IF(OR(B5>20,C5>500),"Spedition","Paket")', stepIndex: 3 },
-    { type: 'cellFormula', cell: { r: 5, c: 3 }, expected: 'IF(OR(B6>20,C6>500),"Spedition","Paket")', stepIndex: 3 },
-  ],
+  validations: (() => {
+    // Accept localized shipping labels (DE/EN/UK/ES)
+    const labels = [
+      ['Spedition', 'Paket'],
+      ['Freight', 'Parcel'],
+      ['Транспорт', 'Пакет'],
+      ['Transporte', 'Paquete'],
+    ];
+    const formula = (row) => labels.map(([a, b]) => `IF(OR(B${row}>20,C${row}>500),"${a}","${b}")`);
+    return [
+      { type: 'cellFormula', cell: { r: 1, c: 3 }, expected: formula(2), stepIndex: 0 },
+      { type: 'cellFormula', cell: { r: 2, c: 3 }, expected: formula(3), stepIndex: 1 },
+      { type: 'cellFormula', cell: { r: 3, c: 3 }, expected: formula(4), stepIndex: 2 },
+      { type: 'cellFormula', cell: { r: 4, c: 3 }, expected: formula(5), stepIndex: 3 },
+      { type: 'cellFormula', cell: { r: 5, c: 3 }, expected: formula(6), stepIndex: 3 },
+    ];
+  })(),
 };
