@@ -8,7 +8,7 @@ export function OerFooter({ title }) {
         <a href="https://creativecommons.org/licenses/by/4.0/deed.de"
            target="_blank" rel="noopener noreferrer license">Inhalte CC&nbsp;BY&nbsp;4.0</a>
         {' · '}
-        <a href="./LICENSE" target="_blank" rel="noopener noreferrer license">Code MIT</a>
+        <a href="https://opensource.org/license/mit" target="_blank" rel="noopener noreferrer license">Code MIT</a>
         {' · '}
         <a href="https://dirk-schulenburg.net" target="_blank" rel="noopener noreferrer">dirk-schulenburg.net</a>
       </p>
