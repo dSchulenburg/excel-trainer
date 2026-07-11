@@ -1,8 +1,12 @@
 {
   "name": "excel-trainer",
-  "private": true,
+  "private": false,
   "version": "1.0.0",
   "type": "module",
+  "description": "Interaktiver Excel-Kurs mit echtem Tabellenblatt: Formeln, Summen, Budgetplanung – spielerisch lernen mit XP und Abzeichen. Mehrsprachig (DE/UK). Open Educational Resource (Inhalte CC BY 4.0)",
+  "license": "MIT",
+  "author": "Dirk Schulenburg (https://dirk-schulenburg.net)",
+  "homepage": "https://lernmodule.dirk-schulenburg.net/excel-trainer/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

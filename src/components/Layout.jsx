@@ -4,6 +4,7 @@ import { useGame } from '../context/GameContext';
 import { getPlayerLevel, getXPProgress } from '../utils/xp';
 import ProgressBar from './ui/ProgressBar';
 import LanguagePicker from './ui/LanguagePicker';
+import { OerFooter } from './OerFooter';
 
 const TRACK_ICONS = { avm: '🛒', kaufleute: '📊' };
 
@@ -68,6 +69,7 @@ export default function Layout({ children, currentView, onNavigate }) {
         </nav>
       </header>
       <main>{children}</main>
+      <OerFooter title="Excel-Trainer" />
     </div>
   );
 }
