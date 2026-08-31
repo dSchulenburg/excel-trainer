@@ -25,7 +25,9 @@ export default function ExerciseView({ exercise, onBack, onNextExercise }) {
   const [condFormatRules, setCondFormatRules] = useState([]);
   const [chartConfig, setChartConfig] = useState(null);
   const startTime = useRef(Date.now());
-  const totalErrors = useRef(0);
+  // Indices of validations that ever failed a check — counting distinct
+  // mistakes instead of re-counting the same unsolved cell on every attempt
+  const failedValidations = useRef(new Set());
 
   const hasCondFormat = exercise.validations?.some(v => v.type === 'conditionalFormat');
   const hasChart = exercise.validations?.some(v => v.type === 'chartConfig');
@@ -51,16 +53,19 @@ export default function ExerciseView({ exercise, onBack, onNextExercise }) {
     setValidationResult(result);
     setCompletedSteps(getCompletedSteps(exercise.validations, sheetData));
 
+    result.results.forEach((res, i) => {
+      if (!res.passed) failedValidations.current.add(i);
+    });
+
     if (result.passed) {
+      const errorCount = failedValidations.current.size;
       const seconds = Math.floor((Date.now() - startTime.current) / 1000);
-      const xp = calculateExerciseXP(exercise, totalErrors.current, seconds);
-      const s = calculateStars(totalErrors.current);
+      const xp = calculateExerciseXP(exercise, errorCount, seconds);
+      const s = calculateStars(errorCount);
       setEarnedXP(xp);
       setStars(s);
-      completeExercise(exercise.id, totalErrors.current, seconds, exercise);
+      completeExercise(exercise.id, errorCount, seconds, exercise);
       setShowComplete(true);
-    } else {
-      totalErrors.current += result.errors;
     }
   }, [sheetData, exercise, completeExercise]);
 
@@ -90,7 +95,14 @@ export default function ExerciseView({ exercise, onBack, onNextExercise }) {
           </button>
           <h2 className="exercise-sidebar__title">{t(exercise.titleKey)}</h2>
           <AudioPlayer
-            src={`level${exercise.levelId}-${exercise.id.split('-')[2].toLowerCase()}`}
+            src={
+              // AVM keeps its historical filenames (level1-ex1.mp3, …); other
+              // tracks get a track prefix so they never play AVM narrations —
+              // the player hides itself while those files don't exist.
+              exercise.trackId === 'avm'
+                ? `level${exercise.levelId}-${exercise.id.split('-')[2].toLowerCase()}`
+                : `${exercise.trackId}-level${exercise.levelId}-${exercise.id.split('-')[2].toLowerCase()}`
+            }
             label={t('audio.exerciseIntro')}
             compact
           />

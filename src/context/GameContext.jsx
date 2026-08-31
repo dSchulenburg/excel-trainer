@@ -45,9 +45,13 @@ const BADGE_TRIGGERS = [
   // Kaufleute — level completion
   { trigger: 'allInLevel', trackId: 'kaufleute', levelId: 1, badge: 'referenz-meister' },
   { trigger: 'allInLevel', trackId: 'kaufleute', levelId: 3, badge: 'entscheider' },
+  { trigger: 'allInLevel', trackId: 'kaufleute', levelId: 4, badge: 'sverweis-meister' },
   { trigger: 'allInLevel', trackId: 'kaufleute', levelId: 6, badge: 'daten-profi' },
   { trigger: 'allInLevel', trackId: 'kaufleute', levelId: 7, badge: 'visualisierer' },
   { trigger: 'allInLevel', trackId: 'kaufleute', levelId: 8, badge: 'geschaeftsfuehrer' },
+  // Kaufleute — first completed chart exercise
+  { trigger: 'exercise', trackId: 'kaufleute', exerciseId: 'K-L7-EX3', badge: 'chart-creator' },
+  { trigger: 'exercise', trackId: 'kaufleute', exerciseId: 'K-L7-EX4', badge: 'chart-creator' },
   // Kaufleute — track completion
   { trigger: 'allInTrack', trackId: 'kaufleute', badge: 'kaufmann-komplett' },
 ];
@@ -55,7 +59,8 @@ const BADGE_TRIGGERS = [
 // ── Initial State ───────────────────────────────────────────────────────────
 const initialState = {
   version: 2,
-  selectedTrack: 'avm',
+  // null until the learner picks a track — App shows the track selection then
+  selectedTrack: null,
   playerName: '',
   avatarId: 0,
   hasChangedLanguage: false,
@@ -67,8 +72,16 @@ const initialState = {
 };
 
 // ── Helpers ─────────────────────────────────────────────────────────────────
+/** Local calendar date (not UTC — a streak should flip at local midnight). */
+function toLocalDateString(date) {
+  const y = date.getFullYear();
+  const m = String(date.getMonth() + 1).padStart(2, '0');
+  const d = String(date.getDate()).padStart(2, '0');
+  return `${y}-${m}-${d}`;
+}
+
 function getToday() {
-  return new Date().toISOString().slice(0, 10);
+  return toLocalDateString(new Date());
 }
 
 /**
@@ -78,6 +91,7 @@ function getToday() {
 function updateActiveTrack(state, updater) {
   const track = state.selectedTrack;
   const trackState = state.tracks[track];
+  if (!trackState) return state; // no track chosen yet
   const updates = updater(trackState);
   return {
     ...state,
@@ -97,6 +111,13 @@ function checkBadgeTriggers(trackId, exerciseResults, currentBadges) {
 
   for (const t of BADGE_TRIGGERS) {
     if (newBadges.includes(t.badge)) continue;
+
+    if (t.trigger === 'exercise' && t.trackId === trackId) {
+      const result = exerciseResults[t.exerciseId];
+      if (result && !result.skipped) {
+        newBadges.push(t.badge);
+      }
+    }
 
     if (t.trigger === 'allInLevel' && t.trackId === trackId) {
       const levelExercises = allExercisesFromIndex.filter(
@@ -145,19 +166,24 @@ function reducer(state, action) {
       const { exerciseId, errors, timeSeconds, exercise } = action;
       const track = state.selectedTrack;
       const ts = state.tracks[track];
+      if (!ts) return state; // no track chosen yet
       const existing = ts.exerciseResults[exerciseId];
       const stars = calculateStars(errors);
       const xpEarned = calculateExerciseXP(exercise, errors, timeSeconds);
 
+      // A skipped entry is a placeholder, not a real completion — solving the
+      // exercise later counts as first completion (full XP, fresh bestTime).
+      const completed = existing && !existing.skipped;
+
       // Only award XP if first completion or better score
-      const prevStars = existing ? existing.stars : 0;
-      const addXP = !existing ? xpEarned : stars > prevStars ? Math.floor(xpEarned * 0.5) : 0;
+      const prevStars = completed ? existing.stars : 0;
+      const addXP = !completed ? xpEarned : stars > prevStars ? Math.floor(xpEarned * 0.5) : 0;
 
       const newResults = {
         ...ts.exerciseResults,
         [exerciseId]: {
           stars: Math.max(stars, prevStars),
-          bestTime: existing ? Math.min(existing.bestTime, timeSeconds) : timeSeconds,
+          bestTime: completed ? Math.min(existing.bestTime, timeSeconds) : timeSeconds,
           attempts: (existing?.attempts || 0) + 1,
         },
       };
@@ -187,19 +213,21 @@ function reducer(state, action) {
     case 'UPDATE_STREAK': {
       const today = getToday();
       if (state.streak.lastDate === today) return state;
-      const yesterday = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
+      const yesterday = toLocalDateString(new Date(Date.now() - 86400000));
       const isConsecutive = state.streak.lastDate === yesterday;
       const newCount = isConsecutive ? state.streak.count + 1 : 1;
+      const newStreak = { count: newCount, lastDate: today };
 
-      // Streak badge applies to active track
+      // Streak badge applies to active track (if one is chosen yet)
       const track = state.selectedTrack;
       const ts = state.tracks[track];
+      if (!ts) return { ...state, streak: newStreak };
       const newBadges = [...ts.badges];
       if (newCount >= 3 && !newBadges.includes('streak-3')) newBadges.push('streak-3');
 
       return {
         ...state,
-        streak: { count: newCount, lastDate: today },
+        streak: newStreak,
         tracks: {
           ...state.tracks,
           [track]: { ...ts, badges: newBadges },

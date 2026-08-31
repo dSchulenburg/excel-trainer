@@ -73,14 +73,27 @@ function normalizeFormula(f) {
 }
 
 /**
- * Parse a number that may use German decimal comma (1,99) or period (1.99).
+ * Parse a number that may use German (1.234,56) or English (1,234.56)
+ * formatting. When both separators appear, the last one is the decimal mark.
  */
 function parseLocalNumber(val) {
   if (typeof val === 'number') return val;
   if (typeof val !== 'string') return NaN;
-  // Replace comma with period for parsing (German decimal separator)
-  const normalized = val.trim().replace(',', '.');
-  return parseFloat(normalized);
+  let s = val.trim();
+  const lastComma = s.lastIndexOf(',');
+  const lastDot = s.lastIndexOf('.');
+  if (lastComma > -1 && lastDot > -1) {
+    if (lastComma > lastDot) {
+      s = s.split('.').join('').replace(',', '.'); // 1.234,56 → 1234.56
+    } else {
+      s = s.split(',').join(''); // 1,234.56 → 1234.56
+    }
+  } else if ((s.match(/,/g) || []).length > 1) {
+    s = s.split(',').join(''); // 1,234,567 → 1234567
+  } else {
+    s = s.replace(',', '.'); // 1,99 → 1.99
+  }
+  return parseFloat(s);
 }
 
 function validateSingle(v, sheetData) {

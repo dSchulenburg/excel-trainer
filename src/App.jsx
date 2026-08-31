@@ -35,6 +35,9 @@ function AppContent() {
     [setTrack]
   );
 
+  // Shared entry point for opening an exercise (from the level map AND from
+  // the "next exercise" button) — shows the level story once per track+level,
+  // so crossing a level boundary via "next" doesn't skip the new level's story.
   const handleStartExercise = useCallback(
     (exerciseId) => {
       setCurrentExerciseId(exerciseId);
@@ -60,11 +63,6 @@ function AppContent() {
   const handleBack = useCallback(() => {
     setView('levels');
     setCurrentExerciseId(null);
-  }, []);
-
-  const handleNextExercise = useCallback((nextId) => {
-    setCurrentExerciseId(nextId);
-    setView('exercise');
   }, []);
 
   const handleNavigate = useCallback(
@@ -94,7 +92,7 @@ function AppContent() {
           key={exercise.id}
           exercise={exercise}
           onBack={handleBack}
-          onNextExercise={handleNextExercise}
+          onNextExercise={handleStartExercise}
         />
       ) : null;
       break;

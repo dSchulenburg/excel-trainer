@@ -1,7 +1,7 @@
 {
   "app": {
     "title": "Excel-Trainer",
-    "subtitle": "Erste eigene Wohnung"
+    "subtitle": "Interaktiv Excel lernen"
   },
   "audio": {
     "levelIntro": "Level-Einleitung",
@@ -65,7 +65,7 @@
     "no": "Doch nicht"
   },
   "levelMap": {
-    "title": "Dein Weg zur Excel-Profi",
+    "title": "Dein Weg zum Excel-Profi",
     "exercise": "Übung"
   },
   "exercise": {

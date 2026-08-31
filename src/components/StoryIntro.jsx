@@ -5,13 +5,22 @@ import { useI18n } from '../context/I18nContext';
 import { getExercise, levels } from '../exercises';
 import AudioPlayer from './AudioPlayer';
 
+// Keyed by track — the AVM Lotties (shopping cart, cooking pot, plane …)
+// belong to the "Erste eigene Wohnung" story and must not leak into the
+// Kaufleute track. Levels without an entry fall back to the level icon.
 const STORY_ANIMATIONS = {
-  1: '/excel-trainer/animations/shopping.json',
-  2: '/excel-trainer/animations/calendar.json',
-  3: '/excel-trainer/animations/cooking.json',
-  4: '/excel-trainer/animations/apartment.json',
-  5: '/excel-trainer/animations/travel.json',
-  6: '/excel-trainer/animations/business.json',
+  avm: {
+    1: 'animations/shopping.json',
+    2: 'animations/calendar.json',
+    3: 'animations/cooking.json',
+    4: 'animations/apartment.json',
+    5: 'animations/travel.json',
+    6: 'animations/business.json',
+  },
+  kaufleute: {
+    1: 'animations/business.json',
+    8: 'animations/celebration.json',
+  },
 };
 
 export default function StoryIntro({ exerciseId, onStart }) {
@@ -23,13 +32,14 @@ export default function StoryIntro({ exerciseId, onStart }) {
   const [animData, setAnimData] = useState(null);
 
   useEffect(() => {
-    const url = STORY_ANIMATIONS[levelId];
-    if (!url) return;
-    fetch(url)
+    setAnimData(null);
+    const path = STORY_ANIMATIONS[trackId]?.[levelId];
+    if (!path) return;
+    fetch(`${import.meta.env.BASE_URL}${path}`)
       .then((r) => r.ok ? r.json() : null)
       .then(setAnimData)
       .catch(() => {});
-  }, [levelId]);
+  }, [levelId, trackId]);
 
   return (
     <motion.div
@@ -79,7 +89,11 @@ export default function StoryIntro({ exerciseId, onStart }) {
         style={{ marginBottom: '0.5rem' }}
       >
         <AudioPlayer
-          src={`level${levelId}-intro`}
+          src={
+            // AVM keeps its historical filenames; other tracks get a prefix so
+            // they never play AVM narrations (player hides while file missing)
+            trackId === 'avm' ? `level${levelId}-intro` : `${trackId}-level${levelId}-intro`
+          }
           label={t('audio.levelIntro')}
         />
       </motion.div>

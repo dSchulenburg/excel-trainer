@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState, useRef } from 'react';
 import { Workbook } from '@fortune-sheet/react';
 import '@fortune-sheet/react/dist/index.css';
 import { useGame } from '../context/GameContext';
-import { translateFormulaToEnglish, hasGermanFunctions } from '../utils/formulaTranslation';
+import { findLocalizedFormulaCells, countFormulaCells } from '../utils/formulaTranslation';
 import { useI18n } from '../context/I18nContext';
 
 /**
@@ -16,6 +16,12 @@ function prepareSheetData(initialData) {
     if (sheet.order === undefined) sheet.order = idx;
     if (!sheet.row) sheet.row = 20;
     if (!sheet.column) sheet.column = 10;
+    // Without an initial selection FortuneSheet's name box renders "A1:NaN"
+    if (!sheet.luckysheet_select_save) {
+      sheet.luckysheet_select_save = [
+        { row: [0, 0], column: [0, 0], row_focus: 0, column_focus: 0 },
+      ];
+    }
 
     if (sheet.celldata) {
       sheet.celldata = sheet.celldata.map((cell) => {
@@ -42,59 +48,6 @@ function prepareSheetData(initialData) {
 }
 
 /**
- * Scan all sheets for German/Spanish formula names, translate to English.
- * Returns { sheets, changed } — sheets is a deep copy with translated formulas.
- */
-function translateGermanFormulas(sheets) {
-  let changed = false;
-  const result = JSON.parse(JSON.stringify(sheets));
-
-  for (const sheet of result) {
-    // Scan 2D data array (primary source after edits)
-    if (sheet.data) {
-      for (let r = 0; r < sheet.data.length; r++) {
-        if (!sheet.data[r]) continue;
-        for (let c = 0; c < sheet.data[r].length; c++) {
-          const cell = sheet.data[r][c];
-          if (cell?.f && hasGermanFunctions(cell.f)) {
-            cell.f = translateFormulaToEnglish(cell.f);
-            changed = true;
-          }
-        }
-      }
-    }
-
-    // Also check sparse celldata
-    if (sheet.celldata) {
-      for (const entry of sheet.celldata) {
-        if (entry.v?.f && hasGermanFunctions(entry.v.f)) {
-          entry.v.f = translateFormulaToEnglish(entry.v.f);
-          changed = true;
-        }
-      }
-    }
-
-    // For remount: rebuild celldata from 2D data (preserves all user edits)
-    if (changed && sheet.data) {
-      const celldata = [];
-      for (let r = 0; r < sheet.data.length; r++) {
-        if (!sheet.data[r]) continue;
-        for (let c = 0; c < sheet.data[r].length; c++) {
-          const cell = sheet.data[r][c];
-          if (cell != null) {
-            celldata.push({ r, c, v: cell });
-          }
-        }
-      }
-      sheet.celldata = celldata;
-      delete sheet.data; // Force FortuneSheet to use celldata on re-init
-    }
-  }
-
-  return { sheets: result, changed };
-}
-
-/**
  * MultiSheetArea — FortuneSheet with multiple sheet tabs for SVERWEIS exercises.
  *
  * Uses a single <Workbook> with 2+ sheets in its data array:
@@ -110,7 +63,8 @@ export default function MultiSheetArea({ exercise, onDataChange }) {
   const { notifyCellEdit, notifyFormulaUse } = useGame();
   const { t } = useI18n();
   const [sheetData, setSheetData] = useState(null);
-  const mountKey = useRef(0);
+  const apiRef = useRef(null);
+  const formulaCount = useRef(0);
 
   // Detect if exercise uses SVERWEIS/VLOOKUP-type formulas for the hint
   const hasFunctionFormulas = exercise.validations?.some(
@@ -122,45 +76,34 @@ export default function MultiSheetArea({ exercise, onDataChange }) {
   );
 
   useEffect(() => {
-    mountKey.current += 1;
-    const prepared = prepareSheetData(exercise.initialData);
-    setSheetData(prepared);
+    formulaCount.current = 0;
+    setSheetData(prepareSheetData(exercise.initialData));
   }, [exercise.id]);
 
   const handleChange = useCallback(
     (data) => {
-      // Auto-translate German/Spanish formula names → English
-      const { sheets, changed } = translateGermanFormulas(data);
-
-      if (changed) {
-        // Remount with translated formulas
-        setSheetData(prepareSheetData(sheets));
-        mountKey.current += 1;
-        onDataChange(sheets);
-      } else {
-        onDataChange(data);
+      // German/Spanish formula names: push the English formula back through the
+      // Workbook API so FortuneSheet recalculates natively (see SpreadsheetArea).
+      const localized = findLocalizedFormulaCells(data);
+      if (localized.length > 0 && apiRef.current) {
+        setTimeout(() => {
+          for (const { sheetIndex, r, c, translated } of localized) {
+            try {
+              apiRef.current?.setCellValue(r, c, translated, { index: sheetIndex });
+            } catch {
+              // Sheet gone (exercise switched) — nothing to fix anymore
+            }
+          }
+        }, 0);
       }
 
+      onDataChange(data);
       notifyCellEdit();
 
-      // Check if any formula was used (across all sheets)
-      const checkData = changed ? sheets : data;
-      if (checkData) {
-        const hasFormula = checkData.some((sheet) => {
-          if (sheet.celldata) {
-            return sheet.celldata.some(
-              (c) => c.v && typeof c.v === 'object' && c.v.f
-            );
-          }
-          if (sheet.data) {
-            return sheet.data.some(
-              (row) => row && row.some((cell) => cell?.f)
-            );
-          }
-          return false;
-        });
-        if (hasFormula) notifyFormulaUse();
-      }
+      // Only report NEW formulas, else sumUseCount inflates on every edit
+      const count = countFormulaCells(data);
+      if (count > formulaCount.current) notifyFormulaUse();
+      formulaCount.current = count;
     },
     [onDataChange, notifyCellEdit, notifyFormulaUse]
   );
@@ -175,7 +118,8 @@ export default function MultiSheetArea({ exercise, onDataChange }) {
         </div>
       )}
       <Workbook
-        key={`multisheet-${exercise.id}-${mountKey.current}`}
+        key={`multisheet-${exercise.id}`}
+        ref={apiRef}
         data={sheetData}
         onChange={handleChange}
         showToolbar={exercise.ui?.showToolbar ?? false}

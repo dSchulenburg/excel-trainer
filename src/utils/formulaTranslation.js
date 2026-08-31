@@ -96,6 +96,69 @@ export function hasLocalizedFunctions(formula) {
   return inShort;
 }
 
+/**
+ * Scan FortuneSheet onChange data for cells whose formula uses localized
+ * (German/Spanish) function names. Returns a list of
+ * { sheetIndex, r, c, translated } entries so the caller can push the
+ * English formula back through the Workbook API — FortuneSheet then runs
+ * it through its native calculation pipeline (a remount would keep the
+ * stale #NAME? value, because init does not recalculate cells that
+ * already carry a cached v/m).
+ */
+export function findLocalizedFormulaCells(sheets) {
+  const found = [];
+  if (!Array.isArray(sheets)) return found;
+
+  sheets.forEach((sheet, sheetIndex) => {
+    if (sheet?.data) {
+      for (let r = 0; r < sheet.data.length; r++) {
+        const row = sheet.data[r];
+        if (!row) continue;
+        for (let c = 0; c < row.length; c++) {
+          const cell = row[c];
+          if (cell?.f && hasLocalizedFunctions(cell.f)) {
+            found.push({ sheetIndex, r, c, translated: translateFormulaToEnglish(cell.f) });
+          }
+        }
+      }
+    } else if (sheet?.celldata) {
+      for (const entry of sheet.celldata) {
+        if (entry.v?.f && hasLocalizedFunctions(entry.v.f)) {
+          found.push({
+            sheetIndex,
+            r: entry.r,
+            c: entry.c,
+            translated: translateFormulaToEnglish(entry.v.f),
+          });
+        }
+      }
+    }
+  });
+
+  return found;
+}
+
+/** Count cells that carry a formula, across 2D data and sparse celldata. */
+export function countFormulaCells(sheets) {
+  if (!Array.isArray(sheets)) return 0;
+  let count = 0;
+  for (const sheet of sheets) {
+    if (sheet?.data) {
+      for (const row of sheet.data) {
+        if (!row) continue;
+        for (const cell of row) {
+          if (cell && typeof cell === 'object' && cell.f) count++;
+        }
+      }
+    } else if (sheet?.celldata) {
+      for (const entry of sheet.celldata) {
+        if (entry.v && typeof entry.v === 'object' && entry.v.f) count++;
+      }
+    }
+  }
+  return count;
+}
+
 // Backward-compatible aliases so any code still using old names keeps working.
 export { ALL_TO_EN as DE_TO_EN };
 export { ALL_TO_EN, ES_DOT_FUNCTIONS, ES_SHORT };

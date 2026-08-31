@@ -13,7 +13,8 @@ export const TRACK_INITIAL = {
 function emptyV2State() {
   return {
     version: 2,
-    selectedTrack: 'avm',
+    // null = no track chosen yet — the app shows the track selection first
+    selectedTrack: null,
     playerName: '',
     avatarId: 0,
     hasChangedLanguage: false,
@@ -53,6 +54,8 @@ function migrateFromV1() {
     const v1 = data.state;
 
     const v2 = emptyV2State();
+    // v1 users were implicitly on the AVM track — keep them there
+    v2.selectedTrack = 'avm';
 
     // Shared top-level fields
     v2.playerName = v1.playerName || '';

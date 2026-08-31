@@ -19,7 +19,7 @@ export default function LevelComplete({ exercise, stars, xp, onNext, onBack }) {
   }, [stars]);
 
   useEffect(() => {
-    fetch('/excel-trainer/animations/celebration.json')
+    fetch(`${import.meta.env.BASE_URL}animations/celebration.json`)
       .then((r) => r.ok ? r.json() : null)
       .then(setCelebrationData)
       .catch(() => {});
