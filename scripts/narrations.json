@@ -6,6 +6,62 @@
       "L1-EX2": "Super, die Artikel stehen schon da! Jetzt trägst du die Preise daneben ein. Achte auf das Komma als Dezimalzeichen.",
       "L1-EX3": "Jetzt wird es spannend: Du schreibst deine erste Formel! Mit der Funktion SUMME addierst du alle Preise automatisch.",
       "L1-EX4": "Letzte Übung in diesem Level: Prüfe, ob dein Budget von zehn Euro reicht. Berechne den Rest mit einer einfachen Formel."
+    },
+    "kaufleute-level1": {
+      "intro": "Willkommen bei Schulz und Partner! Heute ist dein erster Praktikumstag bei einem Großhändler für Bürobedarf. Du aktualisierst die Preisliste und lernst dabei, wie absolute Zellbezüge funktionieren.",
+      "K-L1-EX1": "Hier berechnest du die Bruttopreise. Der Mehrwertsteuer-Faktor steht in Zelle C2 und gilt für alle Artikel. Mit dem Dollarzeichen hältst du diesen Bezug fest, wenn du die Formel nach unten ziehst.",
+      "K-L1-EX2": "Ein Kunde aus den USA möchte die Preise in Dollar sehen. Der Wechselkurs steht in Zelle E2. Rechne jeden Europreis damit um und setze den Bezug auf den Kurs absolut.",
+      "K-L1-EX3": "Schulz und Partner hat zwei Kundengruppen: Standardkunden bekommen zehn Prozent Rabatt, Premiumkunden zwanzig Prozent. Berechne die Nettopreise nach Abzug des Rabatts.",
+      "K-L1-EX4": "Das Vertriebsteam bekommt fünf Prozent Provision auf seinen Umsatz. Der Provisionssatz steht in Zelle C2. Berechne die Provision für alle Verkäuferinnen und Verkäufer."
+    },
+    "kaufleute-level2": {
+      "intro": "Woche zwei bei Schulz und Partner. Du übernimmst die Rechnungsprüfung. Mit der Wenn-Funktion lässt du Excel automatisch entscheiden.",
+      "K-L2-EX1": "Prüfe die offenen Rechnungen: Welche sind schon bezahlt, welche sind noch offen? Die Wenn-Funktion schreibt das Ergebnis für dich in die Zelle.",
+      "K-L2-EX2": "Wer innerhalb von zehn Tagen zahlt, bekommt zwei Prozent Skonto. Berechne mit einer Wenn-Funktion, wie hoch der Skontobetrag bei jeder Rechnung ist.",
+      "K-L2-EX3": "Im Lager wird es knapp. Liegen von einem Artikel weniger als zehn Stück, muss nachbestellt werden. Lass Excel diese Artikel automatisch markieren.",
+      "K-L2-EX4": "Ab hundert Euro Bestellwert ist der Versand kostenlos, darunter kostet er fünf Euro neunundneunzig. Berechne die Versandkosten für jede Bestellung."
+    },
+    "kaufleute-level3": {
+      "intro": "Dein zweiter Monat bei Schulz und Partner. Jetzt wertest du Kundendaten aus und verbindest die Wenn-Funktion mit Und und Oder.",
+      "K-L3-EX1": "Ein Kunde wird nur dann Premiumkunde, wenn er beide Bedingungen erfüllt. Kombiniere Wenn mit Und, um den Kundenstatus zu bestimmen.",
+      "K-L3-EX2": "Ist eine Sendung besonders schwer oder besonders wertvoll, geht sie per Spedition. Eine der beiden Bedingungen reicht, also brauchst du Wenn mit Oder.",
+      "K-L3-EX3": "Es gibt drei Rabattstufen. Mit verschachtelten Wenn-Funktionen ordnest du jedem Kunden den richtigen Rabattsatz zu.",
+      "K-L3-EX4": "Bewerte die Lieferanten mit A, B oder C. Dafür kombinierst du Und und Oder in einer verschachtelten Wenn-Formel."
+    },
+    "kaufleute-level4": {
+      "intro": "Monat drei: Du betreust die Warenwirtschaft. Mit dem S-Verweis findest du in der Produktdatenbank blitzschnell genau die Daten, die du brauchst.",
+      "K-L4-EX1": "Der Chef braucht sofort die aktuellen Preise für vier Artikel. Hol sie dir mit dem S-Verweis aus der Stammdatentabelle.",
+      "K-L4-EX2": "Für eine Nachbestellung musst du wissen, wer welchen Artikel liefert. Such den Lieferanten mit dem S-Verweis heraus.",
+      "K-L4-EX3": "Du stellst eine Bestellung zusammen. Bezeichnung und Preis holst du per S-Verweis, danach berechnest du den Gesamtbetrag.",
+      "K-L4-EX4": "Im Lager suchst du drei Artikel. Nutze den S-Verweis in jeder Zeile dreimal: für das Lager, das Regal und das Fach."
+    },
+    "kaufleute-level5": {
+      "intro": "Monat vier. Den S-Verweis beherrschst du schon. Jetzt kombinierst du ihn mit Wenn, Min und Wennfehler und triffst damit echte Geschäftsentscheidungen.",
+      "K-L5-EX1": "Drei Lieferanten bieten denselben Artikel an. Wer ist am günstigsten? Hol jeden Preis mit dem S-Verweis und finde mit Min den besten.",
+      "K-L5-EX2": "Prüfe den Lagerbestand mit dem S-Verweis. Mit Wenn entscheidest du, ob nachbestellt werden muss.",
+      "K-L5-EX3": "Jetzt entsteht eine komplette Rechnung: Bezeichnung und Preis per S-Verweis, dazu der Gesamtpreis mit Mehrwertsteuer.",
+      "K-L5-EX4": "Einige Artikelnummern sind falsch. Schütze deine Formel mit Wennfehler, damit bei unbekannten Nummern „Nicht gefunden“ erscheint."
+    },
+    "kaufleute-level6": {
+      "intro": "Du hast deinen eigenen Onlineshop eröffnet! Jetzt wertest du die Verkaufsdaten aus, mit Summewenn und Zählenwenn.",
+      "K-L6-EX1": "Wie viel Umsatz macht jede Produktkategorie? Mit Summewenn addierst du nur die Beträge, die zu einer Kategorie gehören.",
+      "K-L6-EX2": "Wie viele Bestellungen erfüllen eine bestimmte Bedingung? Zählenwenn zählt genau die Zellen, die zu deinem Kriterium passen.",
+      "K-L6-EX3": "Dein Shop hat drei Filialen. Vergleiche Umsatz und Anzahl der Bestellungen pro Filiale mit Summewenn und Zählenwenn.",
+      "K-L6-EX4": "Wer sind deine besten Kunden? Berechne für jeden Kunden den Gesamtumsatz, die Anzahl der Bestellungen und den Durchschnittswert."
+    },
+    "kaufleute-level7": {
+      "intro": "Du brauchst einen Kredit für deinen Shop und zeigst der Bank deine Zahlen. Bereite die Daten so auf, dass man sie auf einen Blick versteht.",
+      "K-L7-EX1": "Die Bank will sofort sehen, welche Monate Gewinn und welche Verlust gebracht haben. Färbe die Ergebnisse mit bedingter Formatierung.",
+      "K-L7-EX2": "Vor dem Termin prüfst du noch das Lager. Markiere kritische Bestände rot und gute Bestände grün.",
+      "K-L7-EX3": "Ein Säulendiagramm zeigt der Bank, wie sich dein Umsatz entwickelt hat. Erstelle es mit dem Diagramm-Assistenten.",
+      "K-L7-EX4": "Die Bank fragt, wie sich dein Umsatz verteilt. Ein Kreisdiagramm zeigt die Anteile der Produktkategorien."
+    },
+    "kaufleute-level8": {
+      "intro": "Das Jahr ist vorbei, und dein Shop wächst. Für den Jahresbericht kombinierst du alles, was du gelernt hast: S-Verweis, Summewenn, bedingte Formatierung und Diagramme.",
+      "K-L8-EX1": "Du wickelst einen kompletten Auftrag ab. Bezeichnung und Preis kommen per S-Verweis, danach berechnest du Zwischensumme, Rabatt und Gesamtbetrag.",
+      "K-L8-EX2": "Werte die Verkaufsdaten nach Produkten aus. Den Gesamtumsatz pro Produkt berechnest du mit Summewenn, die Quartale zählst du mit Zählenwenn.",
+      "K-L8-EX3": "Hol die Bewertungen der Lieferanten per S-Verweis und vergib mit Wenn und Und automatisch die Noten A, B oder C. A-Lieferanten färbst du grün, C-Lieferanten rot.",
+      "K-L8-EX4": "Zum Schluss der Jahresbericht: Jahresumsatz, Monatsdurchschnitt, bester und schlechtester Monat. Den Trend zeigst du als Liniendiagramm."
     }
   },
   "uk": {
@@ -15,6 +71,62 @@
       "L1-EX2": "Чудово, товари вже записані! Тепер впиши ціни поруч. Зверни увагу на кому як десятковий розділювач.",
       "L1-EX3": "Тепер стає цікаво: ти напишеш свою першу формулу! Функція SUMME автоматично додає всі ціни.",
       "L1-EX4": "Остання вправа цього рівня: перевір, чи вистачить бюджету в десять євро. Обчисли залишок за допомогою простої формули."
+    },
+    "kaufleute-level1": {
+      "intro": "Ласкаво просимо до Schulz & Partner! Сьогодні твій перший день практики в оптовій компанії канцтоварів. Ти оновлюєш прайс-лист і вчишся, як працюють абсолютні посилання на комірки.",
+      "K-L1-EX1": "Тут ти обчислюєш ціни з ПДВ. Коефіцієнт ПДВ стоїть у комірці C2 і діє для всіх товарів. Знак долара закріплює це посилання, коли ти протягуєш формулу вниз.",
+      "K-L1-EX2": "Клієнт зі США хоче бачити ціни в доларах. Курс обміну стоїть у комірці E2. Перерахуй кожну ціну в євро і зроби посилання на курс абсолютним.",
+      "K-L1-EX3": "У Schulz & Partner дві групи клієнтів: стандартні клієнти отримують знижку десять відсотків, преміум-клієнти двадцять відсотків. Обчисли ціни після знижки.",
+      "K-L1-EX4": "Відділ продажу отримує п'ять відсотків комісії від обороту. Ставка комісії стоїть у комірці C2. Обчисли комісію для кожного продавця."
+    },
+    "kaufleute-level2": {
+      "intro": "Другий тиждень у Schulz & Partner. Ти перевіряєш рахунки. За допомогою функції WENN Excel сам ухвалює рішення.",
+      "K-L2-EX1": "Перевір відкриті рахунки: які вже оплачені, а які ще ні? Функція WENN сама запише результат у комірку.",
+      "K-L2-EX2": "Хто платить протягом десяти днів, отримує знижку за швидку оплату, два відсотки. Обчисли за допомогою WENN суму знижки для кожного рахунку.",
+      "K-L2-EX3": "На складі закінчується товар. Якщо якогось товару менше десяти штук, його треба дозамовити. Нехай Excel автоматично позначить такі товари.",
+      "K-L2-EX4": "Від ста євро доставка безкоштовна, за меншої суми вона коштує п'ять євро дев'яносто дев'ять центів. Обчисли вартість доставки для кожного замовлення."
+    },
+    "kaufleute-level3": {
+      "intro": "Твій другий місяць у Schulz & Partner. Тепер ти аналізуєш дані клієнтів і поєднуєш функцію WENN з UND та ODER.",
+      "K-L3-EX1": "Клієнт стає преміум-клієнтом, лише якщо виконує обидві умови. Поєднай WENN з UND, щоб визначити статус клієнта.",
+      "K-L3-EX2": "Якщо відправлення дуже важке або дуже цінне, його везе транспортна компанія. Досить однієї умови, тому тобі потрібні WENN і ODER.",
+      "K-L3-EX3": "Є три рівні знижок. За допомогою вкладених функцій WENN ти призначаєш кожному клієнту правильну знижку.",
+      "K-L3-EX4": "Оціни постачальників буквами A, B або C. Для цього поєднай UND та ODER у вкладеній формулі WENN."
+    },
+    "kaufleute-level4": {
+      "intro": "Третій місяць: ти ведеш облік товарів. За допомогою SVERWEIS ти миттєво знаходиш у базі товарів саме ті дані, які потрібні.",
+      "K-L4-EX1": "Шефу терміново потрібні актуальні ціни чотирьох товарів. Знайди їх за допомогою SVERWEIS у довідковій таблиці.",
+      "K-L4-EX2": "Для дозамовлення треба знати, хто постачає який товар. Знайди постачальника за допомогою SVERWEIS.",
+      "K-L4-EX3": "Ти складаєш замовлення. Назву й ціну береш через SVERWEIS, а потім обчислюєш загальну суму.",
+      "K-L4-EX4": "На складі треба знайти три товари. Використай SVERWEIS у кожному рядку тричі: для складу, стелажа і полиці."
+    },
+    "kaufleute-level5": {
+      "intro": "Четвертий місяць. SVERWEIS ти вже вмієш. Тепер ти поєднуєш його з WENN, MIN і WENNFEHLER і ухвалюєш справжні бізнес-рішення.",
+      "K-L5-EX1": "Три постачальники пропонують той самий товар. Хто найдешевший? Візьми кожну ціну через SVERWEIS і знайди найкращу за допомогою MIN.",
+      "K-L5-EX2": "Перевір залишок на складі через SVERWEIS. За допомогою WENN вирішуєш, чи треба дозамовляти.",
+      "K-L5-EX3": "Тепер ти створюєш повний рахунок: назва й ціна через SVERWEIS, а також загальна ціна з ПДВ.",
+      "K-L5-EX4": "Деякі номери товарів неправильні. Захисти формулу функцією WENNFEHLER, щоб для невідомих номерів з'являлося „Nicht gefunden“."
+    },
+    "kaufleute-level6": {
+      "intro": "Тепер у тебе власний інтернет-магазин! Проаналізуй дані продажів за допомогою SUMMEWENN і ZÄHLENWENN.",
+      "K-L6-EX1": "Скільки обороту дає кожна категорія товарів? SUMMEWENN додає лише ті суми, що належать до певної категорії.",
+      "K-L6-EX2": "Скільки замовлень відповідає певній умові? ZÄHLENWENN рахує саме ті комірки, які відповідають твоєму критерію.",
+      "K-L6-EX3": "У твого магазину три філії. Порівняй оборот і кількість замовлень кожної філії за допомогою SUMMEWENN і ZÄHLENWENN.",
+      "K-L6-EX4": "Хто твої найкращі клієнти? Обчисли для кожного клієнта загальний оборот, кількість замовлень і середню суму."
+    },
+    "kaufleute-level7": {
+      "intro": "Тобі потрібен кредит для магазину, і ти показуєш свої цифри банку. Підготуй дані так, щоб їх було зрозуміло з першого погляду.",
+      "K-L7-EX1": "Банк хоче одразу бачити, які місяці були прибуткові, а які збиткові. Розфарбуй результати за допомогою умовного форматування.",
+      "K-L7-EX2": "Перед зустріччю ти ще перевіряєш склад. Познач критичні залишки червоним, а добрі зеленим.",
+      "K-L7-EX3": "Стовпчикова діаграма показує банку, як змінювався твій оборот. Створи її за допомогою майстра діаграм.",
+      "K-L7-EX4": "Банк питає, як розподіляється твій оборот. Кругова діаграма показує частки категорій товарів."
+    },
+    "kaufleute-level8": {
+      "intro": "Рік закінчився, і твій магазин росте. Для річного звіту ти поєднуєш усе вивчене: SVERWEIS, SUMMEWENN, умовне форматування і діаграми.",
+      "K-L8-EX1": "Ти повністю опрацьовуєш замовлення. Назва й ціна приходять через SVERWEIS, потім ти обчислюєш проміжну суму, знижку і загальну суму.",
+      "K-L8-EX2": "Проаналізуй дані продажів за товарами. Загальний оборот на товар обчисли через SUMMEWENN, а квартали порахуй через ZÄHLENWENN.",
+      "K-L8-EX3": "Візьми оцінки постачальників через SVERWEIS і автоматично постав оцінку A, B або C за допомогою WENN і UND. Постачальників A розфарбуй зеленим, C червоним.",
+      "K-L8-EX4": "Наостанок річний звіт: річний оборот, середнє за місяць, найкращий і найгірший місяць. Тенденцію покажи лінійною діаграмою."
     }
   }
 }

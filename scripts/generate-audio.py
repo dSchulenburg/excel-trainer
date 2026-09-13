@@ -6,14 +6,22 @@ Uses ElevenLabs API with the Alice voice (eleven_multilingual_v2) to generate
 MP3 narrations for each exercise in multiple languages.
 
 Usage:
-    python generate-audio.py                  # Generate all narrations
+    python generate-audio.py                  # Generate all missing narrations
     python generate-audio.py --lang de        # Only German
     python generate-audio.py --lang uk        # Only Ukrainian
+    python generate-audio.py --track kaufleute  # Only one track
+    python generate-audio.py --force          # Regenerate existing files too
     python generate-audio.py --dry-run        # Preview texts without API calls
+
+narrations.json: {lang: {"level1": {...}, "kaufleute-level1": {...}}}
+Level keys without a track prefix belong to the AVM track. AVM keeps its
+historical filenames (level1-ex1.mp3); other tracks get a prefix
+(kaufleute-level1-ex1.mp3) — the same scheme ExerciseView and StoryIntro use.
 """
 
 import json
 import os
+import re
 import sys
 import io
 import argparse
@@ -38,6 +46,8 @@ SCRIPT_DIR = Path(__file__).parent
 NARRATIONS_FILE = SCRIPT_DIR / "narrations.json"
 OUTPUT_DIR = SCRIPT_DIR.parent / "public" / "audio"
 
+LEVEL_KEY = re.compile(r"^(?:(?P<track>[a-z]+)-)?level(?P<num>\d+)$")
+
 
 def load_api_key():
     """Load API key from .env file in project root or parent directories."""
@@ -59,6 +69,14 @@ def load_api_key():
         search_dir = search_dir.parent
 
     return None
+
+
+def audio_filename(track, level_num, text_key):
+    """File name the player expects, e.g. level1-ex1.mp3 or kaufleute-level1-ex1.mp3."""
+    prefix = "" if track == "avm" else f"{track}-"
+    # text_key is "intro" or an exercise id like "L1-EX1" / "K-L1-EX1"
+    suffix = "intro" if text_key == "intro" else text_key.split("-")[-1].lower()
+    return f"{prefix}level{level_num}-{suffix}.mp3"
 
 
 def generate_audio(text, output_path, api_key):
@@ -98,8 +116,10 @@ def generate_audio(text, output_path, api_key):
 def main():
     parser = argparse.ArgumentParser(description="Generate audio narrations for learning modules")
     parser.add_argument("--lang", choices=["de", "uk"], help="Generate only for this language")
+    parser.add_argument("--track", help="Generate only for this track (e.g. avm, kaufleute)")
     parser.add_argument("--dry-run", action="store_true", help="Preview texts without API calls")
     parser.add_argument("--level", type=int, help="Generate only for this level (e.g. 1)")
+    parser.add_argument("--force", action="store_true", help="Regenerate files that already exist")
     args = parser.parse_args()
 
     # Load narrations
@@ -117,26 +137,31 @@ def main():
     languages = [args.lang] if args.lang else list(narrations.keys())
     total = 0
     success = 0
+    skipped = 0
     errors = []
 
     for lang in languages:
         lang_data = narrations.get(lang, {})
         for level_key, level_texts in lang_data.items():
-            level_num = int(level_key.replace("level", ""))
+            match = LEVEL_KEY.match(level_key)
+            if not match:
+                errors.append(f"{lang}/{level_key}: unknown level key")
+                continue
+            track = match.group("track") or "avm"
+            level_num = int(match.group("num"))
+            if args.track and track != args.track:
+                continue
             if args.level and level_num != args.level:
                 continue
 
             for text_key, text in level_texts.items():
-                # Determine filename
-                if text_key == "intro":
-                    filename = f"level{level_num}-intro.mp3"
-                else:
-                    # text_key is like "L1-EX1"
-                    parts = text_key.lower().replace("l", "").replace("ex", "")
-                    level_id, ex_id = text_key.split("-")
-                    filename = f"level{level_num}-{ex_id.lower()}.mp3"
-
+                filename = audio_filename(track, level_num, text_key)
                 output_path = OUTPUT_DIR / lang / filename
+
+                if output_path.exists() and not args.force:
+                    skipped += 1
+                    continue
+
                 total += 1
 
                 if args.dry_run:
@@ -159,7 +184,7 @@ def main():
                 time.sleep(0.5)
 
     print(f"\n{'=' * 50}")
-    print(f"Results: {success}/{total} generated successfully")
+    print(f"Results: {success}/{total} generated successfully ({skipped} existing skipped)")
     if errors:
         print(f"\nErrors ({len(errors)}):")
         for err in errors:
