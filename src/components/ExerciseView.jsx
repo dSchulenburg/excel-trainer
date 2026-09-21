@@ -1,6 +1,8 @@
 import { useState, useCallback, useRef, Suspense, lazy } from 'react';
 import { useI18n } from '../context/I18nContext';
 import { useGame } from '../context/GameContext';
+import { dispatchSectionComplete } from '../../../shared/journal/dispatch';
+import { exercises as alleUebungen } from '../exercises';
 import { validateExercise, getCompletedSteps } from '../utils/validation';
 import { calculateExerciseXP, calculateStars } from '../utils/xp';
 import ExerciseInstructions from './ExerciseInstructions';
@@ -15,7 +17,7 @@ const ChartWizard = lazy(() => import('./ChartWizard'));
 
 export default function ExerciseView({ exercise, onBack, onNextExercise }) {
   const { t } = useI18n();
-  const { completeExercise, skipExercise } = useGame();
+  const { completeExercise, skipExercise, exerciseResults } = useGame();
   const [sheetData, setSheetData] = useState(null);
   const [validationResult, setValidationResult] = useState(null);
   const [completedSteps, setCompletedSteps] = useState(new Map());
@@ -66,8 +68,27 @@ export default function ExerciseView({ exercise, onBack, onNextExercise }) {
       setStars(s);
       completeExercise(exercise.id, errorCount, seconds, exercise);
       setShowComplete(true);
+
+      // Journal-Signal: einmal pro frisch abgeschlossenem Level. Anders als in
+      // word-trainer zaehlen hier Track UND Level - dieselbe levelId existiert
+      // in jedem Track erneut, eine sectionId nur aus der Levelnummer wuerde
+      // zwei verschiedene Abschnitte zusammenwerfen.
+      // exerciseResults ist der Stand VOR diesem completeExercise.
+      const levelUebungen = alleUebungen.filter(
+        (e) => e.trackId === exercise.trackId && e.levelId === exercise.levelId
+      );
+      const schonFertig = !!exerciseResults[exercise.id];
+      const fertigJetzt =
+        levelUebungen.filter((e) => exerciseResults[e.id]).length + (schonFertig ? 0 : 1);
+      if (!schonFertig && levelUebungen.length > 0 && fertigJetzt >= levelUebungen.length) {
+        dispatchSectionComplete(
+          'excel-trainer',
+          `${exercise.trackId}-level-${exercise.levelId}`,
+          { concepts: [exercise.type || 'tabellenkalkulation'] }
+        );
+      }
     }
-  }, [sheetData, exercise, completeExercise]);
+  }, [sheetData, exercise, completeExercise, exerciseResults]);
 
   const handleSkip = useCallback(() => {
     skipExercise(exercise.id);
